@@ -33,7 +33,7 @@ function setUpGraph() {
 }
 
 async function fetchGoldPrices(dateFrom, dateTo) {
-  const url = `http://api.nbp.pl/api/cenyzlota/${dateFrom}/${dateTo}?format=json`;
+  const url = `https://api.nbp.pl/api/cenyzlota/${dateFrom}/${dateTo}?format=json`;
   const response = await fetch(url);
   const json = await response.json();
 
