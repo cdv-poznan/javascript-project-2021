@@ -49,3 +49,11 @@ npm run production
 * [MDN Web Docs](https://developer.mozilla.org/)
 * [Web Dev](https://web.dev/)
 * [Service Workers](https://serviceworke.rs/)
+
+## GitHub Pages
+
+1. Wyrzucenie `dist` z `.gitignore`
+2. `git add dist`
+3. `git commit`
+4. `git subtree push --prefix dist origin gh-pages`
+
