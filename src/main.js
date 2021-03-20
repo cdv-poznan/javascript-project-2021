@@ -1,5 +1,6 @@
 import { Chart } from 'chart.js';
 import { camelCase, snakeCase, kebabCase } from 'lodash';
+import Push from 'push.js';
 
 function setUpGraph() {
   const canvas = document.getElementById('chart-canvas');
@@ -104,6 +105,21 @@ function setUpCases() {
   });
 }
 
+function setUpPush() {
+  document.getElementById('notify').addEventListener('click', () => {
+    Push.create('Hello world!', {
+      body: "How's it hangin'?",
+      icon: 'assets/icon.png',
+      timeout: 4000,
+      onClick: function () {
+        window.focus();
+        this.close();
+      },
+    });
+  });
+}
+
 setUpCases();
 setUpGraph();
 setUpGoldChart();
+setUpPush();
