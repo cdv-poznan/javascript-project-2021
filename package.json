@@ -25,7 +25,11 @@
     "url": "https://github.com/cdv-poznan/javascript-project-2021/issues"
   },
   "homepage": "https://github.com/cdv-poznan/javascript-project-2021#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "bootstrap": "^5.0.0-beta2",
+    "chart.js": "^2.9.4"
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
