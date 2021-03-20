@@ -47,14 +47,14 @@ async function fetchGoldPrices(dateFrom, dateTo) {
   };
 }
 
+async function updateGoldData() {
+  const dateFrom = document.getElementById('date-from').value;
+  const dateTo = document.getElementById('date-to').value;
+  return await fetchGoldPrices(dateFrom, dateTo);
+}
+
 async function setUpGoldChart() {
   const canvas = document.getElementById('gold-canvas');
-
-  async function updateGoldData() {
-    const dateFrom = document.getElementById('date-from').value;
-    const dateTo = document.getElementById('date-to').value;
-    return await fetchGoldPrices(dateFrom, dateTo);
-  }
 
   const options = {
     type: 'line',
