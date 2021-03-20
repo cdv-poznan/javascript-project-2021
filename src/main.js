@@ -1,1 +1,1 @@
-console.log('JavaScript Project');
+console.log('Hello world');
