@@ -1,4 +1,5 @@
 import { Chart } from 'chart.js';
+import { camelCase, snakeCase, kebabCase } from 'lodash';
 
 function setUpGraph() {
   const canvas = document.getElementById('chart-canvas');
@@ -77,5 +78,32 @@ async function setUpGoldChart() {
   });
 }
 
+function setUpCases() {
+  const inputCase = document.getElementById('input-case');
+  const selectCase = document.getElementById('select-case');
+  const caseOutput = document.getElementById('case-output');
+
+  selectCase.addEventListener('change', $event => {
+    const inputText = inputCase.value;
+    let output = '';
+    switch ($event.target.value) {
+      case 'camel': {
+        output = camelCase(inputText);
+        break;
+      }
+      case 'snake': {
+        output = snakeCase(inputText);
+        break;
+      }
+      case 'kebab': {
+        output = kebabCase(inputText);
+        break;
+      }
+    }
+    caseOutput.innerText = output;
+  });
+}
+
+setUpCases();
 setUpGraph();
 setUpGoldChart();

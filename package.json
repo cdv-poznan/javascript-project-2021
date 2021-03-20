@@ -28,7 +28,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap": "^5.0.0-beta2",
-    "chart.js": "^2.9.4"
+    "chart.js": "^2.9.4",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
