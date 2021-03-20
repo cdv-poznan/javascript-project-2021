@@ -1,6 +1,13 @@
 import { Chart } from 'chart.js';
 import { camelCase, snakeCase, kebabCase } from 'lodash';
 import Push from 'push.js';
+import { Carousel } from 'bootstrap';
+import localforage from 'localforage';
+
+localforage.config({
+  name: 'uploaded-files',
+  driver: localforage.INDEXEDDB,
+});
 
 function setUpGraph() {
   const canvas = document.getElementById('chart-canvas');
@@ -119,7 +126,41 @@ function setUpPush() {
   });
 }
 
+async function setUpGallery() {
+  const carousel = new Carousel(document.getElementById('gallery-carousel'));
+  const fileUpload = document.getElementById('file-upload');
+
+  const files = await localforage.keys();
+
+  function addPreview(file) {
+    const url = URL.createObjectURL(file);
+
+    const img = document.createElement('img');
+    img.src = url;
+    img.className = 'd-block w-100 h-100';
+
+    const slide = document.createElement('div');
+    slide.className = 'carousel-item';
+
+    slide.append(img);
+
+    document.querySelector('#gallery-carousel .carousel-inner').append(slide);
+  }
+
+  files.forEach(async filename => {
+    const file = await localforage.getItem(filename);
+    addPreview(file);
+  });
+
+  fileUpload.addEventListener('change', $event => {
+    const file = $event.target.files[0];
+    localforage.setItem(file.name, file);
+    addPreview(file);
+  });
+}
+
 setUpCases();
 setUpGraph();
 setUpGoldChart();
 setUpPush();
+setUpGallery();
