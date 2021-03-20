@@ -1,1 +1,3 @@
-console.log('JavaScript Project');
+document.addEventListener('click', () => {
+  console.log('Hello');
+});
