@@ -33,7 +33,7 @@ let items = []; // tablica do wartość by przekazać do localStora
 let $idNumber = 0;
 let $allTask;
 
-const endpoint = "http://api.nbp.pl/api/exchangerates/tables/a/last/1?format=json"; // API kursów walutów NBP
+const endpoint = "https://api.nbp.pl/api/exchangerates/tables/a/last/1?format=json"; // API kursów walutów NBP
 const currencyArr = []; //tablica w wynikami kursów walut
 
 

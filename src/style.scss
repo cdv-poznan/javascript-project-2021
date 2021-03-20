@@ -12,9 +12,11 @@ body {
   background-color: black !important;
   padding: 2%;
 }
+
 .navbar-brand {
   text-transform: none;
 }
+
 .navbar-nav li {
   padding-right: 0.8rem;
 }
@@ -31,10 +33,10 @@ body {
 
 /*============= Landing page =============*/
 .home-inner {
-  background-image: url(assets/apple.jpeg);
   background-size: contain;
   opacity: 90%;
 }
+
 .caption {
   width: 100%;
   max-width: 100%;
@@ -43,6 +45,7 @@ body {
   z-index: 1;
   color: white;
 }
+
 .caption h1 {
   font-size: 4rem;
   letter-spacing: 0.2rem;
@@ -91,9 +94,11 @@ footer img {
   height: 2.5rem;
   margin: 1.5rem 0;
 }
+
 footer a {
   color: white;
 }
+
 footer a:hover,
 footer p,
 footer h3 {
@@ -107,9 +112,11 @@ footer h3 {
     width: 80%;
     max-width: 40vw;
   }
+
   .caption {
     display: none;
   }
+  
   .header {
     font-size: 55%;
   }
@@ -140,17 +147,21 @@ footer h3 {
   color: var(--light-dark);
   background-color: var(--light);
 }
+
 .formbox {
   display: flex;
 }
+
 .currencyStyle {
   width: 20%;
   padding: 1% 2%;
 }
+
 .tenorStyle {
   width: 20%;
   padding: 1% 2%;
 }
+
 .marginStyle {
   width: 20%;
   padding: 1% 2%;
@@ -369,6 +380,7 @@ footer h3 {
   color: #fff;
   background-color: var(--light-blue);
 }
+
 :root {
   --deep-dark: rgb(26, 26, 26);
   --light-dark: rgb(79, 82, 92);

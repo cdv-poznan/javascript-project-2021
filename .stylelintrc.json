@@ -3,6 +3,7 @@
   "rules": {
     "order/properties-alphabetical-order": null,
     "max-nesting-depth": 8,
-    "string-quotes" :"double"
+    "string-quotes" :"double",
+    "color-named": null
   }
 }
