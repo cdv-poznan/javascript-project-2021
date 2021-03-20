@@ -159,8 +159,28 @@ async function setUpGallery() {
   });
 }
 
+async function setUpUsers(page) {
+  const url = `https://reqres.in/api/users?page=${page}`;
+
+  const response = await fetch(url);
+
+  const json = await response.json();
+
+  const users = json.data;
+
+  for (const user of users) {
+    const item = document.createElement('li');
+    item.innerText = `${user.first_name} ${user.last_name}`;
+
+    document.getElementById('users-list').append(item);
+  }
+}
+
 setUpCases();
 setUpGraph();
 setUpGoldChart();
 setUpPush();
 setUpGallery();
+
+setUpUsers(1);
+setUpUsers(2);
