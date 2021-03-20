@@ -1,0 +1,433 @@
+body {
+  color: lightgray;
+  overflow-x: hidden;
+}
+
+/*============= NAVI =============*/
+
+.navbar {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background-color: black !important;
+  padding: 2%;
+}
+.navbar-brand {
+  text-transform: none;
+}
+.navbar-nav li {
+  padding-right: 0.8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  padding-top: 0.8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: grey;
+}
+
+/*============= Landing page =============*/
+.home-inner {
+  background-image: url(assets/apple.jpeg);
+  background-size: contain;
+  opacity: 90%;
+}
+.caption {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+  color: white;
+}
+.caption h1 {
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+}
+
+.caption h4 {
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+}
+
+.caption h6 {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem black;
+}
+/*============= JUMBOTRON=============*/
+
+.jumbotron {
+  padding-top: 10%;
+  color: black;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.line {
+  margin-bottom: 0;
+}
+
+.client {
+  border-radius: 50%;
+  width: 70%;
+  max-width: 70%;
+}
+
+/*============= FOOTER =============*/
+footer {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+footer img {
+  height: 2.5rem;
+  margin: 1.5rem 0;
+}
+footer a {
+  color: white;
+}
+footer a:hover,
+footer p,
+footer h3 {
+  color: white;
+}
+
+/*============= Media QUERIES =============*/
+
+@media only screen and (max-width: 768px) {
+  .client {
+    width: 80%;
+    max-width: 40vw;
+  }
+  .caption {
+    display: none;
+  }
+  .header {
+    font-size: 55%;
+  }
+}
+
+/*============= SECTION =============*/
+
+.todo {
+  width: 100%;
+  border-radius: 5px;
+  background: #fff;
+  /* box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4); */
+  text-align: center;
+}
+
+.header {
+  border-radius: 5px 5px 0 0;
+  padding: 40px;
+  color: #ddd;
+}
+
+.todoInput {
+  width: 30%;
+  padding: 10px 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--light-dark);
+  background-color: var(--light);
+}
+.formbox {
+  display: flex;
+}
+.currencyStyle {
+  width: 20%;
+  padding: 1% 2%;
+}
+.tenorStyle {
+  width: 20%;
+  padding: 1% 2%;
+}
+.marginStyle {
+  width: 20%;
+  padding: 1% 2%;
+}
+
+.percentageStyle {
+  width: 20%;
+  padding: 1% 2%;
+}
+
+.insurance {
+  padding-top: 3%;
+}
+
+.alertInfo {
+  margin-top: 20px;
+  color: var(--dark-blue);
+}
+
+.addBtn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.addBtn:hover {
+  color: #fff;
+  background-color: var(--light-dark);
+}
+
+.todoList {
+  padding: 20px 0;
+}
+
+.todoList h3 {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.todoList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  text-align: left;
+  list-style: none;
+  background-color: var(--light);
+}
+
+.tools {
+  display: inline-block;
+}
+
+.tools button {
+  padding: 15px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tools button:hover {
+  background-color: #ddd;
+}
+
+.complete {
+  color: var(--light-blue);
+}
+
+.edit {
+  font-weight: bold;
+  color: rgb(15, 179, 69);
+}
+
+.delete {
+  color: tomato;
+}
+
+.completed {
+  font-size: 12px;
+  color: var(--light-dark);
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+/*============= POPUP EDIT =============*/
+
+.popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  color: var(--light);
+  background-color: var(--light-dark);
+  border-radius: 5px;
+}
+
+.popup h3 {
+  padding: 20px;
+}
+
+.popupInfo {
+  color: var(--light);
+  margin-bottom: 20px;
+}
+
+.popupBody {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  padding: 10px;
+}
+
+.popupInput {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--light-dark);
+  background-color: var(--light);
+}
+
+.popupBtn {
+  width: 30%;
+  display: inline-block;
+  padding: 10px 22px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.popupBtn:hover {
+  color: #fff;
+  background-color: var(--light-blue);
+}
+:root {
+  --deep-dark: rgb(26, 26, 26);
+  --light-dark: rgb(79, 82, 92);
+  --light-blue: rgb(0, 132, 255);
+  --dark-blue: rgb(2, 84, 161);
+  --light: rgb(245, 245, 245);
+}
+
+/*============= acceptPanel =============*/
+
+.acceptPanel {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  color: var(--light);
+  background-color: var(--light-dark);
+  border-radius: 5px;
+}
+
+.acceptPanel h3 {
+  padding: 3%;
+  font-weight: bold;
+}
+
+.acceptPanelBody {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  padding: 20%;
+}
+
+.acceptPanelInfo {
+  width: 100%;
+  padding: 15px 25px;
+  font-weight: bold;
+  font-size: 125%;
+  border: none;
+  border-radius: 5px;
+  color: var(--light-dark);
+  background-color: var(--light);
+}
+
+.acceptPanelBtn {
+  width: 30%;
+  padding: 10px 22px;
+  margin: 1%;
+  border: none;
+  border-radius: 5px;
+  color: var(--deep-dark);
+  background-color: var(--light);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.pacceptPanelBtn:hover {
+  color: #fff;
+  background-color: var(--light-blue);
+}
+:root {
+  --deep-dark: rgb(26, 26, 26);
+  --light-dark: rgb(79, 82, 92);
+  --light-blue: rgb(0, 132, 255);
+  --dark-blue: rgb(2, 84, 161);
+  --light: rgb(245, 245, 245);
+}
+
+/*============= FORM CURRENCY=============*/
+
+input {
+  width: 100%;
+  padding: 20px;
+}
+
+.search-form {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+input.search {
+  margin: 0;
+  text-align: center;
+  outline: 0;
+  border: 10px solid #f7f7f7;
+  width: 120%;
+  left: -10%;
+  /* position: relative; */
+  top: 10px;
+  z-index: 2;
+  border-radius: 5px;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.suggestions {
+  margin: 0;
+  padding: 0;
+  /* position: relative; */
+  /*perspective: 20px;*/
+}
+
+.suggestions li {
+  background: white;
+  list-style: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+span.population {
+  font-size: 15px;
+}
+
+.hlcurrencyArr {
+  background: #d9534f;
+}
