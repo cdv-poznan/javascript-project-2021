@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,132,227,1) 37%, rgba(116,185,255,1) 100%);
+  // background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,132,227,1) 37%, rgba(116,185,255,1) 100%);
+  background: linear-gradient(0deg, rgba(9, 132, 227, 1) 0%, rgba(9, 132, 227, 1) 18%, rgba(255, 255, 255, 1) 80%);
   min-height: 100vh;
   font-family: roboto;
 }
@@ -24,6 +25,7 @@ body {
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 
 }
 
@@ -46,11 +48,11 @@ header {
   position: relative;
   background: linear-gradient(132deg, #ff4f2c, #591bc5, #4169e1);
   background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
   overflow: hidden;
-  max-width: 1920px;
-  margin: 0 auto;
+  border: 1px solid #5529ca;
+  border-radius: 5px 5px 0px 0px;
   animation: Gradient 15s ease infinite;
+
 }
 
 /* animowane divy */
