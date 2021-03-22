@@ -1,2 +1,10 @@
-@import "bootstrap/scss/bootstrap";
-@import "@fortawesome/fontawesome-free/css/all.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "./scss/_variables";
+@import "./scss/_resetAndBg";
+@import "./scss/_profile";
+@import "./scss/_form";
+@import "./scss/_stock";
+
+.visible {
+  display: none;
+}
