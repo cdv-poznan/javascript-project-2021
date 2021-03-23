@@ -10,7 +10,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.1rem;
   background-color: black !important;
-  padding: 2%;
+  padding: 1%;
 }
 
 .navbar-brand {
@@ -128,8 +128,9 @@ footer h3 {
   width: 100%;
   border-radius: 5px;
   background: #fff;
-  /* box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4); */
+  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4); 
   text-align: center;
+  color: black;
 }
 
 .header {

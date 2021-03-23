@@ -28,7 +28,7 @@ let $percentage; //prowizja
 let $insurance; // ubezpieczenie
 
 
-let items = []; // tablica do wartość by przekazać do localStora
+let $items = []; // tablica do wartość by przekazać do localStora
 
 let $idNumber = 0;
 let $allTask;
