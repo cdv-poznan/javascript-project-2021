@@ -73,26 +73,6 @@
     }
   }
 }
-@keyframes blueSquareMove {
-  0% {
-    left: 30%;
-    top: 15%;
-  }
-  100% {
-    top: 65%;
-  }
-}
-
-@keyframes violetSquareMove {
-  0% {
-    left: 75%;
-    top: 45%;
-  }
-  100% {
-    left: 35%;
-  }
-}
-
 // JS
 .registerActive {
   opacity: 0.7;

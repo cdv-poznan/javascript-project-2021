@@ -3,55 +3,34 @@
   height: 90vh;
   margin: 50vh 0 0 50vw;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   overflow-y: scroll;
-  .userData {
-    position: fixed;
-    width: 500px;
-    padding-top: 15px;
-    font-size: 2.4rem;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    &__equity {
-      color: white;
-    }
-    &__amount {
-      color: $base-color;
-    }
-    &__profile {
-      padding: 7px 18px;
-      font-size: 1.5rem;
-      border: 2px solid;
-      border-image-slice: 1;
-      border-image-source: $background;
-      background-image: $background;
-      color: white;
-      background-color: rgba(255, 255, 255, 0);
-      text-transform: uppercase;
-      cursor: pointer;
-      &:hover {
-        background-image: none;
-      }
-    }
-  }
   .data {
-    width: 95%;
-    height: 90%;
+    flex-basis: 90%;
+    padding-top: 150px;
     display: flex;
     align-items: center;
     margin: 0 auto;
     &__chart {
-      flex-basis: 45%;
-      height: 80%;
+      position: relative;
+      flex-basis: 50%;
       background-color: rgba(218, 218, 218, 0.253);
+    }
+    &__data {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
     &__form {
       width: 100px;
-      margin-left: 20px;
+      margin-left: 120px;
       text-align: center;
+    }
+    &__buying {
+      flex-basis: 50%;
     }
     &__count {
       width: 60px;
@@ -81,6 +60,37 @@
       margin-top: 9px;
       font-size: 2rem;
       color: white;
+    }
+  }
+  .userData {
+    position: fixed;
+    width: 500px;
+    padding-top: 15px;
+    font-size: 2.4rem;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__equity {
+      color: white;
+    }
+    &__amount {
+      color: $base-color;
+    }
+    &__profile {
+      padding: 7px 18px;
+      font-size: 1.5rem;
+      border: 2px solid;
+      border-image-slice: 1;
+      border-image-source: $background;
+      background-image: $background;
+      color: white;
+      background-color: rgba(255, 255, 255, 0);
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover {
+        background-image: none;
+      }
     }
   }
 }
