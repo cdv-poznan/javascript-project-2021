@@ -35,25 +35,39 @@
       </div>
       <div class="data__buying">
         <div class="data__form">
-          <input min="0" max="999" type="number" class="data__count"><br>
-          <button class="data__button">Buy</button><br>
-          <input min="0" max="999" type="number" class="data__count"><br>
-          <button class="data__button">Sell</button>
-          <p class="data__quanitity">Quantity: <span class="data__amount">0</span></p>
+          <input min="0" max="999" type="number" class="data__count" id="goldBuyInput"><br>
+          <button class="data__button" id="goldBuyButton">Buy</button><br>
+          <input min="0" max="999" type="number" class="data__count" id="goldSellInput"><br>
+          <button class="data__button" id="goldSellButton">Sell</button>
+          <p class="data__quanitity">Quantity: <span class="data__amount" id="goldQuantity">0</span></p>
         </div>
       </div>
     </div>
     <div class="data">
       <div class="data__chart">
-        <canvas class="data__data" id="myChart"></canvas>
+        <canvas class="data__data" id="usdChart"></canvas>
       </div>
       <div class="data__buying">
         <div class="data__form">
-          <input min="0" max="999" type="number" class="data__count"><br>
-          <button class="data__button">Buy</button><br>
-          <input min="0" max="999" type="number" class="data__count"><br>
-          <button class="data__button">Sell</button>
-          <p class="data__quanitity">Quantity: <span class="data__amount">0</span></p>
+          <input min="0" max="999" type="number" class="data__count" id="usdBuyInput"><br>
+          <button class="data__button" id="usddBuyButton">Buy</button><br>
+          <input min="0" max="999" type="number" class="data__count" id="usdSellInput"><br>
+          <button class="data__button" id="usdSellButton">Sell</button>
+          <p class="data__quanitity">Quantity: <span class="data__amount" id="usdQuantity">0</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="data">
+      <div class="data__chart">
+        <canvas class="data__data" id="gbpChart"></canvas>
+      </div>
+      <div class="data__buying">
+        <div class="data__form">
+          <input min="0" max="999" type="number" class="data__count" id="gbpBuyInput"><br>
+          <button class="data__button" id="gbpdBuyButton">Buy</button><br>
+          <input min="0" max="999" type="number" class="data__count" id="gbpSellInput"><br>
+          <button class="data__button" id="gbpSellButton">Sell</button>
+          <p class="data__quanitity">Quantity: <span class="data__amount" id="gbpQuantity">0</span></p>
         </div>
       </div>
     </div>

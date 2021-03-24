@@ -1,59 +1,113 @@
 import { Chart } from 'chart.js';
 
 const charts = () => {
-
-
-
-  
-  const goldArrayDate = [];
-  // getting current date
-  var date = new Date();
-  const mm = () => {
-    if (date.getMonth() + 1 < 10) {
-      return '0' + Number(date.getMonth() + 1);
-    }
+  // gold
+  const goldBuyInput = document.querySelector('#goldBuyInput');
+  const goldSellInput = document.querySelector('#goldSellInput');
+  const goldBuyButton = document.querySelector('#goldBuyButton');
+  const goldSellButton = document.querySelector('#goldSellButton');
+  let latestGoldCourse;
+  // GOLD
+  const showingGoldStats = () => {
+    // fetch data gold
+    const xAxisGold = [];
+    const yAxisGold = [];
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/cenyzlota/last/30/?format=json`,
+    )
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(element => {
+          xAxisGold.push(element.data);
+          yAxisGold.push(element.cena);
+          latestGoldCourse = element.cena;
+        });
+      });
+    // chart
+    const goldChart = document.getElementById('goldChart').getContext('2d');
+    const goldRateChart = new Chart(goldChart, {
+      type: 'line',
+      data: {
+        labels: xAxisGold,
+        datasets: [
+          {
+            label: 'Gold Rate',
+            data: yAxisGold,
+            backgroundColor: 'transparent',
+            borderColor: 'rgb(215,183,64)',
+          },
+        ],
+      },
+    });
   };
-  const mmOld = () => {
-    if (date.getMonth() < 10) {
-      return '0' + date.getMonth();
-    }
+  // USD
+  const showingUSDStats = () => {
+    // fetch data usd
+    const xAxisGold = [];
+    const yAxisGold = [];
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/exchangerates/rates/a/usd/last/10/?format=json`,
+    )
+      .then(res => res.json())
+      .then(data => {
+        data.rates.forEach(element => {
+          xAxisGold.push(element.effectiveDate);
+          yAxisGold.push(element.mid);
+          latestGoldCourse = element.mid;
+        });
+      });
+    // chart
+    const goldChart = document.getElementById('usdChart').getContext('2d');
+    const goldRateChart = new Chart(goldChart, {
+      type: 'line',
+      data: {
+        labels: xAxisGold,
+        datasets: [
+          {
+            label: 'USD/PLN',
+            data: yAxisGold,
+            backgroundColor: 'transparent',
+            borderColor: 'rgb(215,183,64)',
+          },
+        ],
+      },
+    });
   };
-  const dd = () => {
-    if (Number(date.getDate()) < 10) {
-      return '0' + date.getDate();
-    } else {
-      return date.getDate();
-    }
+  // GBP
+  const showingGBPStats = () => {
+    // fetch data gbp
+    const xAxisGold = [];
+    const yAxisGold = [];
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=json`,
+    )
+      .then(res => res.json())
+      .then(data => {
+        data.rates.forEach(element => {
+          xAxisGold.push(element.effectiveDate);
+          yAxisGold.push(element.mid);
+          latestGoldCourse = element.mid;
+        });
+      });
+    // chart
+    const goldChart = document.getElementById('gbpChart').getContext('2d');
+    const goldRateChart = new Chart(goldChart, {
+      type: 'line',
+      data: {
+        labels: xAxisGold,
+        datasets: [
+          {
+            label: 'GBP/PLN',
+            data: yAxisGold,
+            backgroundColor: 'transparent',
+            borderColor: 'rgb(215,183,64)',
+          },
+        ],
+      },
+    });
   };
-  const currentDate = date.getFullYear() + '-' + mm() + '-' + dd();
-  const oldDate = date.getFullYear() + '-' + mmOld() + '-' + dd();
-  // fetch data
-  async function fetchGoldPrices(dateFrom, dateTo) {
-    const url = `https://api.nbp.pl/api/cenyzlota/${dateFrom}/${dateTo}?format=json`;
-    const response = await fetch(url);
-    const json = await response.json();
-    return {
-      // eslint-disable-next-line array-callback-return
-      labels: json.map(element => {
-        goldArrayDate.push(element);
-        element.data;
-      }),
-    };
-  }
-  const goldChart = document.getElementById('goldChart').getContext('2d');
-  const goldRateChart = new Chart(goldChart, {
-    type: 'line',
-    data: {
-      labels: [goldArrayDate.map(day => day.data)],
-      datasets: [
-        {
-          label: 'Gold Rate',
-          data: [goldArrayDate.map(day => day.cena)],
-          backgroundColor: 'rgb(215,183,64)',
-        },
-      ],
-    },
-  });
-  // silver rate
+  showingGoldStats();
+  showingUSDStats();
+  showingGBPStats();
 };
 export default charts;
