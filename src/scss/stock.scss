@@ -17,12 +17,9 @@
     &__chart {
       position: relative;
       flex-basis: 50%;
-      background-color: rgba(218, 218, 218, 0.253);
     }
     &__data {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      width: 100% !important;
     }
     &__form {
       width: 100px;
@@ -63,7 +60,6 @@
     }
   }
   .userData {
-    position: fixed;
     width: 500px;
     padding-top: 15px;
     font-size: 2.4rem;
@@ -90,6 +86,48 @@
       cursor: pointer;
       &:hover {
         background-image: none;
+      }
+    }
+  }
+}
+@media (max-width: 1400px) {
+  .stock {
+    .data {
+      &__chart {
+        flex-basis: 80%;
+      }
+      &__count {
+        font-size: 1.5rem;
+      }
+      &__button {
+        width: 55px;
+        height: 30px;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      &__quanitity {
+        font-size: 1.45rem;
+        color: white;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .stock {
+    .data {
+      flex-direction: column;
+      &__form {
+        margin-left: 0;
+      }
+    }
+  }
+}
+@media (max-width: 620px) {
+  .stock {
+    .userData {
+      width: 250px;
+      &__name {
+        display: none;
       }
     }
   }
