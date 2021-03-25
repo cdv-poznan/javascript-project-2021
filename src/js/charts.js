@@ -28,13 +28,11 @@ const charts = () => {
   let latestUsdCourse;
   let latestGbpCourse;
   // GOLD
-  const showingGoldStats = () => {
+  async function showingGoldStats() {
     // fetch data gold
     const xAxis = [];
     const yAxis = [];
-    fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/cenyzlota/last/30/?format=json`,
-    )
+    fetch(`http://api.nbp.pl/api/cenyzlota/last/30/?format=json`)
       .then(res => res.json())
       .then(data => {
         data.forEach(element => {
@@ -59,14 +57,14 @@ const charts = () => {
         ],
       },
     });
-  };
+  }
   // USD
-  const showingUSDStats = () => {
+  async function showingUSDStats() {
     // fetch data usd
     const xAxis = [];
     const yAxis = [];
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/exchangerates/rates/a/usd/last/10/?format=json`,
+      `http://api.nbp.pl/api/exchangerates/rates/a/usd/last/10/?format=json`,
     )
       .then(res => res.json())
       .then(data => {
@@ -92,14 +90,14 @@ const charts = () => {
         ],
       },
     });
-  };
+  }
   // GBP
-  const showingGBPStats = () => {
+  async function showingGBPStats() {
     // fetch data gbp
     const xAxis = [];
     const yAxis = [];
     fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=json`,
+      `http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/10/?format=json`,
     )
       .then(res => res.json())
       .then(data => {
@@ -125,7 +123,7 @@ const charts = () => {
         ],
       },
     });
-  };
+  }
   // button actions - buying and selling
   // BUYING
   const buyingAction = e => {
