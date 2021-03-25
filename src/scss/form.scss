@@ -55,19 +55,19 @@
     }
   }
   &__circle {
-    position: absolute;
     width: 300px;
     height: 300px;
+    position: absolute;
     border-radius: 50%;
     &--blue {
-      left: 25%;
       top: 15%;
+      left: 25%;
       background-image: linear-gradient(to top, rgb(61, 123, 173), rgb(59, 128, 255));
       animation: blueSquareMove 20s infinite linear alternate;
     }
     &--violet {
-      left: 75%;
       top: 45%;
+      left: 75%;
       background-image: linear-gradient(to top, rgb(173, 61, 164), rgb(199, 59, 255));
       animation: violetSquareMove 20s infinite linear alternate;
     }

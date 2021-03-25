@@ -11,10 +11,10 @@
   border-radius: 20px;
   box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.5);
   .market {
+    padding: 7px 18px;
     position: absolute;
     top: 5%;
     left: 3%;
-    padding: 7px 18px;
     font-size: 1.5rem;
     border: 2px solid;
     border-image-slice: 1;
@@ -71,10 +71,10 @@
     align-items: center;
     flex-wrap: wrap;
     &__title {
-      font-size: 3rem;
       flex-basis: 100%;
       transform: translateY(-60%);
       text-align: center;
+      font-size: 3rem;
       letter-spacing: 1px;
       color: white;
     }
@@ -112,8 +112,8 @@
     flex-direction: column;
     justify-content: center;
     .userData {
-      font-size: 3rem;
       transform: translateY(30%);
+      font-size: 3rem;
     }
     .deposit {
       margin-left: 0;

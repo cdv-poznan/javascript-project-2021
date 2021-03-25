@@ -29,19 +29,19 @@ html {
   background-image: $background;
   overflow: hidden;
   &__circle {
-    position: absolute;
     width: 300px;
     height: 300px;
+    position: absolute;
     border-radius: 50%;
     &--blue {
-      left: 25%;
       top: 15%;
+      left: 25%;
       background-image: linear-gradient(to top, rgb(61, 123, 173), rgb(59, 128, 255));
       animation: blueSquareMove 20s infinite linear alternate;
     }
     &--violet {
-      left: 75%;
       top: 45%;
+      left: 75%;
       background-image: linear-gradient(to top, rgb(173, 61, 164), rgb(199, 59, 255));
       animation: violetSquareMove 20s infinite linear alternate;
     }
@@ -49,8 +49,8 @@ html {
 }
 @keyframes blueSquareMove {
   0% {
-    left: 30%;
     top: 15%;
+    left: 30%;
   }
   100% {
     top: 65%;
@@ -59,8 +59,8 @@ html {
 
 @keyframes violetSquareMove {
   0% {
-    left: 75%;
     top: 45%;
+    left: 75%;
   }
   100% {
     left: 35%;
@@ -81,8 +81,8 @@ html {
 @media (max-width: 414px) {
   @keyframes blueSquareMove {
     0% {
-      left: 20%;
       top: 15%;
+      left: 20%;
     }
     100% {
       top: 55%;
@@ -90,12 +90,12 @@ html {
   }
   @keyframes violetSquareMove {
     0% {
-      left: 10%;
       top: 55%;
+      left: 10%;
     }
     100% {
-      left: 10%;
       top: 15%;
+      left: 10%;
     }
   }
 }
@@ -108,8 +108,8 @@ html {
   }
   @keyframes blueSquareMove {
     0% {
-      left: 5%;
       top: 5%;
+      left: 5%;
     }
     100% {
       top: 50%;
