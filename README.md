@@ -45,4 +45,9 @@ npm run production
 
 ## Opis
 
-Projekt polegał na stworzeniu strony, dającej możliwość symulowania inwestycji na giełdzie (w bardzo ograniczonych warunkach). Strona updatuje codzienne kursy z API podanym w opisie wyżej.
+Projekt polegał na stworzeniu strony, dającej możliwość symulowania inwestycji na giełdzie (w bardzo ograniczonych warunkach). Strona updatuje codzienne kursy z API podanym w opisie wyżej.  
+  
+Strona przechowuje dane logowania w sessionStorage.  
+Istnieje możliwość dodania nowego konta (symulacja bazy danych w zmiennej "accounts".  
+Api pobierane jest za pomoca funkcji asynchronicznej.  
+Istnieje możliwość doładowania konta oraz dodania zdjęcia profilowego w sekcji "profile".  
