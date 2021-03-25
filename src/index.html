@@ -25,7 +25,10 @@
   </section>
   <section class="stock visible">
     <nav class="userData">
+      <div class="userData__profileWrapper">
+        <img class="userData__profilePicture">
       <p class="userData__name"></p>
+      </div>
       <p class="userData__equity">wallet: $<span class="userData__amount"></span></p>
       <button class="userData__profile">Profile</button>
     </nav>
@@ -78,6 +81,12 @@
       <p class="userData__name">nick: <span class="userData__nameData"></span></p>
       <p class="userData__email">email: <span class="userData__emailData"></span></p>
       <p class="userData__wallet">wallet: $<span class="userData__walletData"></span></p>
+      <input type="file" class="userData__photoInput" hidden>
+      <div class='userData__photoWrapper'>
+        <button class="userData__photoButton">Select a profile photo</button>
+        <img class='userData__photo'>
+      </div>
+      
     </div>
     <form class="deposit">
       <h2 class="deposit__title">Top up your account!</h2>

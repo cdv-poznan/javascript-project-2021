@@ -38,6 +38,29 @@
     &__walletData {
       color: white;
     }
+    &__photoWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__photoButton {
+      width: 170px;
+      height: 40px;
+      margin: 8px 0;
+      font-size: 1.3rem;
+      color: $base-color;
+      border: 1px solid $base-color;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.062);
+    }
+    &__photo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid $base-color;
+      border-radius: 50%;
+    }
   }
   .deposit {
     width: 270px;
