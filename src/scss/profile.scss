@@ -6,11 +6,8 @@
   display: flex;
   align-items: center;
   background-color: rgba(218, 218, 218, 0.1);
-  -o-backdrop-filter: blur(5px);
-  -ms-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.5);
   .market {
