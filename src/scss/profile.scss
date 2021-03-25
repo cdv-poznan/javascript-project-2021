@@ -114,6 +114,9 @@
     .userData {
       transform: translateY(30%);
       font-size: 3rem;
+      &__photo {
+        display: none;
+      }
     }
     .deposit {
       margin-left: 0;

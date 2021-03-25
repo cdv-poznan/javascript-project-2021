@@ -77,8 +77,8 @@ const charts = () => {
         });
       });
     // chart
-    const goldChart = document.getElementById('usdChart').getContext('2d');
-    const goldRateChart = new Chart(goldChart, {
+    const usdChart = document.getElementById('usdChart').getContext('2d');
+    const usdRateChart = new Chart(usdChart, {
       type: 'line',
       data: {
         labels: xAxis,
@@ -110,8 +110,8 @@ const charts = () => {
         });
       });
     // chart
-    const goldChart = document.getElementById('gbpChart').getContext('2d');
-    const goldRateChart = new Chart(goldChart, {
+    const gbpChart = document.getElementById('gbpChart').getContext('2d');
+    const gbpRateChart = new Chart(gbpChart, {
       type: 'line',
       data: {
         labels: xAxis,
