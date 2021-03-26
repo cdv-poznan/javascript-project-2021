@@ -7,7 +7,7 @@
   align-items: center;
   &__form {
     width: 30vw;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,7 +82,6 @@
   .formWrapper {
     &__form {
       width: 50vw;
-      height: 30vh;
     }
     &__label {
       font-size: 2.6rem;
@@ -101,6 +100,30 @@
     &__form {
       width: 70vw;
       height: 40vh;
+    }
+  }
+}
+@media (max-width: 359px) {
+  .formWrapper {
+    &__form {
+      width: 80vw;
+      height: 50vh;
+    }
+  }
+}
+@media (max-height: 500px) {
+  .formWrapper {
+    &__form {
+      width: 70vw;
+      height: 65vh;
+    }
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .formWrapper {
+    &__form {
+      width: 70vw;
+      height: 75vh;
     }
   }
 }
