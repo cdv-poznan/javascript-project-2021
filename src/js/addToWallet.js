@@ -1,3 +1,4 @@
+// add means of payment to wallet (session storage too)
 const addToWallet = () => {
   const buttons = document.querySelectorAll('.deposit__topUp');
   const buttonPay = document.querySelector('.deposit__pay');
@@ -5,6 +6,7 @@ const addToWallet = () => {
   const walletStock = document.querySelector('.userData__amount');
   const walletProfile = document.querySelector('.userData__walletData');
 
+  // choosing amount to top up
   const chooseTopUp = (e, count) => {
     e.preventDefault();
     walletAdd = Number(count);
@@ -16,7 +18,7 @@ const addToWallet = () => {
     });
   };
 
-  // top up
+  // topping up button
   const topUp = e => {
     e.preventDefault();
     if (walletAdd !== 0) {

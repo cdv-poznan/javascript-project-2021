@@ -192,6 +192,7 @@ const charts = () => {
       quantity = gbpQuantity.innerHTML;
       rate = Number(latestGbpCourse);
     }
+    // check if input is not negative or greater than quantity
     if (input > 0) {
       if (quantity >= input) {
         quantity = Number(quantity) - input;

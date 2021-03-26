@@ -1,3 +1,4 @@
+// choosing profile from computer disc and showing in profile and navigation sites
 const profilePicture = () => {
   const input = document.querySelector('.userData__photoInput');
 

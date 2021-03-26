@@ -1,4 +1,4 @@
-// move buttons except formWrapper__button
+// move  profileWrapper in nav and buttons except formWrapper__button
 
 const moveButton = () => {
   const profileButton = document.querySelector('.userData__profile');
