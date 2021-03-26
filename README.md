@@ -1,5 +1,8 @@
 # JavaScript Project
 
+### Live Server  
+https://michalsiminski98.github.io/javascript-project-2021/  
+
 ### Instalacja Zależności
 
 ```shell
