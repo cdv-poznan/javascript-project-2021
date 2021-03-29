@@ -128,7 +128,7 @@ footer h3 {
   width: 100%;
   border-radius: 5px;
   background: #fff;
-  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4); 
+  box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
   text-align: center;
   color: black;
 }
@@ -139,11 +139,11 @@ footer h3 {
   color: #ddd;
 }
 
-.todoInput {
+.todoinput {
   width: 30%;
   padding: 10px 20px;
   margin-right: 20px;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--light-dark);
   background-color: var(--light);
@@ -153,22 +153,22 @@ footer h3 {
   display: flex;
 }
 
-.currencyStyle {
+.currencystyle {
   width: 20%;
   padding: 1% 2%;
 }
 
-.tenorStyle {
+.tenorstyle {
   width: 20%;
   padding: 1% 2%;
 }
 
-.marginStyle {
+.marginstyle {
   width: 20%;
   padding: 1% 2%;
 }
 
-.percentageStyle {
+.percentagestyle {
   width: 20%;
   padding: 1% 2%;
 }
@@ -177,14 +177,14 @@ footer h3 {
   padding-top: 3%;
 }
 
-.alertInfo {
+.alertinfo {
   margin-top: 20px;
   color: var(--dark-blue);
 }
 
-.addBtn {
+.addbtn {
   padding: 10px 22px;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--deep-dark);
   background-color: var(--light);
@@ -193,21 +193,21 @@ footer h3 {
   transition: color 0.3s, background-color 0.3s;
 }
 
-.addBtn:hover {
+.addbtn:hover {
   color: #fff;
   background-color: var(--light-dark);
 }
 
-.todoList {
+.todolist {
   padding: 20px 0;
 }
 
-.todoList h3 {
+.todolist h3 {
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-.todoList li {
+.todolist li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -224,7 +224,7 @@ footer h3 {
 
 .tools button {
   padding: 15px 10px;
-  border: none;
+  border: white;
   background-color: transparent;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -275,12 +275,12 @@ footer h3 {
   padding: 20px;
 }
 
-.popupInfo {
+.popupinfo {
   color: var(--light);
   margin-bottom: 20px;
 }
 
-.popupBody {
+.popupbody {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -288,21 +288,21 @@ footer h3 {
   padding: 10px;
 }
 
-.popupInput {
+.popupinput {
   width: 100%;
   padding: 10px 20px;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--light-dark);
   background-color: var(--light);
 }
 
-.popupBtn {
+.popupbtn {
   width: 30%;
   display: inline-block;
   padding: 10px 22px;
   margin: 20px;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--deep-dark);
   background-color: var(--light);
@@ -311,21 +311,13 @@ footer h3 {
   transition: color 0.3s, background-color 0.3s;
 }
 
-.popupBtn:hover {
+.popupbtn:hover {
   color: #fff;
   background-color: var(--light-blue);
 }
-:root {
-  --deep-dark: rgb(26, 26, 26);
-  --light-dark: rgb(79, 82, 92);
-  --light-blue: rgb(0, 132, 255);
-  --dark-blue: rgb(2, 84, 161);
-  --light: rgb(245, 245, 245);
-}
-
 /*============= acceptPanel =============*/
 
-.acceptPanel {
+.acceptpanel {
   display: none;
   justify-content: center;
   align-items: center;
@@ -340,12 +332,12 @@ footer h3 {
   border-radius: 5px;
 }
 
-.acceptPanel h3 {
+.acceptpanel h3 {
   padding: 3%;
   font-weight: bold;
 }
 
-.acceptPanelBody {
+.acceptpanelbody {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -353,22 +345,22 @@ footer h3 {
   padding: 20%;
 }
 
-.acceptPanelInfo {
+.acceptpanelinfo {
   width: 100%;
   padding: 15px 25px;
   font-weight: bold;
   font-size: 125%;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--light-dark);
   background-color: var(--light);
 }
 
-.acceptPanelBtn {
+.acceptpanelbtn {
   width: 30%;
   padding: 10px 22px;
   margin: 1%;
-  border: none;
+  border: white;
   border-radius: 5px;
   color: var(--deep-dark);
   background-color: var(--light);
@@ -377,7 +369,7 @@ footer h3 {
   transition: color 0.3s, background-color 0.3s;
 }
 
-.pacceptPanelBtn:hover {
+.acceptpanelbtn:hover {
   color: #fff;
   background-color: var(--light-blue);
 }
@@ -402,7 +394,7 @@ input {
   margin: 50px auto;
 }
 
-input.search {
+.search {
   margin: 0;
   text-align: center;
   outline: 0;
@@ -437,10 +429,6 @@ input.search {
   text-transform: capitalize;
 }
 
-span.population {
-  font-size: 15px;
-}
-
-.hlcurrencyArr {
+.hlcurrencyarr {
   background: #d9534f;
 }
