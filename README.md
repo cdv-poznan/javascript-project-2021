@@ -33,9 +33,8 @@ You can recognize the plant from the loaded shot or from the one you make with t
 
 You can create your plant collection and view the recently searched plants on your account. 
 
-It uses the APi from [plant.id](https://github.com/Plant-id/Plant-id-API.) which offers a plant identification service based on machine learning. 
+It uses the API from [plant.id](https://github.com/Plant-id/Plant-id-API.) which offers a plant identification API based on machine learning. 
 
-Fully responsive application created with the use of technologies such as:
 
 
 ## Built with
