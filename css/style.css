@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Economica&display=swap");
+body {
+  background-color: white;
+  font-family: "Economica", sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: rgba(234, 143, 61, 0.37);
+  color: #fff !important;
+  font-family: "Economica", sans-serif;
+}
+
+nav a {
+  color: #fff !important;
+  font-size: 1.1rem;
+}
+
+nav .nav-link {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.507);
+  border-left: none;
+  margin-right: 1rem;
+}
+
+nav .nav-link img {
+  margin: 0 1rem;
+  width: 27px;
+}
+
+nav .navbar-brand {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+  nav .navbar-nav {
+    position: absolute;
+    right: 0;
+  }
+  nav .nav-link {
+    border-left: 1px solid rgba(255, 255, 255, 0.507);
+    border-bottom: none;
+    margin-right: 1rem;
+  }
+}
+
+nav .navbar-toggler:focus {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.logoBig {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 7vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logoBig i {
+  margin-top: 3vh;
+  font-size: 2rem;
+  color: grey;
+  cursor: pointer;
+}
+
+.form {
+  margin: 5vh 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form #identify,
+.form #screenshotButton {
+  border: none;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2.5rem 0;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.form #identify:hover,
+.form #screenshotButton:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form #identify:hover:focus,
+.form #screenshotButton:hover:focus {
+  outline: none !important;
+}
+
+.form .uploadPhotoDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin: 2rem 0;
+  outline: none;
+  -webkit-transition: scale .2s ease-in-out;
+  transition: scale .2s ease-in-out;
+  font-family: "Economica", sans-serif;
+  color: black !important;
+  border: 1px solid rgba(128, 128, 128, 0.452);
+  border-radius: 10px;
+}
+
+.form .uploadPhotoDiv i {
+  color: rgba(149, 147, 147, 0.411);
+  font-size: 1.7rem;
+  margin-left: 1rem;
+}
+
+.form .uploadPhotoDiv div {
+  position: relative;
+  overflow: hidden;
+}
+
+.form .uploadPhotoDiv input {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+.form .uploadPhotoDiv:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form #buttonTakePhoto {
+  border: none;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.form #buttonTakePhoto:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form #buttonTakePhoto:hover:focus {
+  outline: none !important;
+}
+
+.recognizedPlantImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 8px 0px grey;
+          box-shadow: 2px 2px 8px 0px grey;
+}
+
+.recognizedPlantName {
+  font-family: "Economica", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid grey;
+}
+
+.fa-heart {
+  padding-left: 2rem;
+  color: #858181;
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: #e93e63;
+}
+
+.resultsOfUploadPhoto {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5rem;
+  font-family: "Economica", sans-serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 576px) {
+  .resultsOfUploadPhoto {
+    padding: .5rem;
+  }
+}
+
+.resultsOfUploadPhoto img {
+  width: 80%;
+  padding: 1rem;
+}
+
+.resultsOfUploadPhoto .resultDiv {
+  padding: 2rem 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  text-align: center;
+  border-bottom: 1px solid #cfcece;
+}
+
+.videoDiv {
+  position: absolute;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.videoDiv #video {
+  width: 100vw !important;
+  margin-top: 20vh;
+}
+
+.videoDiv #screenshotButton {
+  border: none;
+  background-color: transparent;
+  margin: 2.5rem 0;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.videoDiv #screenshot-img {
+  width: 80vw;
+}
+
+.videoDiv #cameraFlip {
+  padding-top: 1rem;
+}
+/*# sourceMappingURL=style.css.map */

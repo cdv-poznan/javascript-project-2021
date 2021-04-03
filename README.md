@@ -1,51 +1,45 @@
-# JavaScript Project
+# Plantify
 
-### Instalacja Zależności
 
-```shell
-npm install
-```
+### Plantify is a plant photo recognition application.
+You can recognize the plant from the loaded shot or from the one you make with the application. 
 
-### Uruchomienie serwera deweloperskigo
+You can create your plant collection and view the recently searched plants on your account. 
 
-```shell
-nmp start
-```
+It uses the APi from [plant.id](https://github.com/Plant-id/Plant-id-API.) which offers a plant identification service based on machine learning. 
 
-### Budowanie w trybie produkcyjnym
+Fully responsive application created with the use of technologies such as:
 
-```shell
-npm run production
-```
 
-## Wykorzystane narzędzia
-* [node](https://nodejs.org/en/)
-* [webpack](https://webpack.js.org/)
-* [babel](https://babeljs.io/)
-* [eslint](https://eslint.org/)
-* [sass](https://sass-lang.com/)
-* [stylelint](https://stylelint.io/)
-* [prettier](https://prettier.io/)
+## Built with
 
-## Omawiane biblioteki
-* [bootstrap](https://getbootstrap.com/)
-* [fontawesome](https://fontawesome.com/)
-* [chart.js](https://www.chartjs.org/)
-* [lodash](https://lodash.com/)
-* [push.js](https://pushjs.org/)
-* [localforage](https://localforage.github.io/localForage/)
+* [Node.js](https://nodejs.org/en/)
+* [Sass](https://sass-lang.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Fontawesome](https://fontawesome.com/)
+* [Webcam Easy JS](https://www.npmjs.com/package/webcam-easy)
+* [jQuery](https://jquery.com/)
+* HTML5 Canvas
+* [Webpack](https://webpack.js.org/)
+* [Babel](https://babeljs.io/)
+* [Eslint](https://eslint.org/)
+* [Stylelint](https://stylelint.io/)
+* [Prettier](https://prettier.io/)
 
-## Przykładowe API
-* [api.nbp.pl](http://api.nbp.pl/)
-* [api.covid19api.com](https://api.covid19api.com/)
-* [api.exchangerate-api.com](https://api.exchangerate-api.com)
-* [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)
-* [swapi.dev](https://swapi.dev)
-* [pokeapi.co](https://pokeapi.co/)
-* [reqres.in](https://reqres.in/)
-* [api.nasa.gov](https://api.nasa.gov)
 
-## Linki
-* [MDN Web Docs](https://developer.mozilla.org/)
-* [Web Dev](https://web.dev/)
-* [Service Workers](https://serviceworke.rs/)
+Live demo : https://manczakola.github.io/Plantify/index.html
+
+
+ ![Clipboard Image 2021-03-08 AM 9-48-23](https://user-images.githubusercontent.com/61183229/110297251-9051ea00-7ff3-11eb-82fe-a0064dadaf9c.jpg)
+
+![Clipboard Image 2021-03-08 AM 9-44-54](https://user-images.githubusercontent.com/61183229/110297274-96e06180-7ff3-11eb-841b-381654d035e3.jpg)
+
+![Clipboard Image 2021-04-03 PM 4-43-11](https://user-images.githubusercontent.com/61183229/113481762-bdcb6f80-949b-11eb-9d0d-9a2f20c2d3f8.jpg)
+
+![Clipboard Image 2021-04-03 PM 4-46-09](https://user-images.githubusercontent.com/61183229/113481847-316d7c80-949c-11eb-80e7-ceed6c2a1bb8.jpg)
+
+
+
+
+![Clipboard Image 2021-03-08 AM 9-45-47 (1)](https://user-images.githubusercontent.com/61183229/110297361-ae1f4f00-7ff3-11eb-9e0e-b98073c2a9f7.jpg)
+

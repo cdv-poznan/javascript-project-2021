@@ -1,0 +1,84 @@
+.message {
+  color: #858181;
+  padding: 2rem;
+}
+
+.loader-container {
+  margin-top: 10vh;
+  text-align: center;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.loader-container .container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2rem 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 140px;
+}
+
+.box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 4px solid rgba(234, 143, 61, 0.37);
+  width: 90px;
+  height: 90px;
+  -webkit-animation: spin 3s infinite linear;
+          animation: spin 3s infinite linear;
+}
+
+.box:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 4px solid rgba(234, 143, 61, 0.37);
+  width: 60px;
+  height: 60px;
+  -webkit-animation: pulse 1.5s infinite ease;
+          animation: pulse 1.5s infinite ease;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    border-width: 30px;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    border-width: 30px;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=spinners.css.map */
