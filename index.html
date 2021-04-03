@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/account.css">
+    <link rel="stylesheet" href="./css/searched.css">
+
+    <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"> <!-- Fontawesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Economica:ital@1&display=swap" rel="stylesheet"> <!-- Google Fonts-->
+    <link rel="stylesheet" href="./css/spinners.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> <!-- Bootstrap -->
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script> <!--webcam-easy -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--jQuery -->
+    <title>Plantify</title>
+
+</head>
+
+<body>
+
+
+  <!-- Nav start -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">
+        <img src="images/logo.svg" onerror="this.onerror=null; this.src='images/logo.png'"> Plantify
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <img src="images/hamburgerMenu.svg" onerror="this.onerror=null; this.src='images/hamburgerMenu.png'">
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item myaccount">
+            <a class="nav-link" aria-current="page" href="#myaccount" > 
+              <img src="images/user.svg" onerror="this.onerror=null; this.src='images/user.png'">
+              My account
+            </a>
+          </li>
+          <li class="nav-item myplantcollection">
+            <a class="nav-link" href="#myplantcollection">
+              <img src="images/flower.svg" onerror="this.onerror=null; this.src='images/flower.png'">
+              My plant collection
+            </a>
+          </li>
+          <li class="nav-item recentlySearched">
+            <a class="nav-link" href="#recentlysearched">
+              <img src="images/search.svg" onerror="this.onerror=null; this.src='images/search.png'">
+              Recently searched
+            </a>
+          </li>
+          <li class="nav-item logout">
+            <a class="nav-link" href=""> <img src="images/log-out.svg" onerror="this.onerror=null; this.src='images/log-out.png'">
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Nav end -->
+
+ <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Upload section start -->
+<div class="main" >
+
+  <div class="logoBig">
+    <img src="images/plantify.png" onerror="this.onerror=null; this.src='images/plantify.png'">
+  </div>
+
+  <div class="loader-container">
+    
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  <div class='message'></div>
+  </div>
+
+  <form class='form'>
+    <div class="identyfiDiv">
+   <button id='identify' type="button">
+    <img src="images/identify.svg" onerror="this.onerror=null; this.src='images/identify.png'">
+   </button>
+</div>
+
+<div class="uploadPhotoDiv">
+  <div class="file btn btn-lg btn">
+    Upload photo <i class="far fa-image"></i>
+    <input id='upload' type="file" name="file"/>
+  </div>
+</div>
+
+<div class="takePhotoDiv">
+    <button id='buttonTakePhoto' type="button" data-open="camera-modal" class="buttonTakePhoto">
+      <img src="images/takePhoto.svg" onerror="this.onerror=null; this.src='images/takePhoto.png'">
+     </button>
+</div>
+  </form>
+
+  
+
+  <div class="uploadDiv"> 
+   
+    <label for="fileUpload" class="button">
+  
+    </label>
+  
+    </div>
+    
+    
+     <div class="videoDiv"style='visibility:hidden'>
+
+      <video id="webcam" class="video" autoplay playsinline width="640" height="480"></video>
+      <div id="cameraFlip"><img src="images/rotateCamera.svg" onerror="this.onerror=null; this.src='images/rotateCamera.png'">
+      </div>
+      <button id="screenshotButton" type="button"  class="screenshotButton">
+        <img src="images/takeScreenshot.svg" onerror="this.onerror=null; this.src='images/takeScreenshot.png'">
+      </button>
+  
+  <canvas id="canvas" class="d-none"></canvas>
+  <div id="download-photo"></div>
+
+
+</div>
+
+
+    
+  <!-- Upload section end -->
+<script src='uploadPhoto.js'></script>
+<script src='takePhoto.js'></script>
+<script src='media.js'></script>
+<script src='links.js'></script>
+<script src='webcam.js' ></script>
+<script src='addToCollection.js' ></script>
+<script src='spinner.js' ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

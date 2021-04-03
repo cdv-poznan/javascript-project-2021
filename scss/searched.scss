@@ -1,0 +1,71 @@
+@import 'variables';
+
+.main {
+    font-family: $font;
+}
+
+.searchedItems {
+    padding: 0 3rem;
+    color: #858181;
+    display: flex;
+    flex-direction: column;
+    color: $text;
+
+    .searchedItem {
+        list-style-type: none;
+        padding: 2rem 0;
+        border-bottom: 1px solid $border-button;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+            display: flex !important;
+            justify-content: center;
+
+        }
+    }
+
+    .searched-img {
+        max-width: 200px;
+        margin: 0 1rem;
+    }
+
+    .id {
+        font-size: .7rem;
+        margin: 1rem 0;
+    }
+
+}
+
+.headerRecentlySearched {
+    padding: 2rem !important;
+    font-size: 3rem;
+
+
+    @media (max-width:360px) {
+        padding: 0;
+        font-size: 2rem;
+    }
+}
+
+.modalBtn {
+    display: flex !important;
+}
+
+
+
+.cancelItem {
+
+    font-family: "Font Awesome 5 Free";
+    color: $button-hover;
+
+    &:before {
+        content: "\f2ed";
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
