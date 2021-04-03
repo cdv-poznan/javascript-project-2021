@@ -54,7 +54,7 @@ Fully responsive application created with the use of technologies such as:
 * [Prettier](https://prettier.io/)
 
 
-Live demo : https://manczakola.github.io/Plantify/index.html
+##  Live demo : https://manczakola.github.io/Plantify/index.html
 
 
  ![Clipboard Image 2021-03-08 AM 9-48-23](https://user-images.githubusercontent.com/61183229/110297251-9051ea00-7ff3-11eb-82fe-a0064dadaf9c.jpg)
