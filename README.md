@@ -1,4 +1,16 @@
-# JavaScript Project
+
+# Plantify
+
+
+### Plantify is a plant photo recognition application.
+You can recognize the plant from the loaded shot or from the one you make with the application. 
+
+You can create your plant collection and view the recently searched plants on your account. 
+
+It uses the API from [plant.id](https://github.com/Plant-id/Plant-id-API.) which offers a plant identification API based on machine learning. 
+
+
+_________________________________________________________________________________________
 
 ### Instalacja Zależności
 
@@ -18,22 +30,6 @@ nmp start
 npm run production
 ```
 
-
-
-_________________________________________________________________________________________
-
-
-
-
-# Plantify
-
-
-### Plantify is a plant photo recognition application.
-You can recognize the plant from the loaded shot or from the one you make with the application. 
-
-You can create your plant collection and view the recently searched plants on your account. 
-
-It uses the API from [plant.id](https://github.com/Plant-id/Plant-id-API.) which offers a plant identification API based on machine learning. 
 
 
 
