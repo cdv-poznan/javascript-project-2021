@@ -1,0 +1,30 @@
+.dishes {
+  background-color: #ddd;
+  width: 80%;
+  height: 500px;
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 40px;
+
+  .plate {
+    background-color: #fff;
+    width: 40vh;
+    height: 40vh;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: inset 0 0 5px 1px #aaa, 5px 5px 15px 1px #444;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5vh;
+      left: 5vh;
+      width: 30vh;
+      height: 30vh;
+      background-color: #fefefe;
+      border-radius: 50%;
+      box-shadow: 0 0 15px 1px rgb(216, 216, 216), inset 0 0 15px 1px #ddd, inset 7px 7px 10px 1px #555;
+    }
+  }
+}

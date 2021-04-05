@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+
+    li a {
+      color: inherit;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #aaa;
+      transition: 0.3s;
+
+      &:hover {
+        color: #222;
+        border-bottom: 1px solid #222;
+      }
+    }
+  }
+  
+  .logo {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(228, 178, 178);
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,21 @@
+article {
+  box-shadow: 0 0 15px 1px #ddd;
+  margin: 0 auto;
+  width: 80%;
+  padding: 30px;
+  border-radius: 10px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  p.ings {
+    text-align: center;
+    color: #aaa;
+  }
+
+  hr {
+    margin: 15px 0;
+  }
+}
