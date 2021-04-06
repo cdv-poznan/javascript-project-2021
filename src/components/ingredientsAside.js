@@ -1,3 +1,5 @@
+import { fetchRecipesIds } from '../util/fetchData';
+
 const getIngredients = () => {
   const localStorageData = localStorage.getItem('ingredients');
 
@@ -48,6 +50,13 @@ $('input').keypress(e => {
 });
 
 $('ul.ingredientsList').on('click', 'li', deleteIngredient);
+
+$('.saveIngsBtn').click(() => {
+  const localStorageData = localStorage.getItem('ingredients');
+  if (localStorageData) {
+    fetchRecipesIds(localStorageData);
+  }
+});
 
 $(document).ready(function () {
   showIngredients(getIngredients());

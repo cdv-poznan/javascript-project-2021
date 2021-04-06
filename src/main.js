@@ -1,6 +1,7 @@
 // BEM
 
 import './components/ingredientsAside';
+import { fetchRecipesIds } from './util/fetchData';
 
 const navLinks = [
   { button: 'ingsBtn', aside: 'ingredients' },
@@ -17,4 +18,8 @@ for (const link of navLinks) {
 
 $(document).ready(function () {
   $('.ingredients').css('display', 'block');
+  // const localStorageData = localStorage.getItem('ingredients');
+  // if (localStorageData) {
+  //   fetchRecipesIds(localStorageData);
+  // }
 });
