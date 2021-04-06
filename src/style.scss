@@ -1,4 +1,501 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+$nav-color:rgba(234, 143, 61, 0.37);
+$font: 'Economica',
+sans-serif;
+$white: rgb(255, 255, 255);
+$border-white: rgba(255, 255, 255, 0.507);
+$border-button:rgba(0, 0, 0, 0.24);
+
+$white: #fff;
+$black: rgb(100, 98, 98);
+$lightergray: #cfcece;
+$lightgray: #e6ece8;
+$gray: #ddd5d5;
+$text: rgb(133, 129, 129);
+$button: #3e3e3f;
+$button-hover: #525253;
+
+$xs-breakpoint: 0;
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+$xx-breakpointl: 1400px;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Economica&display=swap');
+
+
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: $font;
+    margin: 0;
 }
+
+// Nav
+
+nav {
+    background-color: $nav-color;
+    color: $white !important;
+    font-family: $font;
+
+    a {
+        color: $white !important;
+        font-size: 1.1rem;
+    }
+
+    .nav-link {
+        border-bottom: 1px solid $border-white;
+        border-left: none;
+        margin-right: 1rem;
+
+        img {
+            margin: 0 1rem;
+            width: 27px;
+        }
+    }
+
+    .navbar-brand {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+
+    }
+
+    @media (min-width: 992px) {
+        .navbar-nav {
+            position: absolute;
+            right: 0;
+        }
+
+        .nav-link {
+            border-left: 1px solid $border-white;
+            border-bottom: none;
+            margin-right: 1rem;
+        }
+
+    }
+
+
+    .navbar-toggler {
+
+        &:focus {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+    }
+}
+
+
+
+// Logo
+
+.logoBig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+    flex-direction: column;
+
+    i {
+        margin-top: 3vh;
+        font-size: 2rem;
+        color: grey;
+        cursor: pointer;
+    }
+}
+
+
+
+// Form 
+
+.form {
+    margin: 5vh 0;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+    // identifyDiv
+    #identify,
+    #screenshotButton {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5rem 0;
+        outline: none;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+
+
+
+        &:hover {
+            transform: scale(1.1);
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+
+    // uploadDiv
+
+
+    .uploadPhotoDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin: 2rem 0;
+        outline: none;
+        transition: scale .2s ease-in-out;
+        font-family: $font;
+        color: black !important;
+        border: 1px solid rgba(128, 128, 128, 0.452);
+        border-radius: 10px;
+
+        i {
+            color: rgba(149, 147, 147, 0.411);
+            font-size: 1.7rem;
+            margin-left: 1rem;
+        }
+
+
+        div {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        input {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+    }
+
+
+
+    // takePhotoDiv
+
+    #buttonTakePhoto {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+
+
+        &:hover {
+            transform: scale(1.1);
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+
+
+
+}
+
+
+
+
+// Result section
+
+
+.recognizedPlantImg {
+    display: flex;
+    width: 300px;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 0px grey;
+
+}
+
+
+.recognizedPlantName {
+    font-family: $font;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid grey;
+}
+
+
+.fa-heart {
+    padding-left: 2rem;
+    color: $text;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(233, 62, 99);
+    }
+}
+
+.resultsOfUploadPhoto {
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+    padding: 5rem;
+    font-family: $font;
+    font-size: 1.2rem;
+
+
+    @media (max-width: $sm-breakpoint) {
+        padding: .5rem;
+    }
+
+    img {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .resultDiv {
+
+        padding: 2rem 1rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-height: fit-content;
+        text-align: center;
+        border-bottom: 1px solid $lightergray;
+    }
+}
+
+
+// videoDiv
+
+
+.videoDiv {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    #video {
+        width: 100vw !important;
+        margin-top: 20vh;
+    }
+
+    #screenshotButton {
+        border: none;
+        background-color: transparent;
+        margin: 2.5rem 0;
+        outline: none;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+    }
+
+    #screenshot-img {
+        width: 80vw;
+    }
+
+    #cameraFlip {
+        padding-top: 1rem;
+    }
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem 1rem 2rem 1rem;
+
+    h4 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: $text;
+    }
+
+    form {
+
+        padding: 5vw;
+        border: 1px solid $border-white;
+        border-radius: 5px;
+
+        input {
+            width: 100%;
+            padding: .8rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border: 1px solid $lightergray;
+
+        }
+
+        button {
+            border: 1px solid;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            width: 100%;
+            padding: 1vw;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 50px;
+            transition: .2s ease-in;
+        }
+    }
+}
+
+
+
+
+.main {
+    font-family: $font;
+}
+
+.searchedItems {
+    padding: 0 3rem;
+    color: #858181;
+    display: flex;
+    flex-direction: column;
+    color: $text;
+
+    .searchedItem {
+        list-style-type: none;
+        padding: 2rem 0;
+        border-bottom: 1px solid $border-button;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+            display: flex !important;
+            justify-content: center;
+
+        }
+    }
+
+    .searched-img {
+        max-width: 200px;
+        margin: 0 1rem;
+    }
+
+    .id {
+        font-size: .7rem;
+        margin: 1rem 0;
+    }
+
+}
+
+.headerRecentlySearched {
+    padding: 2rem !important;
+    font-size: 3rem;
+
+
+    @media (max-width:360px) {
+        padding: 0;
+        font-size: 2rem;
+    }
+}
+
+.modalBtn {
+    display: flex !important;
+}
+
+
+
+.cancelItem {
+
+    font-family: "Font Awesome 5 Free";
+    color: $button-hover;
+
+    &:before {
+        content: "\f2ed";
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+
+
+
+
+.message {
+    color: $text;
+    padding: 2rem;
+}
+
+.loader-container {
+    margin-top: 10vh;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+
+    .container {
+        box-sizing: border-box;
+        padding: 2rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 140px;
+    }
+}
+
+.box {
+    box-sizing: border-box;
+    border: 4px solid $nav-color;
+    width: 90px;
+    height: 90px;
+    animation: spin 3s infinite linear;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border: 4px solid $nav-color;
+        width: 60px;
+        height: 60px;
+        animation: pulse 1.5s infinite ease;
+    }
+}
+
+
+
+
+@keyframes pulse {
+    50% {
+        border-width: 30px;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
