@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   </head>
   <body>
     <main>
       <nav>
         <div class="logo"></div>
         <ul>
-          <li><a href="">My ingredients list</a></li>
-          <li><a href="">Menu for a week</a></li>
-          <li><a href="">Favourite recipes</a></li>
-          <li><a href="">Find new recipes</a></li>
+          <li class="ingsBtn"><a href="#">My ingredients list</a></li>
+          <li class="menuBtn"><a href="#">Menu for a week</a></li>
+          <li class="favsBtn"><a href="#">Favourite recipes</a></li>
+          <li class="findBtn"><a href="#">Find new recipes</a></li>
         </ul>
       </nav>
       <section>
@@ -31,7 +35,16 @@
         </article>
       </section>
     </main>
-    <aside>
+    <aside class="ingredients">
+      <h3>My ingredients:</h3>
+      <label for="">Add new ingredient:
+        <input type="text">
+        <button class="addBtn">+</button>
+      </label>
+      <ul class="ingredientsList">
+      </ul>
+    </aside>
+    <aside class="menu">
       <h3>Menu for that week</h3>
       <ul>
         <li>Monday:</li>
@@ -52,6 +65,10 @@
           praesentium
           exercitationem modi quos. Repellendus?</p>
       </div>
+    </aside>
+    <aside class="favourites">
+      <h3>Favourite recipes</h3>
+
     </aside>
   </body>
 </html>
