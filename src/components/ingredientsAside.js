@@ -1,4 +1,5 @@
-import { fetchRecipesIds } from '../util/fetchData';
+import { fetchRecipesByIngredients } from '../service/service';
+import { CURRENT } from '../util/globalData';
 
 const getIngredients = () => {
   const localStorageData = localStorage.getItem('ingredients');
@@ -52,10 +53,8 @@ $('input').keypress(e => {
 $('ul.ingredientsList').on('click', 'li', deleteIngredient);
 
 $('.saveIngsBtn').click(() => {
-  const localStorageData = localStorage.getItem('ingredients');
-  if (localStorageData) {
-    fetchRecipesIds(localStorageData);
-  }
+  CURRENT.setIndex = 0;
+  fetchRecipesByIngredients();
 });
 
 $(document).ready(function () {

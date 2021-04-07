@@ -1,7 +1,8 @@
 // BEM
 
+import './components/dishes';
 import './components/ingredientsAside';
-import { fetchRecipesIds } from './util/fetchData';
+import { fetchRecipesByIngredients } from './service/service';
 
 const navLinks = [
   { button: 'ingsBtn', aside: 'ingredients' },
@@ -15,11 +16,7 @@ for (const link of navLinks) {
     $(`.${link.aside}`).css('display', 'block');
   });
 }
-
-$(document).ready(function () {
+$(document).ready(() => {
   $('.ingredients').css('display', 'block');
-  // const localStorageData = localStorage.getItem('ingredients');
-  // if (localStorageData) {
-  //   fetchRecipesIds(localStorageData);
-  // }
+  fetchRecipesByIngredients();
 });

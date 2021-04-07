@@ -15,7 +15,6 @@
           <li class="ingsBtn"><a href="#">My ingredients list</a></li>
           <li class="menuBtn"><a href="#">Menu for a week</a></li>
           <li class="favsBtn"><a href="#">Favourite recipes</a></li>
-          <li class="findBtn"><a href="#">Find new recipes</a></li>
         </ul>
       </nav>
       <section>
@@ -24,12 +23,13 @@
           <div class="plate"></div>
           <div class="knife"></div>
         </div>
-        <article>
-          <h1>Recipe's name</h1>
-          <p class="ings">Your ingredients: water, salt, flour, sugar, eggs, milk</p>
-          <p class="ings">Missed ingredients: water, salt, flour, sugar, eggs, milk</p>
+        <button class="findBtn">Find new recipes</button>
+        <article class="recipe">
+          <h1 class="recipe__title">Recipe's name</h1>
+          <p class="recipe__ings recipe__ings--owned">Your ingredients: <span> water, salt, flour, sugar, eggs, milk</span></p>
+          <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span> water, salt, flour, sugar, eggs, milk</span></p>
           <hr>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas necessitatibus rem, beatae earum illo
+          <p class="recipe__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas necessitatibus rem, beatae earum illo
             eaque fugit maxime obcaecati quidem, culpa tempora vel incidunt dolores eius reiciendis voluptatum.
             Consequuntur, obcaecati.</p>
         </article>

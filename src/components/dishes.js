@@ -1,0 +1,44 @@
+import { fetchExactRecipe } from '../util/fetchData';
+import { RECIPES, CURRENT } from '../util/globalData';
+
+const getData = async () => {
+  if (RECIPES.all.length === CURRENT.getIndex) {
+    console.log('koniec listy');
+    return;
+  }
+
+  let data;
+  try {
+    data = await fetchExactRecipe(RECIPES.all[CURRENT.getIndex].id);
+    CURRENT.setIndex = +1;
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+
+  if (!data.instructions) {
+    return getData();
+  }
+  return data;
+};
+
+$('.findBtn').click(async () => {
+  const data = await getData();
+  if (!data) {
+    return;
+  }
+
+  $('.recipe__title').text(data.title);
+  $('.recipe__text').text(data.instructions);
+  if (data.image) {
+    $('head').append(
+      `<style id="mystyle" type="text/css"> .plate::after {background-image: url('${data.image}');} </style>`,
+    );
+  }
+  $('.recipe__ings--owned span').text(
+    RECIPES.all[CURRENT.getIndex - 1].usedIngredients[0].name,
+  );
+  $('.recipe__ings--missed span').text(
+    RECIPES.all[CURRENT.getIndex - 1].missedIngredients[0].name,
+  );
+});

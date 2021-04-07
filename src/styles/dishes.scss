@@ -2,7 +2,7 @@
   background-color: #ddd;
   width: 80%;
   height: 500px;
-  margin: 50px auto;
+  margin: 50px auto 20px;
   border-radius: 10px;
   padding: 40px;
   display: flex;
@@ -27,6 +27,19 @@
       background-color: #fefefe;
       border-radius: 50%;
       box-shadow: 0 0 15px 1px rgb(216, 216, 216), inset 0 0 15px 1px #ddd, inset 7px 7px 10px 1px #555;
+      background-image: url();
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6vh;
+      left: 6vh;
+      width: 28vh;
+      height: 28vh;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 }
