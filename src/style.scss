@@ -19,9 +19,10 @@ body {
 .container {
   position: relative;
   top: 3vh;
-  max-width: 1000px;
-  min-height: 80vh;
-  margin: 20px auto;
+  margin: 0 auto;
+  max-width: 800px;
+  // min-height: 100vh;
+  padding: 20px auto;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
@@ -38,13 +39,13 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 40px;
-  color: white;
+  color: #fff;
   font-family: roboto;
 
 }
 
 header {
-  height: 20vh;
+  height: 15vh;
   position: relative;
   background: linear-gradient(132deg, #ff4f2c, #591bc5, #4169e1);
   background-size: 400% 400%;
@@ -140,5 +141,44 @@ header {
   to {
     transform: scale(10) rotate(960deg);
     opacity: 0;
+  }
+}
+
+/* SECTION */
+
+section.board {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  flex-wrap: wrap;
+  padding: 40px 15px;
+}
+
+.cards {
+  background-color: #ff3333;
+  // width: 15%;
+  flex-basis: 15%;
+  height: 90px;
+  // margin: 12px;
+}
+
+@media screen and (max-width: 500px)  {
+
+  section.board {
+    padding: 40px 35px;
+  }
+
+  .cards {
+    background-color: #888888;
+    flex-basis: 21%;
+    height: 65px;
+  }
+
+  .logo {
+    left: 20%;
   }
 }
