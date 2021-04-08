@@ -1,6 +1,6 @@
 aside {
   padding: 10px;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -71,7 +71,7 @@ aside {
       }
     }
     .ingredientsList {
-
+      
       li {
         color: #222;
 
@@ -93,7 +93,7 @@ aside {
         }
       }
     }
-    
+
     .saveIngsBtn {
       padding: 10px;
       width: 100%;
