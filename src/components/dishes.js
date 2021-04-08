@@ -1,9 +1,10 @@
 import { fetchExactRecipe } from '../util/fetchData';
 import { RECIPES, CURRENT } from '../util/globalData';
+import { showModal } from './modal';
 
 const getData = async () => {
   if (RECIPES.all.length === CURRENT.getIndex) {
-    console.log('koniec listy');
+    showModal('Please add or remove ingredients to get new recipes.');
     return;
   }
 

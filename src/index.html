@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  </head>
-  <body>
-    <main>
-      <nav>
-        <div class="logo"></div>
-        <ul>
-          <li class="ingsBtn"><a href="#">My ingredients list</a></li>
-          <li class="menuBtn"><a href="#">Menu for a week</a></li>
-          <li class="favsBtn"><a href="#">Favourite recipes</a></li>
-        </ul>
-      </nav>
-      <section>
-        <div class="dishes">
-          <div class="fork"></div>
-          <div class="plate"></div>
-          <div class="knife"></div>
-        </div>
-        <button class="findBtn">Find new recipes</button>
-        <article class="recipe">
-          <h1 class="recipe__title">Recipe's name</h1>
-          <p class="recipe__ings recipe__ings--owned">Your ingredients: <span> water, salt, flour, sugar, eggs, milk</span></p>
-          <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span> water, salt, flour, sugar, eggs, milk</span></p>
-          <hr>
-          <p class="recipe__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas necessitatibus rem, beatae earum illo
-            eaque fugit maxime obcaecati quidem, culpa tempora vel incidunt dolores eius reiciendis voluptatum.
-            Consequuntur, obcaecati.</p>
-        </article>
-      </section>
-    </main>
-    <aside class="ingredients">
-      <h3>My ingredients:</h3>
-      <label for="">Add new ingredient:
-        <input type="text">
-        <button class="addBtn">+</button>
-      </label>
-      <ul class="ingredientsList">
-      </ul>
-      <button class="saveIngsBtn">Save ingredients for searching recipes</button>
-    </aside>
-    <aside class="menu">
-      <h3>Menu for that week</h3>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+  <div class="backdrop">
+    <div class="modal">
+      <p></p>
+      <button class="closeModalBtn">Close</button>
+    </div>
+  </div>
+  <main>
+    <nav>
+      <div class="logo"></div>
       <ul>
-        <li>Monday:</li>
-        <li>Tuesday:</li>
-        <li>Wednesday:</li>
-        <li>Thursday:</li>
-        <li>Friday:</li>
-        <li>Saturday:</li>
-        <li>Sunday:</li>
+        <li class="ingsBtn"><a href="#">My ingredients list</a></li>
+        <li class="menuBtn"><a href="#">Menu for a week</a></li>
+        <li class="favsBtn"><a href="#">Favourite recipes</a></li>
       </ul>
-      <hr>
-      <div class="info">
-        <h3>Recipe for <strong>Monday</strong> meal - <strong>dish name</strong> </h3>
-        <p class="ings">Ingredients: water, salt, flour, sugar, eggs, milk</p>
-        <p class="recipe">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nulla laboriosam natus
-          explicabo enim
-          exercitationem vitae commodi tempore illo accusamus, repellat accusantium provident? Earum repellendus
-          praesentium
-          exercitationem modi quos. Repellendus?</p>
+    </nav>
+    <section>
+      <div class="dishes">
+        <div class="fork"></div>
+        <div class="plate"></div>
+        <div class="knife"></div>
       </div>
-    </aside>
-    <aside class="favourites">
-      <h3>Favourite recipes</h3>
+      <button class="findBtn">Find new recipes</button>
+      <article class="recipe">
+        <h1 class="recipe__title">Recipe's name</h1>
+        <p class="recipe__ings recipe__ings--owned">Your ingredients: <span> water, salt, flour, sugar, eggs,
+            milk</span></p>
+        <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span> water, salt, flour, sugar, eggs,
+            milk</span></p>
+        <hr>
+        <p class="recipe__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas necessitatibus rem,
+          beatae earum illo
+          eaque fugit maxime obcaecati quidem, culpa tempora vel incidunt dolores eius reiciendis voluptatum.
+          Consequuntur, obcaecati.</p>
+      </article>
+    </section>
+  </main>
+  <aside class="ingredients">
+    <h3>My ingredients:</h3>
+    <label for="">Add new ingredient:
+      <input type="text">
+      <button class="addBtn">+</button>
+    </label>
+    <ul class="ingredientsList">
+    </ul>
+    <button class="saveIngsBtn">Save ingredients for searching recipes</button>
+  </aside>
+  <aside class="menu">
+    <h3>Menu for that week</h3>
+    <ul>
+      <li>Monday:</li>
+      <li>Tuesday:</li>
+      <li>Wednesday:</li>
+      <li>Thursday:</li>
+      <li>Friday:</li>
+      <li>Saturday:</li>
+      <li>Sunday:</li>
+    </ul>
+    <hr>
+    <div class="info">
+      <h3>Recipe for <strong>Monday</strong> meal - <strong>dish name</strong> </h3>
+      <p class="ings">Ingredients: water, salt, flour, sugar, eggs, milk</p>
+      <p class="recipe">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nulla laboriosam natus
+        explicabo enim
+        exercitationem vitae commodi tempore illo accusamus, repellat accusantium provident? Earum repellendus
+        praesentium
+        exercitationem modi quos. Repellendus?</p>
+    </div>
+  </aside>
+  <aside class="favourites">
+    <h3>Favourite recipes</h3>
 
-    </aside>
-  </body>
+  </aside>
+</body>
 </html>
