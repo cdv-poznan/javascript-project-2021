@@ -1,5 +1,6 @@
 import { fetchExactRecipe } from '../util/fetchData';
 import { RECIPES, CURRENT } from '../util/globalData';
+import { addLitoTheList } from './favouritesAside';
 import { showModal } from './modal';
 
 const getData = async () => {
@@ -35,6 +36,7 @@ $('.findBtn').click(async () => {
     $('head').append(
       `<style id="mystyle" type="text/css"> .plate::before {background-image: url('${data.image}'); box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;} </style>`,
     );
+    $('.plate').attr('id', data.id);
   }
   $('.recipe__ings--owned span').text(
     RECIPES.all[CURRENT.getIndex - 1].usedIngredients[0].name,
@@ -42,4 +44,17 @@ $('.findBtn').click(async () => {
   $('.recipe__ings--missed span').text(
     RECIPES.all[CURRENT.getIndex - 1].missedIngredients[0].name,
   );
+});
+
+$('.heart').click(() => {
+  const id = $('.plate').attr('id');
+  const title = $('.recipe__title').text();
+  if (!id) {
+    return;
+  }
+  const localStorageData = localStorage.getItem('favourites');
+  const favourites = localStorageData ? localStorageData.split(',') : [];
+  favourites.push(id);
+  localStorage.setItem('favourites', favourites);
+  addLitoTheList(title);
 });

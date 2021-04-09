@@ -1,6 +1,7 @@
 // BEM
 
 import './components/dishes';
+import './components/favouritesAside';
 import './components/ingredientsAside';
 import { fetchRecipesByIngredients } from './service/service';
 
