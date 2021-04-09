@@ -4,11 +4,13 @@
   "description": "JavaScript Project at CDV",
   "scripts": {
     "start": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "production": "webpack --mode production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdv-poznan/javascript-project-2021.git"
+    "url": "git+https://github.com/YanaYestyle/javascript-project-2021.git"
   },
   "keywords": [
     "javascript",
@@ -19,12 +21,12 @@
     "prettier",
     "sass"
   ],
-  "author": "Adrian Juszczak <adrian.juszczak@cdv.pl>",
+  "author": "Yana Yeustratsyeva>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cdv-poznan/javascript-project-2021/issues"
+    "url": "https://github.com/YanaYestyle/javascript-project-2021.git/issues"
   },
-  "homepage": "https://github.com/cdv-poznan/javascript-project-2021#readme",
+  "homepage": "https://github.com/YanaYestyle/javascript-project-2021.git#readme",
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.13.0",
