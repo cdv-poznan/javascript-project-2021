@@ -1,8 +1,69 @@
-
 html {
   background-color: #003e3e;
-  color: #111;
-};
-.siema {
-  font-family: 'Baloo 2', cursive;
-};
+  color: #f1f0f0;
+  font-family: "Baloo 2", cursive;
+}
+
+// Navbar
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px, 10px;
+}
+
+.log-in {
+  font-size: 20px;
+  float: right;
+  padding: 15px;
+  color: #f1f0f0;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.log-in:hover {
+  color: #8d0808;
+}
+
+.sign-in {
+  font-size: 20px;
+  float: right;
+  padding: 15px;
+  color: #f1f0f0;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.sign-in:hover {
+  color: #8d0808;
+}
+
+nav {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.nav-bar li {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #640;
+  border-radius: 25px 10px;
+  margin: 10px;
+}
+
+.nav-bar li a {
+  transition: all 0.3s ease 0s;
+  color: #f1f0f0;
+  text-decoration: none;
+}
+
+.nav-bar li a:hover {
+  color: #8d0808;
+}
+
+//Body
+.live-home {
+  padding: 10px;
+}
