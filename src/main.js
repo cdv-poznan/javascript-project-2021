@@ -31,6 +31,7 @@ getJoke();
 window.addEventListener("load", getItem);
 let inputValue = ' ';
 let buttonValue = document.querySelector('.buttonItem')
+let buttonClean = document.querySelector('.cleanButton')
 
 buttonValue.addEventListener('click',function(){
 inputValue = document.querySelector('.addItem').value;
@@ -63,13 +64,24 @@ function getItem(){
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         let th = document.createElement('th');
+        let icon = document.createElement('i');
+        icon.className = "material-icons";
+        icon.innerHTML = "&#xe192;";
+        // div.textContent = '&#xe192;' // tu moze jakąś ikonke dać?
         td.textContent = get_data[i];
-        th.textContent = i;
+        th.textContent = i+1;
         tr.appendChild(th)
         tr.appendChild(td)
+        // tr.appendChild(icon) cos obcina mocno content
         document.querySelector('#tableBody').appendChild(tr)
         }
         
        
     }
+}
+buttonClean.addEventListener('click', cleanAllContentFromLSAndList)
+function cleanAllContentFromLSAndList(){
+    localStorage.removeItem('data');
+    document.querySelector('#tableBody').textContent = '';
+
 }
