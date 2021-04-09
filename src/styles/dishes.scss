@@ -7,6 +7,51 @@
   padding: 40px;
   display: flex;
   align-items: center;
+  position: relative;
+
+  .heart {
+    display: none;
+    background-color: #f3d1d1;
+    height: 30px;
+    margin: 0 10px;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: rotate(-45deg) translate(40%, -40%);
+    width: 30px;
+    z-index: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #e4b2b2;
+      display: block;
+    }
+  }
+
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: #f3d1d1;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+
+  .heart:hover:after,
+  .heart:hover:before {
+    background-color: #e4b2b2;
+  }
+
+  .heart:before {
+    top: -15px;
+    left: 0;
+  }
+
+  .heart:after {
+    left: 15px;
+    top: 0;
+  }
 
   .plate {
     background-color: #fff;
@@ -26,21 +71,14 @@
       height: 30vh;
       background-color: #fefefe;
       border-radius: 50%;
-      box-shadow: 0 0 15px 1px rgb(216, 216, 216), inset 0 0 15px 1px #ddd, inset 7px 7px 10px 1px #555;
-      background-image: url();
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 5vh;
-      left: 5vh;
-      width: 30vh;
-      height: 30vh;
-      border-radius: 50%;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;
+      box-shadow: 0 0 15px 1px rgb(216, 216, 216), inset 0 0 15px 1px #ddd, inset 7px 7px 10px 3px #888, inset 0 0 10px 15px #fff;
+    }
+
+    &:hover ~ .heart {
+      display: block;
     }
   }
   // .plate {

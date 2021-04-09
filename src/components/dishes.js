@@ -33,7 +33,7 @@ $('.findBtn').click(async () => {
   $('.recipe__text').text(data.instructions);
   if (data.image) {
     $('head').append(
-      `<style id="mystyle" type="text/css"> .plate::after {background-image: url('${data.image}');} </style>`,
+      `<style id="mystyle" type="text/css"> .plate::before {background-image: url('${data.image}'); box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;} </style>`,
     );
   }
   $('.recipe__ings--owned span').text(
