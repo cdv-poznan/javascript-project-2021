@@ -170,14 +170,14 @@ section.board {
 }
 
 .cards:hover {
-  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.5);
-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
 }
 
-.card1 {
-  // 
-}
+// .card1 {
+//   background-image: url("assets/icons/1.png");
+// }
 
 @media screen and (max-width: 500px) {
 
