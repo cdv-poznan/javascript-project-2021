@@ -3,6 +3,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-redeclare */
+
 var intervalNatural;
 var intervalColored;
 var intervalBlond;

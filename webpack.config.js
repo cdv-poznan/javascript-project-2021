@@ -12,11 +12,11 @@ const configure = (env, args) => {
   return {
     mode: args.mode || 'development',
     entry: {
-      main: ['./src/main', './src/style.scss'],
+      main: ['./src/jQueryForBallons.js'],
     },
     output: {
       path: resolve(__dirname, './dist'),
-      filename: '[name].js',
+      filename: 'jQuery.js',
     },
     module: {
       rules: [
@@ -27,6 +27,9 @@ const configure = (env, args) => {
               loader: 'babel-loader',
             },
           ],
+        },
+        {
+          test: /\.txt$/, use: 'raw-loader',
         },
         {
           test: /\.sc?ss$/,
@@ -52,8 +55,7 @@ const configure = (env, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        favicon: './src/favicon.ico',
+        template: './dist/index.html',
         scriptLoading: 'defer',
         meta: {
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -64,12 +66,6 @@ const configure = (env, args) => {
         failOnError: false,
         failOnWarning: false,
         formatter: 'codeframe',
-      }),
-      new StylelintWebpackPlugin({
-        files: './src/*.scss',
-        failOnError: false,
-        failOnWarning: false,
-        formatter: 'string',
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css',
