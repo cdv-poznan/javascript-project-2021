@@ -1,7 +1,9 @@
+import { showNotification } from '../components/notification';
 import {
   addLiToTheList,
   checkIfExists,
   getDataFromLocalStorage,
+  capitalizeName,
 } from './service';
 
 // create
@@ -13,6 +15,9 @@ export const addNewIngredient = () => {
   $('.ingredients__input').val('');
   const ifExists = checkIfExists(newIngredient, ingredients);
   if (ifExists) {
+    showNotification(
+      `${capitalizeName(newIngredient)} is already on your ingredients list!`,
+    );
     return;
   }
   ingredients.push(newIngredient);

@@ -4,6 +4,7 @@ import {
   checkIfExists,
   getDataFromLocalStorage,
 } from './service';
+import { showNotification } from '../components/notification';
 
 // read
 
@@ -27,6 +28,7 @@ export const addNewFavourite = () => {
   const favourites = getDataFromLocalStorage('favourites');
   const ifExists = checkIfExists(id, favourites);
   if (ifExists) {
+    showNotification(`${title} is already on your favourites list!`);
     return;
   }
   favourites.push(id);

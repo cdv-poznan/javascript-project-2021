@@ -28,3 +28,6 @@ export const addLiToTheList = (item, listType, id = '') => {
     return $(`ul.${listType}__list`).append(`<li id="${id}">${item}</li>`);
   }
 };
+
+export const capitalizeName = name =>
+  name.charAt(0).toUpperCase() + name.slice(1);
