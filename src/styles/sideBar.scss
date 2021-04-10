@@ -29,7 +29,12 @@ aside {
 
     li {
       padding: 5px;
-      color: #aaa;
+      color: #222;
+
+      &:hover {
+        color: rgb(202, 121, 121);
+        cursor: pointer;
+      }
     }
   }
 
@@ -38,7 +43,6 @@ aside {
   }
 
   &.ingredients {
-
     button {
       background-color: #e4b2b2;
       border-radius: 5px;
@@ -64,32 +68,24 @@ aside {
         margin: 0 10px;
       }
 
-      .addBtn {
+      .addIngBtn {
+        min-width: 22px;
         width: 40px;
         height: 30px;
         font-size: 26px;
       }
     }
-    .ingredientsList {
-      
-      li {
-        color: #222;
 
-        &:hover {
-          // text-decoration: underline;
-          // border-bottom: 1px solid black;
-          color: rgb(202, 121, 121);
-          cursor: pointer;
-
-          &::after {
-            content: "Click to delete";
-            padding: 5px;
-            margin: 0 20px;
-            background-color: #ddd;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-          }
+    li {
+      &:hover {
+        &::after {
+          content: "Click to delete";
+          padding: 5px;
+          margin: 0 20px;
+          background-color: #ddd;
+          border-radius: 5px;
+          text-decoration: none;
+          color: white;
         }
       }
     }
@@ -104,6 +100,20 @@ aside {
   &.menu {
   }
 
-  &.facourites {
+  &.favourites {
+    li {
+      &:hover {
+        &::after {
+          content: "X";
+          padding: 5px;
+          font-size: 10px;
+          margin: 0 5px;
+          background-color: #ddd;
+          border-radius: 5px;
+          text-decoration: none;
+          color: rgb(202, 121, 121);
+        }
+      }
+    }
   }
 }
