@@ -1,6 +1,6 @@
+import { addNewFavourite } from '../service/favouritesCRUDservice';
 import { fetchExactRecipe } from '../util/fetchData';
 import { RECIPES, CURRENT } from '../util/globalData';
-import { addLitoTheList } from './favouritesAside';
 import { showModal } from './modal';
 
 const getData = async () => {
@@ -47,14 +47,5 @@ $('.findBtn').click(async () => {
 });
 
 $('.heart').click(() => {
-  const id = $('.plate').attr('id');
-  const title = $('.recipe__title').text();
-  if (!id) {
-    return;
-  }
-  const localStorageData = localStorage.getItem('favourites');
-  const favourites = localStorageData ? localStorageData.split(',') : [];
-  favourites.push(id);
-  localStorage.setItem('favourites', favourites);
-  addLitoTheList(title);
+  addNewFavourite();
 });
