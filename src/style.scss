@@ -25,7 +25,7 @@ body {
   padding: 20px auto;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 
 }
@@ -169,6 +169,44 @@ section.board {
   transition: .5s;
 }
 
+//wylosowane karty
+
+.card1 {
+  background-image: url(assets/icons/1.png)
+}
+.card2 {
+  background-image: url(assets/icons/2.png)
+}
+.card3 {
+  background-image: url(assets/icons/3.png)
+}
+.card4 {
+  background-image: url(assets/icons/4.png)
+}
+.card5 {
+  background-image: url(assets/icons/5.png)
+}
+.card6 {
+  background-image: url(assets/icons/6.png)
+}
+.card7 {
+  background-image: url(assets/icons/7.png)
+}
+.card8 {
+  background-image: url(assets/icons/8.png)
+}
+.card9 {
+  background-image: url(assets/icons/9.png)
+}
+.card10 {
+  background-image: url(assets/icons/10.png)
+}
+.card11 {
+  background-image: url(assets/icons/11.png)
+}
+.card12 {
+  background-image: url(assets/icons/12.png)
+}
 .cards:hover {
   -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
