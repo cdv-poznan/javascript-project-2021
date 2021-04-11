@@ -1,5 +1,5 @@
 # JavaScript Project
-
+DEPLOY https://hair-tips.netlify.app/
 ### Instalacja Zależności
 
 ```shell
