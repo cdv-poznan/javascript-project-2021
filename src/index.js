@@ -3,7 +3,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-redeclare */
-
+var firstTwoButtons;
 var intervalNatural;
 var intervalColored;
 var intervalBlond;
@@ -29,6 +29,40 @@ var intervalBrunetteToBrownResult;
 
 var video = document.getElementById("video");
 var change = document.getElementById("source");
+
+var promiseFirstTwoButtons = new Promise((resolve) => {
+  firstTwoButtons = setInterval(() => {
+    var hairButtonOne = document.getElementById("okForJs");
+    
+    if (hairButtonOne) {
+      clearInterval(firstTwoButtons);
+      resolve(
+        hairButtonOne.addEventListener("click", function (e) {
+          //first button
+          var divForButtonFirst = document.getElementById("naturalHair");
+          var createButton1 = document.createElement("button");
+          var createButtonHair = divForButtonFirst.insertAdjacentElement(
+            "afterbegin",
+            createButton1
+          );
+          createButtonHair.className = "btn btn-primary";
+          createButtonHair.id = "naturalHairButton";
+          createButtonHair.innerHTML = "I have natural hair";
+          //second button
+          var divForButtonSecond = document.getElementById("coloredHair");
+          var createButton2 = document.createElement("button");
+          var createButtonHair = divForButtonSecond.insertAdjacentElement(
+            "afterbegin",
+            createButton2
+          );
+          createButtonHair.className = "btn btn-primary";
+          createButtonHair.id = "coloredHairButton";
+          createButtonHair.innerHTML = "I have colored hair";
+        })
+      );
+    }
+  }, 2000);
+});
 
 var promiseColorSelection = new Promise((resolve) => {
   intervalNatural = setInterval(() => {
@@ -682,15 +716,20 @@ var promiseBunetteToBrownResult = new Promise((resolve) => {
   }, 2000);
 });
 
+//for button Try Again
+document.getElementById('tryAgain').addEventListener("click", function () {
+  window.location.reload(true);
+})
+
+
+
 //for API
 var changeImgSrc;
 var object;
 var json;
 var ingredient;
-var json2;
 var image;
 var divForText;
-var http;
 
 function changesInForm() {
   changeImgSrc = document.getElementById("img1");
@@ -698,7 +737,6 @@ function changesInForm() {
   var formChoose = document.getElementById("choose");
   var allOptions = formChoose.options[formChoose.selectedIndex];
   if (allOptions === document.getElementById("form1")) {
-    // eslint-disable-next-line no-shadow
     var http = new XMLHttpRequest();
     var url1 =
       "https://world.openbeautyfacts.org/api/v0/product/0022796976017.json";
@@ -855,10 +893,4 @@ function changesInForm() {
     divForText.innerHTML = "";
   }
 }
-
-//for button Try Again
-document.getElementById('tryAgain').addEventListener("click", function () {
-  window.location.reload(true);
-})
-
 

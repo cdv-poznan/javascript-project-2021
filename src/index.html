@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" type="text/css" />
+    <title>Hairdresser's Tips</title>
+  </head>
+  <body>
+    <!--navbar-->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-sm">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#note">Tone depth levels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#note1">Classification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#note2">Hair products</a>
+          </li>
+        </ul>
+      </nav>
+      <br />
+    </div>
+
+    <!--title-->
+    <div class="container-sm">
+      <h1>Hairdresser's</h1>
+      <h1 id="tips">Tips</h1>
+    </div>
+
+    <!--main part-->
+    <div class="row">
+      <div class="col" id="colForButton">
+        <button type="button" id="tryAgain" class="btn btn-primary">Try again</button>
+      </div>
+      <div class="col">
+        <video width="320" height="440" id="video" autoplay muted loop>
+          <source id="source" src="/src/assets/video/welcomeHi.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <!--part with 2 buttons-->
+    <div class="row">
+      <div class="col" id="naturalHair"></div>
+      <div class="col" id="coloredHair"></div>
+    </div>
+
+    <!--part with 3 buttons-->
+    <div class="row">
+      <div class="col" id="blondHair"></div>
+      <div class="col" id="brownHair"></div>
+      <div class="col" id="brunette"></div>
+    </div>
+
+    <!--part with  2 buttons blond-->
+    <div class="row">
+      <div class="col" id="dyeHairDiv"></div>
+      <div class="col" id="powderDiv"></div>
+    </div>
+
+    <!--part with 1 button-->
+    <div class="row">
+      <div class="col" id="dyeHairOneButton"></div>
+    </div>
+
+    <!--part with 2 buttons brown/brunette-->
+    <div class="row">
+      <div class="col" id="powderDivToBlond"></div>
+      <div class="col" id="dyeDivToBrown"></div>
+    </div>
+
+    <!--part with 2 buttons brown-->
+    <div class="row">
+      <div class="col" id="dyeToBlond"></div>
+      <div class="col" id="powderToBlond"></div>
+    </div>
+
+    <!--part with 1 button-->
+    <div class="row">
+      <div class="col" id="dyeBrownOneButton"></div>
+    </div>
+
+    <!--part with 2 buttons brunette to blond-->
+    <div class="row">
+      <div class="col" id="dyeToBlondBrunette"></div>
+      <div class="col" id="powderToBlondBrunette"></div>
+    </div>
+
+    <!--part with 1 button-->
+    <div class="row">
+      <div class="col" id="dyeBrunetteOneButton"></div>
+    </div>
+
+    <!--note-->
+    <div class="container-fluid">
+      <div class="warning">
+        <h2 id="note">TONE DEPTH LEVELS</h2>
+      </div>
+      <img
+        src="/src/assets/images/tone depht levels.jpg"
+        alt="Tone depht levels"
+        id="tones"
+      />
+    </div>
+
+    <!--classification of coloring substances-->
+    <div class="container-fluid">
+      <div class="warning">
+        <h2 id="note1">CLASSIFICATION OF COLORING SUBSTANCES</h2>
+      </div>
+      <h2 id="classification">
+        OK, let's figure out what the main means for coloring and discoloring
+        hair are:
+      </h2>
+      <p id="forClassification">
+        <strong id="forStrong">TINT PRODUCTS.</strong>They are used for
+        short-term giving the hair a new shade. They create a color coating on
+        the surface of the hair, quickly wash off, and have the most gentle
+        effect. They are most noticeable on blond hair – best of all those that
+        belong to the red-orange range, slightly worse are all shades of
+        blue-eggplant. But on dark hair, the effect of applying tint products is
+        almost invisible.
+      </p>
+      <p id="forClassification">
+        <strong id="forStrong">SOFT HAIR DYES.</strong>Soft hair dyes contain a
+        gentle oxidizer in a very small concentration. They are more resistant
+        than tint products. They are washed off after 10-20 times: the process
+        is gradual, without the effect of overgrown roots. This dyes will add
+        shine and saturation to the natural color or enliven it with new shades.
+        It is also perfect for toning hair after discoloration.
+      </p>
+      <p id="forClassification">
+        <strong id="forStrong">LONG-LASTING HAIR DYES.</strong>These are
+        universal tools that can give any desired effect. But they contain
+        strong oxidizing agents that negatively affect the health of the hair.
+        They are used to obtain a uniform and persistent color when coloring
+        gray hair and to lighten the hair by !ONE or TWO tones. In all other
+        cases, it is better to use more gentle coloring agents. IMPORTANT: HAIR
+        DYE HAIR DYE will not discolor or in simple words - if your hair was
+        colored in a darker color, and you want to make it lighter, then you
+        need to go through the procedure of decolorization.
+      </p>
+      <p id="forClassification">
+        <strong id="forStrong">HAIR BLEACHERS.</strong>Hair bleachers are used
+        to bleach (by !THREE to FIVE tones or more) dark hair before using the
+        lightest shades of hair dye. They have a destructive effect on the
+        natural structure of the hair. After their application, it is necessary
+        to use special soft shampoos and balms, as well as means for intensive
+        hair treatment. If you have an undesirable shade of hair, you should
+        perform a hair toning procedure.
+      </p>
+    </div>
+
+    <!--div for API-->
+    <div class="container-fluid">
+      <div class="warning">
+        <h2 id="note2">HAIR CARE PRODUCTS AND THEIR COMPOSITION</h2>
+      </div>
+      <div class="row">
+        <div class="col" id="video2">
+          <video id="videoForApi" autoplay muted loop>
+            <source
+              id="source2"
+              src="/src/assets/video/colorSelection.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="col" id="forApi">
+          <form>
+            <select
+              name="products"
+              class="custom-select"
+              id="choose"
+              onchange="changesInForm()"
+            >
+              <option selected id="chooseProduct">Choose a hair care product</option>
+              <option value="volvo" class="form" id="form1">
+                Brazilian keratin smooth SHAMPOO
+              </option>
+              <option value="fiat" class="form" id="form2">
+                Head&Sholders
+              </option>
+              <option value="audi" class="form" id="form3">Pielsana</option>
+              <option value="volvo" class="form" id="form4">Aroma Zone</option>
+              <option value="fiat" class="form" id="form5">Biovital</option>
+              <option value="audi" class="form" id="form6">Ives Rosher</option>
+              <option value="volvo" class="form" id="form7">Syoss</option>
+              <option value="fiat" class="form" id="form8">TREsemme</option>
+              <option value="audi" class="form" id="form9">Schauma</option>
+              <option value="volvo" class="form" id="form10">Gliss Kur</option>
+              <option value="fiat" class="form" id="form11">Organic</option>
+            </select>
+          </form>
+          <div class="container-fluid">
+            <div class="row" id="afterForm">
+              <div class="col" id="forImg">
+                <img class="img-fluid" src="" id="img1" />
+              </div>
+              <div class="col" id="forText"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container-fluid">
+      <footer>
+        <p class="forFooter">
+          <a href="https://www.instagram.com/yana.yestyle/" id="footer"
+            >Instagram</a
+          >
+        </p>
+        <p class="forFooter">
+          <a href="https://www.facebook.com/yana.yestyle" id="footer"
+            >Facebook</a
+          >
+        </p>
+        <p class="forFooter">2021</p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+      integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+      integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/src/jQueryForBallons.js"></script>
+    <script src="/src/index.js"></script>
+    <script src="/src/jquery.balloon.js/docs/js/jquery.balloon.js"></script>
+    <script src="/src/jquery.balloon.js/jquery.balloon.min.js"></script>
+  </body>
+</html>

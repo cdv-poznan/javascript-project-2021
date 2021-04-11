@@ -16,7 +16,7 @@ const configure = (env, args) => {
     },
     output: {
       path: resolve(__dirname, './dist'),
-      filename: 'jQuery.js',
+      filename: 'babel.js',
     },
     module: {
       rules: [
@@ -55,7 +55,7 @@ const configure = (env, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './dist/index.html',
+        template: './src/index.html',
         scriptLoading: 'defer',
         meta: {
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -68,7 +68,7 @@ const configure = (env, args) => {
         formatter: 'codeframe',
       }),
       new MiniCssExtractPlugin({
-        filename: '[name].css',
+        filename: 'style.css',
       }),
       new CopyWebpackPlugin({
         patterns: [

@@ -4,7 +4,7 @@ $(document).ready(function () {
       html: true,
       position: "right",
       contents:
-        '<div class="container"><p>Hi! My name is Yana. I am a professional hair stylist who has been putting order on my client`s heads (and sometimes in their heads ;-) ) for more than 8 years.</p><p>I understand that you want to dye your hair, so I will be happy to share my experience with you.</p><h3>Shall we begin?</h3><button type="button" id="ok" class="btn btn-info">OK</button></div>',
+        '<div class="container"><p>Hi! My name is Yana. I am a professional hair stylist who has been putting order on my client`s heads (and sometimes in their heads ;-) ) for more than 8 years.</p><p>I understand that you want to dye your hair, so I will be happy to share my experience with you.</p><h3>Shall we begin?</h3><button type="button" id="okForJs" class="btn btn-info">OK</button></div>',
       showDuration: 1000,
       hideDuration: 0,
       tipSize: 20,
@@ -22,17 +22,11 @@ $(document).ready(function () {
   });
   
   //function, which make next 2 buttons
-  $(function () {
+ $(function () {
     var shown = true;
-    $("#ok").on("click", function () {
+    $("#okForJs").on("click", function () {
       $("#video").hideBalloon();
       shown = !shown;
-      $("#naturalHair").append(
-        '<button type="button" id="naturalHairButton" class="btn btn-primary">I have natural hair</button>'
-      );
-      $("#coloredHair").append(
-        '<button type="button" id="coloredHairButton" class="btn btn-primary">I have colored hair</button>'
-      );
     });
   });
   
@@ -244,7 +238,7 @@ $(document).ready(function () {
         shown = !shown;
       });
     });
-  });
+});
   
   //explanation of hair dye for brown hair
   
