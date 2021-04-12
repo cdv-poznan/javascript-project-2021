@@ -68,14 +68,15 @@ function getItem(){
         let button = document.createElement('button')
         button.type = 'button'
         button.innerText = 'kliknij'
+        button.classList = 'styleClass'
         button.addEventListener('click', function(){
-            get_data.splice(i,1)
-            console.log(get_data) 
-            localStorage.setItem('data', JSON.stringify(get_data))
             let test = document.querySelector('#tableRow'  + i)
             test.innerHTML = '';
             console.log(test)
-            // location.reload();
+            get_data.splice(i,1)
+            console.log(get_data) 
+            localStorage.setItem('data', JSON.stringify(get_data))
+            location.reload();
         })
         button.id = 'buttonsId' + i
         icon.className = "material-icons";
