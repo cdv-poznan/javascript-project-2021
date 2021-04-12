@@ -72,7 +72,10 @@ function getItem(){
             get_data.splice(i,1)
             console.log(get_data) 
             localStorage.setItem('data', JSON.stringify(get_data))
-            location.reload();
+            let test = document.querySelector('#tableRow'  + i)
+            test.innerHTML = '';
+            console.log(test)
+            // location.reload();
         })
         button.id = 'buttonsId' + i
         icon.className = "material-icons";
@@ -80,6 +83,7 @@ function getItem(){
         // div.textContent = '&#xe192;' // tu moze jakąś ikonke dać?
         td.textContent = get_data[i];
         th.textContent = i+1;
+        tr.id = 'tableRow' + i
         tr.appendChild(th)
         tr.appendChild(td)
         tr.appendChild(button)
