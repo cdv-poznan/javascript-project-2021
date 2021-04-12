@@ -65,6 +65,16 @@ function getItem(){
         let td = document.createElement('td');
         let th = document.createElement('th');
         let icon = document.createElement('i');
+        let button = document.createElement('button')
+        button.type = 'button'
+        button.innerText = 'kliknij'
+        button.addEventListener('click', function(){
+            get_data.splice(i,1)
+            console.log(get_data) 
+            localStorage.setItem('data', JSON.stringify(get_data))
+            location.reload();
+        })
+        button.id = 'buttonsId' + i
         icon.className = "material-icons";
         icon.innerHTML = "&#xe192;";
         // div.textContent = '&#xe192;' // tu moze jakąś ikonke dać?
@@ -72,6 +82,7 @@ function getItem(){
         th.textContent = i+1;
         tr.appendChild(th)
         tr.appendChild(td)
+        tr.appendChild(button)
         // tr.appendChild(icon) cos obcina mocno content
         document.querySelector('#tableBody').appendChild(tr)
         }
