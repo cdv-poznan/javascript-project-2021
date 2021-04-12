@@ -11,8 +11,8 @@ import { showNotification } from '../components/notification';
 export const showFavourites = async () => {
   const favourites = getDataFromLocalStorage('favourites');
   $('ul.favourites__list').empty();
-  for (const fav of favourites) {
-    const data = await fetchExactRecipe(fav);
+  for (const id of favourites) {
+    const data = await fetchExactRecipe(id);
     addLiToTheList(data.title, 'favourites', data.id);
   }
 };
@@ -22,6 +22,8 @@ export const showFavourites = async () => {
 export const addNewFavourite = () => {
   const id = $('.plate').attr('id');
   const title = $('.recipe__title').text();
+  const ownedIngs = $('.recipe__ings--owned span').text();
+  const missedIngs = $('.recipe__ings--missed span').text();
   if (!id) {
     return;
   }
@@ -33,7 +35,9 @@ export const addNewFavourite = () => {
   }
   favourites.push(id);
   localStorage.setItem('favourites', favourites);
+  localStorage.setItem(id, `${ownedIngs}-${missedIngs}`);
   addLiToTheList(title, 'favourites', id);
+  showNotification(`Saved as a favourite!`);
 };
 
 // delete
@@ -43,5 +47,6 @@ export const deleteFavourite = e => {
 
   const newFavouritesList = favourites.filter(item => item !== e.target.id);
   localStorage.setItem('favourites', newFavouritesList);
+  localStorage.removeItem(e.target.id);
   e.target.closest('li').remove();
 };

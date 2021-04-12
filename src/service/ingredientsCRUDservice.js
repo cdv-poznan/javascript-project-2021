@@ -11,7 +11,7 @@ import {
 export const addNewIngredient = () => {
   const ingredients = getDataFromLocalStorage('ingredients');
 
-  const newIngredient = $('.ingredients__input').val();
+  const newIngredient = $('.ingredients__input').val().toLowerCase();
   $('.ingredients__input').val('');
   const ifExists = checkIfExists(newIngredient, ingredients);
   if (ifExists) {

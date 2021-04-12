@@ -4,6 +4,7 @@
   width: 80%;
   padding: 30px;
   border-radius: 10px;
+  position: relative;
 
   &__title {
     text-align: center;
@@ -17,6 +18,19 @@
 
   hr {
     margin: 15px 0;
+  }
+
+  &__note {
+    position: absolute;
+    display: none;
+    top: 18px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    background-color: #ddd;
   }
 }
 
@@ -37,5 +51,5 @@
     color: white;
     cursor: pointer;
   }
-
+  
 }
