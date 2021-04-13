@@ -43,4 +43,11 @@ export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
       RECIPES.all[CURRENT.getIndex - 1].missedIngredients[0].name,
     );
   }
+
+  $('i#vegan').css('color', data.vegan ? '#222' : '#ddd');
+  $('p.vegan').text(data.vegan ? 'Vegan' : 'Not vegan');
+  $('i#vegetarian').css('color', data.vegetarian ? '#222' : '#ddd');
+  $('p.vegetarian').text(data.vegetarian ? 'Vegetarian' : 'Not vegetarian');
+  $('i#glutenFree').css('color', data.glutenFree ? '#222' : '#ddd');
+  $('p.glutenFree').text(data.glutenFree ? 'Gluten free' : 'Not gluten free');
 };

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 <body>
   <div class="backdrop">
@@ -42,10 +44,34 @@
           <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span> water, salt, flour, sugar, eggs,
               milk</span></p>
           <hr>
+          <div class="recipe__note__additional-info">
+            <div class="icon">
+              <i class="fas fa-carrot" id="vegan"></i>
+              <p class="icon__tooltip vegan">Not vegan</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-egg" id="vegetarian"></i>
+              <p class="icon__tooltip vegetarian">Not vegetarian</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-bread-slice" id="glutenFree"></i>
+              <p class="icon__tooltip glutenFree">Not gluten free</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-utensils" id="servings"></i>
+              <p class="icon__tooltip servings">1 serving</p>
+            </div>
+            <div class="icon">
+              <i class="" id="min"> min</i>
+              <p class="icon__tooltip min">5 minutes</p>
+            </div>
+          </div>
+          <hr>
           <p class="recipe__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quas necessitatibus rem,
             beatae earum illo
             eaque fugit maxime obcaecati quidem, culpa tempora vel incidunt dolores eius reiciendis voluptatum.
             Consequuntur, obcaecati.</p>
+          <p class="receipe__additional-info"></p>
       </article>
     </section>
   </main>

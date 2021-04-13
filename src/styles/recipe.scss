@@ -17,7 +17,7 @@
   }
 
   hr {
-    margin: 15px 0;
+    margin: 20px 0;
   }
 
   &__note {
@@ -31,6 +31,52 @@
     font-weight: normal;
     color: white;
     background-color: #ddd;
+
+    &__additional-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        position: relative;
+        i {
+          margin: 0 10px;
+          color: #ddd;
+          font-size: 20px;
+          font-style: normal;
+          &:nth-last-child(1) {
+            font-size: 16px;
+          }
+        }
+        &__tooltip {
+          position: absolute;
+          color: black;
+          font-size: 12px;
+          font-weight: normal;
+          min-width: 100px;
+          width: auto;
+          height: 30px;
+          background-color: #ddd;
+          top: 30px;
+          padding: 0 5px;
+          transform: translate(10%);
+          border-radius: 5px;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            background-color: transparent;
+            border: 5px solid transparent;
+            border-bottom: 10px solid #ddd;
+            top: -10px;
+            left: 4px;
+          }
+        }
+      }
+    }
   }
 }
 

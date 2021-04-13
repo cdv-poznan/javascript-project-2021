@@ -13,3 +13,11 @@ $('.findBtn').click(async () => {
 $('.heart').click(() => {
   addNewFavourite();
 });
+
+$('i')
+  .mouseenter(e => {
+    $(`#${e.target.id} ~ p`).css('display', 'flex');
+  })
+  .mouseleave(e => {
+    $(`#${e.target.id} ~ p`).css('display', 'none');
+  });
