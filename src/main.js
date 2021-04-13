@@ -1,33 +1,31 @@
-let joke;
+
+
 const audio = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=%5bSom%5dBa+Dum+Tss!&filename=22/227744-d408e4ab-84bb-4336-b93f-37daf252ef4d.mp3');
 audio.volume = 0.5;
-const getJoke = () => {
-    document.getElementById('punchline').style.display = 'none';
-    document.getElementById('anotherJoke').style.display = 'none';
+let haha;
+const showJoke = document.querySelector('.showJoke')
+const showPunchline = document.querySelector('.showPunchline')
+const joke = document.querySelector('.joke')
+const puncH1 = document.querySelector('.puncH1')
+showJoke.addEventListener('click', function(){
     axios.get('https://official-joke-api.appspot.com/jokes/random').then((response) => {
-        joke = response.data;
-        document.getElementById('punchlineButton').disabled = false;
-        document.getElementById('joke').innerText = joke.setup;
-    });
-}
-const getPunchline = () => {
-
+        haha = response.data;
+        joke.innerText = haha.setup;
+        jokeFunction()
+})})
+function jokeFunction(){
     setTimeout(() => {
         audio.play();
-        document.getElementById('punchlineButton').disabled = true;
-        document.getElementById('anotherJoke').style.display = 'inline';
-        document.getElementById('punchline').style.display = 'inline';
-        document.getElementById('punchline').innerText = joke.punchline;
-    }, 300);
-    setTimeout(() => {
-        document.getElementById('anotherJoke').style.display = 'inline';
-        document.getElementById('punchline').style.display = 'inline';
-        document.getElementById('punchline').innerText = joke.punchline;
-    }, 300);
+        joke.innerText = haha.punchline;
+        punchlineFunction()
+    }, 3000);
+} 
+function punchlineFunction(){
+    setTimeout(function(){
+        joke.innerHTML = '';
+    },3000)
 }
-getJoke();
-
-
+// ---------------------------------------------------------------------------------------------------------------
 window.addEventListener("load", getItem);
 let inputValue = ' ';
 let buttonValue = document.querySelector('.buttonItem')
@@ -65,13 +63,29 @@ function getItem(){
         let td = document.createElement('td');
         let th = document.createElement('th');
         let icon = document.createElement('i');
+        let button = document.createElement('button')
+        button.type = 'button'
+        button.innerText = 'kliknij'
+        button.classList = 'styleClass'
+        button.addEventListener('click', function(){
+            let test = document.querySelector('#tableRow'  + i)
+            test.innerHTML = '';
+            console.log(test)
+            get_data.splice(i,1)
+            console.log(get_data) 
+            localStorage.setItem('data', JSON.stringify(get_data))
+            location.reload();
+        })
+        button.id = 'buttonsId' + i
         icon.className = "material-icons";
         icon.innerHTML = "&#xe192;";
         // div.textContent = '&#xe192;' // tu moze jakąś ikonke dać?
         td.textContent = get_data[i];
         th.textContent = i+1;
+        tr.id = 'tableRow' + i
         tr.appendChild(th)
         tr.appendChild(td)
+        tr.appendChild(button)
         // tr.appendChild(icon) cos obcina mocno content
         document.querySelector('#tableBody').appendChild(tr)
         }
