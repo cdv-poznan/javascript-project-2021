@@ -1,4 +1,50 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+.layout {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.nav {
+  margin: 40px;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.country-container {
+  padding: 50px;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+}
+
+.country-name {
+  font-size: 20px;
+  background-color: rgb(190, 187, 181);
+  max-width: 200px;
+  text-align: center;
+}
+
+.country-flag {
+  max-height: 200px;
+  max-width: 200px;
 }
