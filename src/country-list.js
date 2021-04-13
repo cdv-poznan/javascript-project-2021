@@ -1,8 +1,10 @@
 export class CountryList {
   countryService;
+  el;
 
   constructor(countryService) {
     this.countryService = countryService;
+    this.el = document.createElement('div');
   }
 
   async initialize() {
@@ -25,9 +27,12 @@ export class CountryList {
       return;
     }
 
-    const countriesMarkup = this.countryService.countries
-      .map(country => country.render())
-      .join('');
-    document.querySelector('.container').innerHTML = countriesMarkup;
+    const container = document.querySelector('.container');
+    container.innerHTML = '';
+    this.countryService.countries.forEach(country => {
+      country.render();
+      container.appendChild(country.el);
+      country.initializeEvents();
+    });
   }
 }
