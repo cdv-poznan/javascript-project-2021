@@ -22,12 +22,12 @@ export class CountryList {
 
   async render() {
     if (this.countryService.countries.length === 0) {
-      document.querySelector('.container').innerHTML =
-        '<div>Name not found</div>';
+      document.querySelector('#container').innerHTML =
+        '<div class="not-found">Name not found</div>';
       return;
     }
 
-    const container = document.querySelector('.container');
+    const container = document.querySelector('#container');
     container.innerHTML = '';
     this.countryService.countries.forEach(country => {
       country.render();

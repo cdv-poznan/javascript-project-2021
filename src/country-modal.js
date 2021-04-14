@@ -5,29 +5,39 @@ export class CountryModal {
   constructor(data) {
     this.countryDetails = data;
     this.el = document.createElement('div');
-    this.container = document.querySelector('.modal');
+    this.container = document.querySelector('#container');
+    this.modal = document.querySelector('.modal');
+    this.modalBody = document.querySelector('.modal-body');
+    this.body = document.querySelector('body');
   }
 
   show() {
     this.render();
-    this.container.classList.remove('hidden');
-    document.querySelector('.modal-body').classList.remove('hidden');
-    this.container.appendChild(this.el);
-    document.querySelector('.container').classList.add('noscroll');
+    this.modalBody.classList.remove('hidden');
+    this.modal.classList.remove('hidden');
+    this.modal.appendChild(this.el);
+    this.body.style.overflow = 'hidden';
+    this.body.classList.add('blur');
     this.initializeEvents();
   }
 
   hide() {
-    this.container.classList.add('hidden');
-    document.querySelector('.modal-body').classList.add('hidden');
-    document.querySelector('.container').classList.remove('noscroll');
-    this.container.innerHTML = '';
+    this.modalBody.classList.add('hidden');
+    this.body.style.overflow = 'scroll';
+    this.body.classList.remove('blur');
+    this.modal.innerHTML = '';
   }
 
   render() {
     this.el.innerHTML = `
-  <div class="country-name">${this.countryDetails.name}</div>
-  <div class="country-name">${this.countryDetails.capital}</div>
+  <div class="country-name">Name: ${this.countryDetails.name}</div>
+  <div class="country-name">Capital: ${this.countryDetails.capital}</div>
+  <div class="country-name">Area: ${this.countryDetails.area}</div>
+  <div class="country-name">Population: ${this.countryDetails.population}</div>
+  <div class="country-name">Main currency: ${
+    this.countryDetails.currencies[0].name
+  }</div>
+  <div class="country-name">Main language: ${this.renderLanguages()}</div>
   <button class="close-button">Click</button>
   `;
   }
@@ -36,5 +46,11 @@ export class CountryModal {
     document.querySelector('.close-button').addEventListener('click', () => {
       this.hide();
     });
+  }
+
+  renderLanguages() {
+    return this.countryDetails.languages
+      .map(lang => `<div>${lang.name}, ${lang.nativeName}</div>`)
+      .join('');
   }
 }

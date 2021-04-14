@@ -12,18 +12,30 @@ export class Country {
   }
 
   render() {
-    this.el.innerHTML = `<div class="country-container">
-   <div class="country-name">${this.countryDetails.name}</div>
-   <img id="${this.countryDetails.alpha2Code}-flag" class="country-flag" src="${this.countryDetails.flag}"></img>
-   <div class="country-name">${this.countryDetails.capital}</div>
-   </div>`;
+    this.el.classList.add('ui', 'card');
+    this.el.innerHTML = `
+    <div class="image">
+      <img id="${this.countryDetails.alpha2Code}-flag" class=" ui fluid image" src="${this.countryDetails.flag}"></img>
+    </div>
+    <div class="content">
+      <a class="header">${this.countryDetails.name}</a>
+      <div class="meta">
+        <span class="date">Capital: ${this.countryDetails.capital}</span>
+      </div>
+    </div>
+  `;
+    // `
+    //   <div class="country-container">
+    //  <div class="country-name">${this.countryDetails.name}</div>
+    //  <img id="${this.countryDetails.alpha2Code}-flag" class="country-flag" src="${this.countryDetails.flag}"></img>
+    //  <div class="country-name">${this.countryDetails.capital}</div>
+    //  </div>`;
   }
 
   initializeEvents() {
     document
       .querySelector(`#${this.countryDetails.alpha2Code}-flag`)
-      .addEventListener('click', event => {
-        console.log(event.target);
+      .addEventListener('click', () => {
         this.modal.show();
       });
   }
