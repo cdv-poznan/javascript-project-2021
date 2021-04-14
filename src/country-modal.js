@@ -17,14 +17,12 @@ export class CountryModal {
     this.modal.classList.remove('hidden');
     this.modal.appendChild(this.el);
     this.body.style.overflow = 'hidden';
-    this.body.classList.add('blur');
     this.initializeEvents();
   }
 
   hide() {
     this.modalBody.classList.add('hidden');
     this.body.style.overflow = 'scroll';
-    this.body.classList.remove('blur');
     this.modal.innerHTML = '';
   }
 

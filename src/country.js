@@ -24,12 +24,6 @@ export class Country {
       </div>
     </div>
   `;
-    // `
-    //   <div class="country-container">
-    //  <div class="country-name">${this.countryDetails.name}</div>
-    //  <img id="${this.countryDetails.alpha2Code}-flag" class="country-flag" src="${this.countryDetails.flag}"></img>
-    //  <div class="country-name">${this.countryDetails.capital}</div>
-    //  </div>`;
   }
 
   initializeEvents() {
