@@ -9,21 +9,32 @@ export class CountryModal {
   }
 
   show() {
-    this.container.appendChild(this.el);
+    this.render();
     this.container.classList.remove('hidden');
+    document.querySelector('.modal-body').classList.remove('hidden');
+    this.container.appendChild(this.el);
+    document.querySelector('.container').classList.add('noscroll');
+    this.initializeEvents();
   }
 
   hide() {
     this.container.classList.add('hidden');
+    document.querySelector('.modal-body').classList.add('hidden');
+    document.querySelector('.container').classList.remove('noscroll');
     this.container.innerHTML = '';
   }
 
   render() {
-    this.el.innerHTML = `<div class="modal-container">
+    this.el.innerHTML = `
   <div class="country-name">${this.countryDetails.name}</div>
   <div class="country-name">${this.countryDetails.capital}</div>
-  <div class="country-name">${this.countryDetails.currencies[0]}</div>
-  <div class="country-name">${this.countryDetails.borders}</div>
-  </div>`;
+  <button class="close-button">Click</button>
+  `;
+  }
+
+  initializeEvents() {
+    document.querySelector('.close-button').addEventListener('click', () => {
+      this.hide();
+    });
   }
 }

@@ -15,6 +15,7 @@
 }
 
 .noscroll {
+  opacity: 40%;
   overflow: hidden;
 }
 
@@ -49,6 +50,20 @@
   max-width: 200px;
 }
 
-.hidden {
-  display: none;
+.modal-body {
+  position: absolute;
+  overflow-y: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 45%;
+  bottom: 50%;
 }
