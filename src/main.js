@@ -62,11 +62,9 @@ function getItem(){
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         let th = document.createElement('th');
-        let icon = document.createElement('i');
         let button = document.createElement('button')
         button.type = 'button'
-        button.innerText = 'kliknij'
-        button.classList = 'styleClass'
+        button.classList="btn-close"
         button.addEventListener('click', function(){
             let test = document.querySelector('#tableRow'  + i)
             test.innerHTML = '';
@@ -77,16 +75,12 @@ function getItem(){
             location.reload();
         })
         button.id = 'buttonsId' + i
-        icon.className = "material-icons";
-        icon.innerHTML = "&#xe192;";
-        // div.textContent = '&#xe192;' // tu moze jakąś ikonke dać?
         td.textContent = get_data[i];
         th.textContent = i+1;
         tr.id = 'tableRow' + i
         tr.appendChild(th)
         tr.appendChild(td)
         tr.appendChild(button)
-        // tr.appendChild(icon) cos obcina mocno content
         document.querySelector('#tableBody').appendChild(tr)
         }
         
