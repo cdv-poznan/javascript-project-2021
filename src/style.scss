@@ -102,16 +102,58 @@ header {
   color: #f1f0f0;
 }
 
+// LOG IN POPUP WINDOW
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  padding: 3vh 5vh;
   border: 3px solid #080808;
   border-radius: 20px;
   z-index: 10;
   background-color: #faf4f4;
-  opacity: 0.75;
   width: 10vh;
   max-width: 80%;
+  transition: 200ms ease-in-out;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup p {
+  font-size: 20px;
+  color: #8d0808;
+}
+
+.submit-button {
+  font-size: 17px;
+  color: #8d0808;
+  position: relative;
+  left: 25%;
+}
+
+.close-button {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: none;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }

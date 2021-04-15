@@ -17,17 +17,19 @@
     <div class="popup">
       <div class="popup-content">
         <form action="#">
+          <button data-close-button class="close-button">&times;</button>
           <p>Username: 
           <input type="text" name="username" size="15"/>
           </p>
           <p>Password:
             <input type="password" name="password" size="15"/>
           </p><br />
-          <input type="submit" value="Log In">
+          <p><input type="submit" class="submit-button" value="Log In"></p>
         </form>
       </div>
     </div>
-<nav>
+    <div id="overlay"></div>
+    <nav>
   <ul class="nav-bar">
   <li><a href="#">Football</a></li>
   <li><a href="#">Basktetball</a></li>
