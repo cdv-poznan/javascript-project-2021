@@ -1,4 +1,300 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+@font-face {
+  font-family: "fat_wandals_personal_useRg";
+  src: url("./fonts/fatwandals_personal-webfont.woff2") format("woff2"), url("./fonts/fatwandals_personal-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Thanx to https://www.fontsquirrel.com/ for support with font issue. It works :) */
+/* Graffitti font from https://www.dafont.com/fat-wandals.font */
+
+:root {
+  --vh: 1vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex-justify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  @include flex-justify;
+  height: 100vh;
+  background-color: #171c3d;
+  background: radial-gradient(circle farthest-side at 0% 50%, #171c3d 23.5%, rgba(240, 166, 17, 0) 0) 21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%, #739059 24%, rgba(240, 166, 17, 0) 0) 19px 30px,
+    linear-gradient(#171c3d 14%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 85%, #171c3d 0) 0 0,
+    linear-gradient(150deg, #171c3d 24%, #739059 0, #739059 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #739059 0, #739059 76%, #171c3d 0) 0 0,
+    linear-gradient(30deg, #171c3d 24%, #739059 0, #739059 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #739059 0, #739059 76%, #171c3d 0) 0 0,
+    linear-gradient(90deg, #313968 2%, #313968 0, #313968 98%, #739059 0%) 0 0 #313968;
+  background-size: 40px 60px;
+}
+
+.container {
+  @include flex-justify;
+  flex-direction: column;
+  height: 90vh;
+  width: calc(40% + 100px);
+  margin: 0 auto;
+  padding: 0 50px;
+  background: linear-gradient(#171c3d, #000, #171c3d);
+  border: 1px solid #739059;
+  box-shadow: 0 0 4px #fff;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: "fat_wandals_personal_useRg", sans-serif;
+  text-align: center;
+  font-size: 2em;
+  color: rgba(240, 248, 255, 0.37);
+  text-shadow: 1px 0 1px rgba(204, 204, 204, 0.53), 0 1px 1px #696969, 2px 1px 1px #ccc, 1px 2px 1px #d6d6d6, 3px 2px 1px #ccc, 2px 3px 1px #000, 4px 3px 1px #ccc 3px 4px 1px #a3a3a3, 5px 4px 1px #262626, 4px 5px 1px #eee, 6px 5px 1px #ccc, 5px 6px 1px #000, 7px 6px 1px #000;
+  text-transform: uppercase;
+  letter-spacing: 14px;
+  width: 100%;
+  padding: 30px 0 40px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.67), rgba(84, 0, 100, 0.47), rgba(0, 0, 0, 0.67));
+  margin: 0;
+  border-radius: 10px;
+}
+
+.screen {
+  @include flex-justify;
+  width: 100%;
+  // max-width: 656px;
+  height: 50px;
+  margin: 20px;
+  background-color: #739059;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen div {
+  display: block;
+  width: 200%;
+  position: absolute;
+  overflow: hidden;
+  animation: scrolling 10s linear infinite;
+}
+
+.screen span {
+  font-family: "Special Elite", cursive;
+  float: left;
+  width: 50%;
+  font-size: 20px;
+}
+
+@keyframes scrolling {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.btn-container {
+  background: rgb(86, 101, 185);
+  display: grid;
+  max-width: 780px;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.key {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  max-height: 400px;
+  /* width: 12vw;
+    height: 12vw; */
+  background: rgba(255, 0, 119, 0.082);
+  border-radius: 25%;
+  box-shadow: inset 9.91px 9.91px 15px#4d5aa6, inset -9.91px -9.91px 15px#5f70cc;
+  border-radius: 10px;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.key:nth-child(odd) {
+  background-color: rgba(69, 69, 250, 0.192);
+}
+
+.key:hover {
+  background: linear-gradient(145deg, #6b7ee7, #414c8b);
+  box-shadow: inset 15.02px 15.02px 19px #465296,
+    inset -15.02px -15.02px 19px #6678dc;
+}
+
+/*    img and svg in case when img can not be upload on the server    */
+
+.key img,
+.key svg {
+  display: block;
+  height: 60%;
+  width: auto;
+  transform: scale(1);
+  transition: 0.2s;
+}
+
+.key.active img,
+.key.active svg {
+  filter: invert(37%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  transform: scale(0.99);
+}
+
+.key.active {
+  background: linear-gradient(145deg, #6b7ee7, #414c8b);
+  box-shadow: inset 15.02px 15.02px 19px #465296, inset -15.02px -15.02px 19px #6678dc;
+}
+
+.box-title {
+  font-size: 1.2em;
+  color: #f0f8ff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    padding: 0;
+    border: 0;
+    box-shadow: 0;
+  }
+  
+  .screen {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    line-height: 2em;
+    letter-spacing: 8px;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .btn-container {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-gap: 15px;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .key {
+    width: 30vw;
+    height: 23vw;
+  }
+  
+  .key .box-title {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .key .box-title {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    // height: 100vh;
+    width: 100%;
+    /* justify-content: space-around; */
+  }
+
+  h1 {
+    font-size: 1.4em;
+    line-height: 2em;
+    letter-spacing: 8px;
+    padding: 30px 5px 40px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .btn-container {
+    width: 100%;
+    height: 100%;
+    grid-gap: 15px;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .key {
+    width: 30vw;
+    height: 40vw;
+
+    .box-title {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .btn-container {
+    width: 100%;
+    height: 100%;
+    grid-gap: 5px;
+    padding: 8px;
+    border-radius: 0;
+  }
+  
+  .key {
+    width: 30vw;
+    height: 40vw;
+  }
+  
+  .key .box-title {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 350px) {
+  h1 {
+    font-size: 1.2;
+    padding: 20px 0;
+  }
+
+  .btn-container {
+    grid-gap: 5px;
+    padding: 8px;
+  }
 }
