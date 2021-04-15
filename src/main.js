@@ -62,27 +62,7 @@ const prepareDOMElemenst = () => {
   $percentage = document.querySelector('.percentage');
   $insurance = document.querySelector(`.insurance input[type='checkbox']`);
 };
-// nadajemy nasłuchiwanie
-const prepareDOMEvents = () => {
-  $addBtn.addEventListener('click', addNewTask);
-  // $addBtn.addEventListener('click', addlocalStorEvent);
-  $ulList.addEventListener('click', checkClick);
-  $closeTodoBtn.addEventListener('click', closePopup);
-  $addPopupBtn.addEventListener('click', changeTodo);
-  $todoInput.addEventListener('keyup', enterCheck);
-  $closeAcceptPanelBtn.addEventListener('click', closeAcceptPanel);
-  $acceptPanelBtn.addEventListener('click', acceptBtn);
-  searchInput.addEventListener('change', displayMatches);
-  searchInput.addEventListener('keyup', displayMatches);
-};
-
-const main = () => {
-  prepareDOMElemenst();
-  prepareDOMEvents();
-  // addlocalStorEvent();
-};
 ///////////////////////////////////////////////////////////////////////
-
 const createToolsArea = () => {
   $toolsPanel = document.createElement('div');
   $toolsPanel.classList.add('tools');
@@ -156,7 +136,6 @@ const addNewTask = () => {
     $newTask.setAttribute('id', `todo-${$idNumber}`);
     $ulList.appendChild($newTask);
     // $newTask.setItem('itemsStorage', JSON.stringify($newTask));
-
     $todoInput.value = '';
     $alertInfo.innerText = '';
     createToolsArea();
@@ -166,26 +145,22 @@ const addNewTask = () => {
 };
 //////////////////////////FUNCKCJA LOCALSTORGE/////////////////////////////////////////////
 
-// const addlocalStorEvent = () =>{
-//     const localtext = $ulList.innerText;
-//     $itemsStorage.push(localtext);
-//     console.log(localtext);
-//     console.log($itemsStorage);
-
-//     localStorage.setItem('itemsStorage', JSON.stringify($itemsStorage));
-//     // addNewTask(localtext);
-
-//     $itemsStorage.forEach(item =>{
-
-//       $newTask = document.createElement('li');
-//       $newTask.innerText = item;
-//       $newTask.setAttribute('id',`todo-${$idNumber}`)
-//       $ulList.appendChild($newTask);
-
-//       $todoInput.value = '';
-//       $alertInfo.innerText = '';
-//       createToolsArea();
-//     })
+// const addlocalStorEvent = () => {
+//   const localtext = $ulList.innerText;
+//   $itemsStorage.push(localtext);
+//   console.log(localtext);
+//   console.log($itemsStorage);
+//   localStorage.setItem('itemsStorage', JSON.stringify($itemsStorage));
+//   addNewTask(localtext);
+//   $itemsStorage.forEach(item => {
+//     $newTask = document.createElement('li');
+//     $newTask.innerText = item;
+//     $newTask.setAttribute('id', `todo-${$idNumber}`)
+//     $ulList.appendChild($newTask);
+//     $todoInput.value = '';
+//     $alertInfo.innerText = '';
+//     createToolsArea();
+//   })
 // };
 ///////////////////////////////////////////////////////////////////////
 
@@ -312,4 +287,23 @@ function displayMatches() {
     .join('');
   suggestions.innerHTML = html;
 }
+
+// nadajemy nasłuchiwanie
+const prepareDOMEvents = () => {
+  $addBtn.addEventListener('click', addNewTask);
+  // $addBtn.addEventListener('click', addlocalStorEvent);
+  $ulList.addEventListener('click', checkClick);
+  $closeTodoBtn.addEventListener('click', closePopup);
+  $addPopupBtn.addEventListener('click', changeTodo);
+  $todoInput.addEventListener('keyup', enterCheck);
+  $closeAcceptPanelBtn.addEventListener('click', closeAcceptPanel);
+  $acceptPanelBtn.addEventListener('click', acceptBtn);
+  searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', displayMatches);
+};
+const main = () => {
+  prepareDOMElemenst();
+  prepareDOMEvents();
+  // addlocalStorEvent();
+};
 document.addEventListener('DOMContentLoaded', main);
