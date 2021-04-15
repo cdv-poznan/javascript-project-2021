@@ -4,6 +4,7 @@
 ## AKAI Music Machine - emulator  kultowego sekwencera/samplera firmy AKAI
 ### Naciskamy pady i z przypisanych do nich ścieżek tworzymy własną melodię
 LINKI:
+* [Gotowy projekt] (http://frontend.ovh/)
 * [AKAI MPC] (https://pl.wikipedia.org/wiki/Akai_MPC)
 * [AKAI PRO] (https://www.akaipro.com/)
 ### Sterowanie z poziomu klawiatury:
