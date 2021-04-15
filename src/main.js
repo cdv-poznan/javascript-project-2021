@@ -35,7 +35,8 @@ buttonValue.addEventListener('click',function(){
 inputValue = document.querySelector('.addItem').value;
 document.querySelector('.addItem').value = '';
 if(inputValue === ''){
-alert('Musisz coś wpisać, nie da sie niczego nie mieć do roboty ;)')
+    $("#myModal").modal('show');
+// alert('Musisz coś wpisać, nie da sie niczego nie mieć do roboty ;)')
 }
 else{
     console.log('Przeszło pierwszego ifa')
@@ -93,3 +94,10 @@ function cleanAllContentFromLSAndList(){
     document.querySelector('#tableBody').textContent = '';
 
 }
+let google = ''
+
+
+document.getElementById('search').onclick = function() {
+    google = document.querySelector('.googleBox').value
+    window.open('http://google.com/search?q='+google);
+};
