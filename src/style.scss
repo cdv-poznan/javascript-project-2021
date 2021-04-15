@@ -7,12 +7,10 @@
 body {
   /*   background-image: linear-gradient(to right top, #d3d3d3, #d5cad9, #e3bed4, #f3b0c2, #ffa5a5); */
   background: #ffb5b4;
-  height: 100vh;
 }
 
 nav {
   height: 10vh;
-  font-family: "Work Sans", sans-serif;
 }
 
 .nav-links {
@@ -23,6 +21,12 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin-left: auto;
+  font-family: "Work Sans", sans-serif;
+}
+
+.logo {
+  color: #fff;
+  cursor: pointer;
 }
 
 .nav-links li a {
@@ -35,6 +39,98 @@ nav {
   color: #fff;
   cursor: pointer;
 }
+
+footer {
+  background: #f1f1f1;
+  padding: 90px 0;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  font-family: "Work Sans", sans-serif;
+}
+
+.logo {
+  width: 180px;
+}
+
+.social-media {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.social-media a {
+  color: #001a21;
+  margin-right: 25px;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+
+.social-media a:hover {
+  color: #ffb5b4;
+}
+
+.right-col h1 {
+  font-size: 26px;
+}
+
+.border {
+  width: 100px;
+  height: 4px;
+  background: #fc5c65;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.txtb {
+  flex: 1;
+  padding: 18px 40px;
+  font-size: 16px;
+  color: #293043;
+  background: #ddd;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  min-width: 260px;
+}
+
+.btn {
+  padding: 18px 40px;
+  font-size: 16px;
+  color: #f1f1f1;
+  background: #fc5c65;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.page-content {
+  min-height: 100vh;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
   .line {
     width: 30px;
@@ -79,5 +175,33 @@ nav {
 
   .landing {
     flex-direction: column;
+  }
+
+  .btn {
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .txtb {
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .footer-container {
+    max-width: 600px;
+  }
+
+  .right-col {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .left-col {
+    width: 100%;
+    text-align: center;
   }
 }
