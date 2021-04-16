@@ -11,14 +11,23 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
   </head>
+  <img class="background-image" src="assets/background.png" />
   <body>
-    <nav class="nav">
-      <div class="ui fluid icon input">
-        <input id="search" type="text" placeholder="Search for..." />
-        <i class="search icon"></i>
-      </div>
-    </nav>
     <main class="layout">
+      <div class="nav">
+        <div>
+          <h2 class="ui center aligned icon header">Country Search</h2>
+          <div class="ui fluid icon input search">
+            <input
+              id="search"
+              type="text"
+              placeholder="Search for..."
+              class="ui input"
+            />
+            <i class="search icon"></i>
+          </div>
+        </div>
+      </div>
       <div id="container" class="ui cards stackable container"></div>
     </main>
     <aside class="hidden modal-body">

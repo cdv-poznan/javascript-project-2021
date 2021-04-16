@@ -32,9 +32,7 @@ export class CountryModal {
   <div class="country-name">Capital: ${this.countryDetails.capital}</div>
   <div class="country-name">Area: ${this.countryDetails.area}</div>
   <div class="country-name">Population: ${this.countryDetails.population}</div>
-  <div class="country-name">Main currency: ${
-    this.countryDetails.currencies[0].name
-  }</div>
+  <div class="country-name">Main currency: ${this.renderCurrencies()}</div>
   <div class="country-name">Main language: ${this.renderLanguages()}</div>
   <button class="close-button">Click</button>
   `;
@@ -49,6 +47,12 @@ export class CountryModal {
   renderLanguages() {
     return this.countryDetails.languages
       .map(lang => `<div>${lang.name}, ${lang.nativeName}</div>`)
+      .join('');
+  }
+
+  renderCurrencies() {
+    return this.countryDetails.currencies
+      .map(cur => `<div>${cur.name}, ${cur.nativeName}</div>`)
       .join('');
   }
 }
