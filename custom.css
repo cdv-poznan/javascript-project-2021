@@ -1,0 +1,33 @@
+ @media(max-width:768px) {
+     .klasa{
+    font-size: 40px !important;
+    display: block;
+    }
+    .form-control{
+        padding-bottom: 15px !important ;
+        font-size: 40px;
+    }
+    .btn-outline-success{
+        background-color: green;
+        color: aliceblue;
+    }
+    .titleClass{
+        font-size: 40px;
+    }
+    .d-flex{
+        flex-direction: column;
+    }
+    .justify-content-between{
+    }
+    .btn-dark{
+        font-size: 30px;
+    }
+    .btn-danger{
+        font-size: 30px;
+    }
+}
+    
+
+/* potrzebuje:
+-768px
+-480px  */
