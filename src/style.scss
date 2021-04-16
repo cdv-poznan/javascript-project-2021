@@ -104,27 +104,38 @@ header {
 
 // LOG IN POPUP WINDOW
 .popup {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%);
   padding: 3vh 5vh;
   border: 3px solid #080808;
   border-radius: 20px;
   z-index: 10;
   background-color: #faf4f4;
-  width: 10vh;
+  width: 15vh;
   max-width: 80%;
+  height: 12vh;
+  max-height: 80%;
   transition: 200ms ease-in-out;
 }
 
-.popup.active {
-  transform: translate(-50%, -50%) scale(1);
+.popup-content input {
+  height: 20px;
+  width: 200px;
 }
 
 .popup p {
   font-size: 20px;
   color: #8d0808;
+  margin: 0;
+}
+
+.popup a {
+  font-size: 12px;
+  color: #8d0808;
+  padding: 0;
 }
 
 .submit-button {
@@ -132,18 +143,35 @@ header {
   color: #8d0808;
   position: relative;
   left: 25%;
+  margin: 15px;
+  border-radius: 25px;
+  border-color: #8d0808;
+  font-size: 18px;
+}
+
+.submit-button:hover {
+  border-color: #8d0808;
+  background-color: #8d0808;
+  color: #f1f0f0;
 }
 
 .close-button {
+  position: absolute;
+  top: 5px;
+  left: 300px;
+  background: rgb(255, 0, 0);
+  color: #8d0808;
   cursor: pointer;
   border: 0;
   outline: none;
   background: none;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-#overlay {
-  position: fixed;
+.overlay {
   opacity: 0;
+  position: fixed;
   transition: 200ms ease-in-out;
   top: 0;
   left: 0;
@@ -153,7 +181,7 @@ header {
   pointer-events: none;
 }
 
-#overlay.active {
+.active {
   opacity: 1;
   pointer-events: all;
 }

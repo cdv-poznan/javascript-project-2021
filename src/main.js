@@ -1,45 +1,30 @@
+// POPUP WINDOW OPENING AND CLOSING
+
+// LOG IN POPUP MECHANISM
 const logInButton = document.querySelector(".log-in");
 const closeButton = document.querySelector(".close-button");
-const overlay = document.getElementById('overlay');
+const frontSection = document.querySelector(".overlay");
 
-logInButton.forEach(button => {
-	button.addEventListener('click', () => {
-		const modal = document.querySelector(button.dataset.modalTarget)
-		openModal(modal)
-	})
-})
+logInButton.addEventListener("click", () => {
+	document.querySelector(".popup").style.display='flex';
+	frontSection.classList.add("active");
+});
 
-overlay.addEventListener('click', () => {
-	const modals = document.querySelectorAll('.popup.active')
-	modals.forEach(modal => {
-		closeModal(modal)
-	})
-})
+closeButton.addEventListener("click", () => {
+	document.querySelector(".popup").style.display='none';
+	frontSection.classList.remove("active");
+});
 
-closeButton.forEach(button => {
-	button.addEventListener('click', () => {
-		const modal = button.closest(".popup")
-		closeModal(modal)
-	})
-})
 
-function openModal(modal) {
-	if (modal == null) return
-	popup.classList.add('active')
-	overlay.classList.add('active')
-}
+frontSection.addEventListener("click", () => {
+	document.querySelector(".popup").style.display='none';
+	frontSection.classList.remove("active");
+});
 
-function closeModal(modal) {
-	if (modal == null) return
-	modal.classList.remove('active')
-	overlay.classList.remove('active')
-}
+// SIGN IN POPUP MECHANISM
 
-// function logInPop() {
-// document.querySelector(".popup").style.display="flex";
-// }
 
-// logInButton.addEventListener("click", logInPop());
+
 
 
 // fetch("https://api-football-v1.p.rapidapi.com/v3/leagues?id=39", {
