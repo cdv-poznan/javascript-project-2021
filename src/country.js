@@ -15,10 +15,10 @@ export class Country {
     this.el.classList.add('ui', 'card');
     this.el.innerHTML = `
     <div class="content">
-      <a class="header">${this.countryDetails.name}</a>
+      <h5 class="header">${this.countryDetails.name}</h5>
     </div>
     <div class="image">
-      <img id="${this.countryDetails.alpha2Code}-flag" class=" ui fluid image" src="${this.countryDetails.flag}"></img>
+      <img id="${this.countryDetails.alpha2Code}-flag" class="ui image country-flag" src="${this.countryDetails.flag}"></img>
     </div>
   `;
   }

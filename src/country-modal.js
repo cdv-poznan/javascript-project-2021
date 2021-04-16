@@ -28,13 +28,22 @@ export class CountryModal {
 
   render() {
     this.el.innerHTML = `
-  <div class="country-name">Name: ${this.countryDetails.name}</div>
-  <div class="country-name">Capital: ${this.countryDetails.capital}</div>
-  <div class="country-name">Area: ${this.countryDetails.area}</div>
-  <div class="country-name">Population: ${this.countryDetails.population}</div>
-  <div class="country-name">Main currency: ${this.renderCurrencies()}</div>
-  <div class="country-name">Main language: ${this.renderLanguages()}</div>
-  <button class="close-button">Click</button>
+    <div class="ui compact black message">
+      <h2 class="ui header">
+        <img class="ui circular image" src="${this.countryDetails.flag}">
+    ${this.countryDetails.name}
+      </h2>
+      <div class="country-details">
+        <div>Capital: ${this.countryDetails.capital}</div>
+        <div>Region: ${this.countryDetails.region}</div>
+        <div>Subregion: ${this.countryDetails.subregion}</div>
+        <div>Area: ${this.countryDetails.area}</div>
+        <div>Population: ${this.countryDetails.population}</div>
+        <div>Main currency: ${this.renderCurrencies()}</div>
+        <div>Main language: ${this.renderLanguages()}</div>
+        <button class="negative ui button close-button">x</button>
+      </div>
+  </div>
   `;
   }
 
@@ -52,7 +61,7 @@ export class CountryModal {
 
   renderCurrencies() {
     return this.countryDetails.currencies
-      .map(cur => `<div>${cur.name}, ${cur.nativeName}</div>`)
+      .map(cur => `<div>${cur.name}, ${cur.code}, ${cur.symbol}</div>`)
       .join('');
   }
 }

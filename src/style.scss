@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+.content h5 {
+  text-align: center;
+}
+
 .nav {
   margin: 40px;
   position: sticky;
@@ -48,6 +52,7 @@
 
 .modal-body {
   position: fixed;
+  z-index: 3;
   top: 0;
   right: 0;
   bottom: 0;
@@ -62,4 +67,16 @@
   left: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
+}
+
+.segment.country-details {
+  font-size: 20px;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  z-index: 2;
 }
