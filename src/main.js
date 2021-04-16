@@ -1,5 +1,4 @@
 
-
 const audio = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=%5bSom%5dBa+Dum+Tss!&filename=22/227744-d408e4ab-84bb-4336-b93f-37daf252ef4d.mp3');
 audio.volume = 0.5;
 let haha;
@@ -67,9 +66,9 @@ function getItem(){
         button.type = 'button'
         button.classList="btn-close"
         button.addEventListener('click', function(){
-            let test = document.querySelector('#tableRow'  + i)
-            test.innerHTML = '';
-            console.log(test)
+            // let test = document.querySelector('#tableRow'  + i)
+            // test.innerHTML = '';
+            // console.log(test)
             get_data.splice(i,1)
             console.log(get_data) 
             localStorage.setItem('data', JSON.stringify(get_data))
