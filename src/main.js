@@ -1,16 +1,17 @@
-// POPUP WINDOW OPENING AND CLOSING
+// POPUP WINDOWS
 
 // LOG IN POPUP MECHANISM
 const logInButton = document.querySelector(".log-in");
-const closeButton = document.querySelector(".close-button");
+const closeButtonLogin = document.querySelector(".close-button-login");
 const frontSection = document.querySelector(".overlay");
+const forgotPassword = document.querySelector(".password-forgot")
 
 logInButton.addEventListener("click", () => {
-	document.querySelector(".popup").style.display='flex';
+	document.querySelector(".popup").style.display='grid';
 	frontSection.classList.add("active");
 });
 
-closeButton.addEventListener("click", () => {
+closeButtonLogin.addEventListener("click", () => {
 	document.querySelector(".popup").style.display='none';
 	frontSection.classList.remove("active");
 });
@@ -21,9 +22,55 @@ frontSection.addEventListener("click", () => {
 	frontSection.classList.remove("active");
 });
 
+forgotPassword.addEventListener("click", () => {
+	alert("Service available soon.");
+})
+
+// REMEMMBER ME IN LOCALSTORAGE
+
+const remMe = document.getElementById("rememberMe");
+const emailInput = document.getElementById("email");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  remMe.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+} else {
+  remMe.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+function lsRememberMe() {
+  if (rmCheck.checked && emailInput.value !== "") {
+    localStorage.username = emailInput.value;
+    localStorage.checkbox = remMe.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }
+}
+
+
+
 // SIGN IN POPUP MECHANISM
 
+const signInButton = document.querySelector(".sign-in");
+const closeButtonSign = document.querySelector(".close-button-sign");
 
+signInButton.addEventListener("click", () => {
+	document.querySelector(".popup-sign").style.display='grid';
+	frontSection.classList.add("active");
+});
+
+closeButtonSign.addEventListener("click", () => {
+	document.querySelector(".popup-sign").style.display='none';
+	frontSection.classList.remove("active");
+});
+
+
+frontSection.addEventListener("click", () => {
+	document.querySelector(".popup-sign").style.display='none';
+	frontSection.classList.remove("active");
+});
 
 
 
