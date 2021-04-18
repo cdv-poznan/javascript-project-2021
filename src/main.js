@@ -28,27 +28,26 @@ forgotPassword.addEventListener("click", () => {
 
 // REMEMMBER ME IN LOCALSTORAGE
 
-const remMe = document.getElementById("rememberMe");
-const emailInput = document.getElementById("email");
+// const remMe = document.getElementById("rememberMe");
+// const emailInput = document.getElementById("email");
 
-if (localStorage.checkbox && localStorage.checkbox !== "") {
-  remMe.setAttribute("checked", "checked");
-  emailInput.value = localStorage.username;
-} else {
-  remMe.removeAttribute("checked");
-  emailInput.value = "";
-}
+// if (localStorage.checkbox && localStorage.checkbox !== "") {
+//   remMe.setAttribute("checked", "checked");
+//   emailInput.value = localStorage.username;
+// } else {
+//   remMe.removeAttribute("checked");
+//   emailInput.value = "";
+// }
 
-function lsRememberMe() {
-  if (rmCheck.checked && emailInput.value !== "") {
-    localStorage.username = emailInput.value;
-    localStorage.checkbox = remMe.value;
-  } else {
-    localStorage.username = "";
-    localStorage.checkbox = "";
-  }
-}
-
+// function lsRememberMe() {
+//   if (rmCheck.checked && emailInput.value !== "") {
+//     localStorage.username = emailInput.value;
+//     localStorage.checkbox = remMe.value;
+//   } else {
+//     localStorage.username = "";
+//     localStorage.checkbox = "";
+//   }
+// }
 
 
 // SIGN IN POPUP MECHANISM
@@ -72,6 +71,36 @@ frontSection.addEventListener("click", () => {
 	frontSection.classList.remove("active");
 });
 
+// NEW ACCOUNT MECHANISM
+const signButton = document.querySelector("#sub-button");
+const loginData = document.querySelector("#sign-email");
+const passwordData = document.querySelector("#sign-password");
+const passwordAgaData = document.querySelector("#sign-aga-password");
+
+// FORM VALIDATION
+
+
+// MAKING ACCOUNTS IN LOCAL STORAGE
+
+
+
+signButton.addEventListener('click', () => {
+	if (loginData.value == "") {
+			alert("Field E-mail is empty.");
+	} else if (passwordData.value = "") {
+			alert("Field Password is empty.")
+	} else if (passwordData.lenght > 15 ) {
+			alert("Password is too long (max 1i5 characters.")
+	} else if (passwordData.value !== passwordAgaData.value) {
+			alert("Passwords are not the same.")
+	}
+		else {
+			localStorage.setItem("login", loginData.value);
+			localStorage.setItem("password", passwordData.value);
+			document.querySelector(".popup-sign").style.display='none';
+			frontSection.classList.remove("active");
+	}
+})
 
 
 // fetch("https://api-football-v1.p.rapidapi.com/v3/leagues?id=39", {

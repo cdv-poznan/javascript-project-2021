@@ -102,7 +102,7 @@ header {
 
 .sign-in:hover {
   border-color: #8d0808;
-  background-color: #8d0808;
+  background: #8d0808;
   color: #f1f0f0;
 }
 
@@ -118,7 +118,7 @@ header {
   border: 3px solid #080808;
   border-radius: 20px;
   z-index: 10;
-  background-color: #faf4f4;
+  background: #faf4f4;
   width: auto;
   max-width: 80%;
   height: auto;
@@ -129,6 +129,14 @@ header {
 .popup-content input {
   height: 20px;
   width: 200px;
+  color: #8d0808;
+  border: 0;
+  border-bottom: 1px solid #8d0808;
+  background: transparent;
+  outline: 0;
+}
+
+::placeholder {
   color: #8d0808;
 }
 
@@ -251,8 +259,16 @@ header {
 }
 
 .popup-sign-content input {
-  height: 20px;
+  height: 30px;
   width: 200px;
+  color: #8d0808;
+  border: 0;
+  border-bottom: 1px solid #8d0808;
+  background: transparent;
+  outline: 0;
+}
+
+::placeholder {
   color: #8d0808;
 }
 
