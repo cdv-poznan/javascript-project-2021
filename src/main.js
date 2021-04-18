@@ -202,8 +202,8 @@ const OpenAcceptPanel = e => {
 
 const checkClick = e => {
   if (e.target.closest('button').classList.contains('complete')) {
-    e.target.closest('li').classList.toggle('completed');
-    e.target.closest('button').classList.toggle('completed');
+    // e.target.closest('li').classList.add('completed');
+    // e.target.closest('button').classList.add('completed');
     OpenAcceptPanel(e);
     console.log('okejkowo');
   } else if (e.target.closest('button').className === 'edit') {
@@ -236,11 +236,13 @@ const closePopup = () => {
 
 // zamykanie acceptPanel
 const closeAcceptPanel = () => {
+  $ulList.classList.remove('completed');
   $acceptPanel.style.display = 'none';
 };
 
 //  Akceptacja oferty
 const acceptBtn = e => {
+  $ulList.classList.add('completed');
   $acceptPanel.style.display = 'none';
 };
 
