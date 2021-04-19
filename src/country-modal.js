@@ -28,58 +28,50 @@ export class CountryModal {
 
   render() {
     this.el.innerHTML = `
-    <div class="ui small message">   
+    <div class="ui large message">   
       <div class="modal-header">
         <h2>${this.countryDetails.name}</h2>
-        <img class="ui circular small image" src="${this.countryDetails.flag}">
+        <img class="ui circular large image" src="${this.countryDetails.flag}">
       </div>
       <div class="country-details">
-      <table class="ui very basic collapsing celled table">
+      <table class="ui very basic table">
       <tbody>
         <tr>
           <td>
             <h4 class="ui image header">
-               <i class="icon city red"></i>
+               <i class="icon city"></i>
               <div class="content">Capital</div>
           </h4></td>
           <td>${this.countryDetails.capital}</td>
         </tr>
-        <tr>
-         <td>
-           <h4 class="ui image header">
-              <i class="icon globe europe red"></i>
-             <div class="content">Region</div>
-         </h4></td>
-         <td>${this.countryDetails.region}</td>
-       </tr>
        <tr>
          <td>
            <h4 class="ui image header">
-              <i class="icon map red"></i>
-             <div class="content">Subregion</div>
+              <i class="icon map"></i>
+             <div class="content">Region</div>
          </h4></td>
          <td>${this.countryDetails.subregion}</td>
        </tr>
        <tr>
          <td>
            <h4 class="ui image header">
-              <i class="icon compress arrows alternate red"></i>
+              <i class="icon compress arrows alternate"></i>
              <div class="content">Area</div>
          </h4></td>
-         <td>${this.countryDetails.area}</td>
+         <td>${this.countryDetails.area.toLocaleString()}</td>
        </tr>
        <tr>
          <td>
            <h4 class="ui image header">
-              <i class="icon users red"></i>
+              <i class="icon users"></i>
              <div class="content">Population</div>
          </h4></td>
-         <td>${this.countryDetails.population}</td>
+         <td>${this.countryDetails.population.toLocaleString()}</td>
        </tr>
        <tr>
         <td>
           <h4 class="ui image header">
-            <i class="icon flag red"></i>
+            <i class="icon flag"></i>
             <div class="content">Language</div>
         </h4></td>
         <td>${this.renderLanguages()}</td>
@@ -87,17 +79,17 @@ export class CountryModal {
       <tr>
         <td>
           <h4 class="ui image header">
-            <i class="icon money red"></i>
+            <i class="icon money"></i>
             <div class="content">Currency</div>
         </h4></td>
         <td>${this.renderCurrencies()}</td>
       </tr>
+      </tbody>
   </table>
       <button class="negative circular ui icon button close-button">
       <i class="icon times"></i>
       </button>
       </div>
-  </div>
   </div>
   `;
   }
@@ -107,16 +99,15 @@ export class CountryModal {
       this.hide();
     });
   }
-
   renderLanguages() {
     return this.countryDetails.languages
-      .map(lang => `<div>${lang.name}</div>`)
+      .map(lang => `<span>${lang.name} </span`)
       .join('');
   }
 
   renderCurrencies() {
     return this.countryDetails.currencies
-      .map(cur => `<div>${cur.name}/ ${cur.code}</div>`)
+      .map(cur => `<p>${cur.name}/${cur.code} </p>`)
       .join('');
   }
 }
