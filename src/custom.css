@@ -1,10 +1,12 @@
+
  @media(max-width:768px) {
-     body{
-         width: 100vw;
-         height: 100%;
-         background-image: url("assets/cool-background2.jpg");
-         background-repeat: no-repeat;
-     }
+    body{
+        width: 100vw;
+/*          height: 100%; */
+        background-image: url("assets/cool-background2.jpg");
+        background-repeat: cover;
+/*       background-size: auto; */
+    }
      .klasa{
     font-size: 40px !important;
     display: block;
@@ -12,7 +14,7 @@
     .form-control{
         padding-bottom: 15px !important ;
         font-size: 20px;
-        background: transparent;
+        background-color: rgba(255, 255, 255, 0.651);
         border:1px solid black;
     }
     .btn-outline-success{
