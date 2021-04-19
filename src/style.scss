@@ -11,6 +11,7 @@ body {
 
 nav {
   height: 10vh;
+  display: flex;
 }
 
 .nav-links {
@@ -26,7 +27,18 @@ nav {
 
 .logo {
   color: #fff;
+  width: 300px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 2em;
+  margin-left: 50px;
+}
+
+.logo span {
+  font-size: 30px;
 }
 
 .nav-links li a {
@@ -54,10 +66,6 @@ footer {
   align-items: center;
   flex-wrap: wrap-reverse;
   font-family: "Work Sans", sans-serif;
-}
-
-.logo {
-  width: 180px;
 }
 
 .social-media {
@@ -148,6 +156,12 @@ footer {
 
   nav {
     position: relative;
+  }
+
+  .logo {
+    width: 200px;
+    font-size: 1.7em;
+    margin-left: 10px;
   }
 
   .hamburger {
