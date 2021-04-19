@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
 }
 
 .layout {
@@ -12,6 +12,10 @@
 
 .content h5 {
   text-align: center;
+}
+
+.center .header {
+  padding-top: 10px;
 }
 
 .nav {
@@ -63,10 +67,27 @@
 .modal {
   position: absolute;
   z-index: 3;
-  top: 40%;
+  top: 30%;
   left: 50%;
-  bottom: 50%;
+  bottom: 40%;
   transform: translate(-50%, -50%);
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.ui .message .modal {
+  height: max-content;
+  width: fit-content;
+}
+
+.close-button {
+  float: right;
 }
 
 .segment.country-details {
@@ -74,9 +95,13 @@
 }
 
 .footer {
-  position: sticky;
   bottom: 0;
-  background-color: rgb(255, 255, 255);
+  position: fixed;
   width: 100%;
   z-index: 2;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -1,0 +1,63 @@
+<table class="ui very basic collapsing celled table">
+   <tbody>
+     <tr>
+       <td>
+         <h4 class="ui image header">
+            <i class="icon city"></i>
+           <div class="content">Capital</div>
+       </h4></td>
+       <td>${this.countryDetails.capital}</td>
+     </tr>
+     <tr>
+      <td>
+        <h4 class="ui image header">
+           <i class="icon region"></i>
+          <div class="content">Region</div>
+      </h4></td>
+      <td>${this.countryDetails.region}</td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+           <i class="icon region"></i>
+          <div class="content">Subregion</div>
+      </h4></td>
+      <td>$${this.countryDetails.subregion}</td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+           <i class="icon area"></i>
+          <div class="content">Area</div>
+      </h4></td>
+      <td>${this.countryDetails.area}</td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+           <i class="icon people"></i>
+          <div class="content">Population</div>
+      </h4></td>
+      <td>${this.countryDetails.population}</td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+           <i class="icon flag"></i>
+          <div class="content">Language</div>
+      </h4></td>
+      <td>${this.renderLanguages()</td>
+    </tr>
+            
+              <div class="content" >Capital: ${this.countryDetails.capital}</div>
+              <div>Region: ${this.countryDetails.region}</div>
+              <div>Subregion: ${this.countryDetails.subregion}</div>
+              <div>Area: ${this.countryDetails.area}</div>
+              <div>Population: ${this.countryDetails.population}</div>
+              <div>Main currency: ${this.renderCurrencies()}</div>
+              <div>Main language: ${this.renderLanguages()}</div>
+              <div><button class="negative circular ui icon button close-button">
+              <i class="icon times"></i>
+            </button></div>
+            </div>
+        </div>
