@@ -28,10 +28,10 @@ export class CountryModal {
 
   render() {
     this.el.innerHTML = `
-    <div class="ui large message">   
+    <div class="ui message">   
       <div class="modal-header">
         <h2>${this.countryDetails.name}</h2>
-        <img class="ui circular large image" src="${this.countryDetails.flag}">
+        <img class="ui circular small image" src="${this.countryDetails.flag}">
       </div>
       <div class="country-details">
       <table class="ui very basic table">

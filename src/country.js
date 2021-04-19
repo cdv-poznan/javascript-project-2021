@@ -15,7 +15,7 @@ export class Country {
     this.el.classList.add('ui', 'card');
     this.el.innerHTML = `
     <div class="content">
-      <h5 class="header">${this.countryDetails.name}</h5>
+      <h4 class="header">${this.countryDetails.name}</h4>
     </div>
     <div class="image">
       <img id="${this.countryDetails.alpha2Code}-flag" class="ui image country-flag" src="${this.countryDetails.flag}"></img>
