@@ -82,17 +82,18 @@ const passwordAgaData = document.querySelector("#sign-aga-password");
 
 // MAKING ACCOUNTS IN LOCAL STORAGE
 
-
-
+const emailVer = document.getElementById("email-wrong");
+const passVer = document.getElementById("password-wrong");
+const passVerSec = document.getElementById("password-wrong-twice");
 signButton.addEventListener('click', () => {
 	if (loginData.value == "") {
-			alert("Field E-mail is empty.");
-	} else if (passwordData.value = "") {
-			alert("Field Password is empty.")
+			emailVer.innerHTML = "***Field E-mail is empty.";
+	} else if (passwordData.value == "") {
+		passVer.innerHTML = "***Field Password is empty";
 	} else if (passwordData.lenght > 15 ) {
-			alert("Password is too long (max 1i5 characters.")
+		passVer.innerHTML = "***Password is too long (Max 15 characters.";
 	} else if (passwordData.value !== passwordAgaData.value) {
-			alert("Passwords are not the same.")
+		passVerSec.innerHTML = "***Field Password is empty or not matching.";
 	}
 		else {
 			localStorage.setItem("login", loginData.value);

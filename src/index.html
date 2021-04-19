@@ -35,14 +35,14 @@
       <button data-close-button class="close-button-sign">&times;</button>
      <div class="popup-sign-content">
          <p>E-mail: 
-         <input id="sign-email" type="email" name="email" placeholder="Example@example.com" pattern="\d*" title="This E-mail will be used to verification."/>
-         </p>
+         <input id="sign-email" type="email" name="email" placeholder="Example@example.com" pattern="\d*" title="This E-mail will be used to verification."/></p>
+         <div id ="email-wrong" class = "wrong"></div>
          <p>Password:
            <input id="sign-password" type="password" name="password" size="15" placeholder="Password" pattern="\d*" title="Max length: 15 characters."/>
-         </p>
+         </p><div id ="password-wrong" class = "wrong"></div>
          <p>Type password again:
           <input id = "sign-aga-password" type="password" name="password" size="15" placeholder="Password again" pattern="\d*" title="Password must be the same as above."/>
-         </p>
+         </p><div id ="password-wrong-twice" class = "wrong"></div>
          <div class="upload-content">
          <p>Upload ID Scan
            <div class="image-input">
