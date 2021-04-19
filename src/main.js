@@ -17,12 +17,12 @@ function jokeFunction(){
         audio.play();
         joke.innerText = haha.punchline;
         punchlineFunction()
-    }, 3000);
+    }, 5000);
 } 
 function punchlineFunction(){
     setTimeout(function(){
         joke.innerHTML = '';
-    },3000)
+    },5000)
 }
 // ---------------------------------------------------------------------------------------------------------------
 window.addEventListener("load", getItem);
