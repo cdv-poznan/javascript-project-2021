@@ -1,11 +1,12 @@
+
  @media(max-width:768px) {
-     body{
-         width: 100vw;
+    body{
+        width: 100vw;
 /*          height: 100%; */
-         background-image: url("cool-background2.jpg");
-         background-repeat: cover;
+        background-image: url("assets/cool-background2.jpg");
+        background-repeat: cover;
 /*       background-size: auto; */
-     }
+    }
      .klasa{
     font-size: 40px !important;
     display: block;
