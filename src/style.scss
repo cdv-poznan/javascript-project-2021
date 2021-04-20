@@ -139,6 +139,46 @@ footer {
   justify-content: center;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item-left {
+  padding: 10px;
+  flex: 50%;
+
+  text-align: left;
+  margin-left: 150px;
+}
+
+.motto {
+  color: #fff;
+  font-size: 60px;
+}
+
+.description {
+  color: #fff;
+  font-size: 20px;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+.main-photo {
+  width: 700px;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
   .line {
     width: 30px;
@@ -201,6 +241,15 @@ footer {
     margin: 0;
     width: 100%;
     margin-top: 20px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .main-photo {
+    width: 400px;
+    height: 400px;
   }
 }
 
