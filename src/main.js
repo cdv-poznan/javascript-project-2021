@@ -85,13 +85,29 @@ const passwordAgaData = document.querySelector("#sign-aga-password");
 const emailVer = document.getElementById("email-wrong");
 const passVer = document.getElementById("password-wrong");
 const passVerSec = document.getElementById("password-wrong-twice");
+const lowerCaseLetters = /[a-z]/g;
+const upperCaseLetters = /[A-Z]/g;
+const numbersVal = /[0-9]/g;
+const mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
 signButton.addEventListener('click', () => {
 	if (loginData.value == "") {
 			emailVer.innerHTML = "***Field E-mail is empty.";
+	} else if (!loginData.value.match(mailFormat)) {
+		emailVer.innerHTML = "***Entered a invalid e-mail address.";
 	} else if (passwordData.value == "") {
 		passVer.innerHTML = "***Field Password is empty";
+	} else if (!passwordData.value.match(lowerCaseLetters)) {
+		passVer.innerHTML = "***Password should must contain minimum one lower case letter.";
+	} else if (!passwordData.value.match(upperCaseLetters)) {
+		passVer.innerHTML = "***Password should must contain minimum one upper case letter.";
+	} else if (!passwordData.value.match(numbersVal)) {
+		passVer.innerHTML = "***Password should must contain minimum one number."
+	} else if (passwordData.lenght < 8) {
+		passVer.innerHTML = "***Password length must be atleast 8 characters.";
 	} else if (passwordData.lenght > 15 ) {
-		passVer.innerHTML = "***Password is too long (Max 15 characters.";
+		passVer.innerHTML = "***Password length must not exceed 15 characters";
 	} else if (passwordData.value !== passwordAgaData.value) {
 		passVerSec.innerHTML = "***Field Password is empty or not matching.";
 	}
