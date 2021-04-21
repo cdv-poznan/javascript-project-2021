@@ -172,7 +172,7 @@ signButton.addEventListener('click', () => {
 // function () {
 // 	const newDiv = document.createElement("div");
 // 	const textInDiv = document.createTextNode(``);
-// 	newDiv.classList.add("popup-live");
+// 	newDiv.classList.add("match");
 // 	newDiv.appendChild(textInDiv);
 // 	const liveNow = document.querySelector(".live-home");
 

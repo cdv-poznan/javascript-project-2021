@@ -355,6 +355,18 @@ header {
   background-color: #8d0808;
 }
 
-// .popup-live {
+.match {
+  background-color: #f1f0f0;
+  opacity: 0.8;
+  width: 25%;
+  height: 25%;
+  border: solid #8d0808;
+  border-radius: 0 30px;
+  color: #8d0808;
+  padding: 10px;
+  margin: 15px;
+}
 
-// }
+.match p {
+  color: #8d0808;
+}
