@@ -25,6 +25,7 @@ export const addNewFavourite = () => {
   const ownedIngs = $('.recipe__ings--owned span').text();
   const missedIngs = $('.recipe__ings--missed span').text();
   if (!id) {
+    showNotification(`Find recipe first!`);
     return;
   }
   const favourites = getDataFromLocalStorage('favourites');
