@@ -10,7 +10,8 @@ export const getDataFromLocalStorage = type => {
 export const fetchRecipesByIngredients = async () => {
   const data = getDataFromLocalStorage('ingredients');
   if (data) {
-    const recipesIds = await fetchRecipesIds(data);
+    const isPantryIgnored = $('#checkbox').is(':checked') ? true : false;
+    const recipesIds = await fetchRecipesIds(data, isPantryIgnored);
     RECIPES.ids = recipesIds;
   }
 };

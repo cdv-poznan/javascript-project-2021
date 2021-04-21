@@ -1,7 +1,7 @@
 export const fetchRecipesIds = async (
   ingredients,
+  isPantryIgnored,
   ranking = 1,
-  isPantryIgnored = true,
   maxNmberOfRecipes = 10,
 ) => {
   // Ranking - Whether to maximize used ingredients (1) or minimize missing ingredients (2) first.
