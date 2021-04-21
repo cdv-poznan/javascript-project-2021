@@ -338,3 +338,23 @@ header {
 ::placeholder {
   opacity: 0.35;
 }
+
+// SECOND SECTION
+
+.second-section {
+  background-image: url("assets/field.jpeg");
+  background-size: cover;
+  background-position: top center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.live-now {
+  text-align: center;
+  font-size: 50px;
+  background-color: #8d0808;
+}
+
+// .popup-live {
+
+// }

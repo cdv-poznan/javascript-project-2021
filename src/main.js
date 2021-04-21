@@ -166,3 +166,14 @@ signButton.addEventListener('click', () => {
 // .catch((err) => {
 // 	console.log("Unsuccesfull", err)
 // })
+
+//MECHANISM OF ADDING DIV'S IN LIVE NOW SECTION
+
+// function () {
+// 	const newDiv = document.createElement("div");
+// 	const textInDiv = document.createTextNode(``);
+// 	newDiv.classList.add("popup-live");
+// 	newDiv.appendChild(textInDiv);
+// 	const liveNow = document.querySelector(".live-home");
+
+// }
