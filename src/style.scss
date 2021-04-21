@@ -11,8 +11,12 @@ html {
 body {
   // background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,132,227,1) 37%, rgba(116,185,255,1) 100%);
   background: linear-gradient(0deg, rgba(9, 132, 227, 1) 0%, rgba(9, 132, 227, 1) 18%, rgba(255, 255, 255, 1) 80%);
+  // background-image: url("assets/city.jpg");
+  background-position: center;
+  background-size: 100% auto;
   min-height: 100vh;
   font-family: roboto;
+  
 }
 
 /* Container */
@@ -174,39 +178,51 @@ section.board {
 .card1 {
   background-image: url(assets/icons/1.png)
 }
+
 .card2 {
   background-image: url(assets/icons/2.png)
 }
+
 .card3 {
   background-image: url(assets/icons/3.png)
 }
+
 .card4 {
   background-image: url(assets/icons/4.png)
 }
+
 .card5 {
   background-image: url(assets/icons/5.png)
 }
+
 .card6 {
   background-image: url(assets/icons/6.png)
 }
+
 .card7 {
   background-image: url(assets/icons/7.png)
 }
+
 .card8 {
   background-image: url(assets/icons/8.png)
 }
+
 .card9 {
   background-image: url(assets/icons/9.png)
 }
+
 .card10 {
   background-image: url(assets/icons/10.png)
 }
+
 .card11 {
   background-image: url(assets/icons/11.png)
 }
+
 .card12 {
   background-image: url(assets/icons/12.png)
 }
+
 .cards:hover {
   -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
