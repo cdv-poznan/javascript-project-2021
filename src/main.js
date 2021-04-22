@@ -20,11 +20,13 @@ function game() {
     //funkcje
     function different() {
         // document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1")
-        document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24")
+        document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24");
             
-        document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24")
+        document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24");
 
-    }
+        cardCompare = [];
+        addClass = [];
+    };
 
     // porównanie kart
     function sameCards(var1) {
@@ -36,7 +38,6 @@ function game() {
 
                 document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.add("match");
                 document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.add("match");
-
                 cardCompare = [];
                 addClass = [];
             } else {
@@ -47,13 +48,13 @@ function game() {
 
                 //     document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
                 // });
-
-                different();
+                setTimeout(different, 1000);
+                // different();
                 
                 // document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
 
-                cardCompare = [];
-                addClass = [];
+                // cardCompare = [];
+                // addClass = [];
             }
         }
     }
