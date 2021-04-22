@@ -119,53 +119,97 @@ signButton.addEventListener('click', () => {
 	}
 })
 
+// FETCH API MECHANISM
+const matchTime = document.querySelector("#time");
+const firstTeam = document.querySelector("#home-name");
+const firstTeamLogo = document.querySelector("#home-logo");
+const secondTeam = document.querySelector("#away-name");
+const secondTeamLogo = document.querySelector("#away-logo");
+const actualScore = document.querySelector("#score");
 
-// fetch("https://api-football-v1.p.rapidapi.com/v3/leagues?id=39", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": ,
-// 		"x-rapidapi-host": 
-// 	}
-// }).then((res) => {
-// 	console.log("Succes", res);
-// 	return res.json()
-// })
-// .then(data => {
-// 	console.log(data.response)
-// 		const dres = data.response.map(user => {
-// 			return `<p>Name: ${user.country.name}</p>`
-// 		}).join("")
-// 		console.log(dres)
-// 	document.querySelector('.live-home').insertAdjacentHTML('beforebegin', dres)
-// 	})
+function addMatch (data) {
+	const matchtile = document.createElement('div');
+	matchtile.classList.add("match-tile");
+
+	const homeTeam = document.createElement('div');
+	homeTeam.classList.add("team");
+
+	const homeTileTeamName = document.createElement('p');
+	homeTileTeamName.innerHTML = data['team']['home']['name'];
+
+	const homeTileTeamLogo = document.createElement('img');
+	homeTileTeamLogo.src=data['team']['home']['logo'];
 	
-// .catch((err) => {
-// 	console.log("Unsuccesfull", err)
-// })
+	homeTeam.appendChild(homeTileTeamLogo);
+	homeTeam.appendChild(homeTileTeamName);
+
+	const awayTeam = document.createElement('div');
+	awayTeam.append.classList.add('team');
+
+	const awayTileTeamName=document.createElement('p');
+	awayTileTeamName.innerHTML = data['teams']['away']['name'];
+
+	const awayTileTeamLogo = document.createElement('img');
+	awayTileTeamLogo.src=data['teams']['away']['logo'];
+
+	awayTeam.appendChild(awayTileTeamLogo);
+	awayTeam.appendChild(awayTileTeamName);
+
+	const score = document.createElement('p');
+	score.innerHTML = data['goals']['home'] + " - " + data['goals']['away'];
+
+	matchtile.appendChild(homeTeam);
+	matchtile.appendChild(score);
+	matchtile.appendChild(awayTeam);
+
+}
 
 
+fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "",
+		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+	}
+}).then((res) => {
+	console.log("Succes", res);
+	return res.json()
+})
+.then(data => {
+	console.log(data.response);
+	const matches = data['response'];
+	const time = matches[0]['fixture'];
+	const goals = matches[0]['goals'];
+	const teams = matches[0]['teams'];
+	console.log(matches.lenght);
+	console.log(matches);
+	console.log(goals);
+	console.log(teams);
 
-// fetch("https://api-football-v1.p.rapidapi.com/v2/country/england/2020", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": 
-// 		"x-rapidapi-host":, 
-// 	}
-// }).then((res) => {
-// 	console.log("Succes", res);
-// 	return res.json()
-// })
-// .then(data => {
-// 	console.log(data)
-// 	// 	const dres = data.response.map(user => {
-// 	// 		return `<p>Name: ${user.country.name}</p>`
-// 	// 	}).join("")
-// 	// 	console.log(dres)
-// 	// document.querySelector('.live-home').insertAdjacentHTML('beforebegin', dres)
-// 	})
-// .catch((err) => {
-// 	console.log("Unsuccesfull", err)
-// })
+	matchTime.innerHTML = time['status']['elapsed'] + "'";
+	firstTeam.innerHTML = teams['home']['name'];
+	firstTeamLogo.src = teams['home']['logo'];
+	secondTeam.innerHTML = teams['away']['name'];
+	secondTeamLogo.src = teams['away']['logo'];
+
+	actualScore.innerHTML = goals['home'] + " - " + goals['away'];
+
+	// for(let i = 1; i < matches.lenght; i++) {
+	// 	addMatch(matches[i]);
+	// }
+	})
+.catch((err) => {
+	console.log("Unsuccesfull", err)
+})
+
+
+// 
+
+// const dres = data.response.map(user => {
+// 	return `<p>Name: ${user.country.name}</p>`
+// }).join("")
+// console.log(dres)
+
 
 //MECHANISM OF ADDING DIV'S IN LIVE NOW SECTION
 
