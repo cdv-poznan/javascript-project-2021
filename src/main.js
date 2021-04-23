@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   function setViewportHeight() {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty(--vh, `${vh}px`);
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
   setViewportHeight();
@@ -14,14 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('img');
   const keyboardBtns = ['z', 'x', 'c', 'v', 'b', 'n', 'm', 'k', 'l'];
 
-  function stopSound(key) {
-    const soundAudio = document.getElementById(key.dataset.note);
-    soundAudio.loop = false;
-    soundAudio.pause();
-    soundAudio.currentTime = 0;
-    key.classList.remove('active');
-  }
-
   function playSound(key) {
     const soundAudio = document.getElementById(key.dataset.note);
     soundAudio.currentTime = 0;
@@ -33,14 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function stopSound(key) {
+    const soundAudio = document.getElementById(key.dataset.note);
+    soundAudio.loop = false;
+    soundAudio.pause();
+    soundAudio.currentTime = 0;
+    key.classList.remove('active');
+  }
+
   keys.forEach(key => {
-    key.addEventListener('click', () => {
+    key.addEventListener('click', e => {
+      key = e.target;
       playSound(key);
     });
   });
 
-  keys.addEventListener('dblclick', e => {
-    const key = e.target;
+  document.addEventListener('dblclick', e => {
+    key = e.target;
     stopSound(key);
   });
 
@@ -74,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keyup', e => {
-    //    if (e.repeat) return;
     e.preventDefault();
     const key = e.key;
     const keyboardBtnsIndex = keyboardBtns.indexOf(key);
