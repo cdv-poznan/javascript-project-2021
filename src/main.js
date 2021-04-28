@@ -16,7 +16,8 @@ function game() {
     }
 
     //zmienne
-    cardCompare = [];
+    var cardCompare = [];
+    var pairsCounter = 0;
     //funkcje
     function different() {
         // document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1")
@@ -28,6 +29,10 @@ function game() {
         addClass = [];
     };
 
+    function pairsCount() {
+        document.querySelector(".countMatches").innerHTML="Liczba trafień: " + pairsCounter;
+    }
+
     // porównanie kart
     function sameCards(var1) {
         addClass.push(var1);
@@ -35,11 +40,13 @@ function game() {
             console.log("2!");
             if (cardCompare[0] == cardCompare[1]) {
                 console.log("Te same!");
-
+                pairsCounter++;
+                console.log("pairsCounter= " + pairsCounter);
                 document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.add("match");
                 document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.add("match");
                 cardCompare = [];
                 addClass = [];
+                pairsCount();
             } else {
                 console.log("Różne!");
                 // document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").addEventListener("click", function () {
@@ -48,7 +55,7 @@ function game() {
 
                 //     document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
                 // });
-                setTimeout(different, 1000);
+                setTimeout(different, 800);
                 // different();
                 
                 // document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");

@@ -159,7 +159,7 @@ section.board {
   align-items: center;
   background-color: #fff;
   flex-wrap: wrap;
-  padding: 40px 15px;
+  padding: 5px 15px;
 }
 
 .cards {
@@ -229,15 +229,35 @@ section.board {
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
 }
 
-
 .board .match {
   visibility: hidden;
 }
 
+.countMatches {
+  // background-color:#4169e1;
+  padding: 10px;
+  // font-weight: bold;
+  color: white;
+  font-size: 18px;
+  border-bottom: 2px solid rgba(29, 31, 153, 0.3);
+  background-color: rgb(9, 27, 82);
+}
+
+footer {
+  background-color: rgb(9, 27, 82);
+  display: block;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+
+}
+
+
 @media screen and (max-width: 500px) {
 
   section.board {
-    padding: 40px 35px;
+    padding: 20px 15px;
   }
 
   .cards {
