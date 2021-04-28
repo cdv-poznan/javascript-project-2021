@@ -2,6 +2,7 @@ html {
   color: #f1f0f0;
   font-family: "Baloo 2", cursive;
   background-color: #020202;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -89,6 +90,26 @@ header {
   color: #f1f0f0;
 }
 
+.log-out {
+  color: #8d0808;
+  font-size: 1.5vh;
+  border-color: #faf4f4;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  background-color: #faf4f4;
+  opacity: 0.75;
+  transition: 1s;
+}
+
+.log-out:hover {
+  border-color: #8d0808;
+  background-color: #8d0808;
+  color: #f1f0f0;
+}
+
 .sign-in {
   color: #8d0808;
   font-size: 1.5vh;
@@ -104,6 +125,26 @@ header {
 }
 
 .sign-in:hover {
+  border-color: #8d0808;
+  background: #8d0808;
+  color: #f1f0f0;
+}
+
+.favourites {
+  color: #8d0808;
+  font-size: 1.5vh;
+  border-color: #faf4f4;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  background-color: #faf4f4;
+  opacity: 0.75;
+  transition: 1s;
+}
+
+.favourites:hover {
   border-color: #8d0808;
   background: #8d0808;
   color: #f1f0f0;
@@ -175,6 +216,10 @@ header {
   color: #8d0808;
   margin: 0;
   padding: 7px;
+}
+
+.login-error-message {
+  font-size: 10px !important;
 }
 
 .popup a {
@@ -354,13 +399,22 @@ header {
   text-align: center;
   font-size: 50px;
   background-color: #8d0808;
+  margin: 0;
+}
+
+.live-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .match {
   background-color: #f1f0f0;
   opacity: 0.8;
-  width: 25%;
-  height: 25%;
+  min-width: 25%;
+  min-height: 25%;
+  max-width: 35%;
+  max-height: 35%;
   border: solid #8d0808;
   border-radius: 0 30px;
   color: #8d0808;
@@ -368,6 +422,9 @@ header {
   margin: 15px;
   text-align: center;
   color: #8d0808;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
 .match h1 {
@@ -376,6 +433,9 @@ header {
 
 .match p {
   color: #8d0808;
+  margin: 0;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .teams-names {
@@ -389,7 +449,9 @@ header {
 }
 
 .team {
-  width: 100px;
+  min-width: 100px;
+  max-width: 130px;
+  padding: 15px;
 }
 
 .team img {
@@ -403,4 +465,15 @@ header {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
+  overflow-wrap: break-word;
+}
+
+//THIRD SECTION
+
+.third-section {
+  background-image: url("assets/ball.jpeg");
+  background-size: cover;
+  background-position: top center;
+  min-height: 100vh;
+  width: 100%;
 }

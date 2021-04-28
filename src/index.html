@@ -3,36 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <section class="front-section">
     <header>
     <img class="frontlogo" src="/assets/logobeztlabig.png" title="LogoBetterBET" alt="LOGO"></img>
     <div class="front-options">
-    <a class="log-in" type="button" href="#">Log In</a>
-    <a class="sign-in" type="button" href="#">Sign In</a></div>
-    <a href="#second-section" type="button" class="slide-second"> <div class = "down-front-section"><p>Slide down</p>
+    <a class="log-in" type="button" href="#" id = "login-start-button">Log In</a>
+    <a class="log-out" type="button" href="#" id = "logout-start-button">Log Out</a>
+    <a class="sign-in" type="button" href="#" id = "signin-start-button">Sign In</a>
+    <a class="favourites" type="button" href="#" id = "favourites-button">Favourites</a></div>
+    <a href="#second-section" type="button" class="slide-second"> <div class = "down-front-section"><p>Live Now</p>
     <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></div></a></header>
 </section>
     </header>
-    
     <div class="popup">
        <button data-close-button class="close-button-login">&times;</button>
       <div class="popup-content">
-         
+          
           <p>E-mail: 
-          <input type="email" id="email" placeholder="Example@example.com"/>
+          <input type="email" id="email-field" placeholder="Example@example.com"/>
           </p>
+          <p id = "login-error-message" class="login-error-message"></p>
           <p>Password:
-            <input type="password" name="password" size="15" placeholder="Password"/>
+            <input type="password" name="password" size="15" placeholder="Password" id="password-field"/>
           </p>
           
-          <a class = "password-forgot" href="#" type="link">Forgot Password?</a><br />
+          <a class = "password-forgot" id = "password-forgot-button" href="#" type="link">Forgot Password?</a><br />
 
           <p class="remember-checkbox"><input type="checkbox" value="lsRememberMe" id="rememberMe"/><label for="rememberMe">Remember me</label></p>
           
-          <p><button type="submit" class="submit-button">Log In</button></p>
+          <p><button type="submit" class="submit-button" id = "login-button">Log In</button></p>
       </div>
     </div>
     <div class="popup-sign">
@@ -60,13 +62,10 @@
    </div>
     <div class = "overlay"></div>
     <section id="second-section" class="second-section">
+      <h1 class="live-now">LIVE NOW</h1>
 <div class="live-home">
-  <h1 class="live-now">LIVE NOW</h1>
   <div class = "match">
     <h1>Scoreboard</h1>
-    <div class="teams-names">
-      
-    </div>
     <div class="teams-logo">
       <div class="team">
         <img alt="home-team-logo" id="home-logo" >
@@ -82,6 +81,7 @@
   </div>
 </div>
 </section>
+<section id="third-section" class="third-section"></section>
   </body>
 </html>
   
