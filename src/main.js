@@ -43,7 +43,7 @@ const getMealList = function () {
   if (document.querySelector('#notFound')) {
     document.querySelector('#notFound').id = 'meal';
   }
-  let searchInputText = document.querySelector('#search-input').value.trim();
+  const searchInputText = document.querySelector('#search-input').value.trim();
   fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`,
   )
@@ -79,7 +79,7 @@ const getMealRecipe = function (e) {
   e.preventDefault();
   if (e.target.classList.contains('recipe-btn')) {
     overlay.classList.remove('hidden');
-    let mealItem = e.target.parentElement.parentElement;
+    const mealItem = e.target.parentElement.parentElement;
     fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`,
     )
