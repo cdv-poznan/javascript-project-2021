@@ -101,3 +101,5 @@ document.addEventListener('keydown', function (e) {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') getMealList();
 });
+
+import css from './style.css';
