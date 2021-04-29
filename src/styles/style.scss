@@ -1,0 +1,299 @@
+*,
+*::before,
+*::after {
+    box-sizing: content-box;
+}
+
+$fontSize: 12px;
+$canvas-sm: 320px;
+$smartphoneTabletBP: 768px;
+$canvas-lg: 500px;
+$tabletDesktopBP: 1200px;
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: #00000c;
+    font-family: 'Roboto', sans-serif;
+    color: #111;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 1.6*$fontSize;
+    line-height: 2;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.actualTime {
+    font-size: 2*$fontSize;
+    line-height: 1.6;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1*$fontSize;
+    color: #222;
+
+}
+
+.instruction {
+    font-size: 1*$fontSize;
+    color: #222;
+    text-align: justify;
+
+    h2 {
+        font-size: 1.2*$fontSize;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+}
+
+h3 {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.requestValue {
+    font-size: 1.5*$fontSize;
+    font-weight: 700;
+    text-align: right;
+}
+
+.navSection {
+    border-top: 1px solid black;
+    padding: 10px 0 10px 0;
+    font-weight: 700;
+}
+
+.coordSection {
+    border-top: 1px solid black;
+    padding: 10px 0 10px 0;
+}
+
+.arrow {
+    background-color: inherit;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+#azimuths,
+#otherData {
+    display: none;
+}
+
+.container {
+    margin-bottom: 5px;
+}
+
+.dayLength {
+    font-size: 1.25*$fontSize;
+    padding: 5px 0;
+}
+
+.ray {
+    font-style: italic;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+}
+
+//header
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 10px 40px #444;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    img {
+        width: 30px;
+    }
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+//footer
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.socialIcon {
+    img {
+        display: inline-block;
+        height: 30px;
+        margin: 5px 10px 10px 10px;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1.0;
+        }
+    }
+}
+
+.footerBottom {
+    margin-top: 20px;
+    font-size: $fontSize;
+    font-style: italic;
+}
+
+// smartphone
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    width: min-content;
+    margin: 0 auto;
+}
+
+.aside1,
+.aside2 {
+    padding: 4px;
+    background-color: #ddd;
+    border: 1px solid #777;
+    margin: 1px;
+}
+
+.main {
+    width: $canvas-sm;
+    height: $canvas-sm;
+    background-color: #fff;
+    border: 1px solid #777;
+    margin: 1px;
+}
+
+#info {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: justify;
+    width: $canvas-sm;
+    background-color: white;
+    padding: 5px;
+}
+
+#canvas-sm {
+    background: url("../assets/img/back.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#canvas-lg {
+    display: none;
+}
+
+// tablet
+
+@media all and (min-width:$smartphoneTabletBP) {
+    .wrapper {
+        display: grid;
+        grid-template-areas:
+            "a a"
+            "b c";
+    }
+
+    .aside1,
+    .aside2 {
+        width: $canvas-lg/2 - 10px;
+    }
+
+    .aside1 {
+        grid-area: b;
+    }
+
+    .aside2 {
+        grid-area: c;
+    }
+
+    .main {
+        grid-area: a;
+        width: $canvas-lg;
+        height: $canvas-lg;
+    }
+
+    #canvas-lg {
+        display: block;
+        background: url("../assets/img/back.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #canvas-sm {
+        display: none;
+    }
+}
+
+// computer
+
+@media all and (min-width:$tabletDesktopBP) {
+    .wrapper {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .aside1,
+    .aside2 {
+        width: ($tabletDesktopBP - $canvas-lg)/3;
+    }
+
+    .main {
+        width: $canvas-lg;
+        height: $canvas-lg;
+    }
+
+    #canvas-lg {
+        display: block;
+        background: url("../assets/img/back.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #canvas-sm {
+        display: none;
+    }
+
+}
