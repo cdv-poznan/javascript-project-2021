@@ -40,26 +40,27 @@ frontSection.addEventListener('click', () => {
 
 // REMEMMBER ME IN LOCALSTORAGE
 
-// const remMe = document.getElementById('rememberMe');
-// const emailInput = document.getElementById('email');
+const remMe = document.querySelector('#rememberMe');
+const emailInput = document.querySelector('#email-field');
+const loggingInButton  = document.querySelector('#login-button')
 
-// if (localStorage.checkbox && localStorage.checkbox !== '') {
-//   remMe.setAttribute('checked', 'checked');
-//   emailInput.value = localStorage.username;
-// } else {
-//   remMe.removeAttribute('checked');
-//   emailInput.value = '';
-// }
+if (localStorage.checkbox && localStorage.checkbox !== '') {
+	remMe.setAttribute('checked', 'checked');
+	emailInput.value = localStorage.username;
+} else {
+	remMe.removeAttribute('checked');
+	emailInput.value = '' 
+}
 
-// function lsRememberMe() {
-//   if (rmCheck.checked && emailInput.value !== '') {
-//     localStorage.username = emailInput.value;
-//     localStorage.checkbox = remMe.value;
-//   } else {
-//     localStorage.username = '';
-//     localStorage.checkbox = '';
-//   }
-// }
+loggingInButton.addEventListener('click', () => {
+	if(remMe.checked && emailInput.value !== '') {
+		localStorage.username = emailInput.value;
+		localStorage.checkbox = remMe.value;
+	} else {
+		localStorage.username = '';
+		localStorage.checkbox = '';
+	}
+})
 
 
 // SIGN IN POPUP MECHANISM
@@ -133,7 +134,7 @@ signButton.addEventListener('click', () => {
 
 
 // LOGING IN MECHANISM
-const loggingInButton  = document.querySelector('#login-button')
+
 const logginInEmail = document.querySelector('#email-field');
 const logginInPassword = document.querySelector('#password-field');
 const logOutButton = document.querySelector('#logout-start-button');
@@ -149,11 +150,9 @@ loggingInButton.addEventListener('click', () => {
 	
 	const emailValue = logginInEmail.value;
 	const passwordValue = logginInPassword.value;
-
 	firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
   .then((userCredential) => {
     const user = userCredential.user;
-		console.log('Logged In')
 	firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 	document.querySelector('.popup').style.display='none';
@@ -162,7 +161,7 @@ loggingInButton.addEventListener('click', () => {
 	logOutButton.style.display = 'flex';
 	signInButton.style.display = 'none';
 	favouritesButton.style.display = 'flex';
-		console.log('Logged In');
+	console.log('Logged In');
 	} else {
 	console.log('Not logged')
   }
@@ -316,8 +315,5 @@ logOutButton.addEventListener('click', logOut)
 // .catch((err) => {
 // 	console.log("Unsuccesfull", err)
 // })
-
-
-// FIREBASE AUTHENTICATION
 
 
