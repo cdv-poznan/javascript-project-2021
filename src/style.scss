@@ -1,4 +1,116 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.notlogged-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/login-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.landing-header1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #f4acb7;
+  font-size: 4rem;
+}
+
+.landing-header2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.container-landing {
+  margin: 0 100px;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.landing-text {
+  margin-bottom: 10px;
+}
+
+.logged-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.page-header {
+  height: 8vh;
+  background-color: #03045e;
+}
+
+.page-content {
+  height: 92vh;
+  background-color: #fff;
+}
+
+.page-header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.logout-btn {
+  padding: 1px 3px;
+}
+
+.page-content {
+  padding: 0 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.balance-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.balance {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.balance-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.positive {
+  color: #198754;
+}
+
+.negative {
+  color: #dc3545;
 }

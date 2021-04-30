@@ -1,7 +1,350 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le $ bean</title>
+    <!--Bootstrap config-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!--Font awesome-->
+    <script
+      src="https://kit.fontawesome.com/3a98e49b7b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="notlogged-container">
+      <div class="container-landing">
+        <h1 class="landing-header1">Le $ bean</h1>
+        <h2 class="landing-header2">Your key to saving money</h2>
+        <p class="landing-text">
+          Keep track of your finances with this simple but powerful app. <br />
+          Add your incomes and spendings, analyse graphs and finance history and
+          control your money
+          <br />
+          Login or register now to start saving!
+        </p>
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-login"
+            data-toggle="modal"
+            data-target="#loginModal"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg btn-register"
+            data-toggle="modal"
+            data-target="#registerModal"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+
+      <!-- login modal -->
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form autocomplete="off" class="form-group" id="login-form">
+                <label for="login-email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="login-email"
+                  required
+                /><br />
+                <label for="login-password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="login-password"
+                  required
+                  minlength="6"
+                /><br />
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+            <div class="container error" id="signupError"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- register modal -->
+      <div
+        class="modal fade"
+        id="registerModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form autocomplete="off" class="form-group" id="register-form">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                /><br />
+                <label for="register-email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="register-email"
+                  required
+                /><br />
+                <label for="register-password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="register-password"
+                  required
+                  minlength="6"
+                /><br />
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+            </div>
+            <div class="container error" id="registerError"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Container displayed after logging in-->
+    <div class="logged-container">
+      <header class="page-header">
+        <h3>Le $ bean</h3>
+        <h2>Hello there :)</h2>
+        <button class="btn btn-secondary logout-btn">Logout</button>
+      </header>
+      <div class="page-content">
+        <div class="row h-25">
+          <div class="col-12 balance-row">
+            <p>Your balance:</p>
+            <h2 class="balance"><span class="balance-text">x</span> PLN</h2>
+            <div class="header-buttons">
+              <button
+                class="btn btn-primary btn-circle"
+                data-toggle="modal"
+                data-target="#addIncomeModal"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+              <button
+                class="btn btn-danger btn-circle"
+                data-toggle="modal"
+                data-target="#addExpenseModal"
+              >
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row h-75">
+          <div class="col-6 h-75 history finances-container"></div>
+          <div class="col-6 h-75 chart">3 of 3</div>
+        </div>
+      </div>
+
+      <!-- add income modal -->
+      <div
+        class="modal fade"
+        id="addIncomeModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add income</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form autocomplete="off" class="form-group" id="income-form">
+                <label for="income-amount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="income-amount"
+                  required
+                  min="0"
+                />
+                <br />
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- add expense modal -->
+      <div
+        class="modal fade"
+        id="addExpenseModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add expense</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form autocomplete="off" class="form-group" id="expense-form">
+                <label for="expense-amount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="expense-amount"
+                  required
+                  min="0"
+                />
+                <br />
+                <label for="finance-select">Choose expense type</label>
+                <select
+                  class="finance-select"
+                  name="finance-select"
+                  id="finance-select"
+                  aria-label="Default select example"
+                  required
+                >
+                  <option selected value="housing">Housing</option>
+                  <option value="transportation">Transportation</option>
+                  <option value="food">Food</option>
+                  <option value="utilities">Utilities</option>
+                  <option value="insurance">Insurance</option>
+                  <option value="medical">Medical</option>
+                  <option value="saving, investing">Saving, Investing</option>
+                  <option value="other">Other</option>
+                </select>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Bootstrap config-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
