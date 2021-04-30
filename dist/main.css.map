@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://javascript-project-2021/./src/style.css"],"names":[],"mappings":"AACE,YACE,U","file":"main.css","sourcesContent":["\r\n  .styleClass{\r\n    color: red;\r\n  }"],"sourceRoot":""}
