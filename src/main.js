@@ -27,14 +27,7 @@ showJoke.addEventListener('click', function(){
 
 
 // ---------------------------------------------------------------------------------------------------------------
-window.addEventListener("load", getItem);
-let inputValue = ' ';
-const buttonValue = document.querySelector('.buttonItem')
-const buttonClean = document.querySelector('.cleanButton')
 
-buttonValue.addEventListener('click',function(){
-inputValue = document.querySelector('.addItem').value;
-document.querySelector('.addItem').value = '';
 function getItem(){
     if(localStorage.getItem('data')!== null){
         get_data = JSON.parse(localStorage.getItem('data'))
@@ -68,7 +61,15 @@ function getItem(){
         
        
     }
-}
+}window.addEventListener("load", getItem);
+let inputValue = ' ';
+const buttonValue = document.querySelector('.buttonItem')
+const buttonClean = document.querySelector('.cleanButton')
+
+buttonValue.addEventListener('click',function(){
+inputValue = document.querySelector('.addItem').value;
+document.querySelector('.addItem').value = '';
+
 if(inputValue === ''){
     $("#myModal").modal('show');
 // alert('Musisz coś wpisać, nie da sie niczego nie mieć do roboty ;)')
