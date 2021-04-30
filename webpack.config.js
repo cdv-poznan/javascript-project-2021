@@ -1,9 +1,13 @@
-const { resolve } = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAsstesPlugin = require('optimize-css-assets-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const configure = (env, args) => {
   const PRODUCTION = args.mode === 'production';
@@ -11,41 +15,45 @@ const configure = (env, args) => {
   return {
     mode: args.mode || 'development',
     entry: {
-      main: ['./src/main', './src/style.scss'],
+      main: ['./src/index.js'],
     },
     output: {
-      path: resolve(__dirname, './dist'),
-      filename: '[name].js',
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'bundle.js',
     },
     module: {
       rules: [
         {
           test: /\.js$/,
+          exclude: /node_modules/,
           use: [
             {
               loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+              },
             },
           ],
         },
         {
-          test: /\.sc?ss$/,
+          test: /\.s?css$/,
           use: [
-            env.WEBPACK_SERVE
-              ? {
-                  loader: 'style-loader',
-                }
-              : MiniCssExtractPlugin.loader,
+            MiniCssExtractPlugin.loader,
             { loader: 'css-loader' },
             { loader: 'sass-loader' },
+            { loader: 'postcss-loader' },
           ],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
+          test: /\.(png|svg|jpg|jpeg|gif|eot|woff|woff2|ttf)$/,
+          use: {
+            loader: 'file-loader',
+            options: { name: '[path][name].[ext]' },
+          },
         },
         {
-          test: /\.(svg|eot|woff|woff2|ttf)$/,
-          type: 'asset/resource',
+          test: /\.(html)$/,
+          use: ['html-loader'],
         },
       ],
     },
@@ -55,10 +63,13 @@ const configure = (env, args) => {
         favicon: './src/favicon.ico',
         scriptLoading: 'defer',
         meta: {
+          description: 'Solar based compass',
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+          author: 'Marcin Rochowski',
         },
         minify: 'auto',
       }),
+      new CleanWebpackPlugin(),
       new ESLintWebpackPlugin({
         failOnError: false,
         failOnWarning: false,
@@ -73,20 +84,29 @@ const configure = (env, args) => {
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: './src/assets',
-            to: 'assets',
-          },
-        ],
+      new OptimizeCssAsstesPlugin({
+        assetNameRegExp: /\.css$/,
+      }),
+      new BrowserSyncPlugin(
+        {
+          host: 'localhost',
+          port: 4200,
+          proxy: 'http://localhost:4200',
+        },
+        {
+          reload: true,
+        },
+      ),
+      new webpack.LoaderOptionsPlugin({
         options: {
-          concurrency: 100,
+          postcss: [autoprefixer()],
         },
       }),
     ],
     devServer: {
+      contentBase: path.join(__dirname, 'dist'),
       port: 4200,
+      watchContentBase: true,
     },
     performance: {
       hints: false,
