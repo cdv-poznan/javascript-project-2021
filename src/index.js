@@ -518,6 +518,8 @@ function showPosition(position) {
           '#secondsToSunset',
           sunsetDate,
         );
+        shadowLength();
+        computeAzimuth(actualDate, '#actualAzimuth');
 
         // set background gradient
         var actualBackground = (actualDate - sunriseDate) / (dayLength * 1000);
@@ -541,9 +543,6 @@ function showPosition(position) {
           sunsetDate,
         );
       }
-
-      computeAzimuth(actualDate, '#actualAzimuth');
-      shadowLength();
     }, 1000);
 
     // DRAWING THE SUN DATA
@@ -570,8 +569,17 @@ function showPosition(position) {
         }
       }
     }
-    setInterval(walkingSun, 1000);
-
+    if (actualDate > sunriseDate && actualDate > sunsetDate) {
+      alert(
+        'Słońce już zaszło za horyzontem - nie odnajdziesz kierunku geograficznej północy bez słońca na niebie.',
+      );
+    } else if (actualDate < sunriseDate && actualDate < sunsetDate) {
+      alert(
+        'Słońce jeszcze nie wzeszło ponad horyzont - nie odnajdziesz kierunku geograficznej północy bez słońca na niebie.',
+      );
+    } else if (actualDate > sunriseDate && actualDate < sunsetDate) {
+      setInterval(walkingSun, 1000);
+    }
     function drawCompass(canvas) {
       var ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
