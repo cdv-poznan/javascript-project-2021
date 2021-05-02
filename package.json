@@ -25,10 +25,7 @@
     "url": "https://github.com/cdv-poznan/javascript-project-2021/issues"
   },
   "homepage": "https://github.com/cdv-poznan/javascript-project-2021#readme",
-  "dependencies": {
-    "bootstrap": "^5.0.0-beta3",
-    "firebase": "^8.4.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
