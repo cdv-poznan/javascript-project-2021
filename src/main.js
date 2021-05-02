@@ -56,7 +56,7 @@ const getDate = () => {
     clockNumbers.innerHTML = currentTimeText;
     //getting date
     let currentDay = currentTime.getDate();
-    let currentMonth = currentTime.getMonth();
+    let currentMonth = currentTime.getMonth() + 1;
     const currentYear = currentTime.getFullYear();
     currentDay = (currentDay < 10 ? '0' : '') + currentDay;
     currentMonth = (currentMonth < 10 ? '0' : '') + currentMonth;
