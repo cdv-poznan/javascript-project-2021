@@ -2,6 +2,85 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <script
+      src="https://kit.fontawesome.com/3a98e49b7b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="main-screen">
+      <div class="quote-div">
+        <p class="quote">Loading quote</p>
+        <br />
+        <div class="quote-footer">
+          <p class="quote-author">Loading author</p>
+          <button class="get-quote-btn btn">
+            <i class="fas fa-random"></i>
+          </button>
+        </div>
+      </div>
+      <div class="clock-div digital-clock">
+        <h2 class="clock-intro">
+          <i class="fa greeting-icon"></i>
+          <span class="clock-intro greeting">Good morning,</span> it's
+        </h2>
+        <h1 class="clock-numbers"></h1>
+        <h2 class="clock-date">Day, month, year</h2>
+      </div>
+      <div class="clock-div analog-clock invisible">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+          <div class="sc" id="sc"></div>
+        </div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="secondary-screen">
+      <div class="weather-window day-one">
+        <h4 class="card-header">Today</h4>
+        <div class="weather-picture today-icon"></div>
+        <h3 class="card-header today-temp">Temps</h3>
+        <h4 class="today-desc">Desc</h4>
+      </div>
+      <div class="weather-window day-two">
+        <h4 class="card-header">Tomorrow</h4>
+        <div class="weather-picture tomorrow-icon"></div>
+        <h3 class="card-header tomorrow-temp">Temps</h3>
+        <h4 class="tomorrow-desc">Desc</h4>
+      </div>
+      <div class="weather-window day-three">
+        <h4 class="card-header">Overmorrow</h4>
+        <div class="weather-picture overmorrow-icon"></div>
+        <h3 class="card-header overmorrow-temp">Temps</h3>
+        <h4 class="overmorrow-desc">Desc</h4>
+      </div>
+      <div class="search-bar">
+        <form autocomplete="off" class="search-form" id="form">
+          <input
+            class="search-input"
+            id="search-input"
+            type="text"
+            placeholder="Type city name in English"
+          />
+          <button type="submit" class="search-btn btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <p class="err-msg"></p>
+      </div>
+    </div>
+    <div class="footer">
+      Coded by
+      <a href="https://github.com/joaskr" target="_blank">Joanna Skrzypczak</a>,
+      2021
+    </div>
+  </body>
 </html>
