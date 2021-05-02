@@ -1,227 +1,224 @@
-import { auth, db } from './firebase';
-const notloggedContainer = document.querySelector('.notlogged-container');
-const loggedContainer = document.querySelector('.logged-container');
-let loggedIn = false;
-
-//hide or show landing page
-const hideContainer = () => {
-  if (loggedIn === true) {
-    notloggedContainer.style.display = 'none';
-    loggedContainer.style.display = 'block';
-    loggedContainer.classList.add('visible');
-  } else {
-    notloggedContainer.style.display = 'flex';
-    loggedContainer.style.display = 'none';
-    loggedContainer.classList.remove('visible');
-  }
+//get random background and change it after 5 minuter
+const background = document.querySelector('.main-screen');
+const backgroundsArray = [
+  "url('./assets/ajai-arif-a_nu2fRoqwI-unsplash.jpg')",
+  "url('./assets/antonio-grosz-Wc-1sAv4cn4-unsplash.jpg')",
+  "url('./assets/dave-hoefler-jdgfzZF8PMs-unsplash.jpg')",
+  "url('./assets/dave-hoefler-4pvfpUkmR6I-unsplash.jpg')",
+  "url('./assets/dave-hoefler-JZKl9ZjSjWA-unsplash.jpg')",
+  "url('./assets/dave-hoefler-lsIBgbLQSsQ-unsplash.jpg')",
+  "url('./assets/dave-hoefler-oZxutmdh5dE-unsplash.jpg')",
+  "url('./assets/jonatan-pie-OPOg0fz5uIs-unsplash.jpg')",
+  "url('./assets/marco-mons--_3HeEkP-fE-unsplash.jpg')",
+  "url('./assets/ricardo-gomez-angel-ZCPwkmfsHNY-unsplash.jpg')",
+];
+const getRandomNumber = () => {
+  return Math.floor(Math.random() * (9 - 0 + 1)) + 0;
 };
-
-hideContainer();
-
-const getIntoApp = () => {
-  loggedIn = true;
-  hideContainer();
+const getRandomBackground = () => {
+  setInterval(() => {
+    const randomNumber = getRandomNumber();
+    background.style.backgroundImage = backgroundsArray[randomNumber];
+  }, 300000);
 };
-
-//register
-const registerForm = document.getElementById('register-form');
-registerForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const name = registerForm['name'].value;
-  const email = registerForm['register-email'].value.trim();
-  const password = registerForm['register-password'].value;
-  registerForm.reset();
-  auth
-    .createUserWithEmailAndPassword(email, password)
-    .then(cred => {
-      return db
-        .collection('users')
-        .doc(cred.user.uid)
-        .set({
-          Name: name,
-          Email: email,
-          Password: password,
-        })
-        .then(() => {
-          console.log('success');
-          $('#loginModal').modal('hide');
-          getIntoApp();
-        })
-        .catch(err => {
-          console.log(err.message);
-          const registerError = getElementById('registerError');
-          registerError.innerText = err.message;
-        });
+//random quote api
+const quoteText = document.querySelector('.quote');
+const quoteAuthor = document.querySelector('.quote-author');
+const getQuoteBtn = document.querySelector('.get-quote-btn');
+const getQuote = () => {
+  fetch('https://type.fit/api/quotes')
+    .then(res => res.json())
+    .then(data => {
+      const index = Math.round(Math.random() * 1643);
+      quoteText.innerHTML = data[index].text;
+      quoteAuthor.innerHTML = data[index].author;
     })
     .catch(err => {
-      console.log(err.message);
-      registerError.innerText = err.message;
+      console.log(err);
     });
-});
-
-//login
-const loginForm = document.getElementById('login-form');
-loginForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const loginEmail = loginForm['login-email'].value;
-  const loginPassword = loginForm['login-password'].value;
-  // console.log(loginEmail, loginPassword);
-  auth
-    .signInWithEmailAndPassword(loginEmail, loginPassword)
-    .then(() => {
-      console.log('login success');
-      $('#loginModal').modal('hide');
-      getIntoApp();
-    })
-    .catch(err => {
-      const loginError = document.getElementById('loginError');
-      loginError.innerText = err.message;
-    });
-});
-
-//logout
-const logoutButton = document.querySelector('.logout-btn');
-console.log(logoutButton);
-const logout = () => {
-  auth.signOut();
-  loggedIn = false;
-  location.reload();
 };
-logoutButton.addEventListener('click', logout);
-
-//adding incomes and expenses
-let balance = 0;
-const balanceText = document.querySelector('.balance-text');
-// const setBalance = () => {
-//   // balanceText.innerText = balance;
-//   if (balance === 0) {
-//     balanceText.style.color = '#000';
-//   } else if (balance < 0) {
-//     balanceText.style.color = '#dc3545';
-//   } else {
-//     balanceText.style.color = '#198754';
-//   }
-// };
-// setBalance();
-
-//adding expenses and incomes on list
-const financesContainer = document.querySelector('.finances-container');
-const renderData = individualDoc => {
-  if (individualDoc.balance === undefined) {
-    balanceText.innerText = 0;
-  } else {
-    balanceText.innerText = individualDoc.balance;
-  }
-  if (balance === 0) {
-    balanceText.style.color = '#000';
-  } else if (balance < 0) {
-    balanceText.style.color = '#dc3545';
-  } else {
-    balanceText.style.color = '#198754';
-  }
-  //parent element
-  const parentDiv = document.createElement('div');
-  parentDiv.className = 'container finance-box';
-  parentDiv.setAttribute('data-id', individualDoc.id);
-  //to-do div
-  const financeDiv = document.createElement('div');
-  financeDiv.textContent = individualDoc.data().amount;
-  //button to delete todos
-  const trash = document.createElement('button');
-  //font awesome icon
-  const i = document.createElement('i');
-  i.className = 'fas fa-trash';
-  // appending
-  trash.appendChild(i);
-
-  parentDiv.appendChild(financeDiv);
-  parentDiv.appendChild(trash);
-  financesContainer.appendChild(parentDiv);
-
-  trash.addEventListener('click', e => {
-    // eslint-disable-next-line prefer-const
-    let id = e.target.parentElement.parentElement.getAttribute('data-id');
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        db.collection(user.uid).doc(id).delete();
-      }
-    });
-  });
-};
-
-//Adding finance to db function
-const addFinanceToDb = (amount, id, balance) => {
-  console.log('id' + id + 'amount' + amount);
-  auth.onAuthStateChanged(user => {
-    if (user) {
-      db.collection(user.uid)
-        .doc('_' + id)
-        .set({
-          id: '_' + id,
-          amount: amount,
-          balance: balance,
-        })
-        .then(() => {
-          console.log('finance added');
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
+getQuoteBtn.addEventListener('click', getQuote);
+//get date function
+const clockNumbers = document.querySelector('.clock-numbers');
+const clockDate = document.querySelector('.clock-date');
+let greeting;
+const greetingText = document.querySelector('.greeting');
+const greetingIcon = document.querySelector('.greeting-icon');
+//set time for digital clock
+const getDate = () => {
+  setInterval(() => {
+    //getting time
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    let currentMinute = currentTime.getMinutes();
+    currentMinute = (currentMinute < 10 ? '0' : '') + currentMinute;
+    const currentTimeText = currentHour + ':' + currentMinute;
+    clockNumbers.innerHTML = currentTimeText;
+    //getting date
+    let currentDay = currentTime.getDate();
+    let currentMonth = currentTime.getMonth();
+    const currentYear = currentTime.getFullYear();
+    currentDay = (currentDay < 10 ? '0' : '') + currentDay;
+    currentMonth = (currentMonth < 10 ? '0' : '') + currentMonth;
+    const currentDateText = currentDay + '.' + currentMonth + '.' + currentYear;
+    clockDate.innerHTML = currentDateText;
+    //check if you should say morning/afternoon/evening
+    if (currentHour === 24) {
+      greeting = 'good morning,';
+      greetingText.innerHTML = greeting;
+      greetingIcon.classList.add('fa-coffee');
+    } else if (currentHour >= 1 && currentHour < 13) {
+      greeting = 'good morning,';
+      greetingText.innerHTML = greeting;
+      greetingIcon.classList.add('fa-coffee');
+    } else if (currentHour >= 13 && currentHour < 17) {
+      greeting = 'good afternoon,';
+      greetingText.innerHTML = greeting;
+      greetingIcon.classList.add('fa-sun');
+    } else {
+      greeting = 'good evening,';
+      greetingText.innerHTML = greeting;
+      greetingIcon.classList.add('fa-moon');
     }
+  }, 1000);
+};
+//get date for analog clock
+const degree = 6;
+const hrLine = document.querySelector('#hr');
+const minLine = document.querySelector('#mn');
+const scLine = document.querySelector('#sc');
+const getDateForAnalog = () => {
+  setInterval(() => {
+    const analogDate = new Date();
+    const hour = analogDate.getHours() * 30;
+    const min = analogDate.getMinutes() * degree;
+    const sec = analogDate.getSeconds() * degree;
+    hrLine.style.transform = `rotateZ(${hour + min / 12}deg)`;
+    minLine.style.transform = `rotateZ(${min}deg)`;
+    scLine.style.transform = `rotateZ(${sec}deg)`;
   });
 };
-
-//getting values from incomes form
-const incomeForm = document.getElementById('income-form');
-const date = new Date();
-const time = date.getTime();
-let counter = time;
-incomeForm.addEventListener('submit', e => {
-  e.preventDefault();
-  // eslint-disable-next-line prefer-const
-  let amount = Number(incomeForm['income-amount'].value);
-  // eslint-disable-next-line prefer-const
-  let id = (counter += 1);
-  console.log(id);
-  balance = balance + amount;
-  amount = amount + ' pln';
-  // setBalance(id);
-  incomeForm.reset();
-  $('#addIncomeModal').modal('hide');
-  addFinanceToDb(amount, id, balance);
-});
-
-//getting values from expenses form
-const expenseForm = document.getElementById('expense-form');
-expenseForm.addEventListener('submit', e => {
-  e.preventDefault();
-  // eslint-disable-next-line prefer-const
-  let amount = Number(expenseForm['expense-amount'].value);
-  const expenseType = expenseForm['finance-select'].value;
-  // eslint-disable-next-line prefer-const
-  let id = (counter += 1);
-  balance = balance - amount;
-  amount = amount + ' pln - expense type: ' + expenseType;
-  // setBalance(id);
-  expenseForm.reset();
-  addFinanceToDb(amount, id, balance);
-});
-
-// event listeners for adding and removing
-auth.onAuthStateChanged(user => {
-  if (user) {
-    db.collection(user.uid).onSnapshot(snapshot => {
-      const changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === 'added') {
-          renderData(change.doc);
-        } else if (change.type === 'removed') {
-          const li = financesContainer.querySelector(
-            '[data-id=' + change.doc.id + ']',
-          );
-          financesContainer.removeChild(li);
-        }
-      });
+//using switch to display digital/analog clock
+const digitalClock = document.querySelector('.digital-clock');
+const analogClock = document.querySelector('.analog-clock');
+const switchBtn = document.querySelector('.switch');
+const displayClock = () => {
+  digitalClock.classList.toggle('invisible');
+  analogClock.classList.toggle('invisible');
+};
+switchBtn.addEventListener('change', displayClock);
+//weather api
+const secondaryScreen = document.querySelector('.secondary-screen');
+const todayTempText = document.querySelector('.today-temp');
+const tomorrowTempText = document.querySelector('.tomorrow-temp');
+const overmorrowTempText = document.querySelector('.overmorrow-temp');
+const todayDescText = document.querySelector('.today-desc');
+const tomorrowDescText = document.querySelector('.tomorrow-desc');
+const overmorrowDescText = document.querySelector('.overmorrow-desc');
+const todayIcon = document.querySelector('.today-icon');
+const tomorrowIcon = document.querySelector('.tomorrow-icon');
+const overmorrowIcon = document.querySelector('.overmorrow-icon');
+//setting correct icon for weather
+const weatherIconArray = [
+  "url('./assets/cloud.png')",
+  "url('./assets/rain.png')",
+  "url('./assets/snowflake.png')",
+  "url('./assets/sun.png')",
+];
+const setWeatherIcon = (fieldName, desc) => {
+  if (desc.includes('clouds')) {
+    fieldName.style.backgroundImage = weatherIconArray[0];
+  } else if (desc.includes('rain')) {
+    fieldName.style.backgroundImage = weatherIconArray[1];
+  } else if (desc.includes('snow')) {
+    fieldName.style.backgroundImage = weatherIconArray[2];
+  } else {
+    fieldName.style.backgroundImage = weatherIconArray[3];
+  }
+};
+//assign weather data to text boxes
+const assignWeatherData = weatherData => {
+  const todayData = weatherData[0];
+  const tomorrowData = weatherData[1];
+  const overmorrowData = weatherData[2];
+  const todayDesc = todayData.weather[0].description;
+  const tomorrowDesc = tomorrowData.weather[0].description;
+  const overmorrowDesc = overmorrowData.weather[0].description;
+  todayTempText.innerHTML = Math.round(Number(todayData.main.temp)) + '°C';
+  todayDescText.innerHTML = todayDesc;
+  tomorrowTempText.innerHTML =
+    Math.round(Number(tomorrowData.main.temp)) + '°C';
+  tomorrowDescText.innerHTML = tomorrowDesc;
+  overmorrowTempText.innerHTML =
+    Math.round(Number(overmorrowData.main.temp)) + '°C';
+  overmorrowDescText.innerHTML = overmorrowDesc;
+  setWeatherIcon(todayIcon, todayDesc);
+  setWeatherIcon(tomorrowIcon, tomorrowDesc);
+  setWeatherIcon(overmorrowIcon, overmorrowDesc);
+};
+//get weather based on device location
+const getWeather = (lat, lon) => {
+  let weatherData;
+  const APIkey = '477f8b9f91e57252f7371ae3951b14d4';
+  const weatherApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${APIkey}`;
+  fetch(weatherApi)
+    .then(res => res.json())
+    .then(data => {
+      weatherData = data.list;
+      assignWeatherData(weatherData);
+    })
+    .catch(err => {
+      console.log(err);
     });
+};
+//get device location
+function showPosition(position) {
+  const lat = Math.round(position.coords.latitude);
+  const lon = Math.round(position.coords.longitude);
+  getWeather(lat, lon);
+}
+const getLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert('Geolocation is not supported by this browser.');
+  }
+};
+//get weather based on device location
+const getWeatherByCity = userLocation => {
+  let weatherDataLocation;
+  const APIkey = '477f8b9f91e57252f7371ae3951b14d4';
+  const weatherApi = `https://api.openweathermap.org/data/2.5/forecast?q=${userLocation}&units=metric&appid=${APIkey}`;
+  fetch(weatherApi)
+    .then(res => res.json())
+    .then(data => {
+      weatherDataLocation = data.list;
+      assignWeatherData(weatherDataLocation);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+//get weather based on given by user location
+const form = document.querySelector('.search-form');
+const errMsg = document.querySelector('.err-msg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const searchLocation = form['search-input'].value.toLowerCase();
+  if (searchLocation === '') {
+    errMsg.innerHTML = 'Please add name';
+    form.reset;
+  } else {
+    errMsg.innerHTML = '';
+    getWeatherByCity(searchLocation);
   }
 });
+//start all functions after load
+const startPage = () => {
+  getRandomBackground();
+  getQuote();
+  getDate();
+  getDateForAnalog();
+  getLocation();
+};
+document.addEventListener('load', startPage());
