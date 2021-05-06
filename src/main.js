@@ -49,7 +49,7 @@ submit01.addEventListener('click', function () {
     document.querySelector('#ringDiameter02').value >
       2 * document.querySelector('#ringThickness02').value
   ) {
-    const url = `http://api.nbp.pl/api/cenyzlota//?format=json`;
+    const url = `https://api.nbp.pl/api/cenyzlota//?format=json`;
     async function getPricesMarriage() {
       const ringDiameter01 = document.querySelector('#ringDiameter01').value;
       const ringDiameter02 = document.querySelector('#ringDiameter02').value;
@@ -181,7 +181,7 @@ submit03.addEventListener('click', function () {
         .parentElement.classList.contains('active')) &&
     oneRing.checked == true
   ) {
-    const url = `http://api.nbp.pl/api/cenyzlota//?format=json`;
+    const url = `https://api.nbp.pl/api/cenyzlota//?format=json`;
     async function getPricesDivorceOne() {
       const ringWeight01 = document.querySelector('#ringWeight01').value;
       const goldFineness = document.querySelector('.active>input').value;
@@ -213,7 +213,7 @@ submit03.addEventListener('click', function () {
     twoRings.checked == true
   ) {
     async function getPricesDivorceTwo() {
-      const url = `http://api.nbp.pl/api/cenyzlota//?format=json`;
+      const url = `https://api.nbp.pl/api/cenyzlota//?format=json`;
       const ringWeight01 = document.querySelector('#ringWeight01').value;
       const ringWeight02 = document.querySelector('#ringWeight02').value;
       const goldFineness = document.querySelector('.active>input').value;
