@@ -4,7 +4,8 @@
   "description": "JavaScript Project at CDV",
   "scripts": {
     "start": "webpack serve",
-    "production": "webpack --mode production"
+    "production": "webpack --mode production",
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,11 @@
     "url": "https://github.com/cdv-poznan/javascript-project-2021/issues"
   },
   "homepage": "https://github.com/cdv-poznan/javascript-project-2021#readme",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.8",
