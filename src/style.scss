@@ -1,4 +1,233 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+  body {
+      font-size: 9px;
+      height: 568px;
+      width: 100%;
+  }
+
+  .intro {
+      font-size: 18px;
+      height: 100px;
+      width: 230.5%;
+  }
+
+  header {
+      height: 100px;
+  }
+
+  .holiday, .dayOff, .joke {
+      height: 106px;
+      width: 860px;
 }
+
+  .holiday_image, .dayOff_image, .joke_image {
+      float: none;
+      height: 106px;
+      width: 100px;
+}
+
+  .holiday_checker, .dayOff_countdowner, .joke_picker {
+      float: none;
+      height: 106px;
+      width: 240px;
+}
+
+  footer {
+      width: 860px;
+}
+  #copyright {
+      font-size: 18px;
+      width: 860px;
+}
+
+  img {
+      width: 100px;
+}
+}
+
+
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  body {
+      font-size: 12px;
+      height: 1024px;
+  }
+
+  .intro {
+      font-size: 18px;
+      height: 150px;
+      width: 161.5%;
+  }
+
+  header {
+      height: 150px;
+  }
+
+  .holiday, .dayOff, .joke {
+      height: 191px;
+      width: 900px;
+}
+
+  .holiday_image, .dayOff_image, .joke_image {
+      float: none;
+      height: 191px; 
+      width: 270px;
+}
+
+  .holiday_checker, .dayOff_countdowner, .joke_picker {
+      float: none;
+      height: 191px; 
+      width: 270px; 
+}
+  footer {
+      width: 900px;
+  }
+
+  #copyright {
+      font-size: 18px;
+      width: 900px;
+}
+  img {
+      width: 270px;
+}
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+      font-size: 15px;
+      height: 1366px;
+  }
+
+  .intro {
+      font-size: 18px;
+      height: 180px;
+      width: 100%;
+  }
+
+  header {
+      height: 180px;
+  }
+
+  .holiday, .dayOff, .joke {
+      height: 285px;
+      width: 1024px;
+}
+
+  .holiday_image, .dayOff_image, .joke_image {
+      float: none;
+      height: 285px; 
+      width: 500px;
+      
+}
+
+  .holiday_checker, .dayOff_countdowner, .joke_picker {
+      float: none;
+      height: 285px; 
+      width: 400px;
+}
+  footer {
+      font-size: 10px;
+      width: 100%;
+}
+
+  img {
+      width: 500px;
+  }
+}
+
+
+
+* {
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+}
+
+body {
+  background-color: rgb(243, 169, 212);
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 1402px;
+}
+
+header {
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  position: relative;
+}
+
+header p {
+  font-family: 'Italianno', cursive;
+  font-size: large;
+  position: absolute;
+  top: 75%;
+  left: 7%;
+}
+
+.p_underlined {
+  text-decoration: underline;
+}
+
+.intro {
+  background-color: whitesmoke;
+  height: 100px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+}
+
+input {
+  border: 2px solid black;
+}
+
+button {
+  background-color: #ffff;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.holiday, .dayOff, .joke {
+  display: inline-block;
+  height: 394px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.holiday_image, .dayOff_image, .joke_image {
+  float: left;
+  height: 394px;
+  width: 590px;
+}
+
+.holiday_checker, .dayOff_countdowner, .joke_picker {
+  float: right;
+  padding: 15px;
+}
+
+footer {
+  background-color: whitesmoke;
+  font-family: 'Italianno', cursive;
+  font-size: large;
+  font-weight: bold;
+  height: 20px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+

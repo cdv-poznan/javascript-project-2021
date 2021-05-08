@@ -1,7 +1,116 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bored Worker App</title>
+  <link rel="stylesheet" href="style.scss">
+  <script src="https://kit.fontawesome.com/809f14bce9.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <h1><i class="fas fa-pray"></i>Bored Worker App</h1>
+      <p>Bored with your job? We are here to help.</p>
+  </header>
+  <main>
+      <div class="intro">
+        <p>Everyone feels bored from time to time. Imagine there's not much to do at work today.</p><p>You have already managed to check out <a href="https://www.careercontessa.com/advice/bored-at-work/" rel="nofollow" target="_blank">
+        65 (Productive) Things to Do When You're Bored at Work.
+        </a></p>
+        <p>Or perhaps the task you have to do is just too boring and you need a break to take your mind off it.</p>
+        <p>Our app will help you forget about this unpleasant feeling of boredom at work (well, at least for a while).</p>
+      </div>    
+      <div class="holiday">
+        <div class="holiday_image">
+          <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346138.jpg" width="590" height="394" alt="A bored woman looking at the clock" title="A bored woman">
+        </div>
+        <div class="holiday_checker">
+          <h1>Holiday Checker <i class="far fa-calendar-alt"></i></h1>
+          <p>Maybe you need to have some time off?</p> 
+          <p>Here you can check if the given day is a holiday (unfortunately, not every holiday means free time).</p>
+          <p>All you have to do is select a date and if it's a holiday the program will return its date and name.</p>
+          <p>If the date entered is not a holiday, no result will appear.</p>
+          <p>If you didn't want to wait for a holiday and you have already booked your vacation,</p>
+          <p>you can use the tool below :)</p>
+          <br>
+          <p>Enter a numerical value:</p>
+          <form id="holidayForm" autocomplete="off">
+            <input type="text" id="holidayMonth" value="" placeholder="Enter a month">
+            <input type="text" id="holidayDay" value="" placeholder="Enter a day">
+            <button id="holidaySubmit">SUBMIT</button>
+            <button id="holidayClear">CLEAR</button>
+          </form>
+          <br>
+          <p class="p_underlined">Holiday date:</p><span id="holidayDate"></span>
+          <p class="p_underlined">Holiday name:</p><span id="holidayName"></span>
+        </div>  
+      </div>
+      <div class="dayOff">
+        <div class="dayOff_image">
+          <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346139.jpg" width="590" height="394" alt="A bored woman looking at the front" title="A bored woman">
+        </div>
+        <div class="dayOff_countdowner">  
+          <h1>Day off Countdowner <i class="far fa-clock"></i></i></h1>
+          <p>Have you already booked your vacation?</p> 
+          <p>If you feel really bored today, a good motivation will be to check,</p> 
+          <p>how many days are left until the day you are waiting for.</p> 
+          <p>All you have to do is select a date and the program will show you,</p> 
+          <p>how much time is left for the given date.</p> 
+          <p>And if no holiday is coming and you haven't been given a vacation,</p>
+          <p>it only remains for you to use the last tool that was designed to cheer you up a little bit :)</p>
+          <br>
+          <p>Enter a numerical value:</p>
+          <form id="dayOffForm" autocomplete="off"></form>
+          <select name="mon" id="dayOffMonth">
+            <option value="">--Choose a month--</option>
+            <option value="jan">Jan</option>
+            <option value="feb">Feb</option>
+            <option value="mar">Mar</option>
+            <option value="apr">Apr</option>
+            <option value="may">May</option>
+            <option value="jun">Jun</option>
+            <option value="jul">Jul</option>
+            <option value="aug">Aug</option>
+            <option value="sep">Sep</option>
+            <option value="oct">Oct</option>
+            <option value="nov">Nov</option>
+            <option value="dec">Dec</option>
+          </select>
+          <input type="text" id="dayOffDay" value="" placeholder="Enter a day">
+          <input type="text" id="dayOffYear" value="" placeholder="Enter a year">
+          <button id="dayOffSubmit">SUBMIT</button>
+          <button id="dayOffClear">CLEAR</button>
+          </form>
+          <br>
+          <br>
+          <p class="p_underlined">Time left:</p><br><span id="countdownTimer"></span>
+        </div>
+      </div>  
+      <div class="joke">
+        <div class="joke_image">
+          <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346141.jpg" width="590" height="394" alt="A bored woman looking to the right" title="A bored woman">
+        </div>
+        <div class="joke_picker">  
+          <h1>Joke Picker <i class="far fa-grin-squint"></i></h1>
+          <p>Here you can pick a joke to cheer up a little bit :)</p>
+          <br>
+          <button id="jokeSubmit">PICK A JOKE</button>
+          <button id="jokeClear">CLEAR</button>
+          <br>
+          <br>
+          <p class="p_underlined">Joke of the day (hour? minute?):</p><span id="joke_selected"></span>
+        </div>
+      </div>
+  </main>
+  <footer>
+    <p id="copyright">&copy; Bored Worker App 2021. In case of persistent symptoms of boredom we recommend finding a new job.</p>
+  </footer>
+    <script src="main.js"></script>
+</body>
 </html>
+
