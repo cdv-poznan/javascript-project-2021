@@ -133,7 +133,7 @@ button:hover,
   opacity: 0;
 }
 
-.bg-two-ring,
+.bg-two-rings,
 .bg-ring,
 .bg-one-ring {
   opacity: 1;
@@ -156,10 +156,11 @@ button:hover,
   }
 
   .bg-ring,
-  .bg-two-ring,
+  .bg-two-rings,
   .bg-one-ring {
-    width: 40%;
-    height: 150%;
+    width: 50%;
+    height: 120%;
+    font-size: 1.1rem;
   }
 
   .one {

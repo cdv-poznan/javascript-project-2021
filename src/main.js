@@ -188,11 +188,11 @@ submit03.addEventListener('click', function () {
       const goldRate = await response.json();
       const goldPrice = (document.getElementById('goldPriceDivorce').innerHTML =
         goldRate[0].cena);
-      document.getElementById('divorceResult').classList.remove('bg-two-ring');
+      document.getElementById('divorceResult').classList.remove('bg-two-rings');
       document.getElementById('divorceResult').classList.add('bg-one-ring');
       document.querySelector('#alert02').classList.add('d-none');
       document.getElementById('divorceResult').innerHTML = `
-      Za swoją obrączkę otrzumasz: ${Math.round(
+      Za swoją obrączkę otrzymasz: ${Math.round(
         goldFineness * ringWeight01 * goldPrice,
       )} PLN`;
     }
@@ -221,14 +221,14 @@ submit03.addEventListener('click', function () {
       const goldPrice = (document.getElementById('goldPriceDivorce').innerHTML =
         goldRate[0].cena);
       document.getElementById('divorceResult').classList.remove('bg-one-ring');
-      document.getElementById('divorceResult').classList.add('bg-two-ring');
+      document.getElementById('divorceResult').classList.add('bg-two-rings');
       document.querySelector('#alert02').classList.add('d-none');
       document.getElementById(
         'divorceResult',
-      ).innerHTML = `<div>Za obie obrączki otrzymasz:</br> ${Math.round(
+      ).innerHTML = `Za obie obrączki otrzymasz:</br> ${Math.round(
         goldFineness * ringWeight01 * goldPrice +
           goldFineness * ringWeight02 * goldPrice,
-      )} PLN</div>`;
+      )} PLN`;
     }
     getPricesDivorceTwo(); //pirce for two rings
   } else {
@@ -250,7 +250,7 @@ btnReset01.addEventListener('click', function () {
 btnReset02.addEventListener('click', function () {
   document
     .getElementById('divorceResult')
-    .classList.remove('bg-two-ring', 'bg-one-ring');
+    .classList.remove('bg-two-rings', 'bg-one-ring');
   document.getElementById('divorceResult').innerHTML = '';
   document.querySelector('#alert02').classList.add('d-none');
   document.querySelector('#alert03').classList.add('d-none');
