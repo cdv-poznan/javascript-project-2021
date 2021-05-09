@@ -253,7 +253,6 @@ btnReset02.addEventListener('click', function () {
     .classList.remove('bg-two-rings', 'bg-one-ring');
   document.getElementById('divorceResult').innerHTML = '';
   document.querySelector('#alert02').classList.add('d-none');
-  document.querySelector('#alert03').classList.add('d-none');
 });
 
 submit02.addEventListener('click', function () {

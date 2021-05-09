@@ -148,11 +148,11 @@ button:hover,
 
 @media (max-width: 991px) {
   .marriage-part {
-    height: 180vh;
+    height: 250vh;
   }
 
   .divorce-part {
-    height: 140vh;
+    height: 250vh;
   }
 
   .bg-ring,
@@ -168,20 +168,3 @@ button:hover,
   }
 }
 
-@media (max-width: 768px) {
-  .one {
-    height: 135vh;
-  }
-
-  .marriage,
-  .divorce {
-    height: 180vh;
-  }
-}
-
-@media (max-width: 576px) {
-  .marriage,
-  .divorce {
-    height: 200vh;
-  }
-}
