@@ -64,6 +64,12 @@ submit01.addEventListener('click', function () {
       const goldPrice = (document.getElementById(
         'goldPriceMarriage',
       ).innerHTML = goldRate[0].cena);
+      document
+        .querySelector('#marriageResult')
+        .parentElement.classList.remove('d-none');
+      document
+        .querySelector('#marriageResult')
+        .parentElement.classList.add('d-flex');
       document.getElementById('marriageResult').classList.add('bg-ring');
       document.querySelector('#alert01').classList.add('d-none');
       document.querySelector('#ringDiameter01').style.backgroundColor = '#fff';
@@ -188,6 +194,12 @@ submit03.addEventListener('click', function () {
       const goldRate = await response.json();
       const goldPrice = (document.getElementById('goldPriceDivorce').innerHTML =
         goldRate[0].cena);
+      document
+        .querySelector('#divorceResult')
+        .parentElement.classList.remove('d-none');
+      document
+        .querySelector('#divorceResult')
+        .parentElement.classList.add('d-flex');
       document.getElementById('divorceResult').classList.remove('bg-two-rings');
       document.getElementById('divorceResult').classList.add('bg-one-ring');
       document.querySelector('#alert02').classList.add('d-none');
@@ -220,6 +232,12 @@ submit03.addEventListener('click', function () {
       const goldRate = await response.json();
       const goldPrice = (document.getElementById('goldPriceDivorce').innerHTML =
         goldRate[0].cena);
+      document
+        .querySelector('#divorceResult')
+        .parentElement.classList.remove('d-none');
+      document
+        .querySelector('#divorceResult')
+        .parentElement.classList.add('d-flex');
       document.getElementById('divorceResult').classList.remove('bg-one-ring');
       document.getElementById('divorceResult').classList.add('bg-two-rings');
       document.querySelector('#alert02').classList.add('d-none');
