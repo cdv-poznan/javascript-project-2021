@@ -14,7 +14,23 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+//CLOCK MECHANISM
 
+const deg = 6;
+const hr = document.querySelector('#hr');
+const mn = document.querySelector('#mn');
+const sc = document.querySelector('#sc');
+
+setInterval(() => {
+var day = new Date();
+var hh = day.getHours() * 30;
+var mm = day.getMinutes() * deg;
+var ss = day.getSeconds() * deg;
+
+hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+mn.style.transform = `rotateZ(${mm}deg)`;
+sc.style.transform = `rotateZ(${ss}deg)`;
+})
 // POPUP WINDOWS
 
 // LOG IN POPUP MECHANISM
@@ -90,14 +106,12 @@ const loginData = document.querySelector('#sign-email');
 const passwordData = document.querySelector('#sign-password');
 const passwordAgaData = document.querySelector('#sign-aga-password');
 
-// FORM VALIDATION
-
-
-// MAKING ACCOUNTS IN LOCAL STORAGE
 
 const emailVer = document.getElementById('email-wrong');
 const passVer = document.getElementById('password-wrong');
 const passVerSec = document.getElementById('password-wrong-twice');
+const signupError = document.querySelector('.signup-error');
+const signupSucces = document.querySelector('.popup-succesfull');
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbersVal = /[0-9]/g;
@@ -125,10 +139,23 @@ signButton.addEventListener('click', () => {
 		passVerSec.innerHTML = '***Field Password is empty or not matching.';
 	}
 		else {
-			localStorage.setItem('login', loginData.value);
-			localStorage.setItem('password', passwordData.value);
-			document.querySelector('.popup-sign').style.display='none';
-			frontSection.classList.remove('active');
+			firebase.auth().createUserWithEmailAndPassword(loginData.value, passwordData.value)
+  .then((userCredential) => {
+		var user = userCredential.user;
+		emailVer.innerHTML = '';
+		passVer.innerHTML = '';
+		passVerSec.innerHTML = '';
+		document.querySelector('.popup-sign').style.display='none';
+		signupSucces.style.display='active';
+		console.log('account created')
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+		var errorMessage = error.message;
+		signupError.innerHTML= errorMessage;
+		console.log(errorMessage)
+  });
+			
 	}
 })
 
@@ -140,11 +167,6 @@ const logginInPassword = document.querySelector('#password-field');
 const logOutButton = document.querySelector('#logout-start-button');
 const favouritesButton = document.querySelector('#favourites-button');
 const loginErrorMessage = document.querySelector('#login-error-message');
-
-
-
-
-
 
 loggingInButton.addEventListener('click', () => {
 	
@@ -279,12 +301,12 @@ logOutButton.addEventListener('click', logOut)
 // }
 
 
-// fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "",
-// 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
-// 	}
+// // fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
+// // 	"method": "GET",
+// // 	"headers": {
+// // 		"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
+// // 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+// // 	}
 // }).then((res) => {
 // 	console.log("Succes", res);
 // 	return res.json()
@@ -316,4 +338,173 @@ logOutButton.addEventListener('click', logOut)
 // 	console.log("Unsuccesfull", err)
 // })
 
+
+// // FINDING LEAGUES MECHANISM
+// const table = document.querySelector('.matches-list');
+// const tableTbody = document.querySelector('.matches-list-tbody')
+
+// function addTable (sdata) {
+// 	const tableRow = document.createElement('tr')
+
+// 	const place = document.createElement('td');
+// 	place.innerHTML = sdata['rank'];
+
+// 	const teamName = document.createElement('td');
+// 	const teamLogo = document.createElement('img');
+// 	teamLogo.src = sdata['team']['logo'];
+// 	teamName.appendChild(teamLogo);
+// 	teamName.classList.add('logo-name');
+// 	teamName.innerHTML = sdata['team']['name'];
+
+// 	const teamPoints = document.createElement('td');
+// 	teamPoints.innerHTML = sdata['points'];
+
+// 	const teamMatchesPlayed = document.createElement('td');
+// 	teamMatchesPlayed.innerHTML = sdata['all']['played'];
+
+// 	const teamMatchesWon = document.createElement('td');
+// 	teamMatchesWon.innerHTML = sdata['all']['win'];
+
+// 	const teamMatchesDraw = document.createElement('td');
+// 	teamMatchesDraw.innerHTML = sdata['all']['draw'];
+
+// 	const teamMatchesLost = document.createElement('td');
+// 	teamMatchesLost.innerHTML = sdata['all']['lose'];
+
+// 	tableRow.appendChild(place);
+// 	tableRow.appendChild(teamName);
+// 	tableRow.appendChild(teamMatchesPlayed);
+// 	tableRow.appendChild(teamMatchesWon);
+// 	tableRow.appendChild(teamMatchesDraw);
+// 	tableRow.appendChild(teamMatchesLost);
+// 	tableRow.appendChild(teamPoints);
+// 	console.log(tableRow)
+
+// 	tableTbody.appendChild(tableRow);
+// }
+
+const tableButton = document.querySelector('.find-match-button');
+const matchesList = document.querySelector('.matches-list');
+const selectedCountry = document.querySelector('#country-select');
+const selectedLeague = document.querySelector('#league-select');
+const selectedYear = document.querySelector('#year-select');
+
+selectedCountry.addEventListener('change', () => {
+if (selectedCountry.value === "England") {
+	selectedLeague.options.length = 1;
+	console.log(selectedLeague.options.length)
+	
+	const firstOptionEngland = document.createElement('option');
+	firstOptionEngland.innerHTML = 'Premier League';
+	firstOptionEngland.value = '39';
+	selectedLeague.appendChild(firstOptionEngland);
+
+	const secondOptionEngland = document.createElement('option');
+	secondOptionEngland.innerHTML='Championship';
+	secondOptionEngland.value='40';
+	selectedLeague.appendChild(secondOptionEngland);
+
+	const thirdOptionEngland = document.createElement('option');
+	thirdOptionEngland.innerHTML='League One';
+	thirdOptionEngland.value='41';
+	selectedLeague.appendChild(thirdOptionEngland);
+
+	const fourthOptionEngland = document.createElement('option');
+	fourthOptionEngland.innerHTML='League Two';
+	fourthOptionEngland.value='42';
+	selectedLeague.appendChild(fourthOptionEngland);
+
+	const fifthOptionEngland = document.createElement('option');
+	fifthOptionEngland.innerHTML='National League';
+	fifthOptionEngland.value='43';
+	selectedLeague.appendChild(fifthOptionEngland);
+
+} else if (selectedCountry.value === "Poland") {
+	selectedLeague.options.length = 1;
+
+	const firstOptionPoland = document.createElement('option');
+	firstOptionPoland.innerHTML = 'Ekstraklasa';
+	firstOptionPoland.value = '106';
+	selectedLeague.appendChild(firstOptionPoland);
+
+	const secondOptionPoland = document.createElement('option');
+	secondOptionPoland.innerHTML='I Liga';
+	secondOptionPoland.value='107';
+	selectedLeague.appendChild(secondOptionPoland);
+	
+} else if (selectedCountry.value === "Germany") {
+	selectedLeague.options.length = 1;
+
+	const firstOptionGermany = document.createElement('option');
+	firstOptionGermany.innerHTML = 'Bundesliga 1';
+	firstOptionGermany.value = '78';
+	selectedLeague.appendChild(firstOptionGermany);
+
+	const secondOptionGermany = document.createElement('option');
+	secondOptionGermany.innerHTML='Bundesliga 2';
+	secondOptionGermany.value='79';
+	selectedLeague.appendChild(secondOptionGermany);
+
+	const thirdOptionGermany = document.createElement('option');
+	thirdOptionGermany.innerHTML='Liga 3';
+	thirdOptionGermany.value='80';
+	selectedLeague.appendChild(thirdOptionGermany);
+}
+})
+
+const fulfillWarning = document.querySelector('.not-fulfilled')
+tableButton.addEventListener('click', () => {
+if (selectedCountry.value !== 'null' && selectedLeague.value !== 'null' && selectedYear.value !== 'null') {
+matchesList.style.display = 'active';
+fetch(`https://api-football-v1.p.rapidapi.com/v3/standings?season=${selectedYear.value}&league=${selectedCountry.value}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
+		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+	}
+})
+.then(response => response.json().then(data => {
+	const respns = data['response'];
+	const dataRespns = respns[0]['league']['standings'][0];
+	
+	for (let i = 0; i < dataRespns.length; i++ ) {
+		addTable(dataRespns[i]);	
+	}
+}))
+.catch(err => {
+	console.log(err);
+})
+} else {
+fulfillWarning.style.display='active';
+}})
+
+// FIND PLAYER MECHANISM
+
+
+
+
+const findPlayerButton = document.querySelector('#find-match-button');
+const playerSurname = document.querySelector('.player-input');
+const leagueNumber = document.querySelector('.player-select')
+
+
+findPlayerButton.addEventListener('click', () => {
+	if (playerSurname.value !== "" && leagueNumber.value !== "null") {
+	fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=${leagueNumber}&search=${playerSurname}`, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
+			"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+		}
+	})
+	.then(response => response.json().then(data => {
+		const respns = data['response'];
+
+	}))
+	.catch(err => {
+		console.log(err);
+	})
+	} else {
+	fulfillWarning.style.display='active';
+	}})
 

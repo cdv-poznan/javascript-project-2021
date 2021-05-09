@@ -8,20 +8,49 @@
   <body>
     <section class="front-section">
     <header>
+      <div class="clock">
+      <div class="hour">
+        <div class="hr" id="hr"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc"></div>
+      </div>
+      </div>
     <img class="frontlogo" src="/assets/logobeztlabig.png" title="LogoBetterBET" alt="LOGO"></img>
     <div class="front-options">
     <a class="log-in" type="button" href="#" id = "login-start-button">Log In</a>
     <a class="log-out" type="button" href="#" id = "logout-start-button">Log Out</a>
     <a class="sign-in" type="button" href="#" id = "signin-start-button">Sign In</a>
     <a class="favourites" type="button" href="#" id = "favourites-button">Favourites</a></div>
-    <a href="#second-section" type="button" class="slide-second"> <div class = "down-front-section"><p>Live Now</p>
-    <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></div></a></header>
+    
+    <div class = "down-front-section">
+      <div class="down-front-centre">
+    <a href="#second-section" type="button" class="slide-first"> <p>Live Now</p>
+    <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+  
+    <div class="down-front-centre">
+      <a href="#third-section" type="button" class="slide-second"> <p>Standings</p>
+      <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+
+      <div class="down-front-centre">
+        <a href="#fourth-section" type="button" class="slide-third"> <p>Find Player</p>
+        <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+  </div></header>
 </section>
-    </header>
+
+<div class="popup-succesfull">
+ <div class="popup-content-succcesfull">
+     <p>Account has been created succesfully.</p>
+     <button data-close-button class="close-button-newaccount">Close</button>
+ </div>
+</div>
+
     <div class="popup">
        <button data-close-button class="close-button-login">&times;</button>
       <div class="popup-content">
-          
           <p>E-mail: 
           <input type="email" id="email-field" placeholder="Example@example.com"/>
           </p>
@@ -40,6 +69,7 @@
     <div class="popup-sign">
       <button data-close-button class="close-button-sign">&times;</button>
      <div class="popup-sign-content">
+       <p id="signup-error"></p>
          <p>E-mail: 
          <input id="sign-email" type="email" name="email" placeholder="Example@example.com" pattern="\d*" title="This E-mail will be used to verification."/></p>
          <div id ="email-wrong" class = "wrong"></div>
@@ -62,7 +92,10 @@
    </div>
     <div class = "overlay"></div>
     <section id="second-section" class="second-section">
-      <h1 class="live-now">LIVE NOW</h1>
+      <h1 class="live-now">LIVE NOW
+        <a href="#" type="button" class="find-button">
+      <img src="assets/find.png" alt="findlogo" class="find-logo"/></a></h1>
+      
 <div class="live-home">
   <div class = "match">
     <h1>Scoreboard</h1>
@@ -81,7 +114,74 @@
   </div>
 </div>
 </section>
-<section id="third-section" class="third-section"></section>
+<section id="third-section" class="third-section">
+  <div class = "find-match">
+    <div class="find-standings-text"><p>Find Standings</p></div>
+      <ul class = "find-specifications">
+        <li>
+          <p>Country:</p>
+          <select class = "country-select" id="country-select">
+            <option value="null">Choose a country</option>
+            <option value="England">England</option>
+            <option value="Poland">Poland</option>
+            <option value="Germany">Germany</option>
+          </select>
+          </li>
+          <li>
+            <p>League:</p>
+            <select class = "country-select" id="league-select">
+              <option value="null">Choose a league</option>
+            </select>
+          </li>
+          <li>
+            <p>Year:</p>
+            <select class = "country-select" id="year-select">
+              <option value="null">Choose a year</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+            </select>
+          </li>
+      </ul>
+    <div class="find-standings-button">
+    <button type="sumbit" class="find-match-button">Submit</button></div>
+    <p class="not-fulfilled">Please fulfill every select form.</p>
+    </div>
+<div class="find-results">
+  <table class="matches-list">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Club Name</th>
+      <th>Matches Played</th>
+      <th>Wins</th>
+      <th>Draws</th>
+      <th>Loses</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody class="matches-list-tbody">
+</tbody>
+  </table>
+</div>
+</section>
+<section class="fourth-section">
+<div class = "find-player"><div class="find-player-text">
+<p>Find Player Statistics</p></div>
+<input type="text" placeholder="Player full name" class="player-input"/>
+<select class = "player-select">
+  <option value="null">Choose a league</option>
+  <option value="39">Premier League</option>
+  <option value="78">Bundesliga</option>
+  <option value="106">Ekstraklasa</option>
+</select>
+<div class="find-standings-button">
+  <button type="sumbit" class="find-match-button" id="find-player-button">Submit</button></div>
+  <p class="not-fulfilled-player">Please fulfill every form.</p>
+</div>
+</section>
   </body>
 </html>
   
