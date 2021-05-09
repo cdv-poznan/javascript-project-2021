@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto";
+}
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.wrapper {
+  min-height: 100vh;
+  background-image: $background;
+  overflow: hidden;
+  &__circle {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+    &--blue {
+      top: 15%;
+      left: 25%;
+      background-image: linear-gradient(to top, rgb(61, 123, 173), rgb(59, 128, 255));
+      animation: blueSquareMove 20s infinite linear alternate;
+    }
+    &--violet {
+      top: 45%;
+      left: 75%;
+      background-image: linear-gradient(to top, rgb(173, 61, 164), rgb(199, 59, 255));
+      animation: violetSquareMove 20s infinite linear alternate;
+    }
+  }
+}
+@keyframes blueSquareMove {
+  0% {
+    top: 15%;
+    left: 30%;
+  }
+  100% {
+    top: 65%;
+  }
+}
+
+@keyframes violetSquareMove {
+  0% {
+    top: 45%;
+    left: 75%;
+  }
+  100% {
+    left: 35%;
+  }
+}
+
+@media (max-width: 1024px) {
+  @keyframes violetSquareMove {
+    0% {
+      left: 30%;
+    }
+    100% {
+      left: 2%;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  @keyframes blueSquareMove {
+    0% {
+      top: 15%;
+      left: 20%;
+    }
+    100% {
+      top: 55%;
+    }
+  }
+  @keyframes violetSquareMove {
+    0% {
+      top: 55%;
+      left: 10%;
+    }
+    100% {
+      top: 15%;
+      left: 10%;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .wrapper {
+    &__circle {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @keyframes blueSquareMove {
+    0% {
+      top: 5%;
+      left: 5%;
+    }
+    100% {
+      top: 50%;
+    }
+  }
+}

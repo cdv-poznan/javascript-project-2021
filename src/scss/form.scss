@@ -1,0 +1,129 @@
+.formWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__form {
+    width: 30vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(218, 218, 218, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.5);
+  }
+  &__label {
+    margin-top: 15px;
+    font-size: 2.2rem;
+    color: $base-color;
+  }
+  &__input {
+    padding: 7px 10px;
+    margin-top: 7px;
+  }
+  &__button {
+    padding: 8px 18px;
+    margin-top: 15px;
+    font-size: 1.6rem;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: $background;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    &:hover {
+      background-image: $background;
+    }
+  }
+  .textWrapper {
+    z-index: 100;
+    &__register {
+      margin-top: 10px;
+      font-size: 1.6rem;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        color: $base-color;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__circle {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border-radius: 50%;
+    &--blue {
+      top: 15%;
+      left: 25%;
+      background-image: linear-gradient(to top, rgb(61, 123, 173), rgb(59, 128, 255));
+      animation: blueSquareMove 20s infinite linear alternate;
+    }
+    &--violet {
+      top: 45%;
+      left: 75%;
+      background-image: linear-gradient(to top, rgb(173, 61, 164), rgb(199, 59, 255));
+      animation: violetSquareMove 20s infinite linear alternate;
+    }
+  }
+}
+// JS
+.registerActive {
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .formWrapper {
+    &__form {
+      width: 50vw;
+    }
+    &__label {
+      font-size: 2.6rem;
+    }
+    &__input {
+      padding: 7px 10px;
+      margin-top: 7px;
+    }
+    &__button {
+      padding: 10px 18px;
+    }
+  }
+}
+@media (max-width: 540px) {
+  .formWrapper {
+    &__form {
+      width: 70vw;
+      height: 40vh;
+    }
+  }
+}
+@media (max-width: 359px) {
+  .formWrapper {
+    &__form {
+      width: 80vw;
+      height: 50vh;
+    }
+  }
+}
+@media (max-height: 500px) {
+  .formWrapper {
+    &__form {
+      width: 70vw;
+      height: 65vh;
+    }
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .formWrapper {
+    &__form {
+      width: 70vw;
+      height: 75vh;
+    }
+  }
+}

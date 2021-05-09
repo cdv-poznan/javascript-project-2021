@@ -1,1 +1,10 @@
-console.log('JavaScript Project');
+import charts from './js/charts.js';
+import login from './js/login.js';
+import moveButton from './js/moveButton.js';
+import addToWallet from './js/addToWallet.js';
+import profilePicture from './js/profilePicture.js';
+charts();
+moveButton();
+login();
+addToWallet();
+profilePicture();

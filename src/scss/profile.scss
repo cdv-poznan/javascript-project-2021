@@ -1,0 +1,159 @@
+.profile {
+  width: 90vw;
+  height: 90vh;
+  margin: 50vh 0 0 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background-color: rgba(218, 218, 218, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.5);
+  .market {
+    padding: 7px 18px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-size: 1.5rem;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: $background;
+    background-image: $background;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      background: none;
+      background-image: none;
+    }
+  }
+  .userData {
+    flex-basis: 50%;
+    text-align: center;
+    font-size: 2.4rem;
+    color: $base-color;
+    &__nameData,
+    &__emailData,
+    &__walletData {
+      color: white;
+    }
+    &__photoWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__photoButton {
+      width: 170px;
+      height: 40px;
+      margin: 8px 0;
+      font-size: 1.3rem;
+      color: $base-color;
+      border: 1px solid $base-color;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.062);
+    }
+    &__photo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid $base-color;
+      border-radius: 50%;
+    }
+  }
+  .deposit {
+    width: 270px;
+    height: 200px;
+    margin-left: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    &__title {
+      flex-basis: 100%;
+      transform: translateY(-60%);
+      text-align: center;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      color: white;
+    }
+    &__button {
+      width: 85px;
+      height: 40px;
+      font-size: 2.7rem;
+      font-weight: bold;
+      border: 4px solid;
+      border-image-slice: 4;
+      border-image-source: $background;
+      color: white;
+      background-color: rgba(255, 255, 255, 0);
+      cursor: pointer;
+      &:hover {
+        background-image: $background;
+      }
+    }
+    &__pay {
+      background-image: $background;
+      &:hover {
+        background-image: none;
+      }
+    }
+  }
+}
+
+// JS
+.activePayment {
+  background-image: $background;
+}
+
+@media (max-width: 1024px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+    .userData {
+      transform: translateY(30%);
+      font-size: 3rem;
+      &__photo {
+        display: none;
+      }
+    }
+    .deposit {
+      margin-left: 0;
+    }
+  }
+}
+@media (max-width: 414px) {
+  .deposit {
+    &__title {
+      display: none;
+    }
+  }
+}
+
+@media (max-height: 1023px) and (orientation: landscape) {
+  .deposit {
+    &__title {
+      display: none;
+    }
+  }
+}
+@media (max-height: 414px) and (orientation: landscape) {
+  .profile {
+    .userData {
+      font-size: 1.7rem;
+    }
+  }
+}
+@media (max-height: 360px) and (orientation: landscape) {
+  .profile {
+    .deposit {
+      &__button {
+        width: 50px;
+        height: 35px;
+        margin-top: 16px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
