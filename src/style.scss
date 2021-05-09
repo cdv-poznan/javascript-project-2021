@@ -120,8 +120,8 @@ button:hover,
 /* ANIMATIONS */
 .animation-start {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8));
-  width: 60%;
-  height: 50%;
+  width: 400px;
+  height: 300px;
   border: 13px double #8e793e;
   background-size: cover;
   box-shadow: 1px 1px 20px 15px rgba(142, 121, 62, 0.4);
@@ -158,13 +158,12 @@ button:hover,
   .bg-ring,
   .bg-two-rings,
   .bg-one-ring {
-    width: 50%;
-    height: 120%;
-    font-size: 1.1rem;
+    width: 300px;
+    height: 250px;
+    font-size: 1.3rem;
   }
 
   .one {
     height: 120vh;
   }
 }
-
