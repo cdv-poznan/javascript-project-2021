@@ -78,7 +78,7 @@ submit01.addEventListener('click', function () {
       document.querySelector('#ringThickness02').style.backgroundColor = '#fff';
       document.getElementById(
         'marriageResult',
-      ).innerHTML = `<div>Złoto w Waszych obrączkach jest warte: </br> ${Math.round(
+      ).innerHTML = `Złoto w Waszych obrączkach jest warte: </br> ${Math.round(
         goldFineness04Value *
           ((Math.PI * Math.pow(0.5 * ringDiameter01, 2) * ringWidth01 -
             Math.PI *
@@ -95,7 +95,7 @@ submit01.addEventListener('click', function () {
               0.001 *
               19.3 *
               goldPrice),
-      )} PLN </div>`;
+      )} PLN`;
     }
     getPricesMarriage();
   } else if (
