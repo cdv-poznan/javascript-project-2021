@@ -1,144 +1,151 @@
-const url = "https://holidays.abstractapi.com/v1/?api_key=f12d8eae0def42a096ad807365e937ca";
-const monthField = document.querySelector('#holidayMonth');
-const dayField = document.querySelector('#holidayDay');
-const submit = document.querySelector('#holidaySubmit');
-const clear = document.querySelector('#holidayClear');
-const dateField = document.getElementById("holidayDate");
-const nameField = document.getElementById("holidayName");
+const url =
+  'https://holidays.abstractapi.com/v1/?api_key=f12d8eae0def42a096ad807365e937ca';
+const monthField = document.querySelector('#holiday-month');
+const dayField = document.querySelector('#holiday-day');
+const submit = document.querySelector('#holiday-submit');
+const clear = document.querySelector('#holiday-clear');
+const dateField = document.getElementById('holiday-date');
+const nameField = document.getElementById('holiday-name');
 
-const submittedMonth = document.getElementById("dayOffMonth");
-const submittedDay = document.getElementById("dayOffDay");
-const submittedYear = document.getElementById("dayOffYear");
-const timer = document.getElementById("countdownTimer");
-const submitDay = document.querySelector('#dayOffSubmit');
-const clearDay = document.querySelector('#dayOffClear');
+const submittedMonth = document.getElementById('day-off-month');
+const submittedDay = document.getElementById('day-off-day');
+const submittedYear = document.getElementById('day-off-year');
+const timer = document.getElementById('countdown-timer');
+const submitDay = document.querySelector('#day-off-submit');
+const clearDay = document.querySelector('#day-off-clear');
 
-const submitPick = document.querySelector('#jokeSubmit');
-const responseArea = document.querySelector('#joke_selected');
-const clearJoke = document.querySelector('#jokeClear');
-
+const submitPick = document.querySelector('#joke-submit');
+const responseArea = document.querySelector('#joke-selected');
+const clearJoke = document.querySelector('#joke-clear');
 
 // The functions for Holiday Checker.
 
-const displayResults = (event) => {
-    event.preventDefault();
-  
-    secureFields();
-  }; 
-  
-const secureFields = () => {
-    if (monthField.value === '' || dayField.value === '') {
-      dateField.textContent = 'Please, fill all the fields.';
-    }
-    else {
-        getResults();
-    }
-  };  
-
 const getResults = () => {
-    const monthQuery = monthField.value.toString();
-    const dayQuery = dayField.value.toString();
-    const endpoint = url + '&country=PL' + '&year=2021' + '&month=' + monthQuery + '&day=' + dayQuery;
+  const monthQuery = monthField.value.toString();
+  const dayQuery = dayField.value.toString();
+  const endpoint =
+    url +
+    '&country=PL' +
+    '&year=2021' +
+    '&month=' +
+    monthQuery +
+    '&day=' +
+    dayQuery;
 
-    fetch(endpoint).then(response => response.json())
+  fetch(endpoint)
+    .then(response => response.json())
     .then(response => {
-        const getDate = response[0].date;
-        const getName = response[0].name;
-        dateField.textContent = getDate;
-        nameField.textContent = getName;
-    }).catch((error) => {
+      const getDate = response[0].date;
+      const getName = response[0].name;
+      dateField.textContent = getDate;
+      nameField.textContent = getName;
+    })
+    .catch(error => {
       console.error('Error:', error);
-            })
-  };
+    });
+};
+
+const secureFields = () => {
+  if (monthField.value === '' || dayField.value === '') {
+    dateField.textContent = 'Please, fill all the fields.';
+  } else {
+    getResults();
+  }
+};
+
+const displayResults = event => {
+  event.preventDefault();
+
+  secureFields();
+};
 
 const clearResult = () => {
-    monthField.textContent = '';
-    dayField.textContent = '';
-    dateField.textContent = '';
-    nameField.textContent = '';
-  };
+  monthField.textContent = '';
+  dayField.textContent = '';
+  dateField.textContent = '';
+  nameField.textContent = '';
+};
 
 holidaySubmit.addEventListener('click', displayResults);
 holidayClear.addEventListener('click', clearResult);
 
-
 // The functions for Day off Countdowner.
 
-const checkFields = () => {
-  if (submittedDay.value === '' || submittedYear.value === '') {
-    timer.textContent = 'Please, fill all the fields.';
-  }
-  else {
-      getFinalDate();
-  }
-};
-
-function getFinalDate(){
-  const parsedMonth = submittedMonth.value.toString();  
+function getFinalDate() {
+  const parsedMonth = submittedMonth.value.toString();
   const parsedDay = submittedDay.value.toString();
   const parsedYear = submittedYear.value.toString();
   const parsedTime = parsedMonth + ' ' + parsedDay + ', ' + parsedYear;
 
-  let countDownDate = new Date(parsedTime).getTime();
-  let x = setInterval(function() {
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  timer.innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  const countDownDate = new Date(parsedTime).getTime();
+  const x = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  if (distance < 0) {
-    clearInterval(x);
-    timer.innerHTML = "A thing of the past.";
-  }
+    timer.innerHTML =
+      days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
+
+    if (distance < 0) {
+      clearInterval(x);
+      timer.innerHTML = 'A thing of the past.';
+    }
   }, 1000);
-  }
+}
 
-  const clearDayField = () => {
-    submittedMonth.value = '';
-    submittedDay.value = '';
-    submittedYear.value = '';
-    timer.hidden = true;
+const checkFields = () => {
+  if (submittedDay.value === '' || submittedYear.value === '') {
+    timer.textContent = 'Please, fill all the fields.';
+  } else {
+    getFinalDate();
   }
+};
+
+const clearDayField = () => {
+  submittedMonth.value = '';
+  submittedDay.value = '';
+  submittedYear.value = '';
+  timer.hidden = true;
+};
 
 submitDay.addEventListener('click', checkFields);
 clearDay.addEventListener('click', clearDayField);
 
-
 // The functions for Joke Picker.
 
 const getJoke = () => {
-
   const address = 'https://icanhazdadjoke.com/';
   const options = {
     headers: {
-      Accept: "application/json"
-    }
+      Accept: 'application/json',
+    },
   };
-  fetch(address, options).then(response => response.json())
-  .then(response => {
+  fetch(address, options)
+    .then(response => response.json())
+    .then(response => {
       const generateJoke = response.joke;
-      document.getElementById("joke_selected").textContent = generateJoke;
+      document.getElementById('joke_selected').textContent = generateJoke;
       console.log(response);
-  }).catch((error) => {
-    console.error('Error:', error);
-          })
-  }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+};
 
- const displayJokes = (event) => {
- event.preventDefault();
+const displayJokes = event => {
+  event.preventDefault();
 
   getJoke();
-}
+};
 
 const clearJokeField = () => {
   responseArea.textContent = '';
-}
+};
 
 jokeSubmit.addEventListener('click', displayJokes);
 clearJoke.addEventListener('click', clearJokeField);
-

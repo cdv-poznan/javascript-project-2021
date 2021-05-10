@@ -26,10 +26,10 @@
         <p>Our app will help you forget about this unpleasant feeling of boredom at work (well, at least for a while).</p>
       </div>    
       <div class="holiday">
-        <div class="holiday_image">
+        <div class="holiday-img">
           <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346138.jpg" width="590" height="394" alt="A bored woman looking at the clock" title="A bored woman">
         </div>
-        <div class="holiday_checker">
+        <div class="holiday-checker">
           <h1>Holiday Checker <i class="far fa-calendar-alt"></i></h1>
           <p>Maybe you need to have some time off?</p> 
           <p>Here you can check if the given day is a holiday (unfortunately, not every holiday means free time).</p>
@@ -39,22 +39,22 @@
           <p>you can use the tool below :)</p>
           <br>
           <p>Enter a numerical value:</p>
-          <form id="holidayForm" autocomplete="off">
-            <input type="text" id="holidayMonth" value="" placeholder="Enter a month">
-            <input type="text" id="holidayDay" value="" placeholder="Enter a day">
-            <button id="holidaySubmit">SUBMIT</button>
-            <button id="holidayClear">CLEAR</button>
+          <form id="holiday-form" autocomplete="off">
+            <input type="text" id="holiday-month" value="" placeholder="Enter a month">
+            <input type="text" id="holiday-day" value="" placeholder="Enter a day">
+            <button id="holiday-submit">SUBMIT</button>
+            <button id="holiday-clear">CLEAR</button>
           </form>
           <br>
-          <p class="p_underlined">Holiday date:</p><span id="holidayDate"></span>
-          <p class="p_underlined">Holiday name:</p><span id="holidayName"></span>
+          <p class="p-underlined">Holiday date:</p><span id="holiday-date"></span>
+          <p class="p-underlined">Holiday name:</p><span id="holiday-name"></span>
         </div>  
       </div>
-      <div class="dayOff">
-        <div class="dayOff_image">
+      <div class="day-off">
+        <div class="day-off-img">
           <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346139.jpg" width="590" height="394" alt="A bored woman looking at the front" title="A bored woman">
         </div>
-        <div class="dayOff_countdowner">  
+        <div class="day-off-countdowner">  
           <h1>Day off Countdowner <i class="far fa-clock"></i></i></h1>
           <p>Have you already booked your vacation?</p> 
           <p>If you feel really bored today, a good motivation will be to check,</p> 
@@ -65,8 +65,8 @@
           <p>it only remains for you to use the last tool that was designed to cheer you up a little bit :)</p>
           <br>
           <p>Enter a numerical value:</p>
-          <form id="dayOffForm" autocomplete="off"></form>
-          <select name="mon" id="dayOffMonth">
+          <form id="day-off-form" autocomplete="off"></form>
+          <select name="mon" id="day-off-month">
             <option value="">--Choose a month--</option>
             <option value="jan">Jan</option>
             <option value="feb">Feb</option>
@@ -81,34 +81,34 @@
             <option value="nov">Nov</option>
             <option value="dec">Dec</option>
           </select>
-          <input type="text" id="dayOffDay" value="" placeholder="Enter a day">
-          <input type="text" id="dayOffYear" value="" placeholder="Enter a year">
-          <button id="dayOffSubmit">SUBMIT</button>
-          <button id="dayOffClear">CLEAR</button>
+          <input type="text" id="day-off-day" value="" placeholder="Enter a day">
+          <input type="text" id="day-off-year" value="" placeholder="Enter a year">
+          <button id="day-off-submit">SUBMIT</button>
+          <button id="day-off-clear">CLEAR</button>
           </form>
           <br>
           <br>
-          <p class="p_underlined">Time left:</p><br><span id="countdownTimer"></span>
+          <p class="p-underlined">Time left:</p><br><span id="countdown-timer"></span>
         </div>
       </div>  
       <div class="joke">
-        <div class="joke_image">
+        <div class="joke-img">
           <img src="../javascript-project-2021/src/assets/pexels-koolshooters-7346141.jpg" width="590" height="394" alt="A bored woman looking to the right" title="A bored woman">
         </div>
-        <div class="joke_picker">  
+        <div class="joke-picker">  
           <h1>Joke Picker <i class="far fa-grin-squint"></i></h1>
           <p>Here you can pick a joke to cheer up a little bit :)</p>
           <br>
-          <button id="jokeSubmit">PICK A JOKE</button>
-          <button id="jokeClear">CLEAR</button>
+          <button id="joke-submit">PICK A JOKE</button>
+          <button id="joke-clear">CLEAR</button>
           <br>
           <br>
-          <p class="p_underlined">Joke of the day (hour? minute?):</p><span id="joke_selected"></span>
+          <p class="p-underlined">Joke of the day (hour? minute?):</p><span id="joke-selected"></span>
         </div>
       </div>
   </main>
   <footer>
-    <p id="copyright">&copy; Bored Worker App 2021. In case of persistent symptoms of boredom we recommend finding a new job.</p>
+    <p class="copyright">&copy; Bored Worker App 2021. In case of persistent symptoms of boredom we recommend finding a new job.</p>
   </footer>
     <script src="main.js"></script>
 </body>
