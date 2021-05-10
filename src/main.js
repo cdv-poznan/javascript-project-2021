@@ -15,7 +15,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //CLOCK MECHANISM
-
 const deg = 6;
 const hr = document.querySelector('#hr');
 const mn = document.querySelector('#mn');
@@ -30,9 +29,9 @@ var ss = day.getSeconds() * deg;
 hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
 mn.style.transform = `rotateZ(${mm}deg)`;
 sc.style.transform = `rotateZ(${ss}deg)`;
-})
-// POPUP WINDOWS
+});
 
+// POPUP WINDOWS
 // LOG IN POPUP MECHANISM
 const logInButton = document.querySelector('#login-start-button');
 const closeButtonLogin = document.querySelector('.close-button-login');
@@ -48,14 +47,12 @@ closeButtonLogin.addEventListener('click', () => {
 	frontSection.classList.remove('active');
 });
 
-
 frontSection.addEventListener('click', () => {
 	document.querySelector('.popup').style.display='none';
 	frontSection.classList.remove('active');
 });
 
 // REMEMMBER ME IN LOCALSTORAGE
-
 const remMe = document.querySelector('#rememberMe');
 const emailInput = document.querySelector('#email-field');
 const loggingInButton  = document.querySelector('#login-button')
@@ -78,9 +75,7 @@ loggingInButton.addEventListener('click', () => {
 	}
 })
 
-
 // SIGN IN POPUP MECHANISM
-
 const signInButton = document.querySelector('#signin-start-button');
 const closeButtonSign = document.querySelector('.close-button-sign');
 
@@ -105,8 +100,6 @@ const signButton = document.querySelector('#sub-button');
 const loginData = document.querySelector('#sign-email');
 const passwordData = document.querySelector('#sign-password');
 const passwordAgaData = document.querySelector('#sign-aga-password');
-
-
 const emailVer = document.getElementById('email-wrong');
 const passVer = document.getElementById('password-wrong');
 const passVerSec = document.getElementById('password-wrong-twice');
@@ -154,14 +147,11 @@ signButton.addEventListener('click', () => {
 		var errorMessage = error.message;
 		signupError.innerHTML= errorMessage;
 		console.log(errorMessage)
-  });
-			
+  });	
 	}
 })
 
-
 // LOGING IN MECHANISM
-
 const logginInEmail = document.querySelector('#email-field');
 const logginInPassword = document.querySelector('#password-field');
 const logOutButton = document.querySelector('#logout-start-button');
@@ -196,7 +186,6 @@ loggingInButton.addEventListener('click', () => {
 });
 
 // FORGOT PASSWORD MECHANISM
-
 const forgotPasswordButton = document.querySelector('#password-forgot-button');
 
 function forgotPasswordFunction () {
@@ -216,7 +205,6 @@ loginErrorMessage.innerHTML = 'A reset password link has been sent to the specif
 forgotPasswordButton.addEventListener('click', forgotPasswordFunction);
 
 // LOGOUT MECHANISM
-
 function logOut () {
 	firebase.auth().signOut();
 	logInButton.style.display = 'flex';
@@ -225,163 +213,159 @@ function logOut () {
 	favouritesButton.style.display = 'none';
 	console.log('Logged Out')
 }
-
 logOutButton.addEventListener('click', logOut)
 
-
-
-
 // FETCH API MECHANISM
-// const liveMatchesSection = document.querySelector(".live-home");
+const liveMatchesSection = document.querySelector(".live-home");
 
-// const matchTime = document.querySelector("#time");
-// const firstTeam = document.querySelector("#home-name");
-// const firstTeamLogo = document.querySelector("#home-logo");
-// const secondTeam = document.querySelector("#away-name");
-// const secondTeamLogo = document.querySelector("#away-logo");
-// const actualScore = document.querySelector("#score");
+const matchTime = document.querySelector("#time");
+const firstTeam = document.querySelector("#home-name");
+const firstTeamLogo = document.querySelector("#home-logo");
+const secondTeam = document.querySelector("#away-name");
+const secondTeamLogo = document.querySelector("#away-logo");
+const actualScore = document.querySelector("#score");
 
-// function addMatch(data) {
-// 	const matchtile = document.createElement('div');
-// 	matchtile.classList.add("match");
+function addMatch(data) {
+	const matchtile = document.createElement('div');
+	matchtile.classList.add("match");
 	
-// 	const scoreBoard = document.createElement('h1');
-// 	scoreBoard.innerHTML = "Scoreboard";
+	const scoreBoard = document.createElement('h1');
+	scoreBoard.innerHTML = "Scoreboard";
 
-// 	const teamsLogo = document.createElement('div');
-// 	teamsLogo.classList.add("teams-logo");
-
-
-
-// 	const homeTeam = document.createElement("div");
-// 	homeTeam.classList.add("team");
-
-// 	const homeLogo = document.createElement("img");
-// 	homeLogo.src=data['teams']['home']['logo'];
-// 	homeLogo.classList.add("home-logo");
-
-// 	const homeName = document.createElement('p');
-// 	homeName.innerHTML = data['teams']['home']['name'];
-
-// 	homeTeam.appendChild(homeLogo);
-// 	homeTeam.appendChild(homeName);
+	const teamsLogo = document.createElement('div');
+	teamsLogo.classList.add("teams-logo");
 
 
 
-// 	const awayTeam = document.createElement("div");
-// 	awayTeam.classList.add("team");
+	const homeTeam = document.createElement("div");
+	homeTeam.classList.add("team");
 
-// 	const awayLogo = document.createElement("img");
-// 	awayLogo.src=data['teams']['away']['logo'];
-// 	awayLogo.classList.add("away-logo");
+	const homeLogo = document.createElement("img");
+	homeLogo.src=data['teams']['home']['logo'];
+	homeLogo.classList.add("home-logo");
 
-// 	const awayName = document.createElement('p');
-// 	awayName.innerHTML = data['teams']['away']['name'];
+	const homeName = document.createElement('p');
+	homeName.innerHTML = data['teams']['home']['name'];
 
-// 	awayTeam.appendChild(awayLogo);
-// 	awayTeam.appendChild(awayName);
-
-// 	const matchScore = document.createElement('p');
-// 	matchScore.classList.add('score');
-// 	matchScore.innerHTML=data['goals']['home'] + " - " + data['goals']['away'];
-
-// 	teamsLogo.appendChild(homeTeam);
-// 	teamsLogo.appendChild(matchScore)
-// 	teamsLogo.appendChild(awayTeam);
-
-// 	const matchTime = document.createElement('p');
-// 	matchTime.classList.add('time');
-// 	matchTime.innerHTML = data['fixture']['status']['elapsed'] + "'"
-
-// 	matchtile.appendChild(scoreBoard);
-// 	matchtile.appendChild(teamsLogo);
-// 	matchtile.appendChild(matchTime);
-
-// 	liveMatchesSection.appendChild(matchtile);
-// }
+	homeTeam.appendChild(homeLogo);
+	homeTeam.appendChild(homeName);
 
 
-// // fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
-// // 	"method": "GET",
-// // 	"headers": {
-// // 		"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
-// // 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
-// // 	}
-// }).then((res) => {
-// 	console.log("Succes", res);
-// 	return res.json()
-// })
-// .then(data => {
-// 	console.log(data.response);
-// 	const matches = data['response'];
-// 	const time = matches[0]['fixture'];
-// 	const goals = matches[0]['goals'];
-// 	const teams = matches[0]['teams'];
-// 	console.log(matches.length);
-// 	console.log(matches);
-// 	console.log(goals);
-// 	console.log(teams);
 
-// 	matchTime.innerHTML = time['status']['elapsed'] + "'";
-// 	firstTeam.innerHTML = teams['home']['name'];
-// 	firstTeamLogo.src = teams['home']['logo'];
-// 	secondTeam.innerHTML = teams['away']['name'];
-// 	secondTeamLogo.src = teams['away']['logo'];
+	const awayTeam = document.createElement("div");
+	awayTeam.classList.add("team");
 
-// 	actualScore.innerHTML = goals['home'] + " - " + goals['away'];
+	const awayLogo = document.createElement("img");
+	awayLogo.src=data['teams']['away']['logo'];
+	awayLogo.classList.add("away-logo");
 
-// 	for(let i = 1; i < matches.length; i++) {
-// 		addMatch(matches[i]);
-// 	}
-// 	})
-// .catch((err) => {
-// 	console.log("Unsuccesfull", err)
-// })
+	const awayName = document.createElement('p');
+	awayName.innerHTML = data['teams']['away']['name'];
 
+	awayTeam.appendChild(awayLogo);
+	awayTeam.appendChild(awayName);
 
-// // FINDING LEAGUES MECHANISM
-// const table = document.querySelector('.matches-list');
-// const tableTbody = document.querySelector('.matches-list-tbody')
+	const matchScore = document.createElement('p');
+	matchScore.classList.add('score');
+	matchScore.innerHTML=data['goals']['home'] + " - " + data['goals']['away'];
 
-// function addTable (sdata) {
-// 	const tableRow = document.createElement('tr')
+	teamsLogo.appendChild(homeTeam);
+	teamsLogo.appendChild(matchScore)
+	teamsLogo.appendChild(awayTeam);
 
-// 	const place = document.createElement('td');
-// 	place.innerHTML = sdata['rank'];
+	const matchTime = document.createElement('p');
+	matchTime.classList.add('time');
+	matchTime.innerHTML = data['fixture']['status']['elapsed'] + "'"
 
-// 	const teamName = document.createElement('td');
-// 	const teamLogo = document.createElement('img');
-// 	teamLogo.src = sdata['team']['logo'];
-// 	teamName.appendChild(teamLogo);
-// 	teamName.classList.add('logo-name');
-// 	teamName.innerHTML = sdata['team']['name'];
+	matchtile.appendChild(scoreBoard);
+	matchtile.appendChild(teamsLogo);
+	matchtile.appendChild(matchTime);
 
-// 	const teamPoints = document.createElement('td');
-// 	teamPoints.innerHTML = sdata['points'];
+	liveMatchesSection.appendChild(matchtile);
+}
+const liveSearchButton = document.querySelector('#live-search-button');
 
-// 	const teamMatchesPlayed = document.createElement('td');
-// 	teamMatchesPlayed.innerHTML = sdata['all']['played'];
+liveSearchButton.addEventListener('click', () => {
+fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "",
+		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+	}
+}).then((res) => {
+	console.log("Succes", res);
+	return res.json()
+})
+.then(data => {
+	console.log(data.response);
+	const matches = data['response'];
+	const time = matches[0]['fixture'];
+	const goals = matches[0]['goals'];
+	const teams = matches[0]['teams'];
+	console.log(matches.length);
+	console.log(matches);
+	console.log(goals);
+	console.log(teams);
 
-// 	const teamMatchesWon = document.createElement('td');
-// 	teamMatchesWon.innerHTML = sdata['all']['win'];
+	matchTime.innerHTML = time['status']['elapsed'] + "'";
+	firstTeam.innerHTML = teams['home']['name'];
+	firstTeamLogo.src = teams['home']['logo'];
+	secondTeam.innerHTML = teams['away']['name'];
+	secondTeamLogo.src = teams['away']['logo'];
 
-// 	const teamMatchesDraw = document.createElement('td');
-// 	teamMatchesDraw.innerHTML = sdata['all']['draw'];
+	actualScore.innerHTML = goals['home'] + " - " + goals['away'];
 
-// 	const teamMatchesLost = document.createElement('td');
-// 	teamMatchesLost.innerHTML = sdata['all']['lose'];
+	for(let i = 1; i < matches.length; i++) {
+		addMatch(matches[i]);
+	}
+	})
+.catch((err) => {
+	console.log("Unsuccesfull", err)
+})
+})
+// FINDING LEAGUES MECHANISM
+const table = document.querySelector('.matches-list');
+const tableTbody = document.querySelector('.matches-list-tbody')
 
-// 	tableRow.appendChild(place);
-// 	tableRow.appendChild(teamName);
-// 	tableRow.appendChild(teamMatchesPlayed);
-// 	tableRow.appendChild(teamMatchesWon);
-// 	tableRow.appendChild(teamMatchesDraw);
-// 	tableRow.appendChild(teamMatchesLost);
-// 	tableRow.appendChild(teamPoints);
-// 	console.log(tableRow)
+function addTable (sdata) {
+	const tableRow = document.createElement('tr')
 
-// 	tableTbody.appendChild(tableRow);
-// }
+	const place = document.createElement('td');
+	place.innerHTML = sdata['rank'];
+
+	const teamName = document.createElement('td');
+	const teamLogo = document.createElement('img');
+	teamLogo.src = sdata['team']['logo'];
+	teamName.appendChild(teamLogo);
+	teamName.classList.add('logo-name');
+	teamName.innerHTML = sdata['team']['name'];
+
+	const teamPoints = document.createElement('td');
+	teamPoints.innerHTML = sdata['points'];
+
+	const teamMatchesPlayed = document.createElement('td');
+	teamMatchesPlayed.innerHTML = sdata['all']['played'];
+
+	const teamMatchesWon = document.createElement('td');
+	teamMatchesWon.innerHTML = sdata['all']['win'];
+
+	const teamMatchesDraw = document.createElement('td');
+	teamMatchesDraw.innerHTML = sdata['all']['draw'];
+
+	const teamMatchesLost = document.createElement('td');
+	teamMatchesLost.innerHTML = sdata['all']['lose'];
+
+	tableRow.appendChild(place);
+	tableRow.appendChild(teamName);
+	tableRow.appendChild(teamMatchesPlayed);
+	tableRow.appendChild(teamMatchesWon);
+	tableRow.appendChild(teamMatchesDraw);
+	tableRow.appendChild(teamMatchesLost);
+	tableRow.appendChild(teamPoints);
+	console.log(tableRow)
+
+	tableTbody.appendChild(tableRow);
+}
 
 const tableButton = document.querySelector('.find-match-button');
 const matchesList = document.querySelector('.matches-list');
@@ -459,7 +443,7 @@ matchesList.style.display = 'active';
 fetch(`https://api-football-v1.p.rapidapi.com/v3/standings?season=${selectedYear.value}&league=${selectedCountry.value}`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
+		"x-rapidapi-key": "",
 		"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
 	}
 })
@@ -479,32 +463,136 @@ fulfillWarning.style.display='active';
 }})
 
 // FIND PLAYER MECHANISM
+const playerImage = document.querySelector('#player-image');
+const playerName = document.querySelector('#player-name');
+const playerAge = document.querySelector('#player-age');
+const playerNationality = document.querySelector('#player-nationality');
+const playerHeight = document.querySelector('#player-height');
+const playerWeight = document.querySelector('#player-weight');
+const playerTeam = document.querySelector('#player-team');
+const playerGames = document.querySelector('#player-games');
+const playerShots = document.querySelector('#player-shots');
+const playerGoals = document.querySelector('#player-goals');
+const playerPasses = document.querySelector('#player-passes');
+const playerTackles = document.querySelector('#player-tackles');
+const playerDribbles = document.querySelector('#player-dribbles');
+const playerFouls = document.querySelector('#player-fouls');
+const playerYCards = document.querySelector('#player-ycards');
+const playerRCards = document.querySelector('#player-rcards');
+const playerPenalty = document.querySelector('#player-penalty');
+
+function playerInfo (pdata) {
+
+	const playerImageImg = document.createElement('img');
+	playerImageImg.src = pdata['player']['photo'];
+	playerImageImg.classList.add('.player-logo');
+	playerImage.appendChild(playerImageImg);
 
 
+	const playerNameTd = document.createElement('td');
+	playerNameTd.innerHTML = pdata['player']['name'];
+	playerName.appendChild(playerNameTd);
+
+	const playerAgeTd = document.createElement('td');
+	playerAgeTd.innerHTML = pdata['player']['age'];
+	playerAge.appendChild(playerAgeTd);
+
+	
+	const playerNationalityTd = document.createElement('td');
+	playerNationalityTd.innerHTML = pdata['player']['nationality'];
+	playerNationality.appendChild(playerNationalityTd);
 
 
-const findPlayerButton = document.querySelector('#find-match-button');
+	const playerHeightTd = document.createElement('td');
+	playerHeightTd.innerHTML = pdata['player']['height'];
+	playerHeight.appendChild(playerHeightTd);
+
+
+	const playerWeightTd = document.createElement('td');
+	playerWeightTd.innerHTML = pdata['player']['weight'];
+	playerWeight.appendChild(playerWeightTd);
+
+
+	const playerTeamTd = document.createElement('td');
+	playerTeamTd.innerHTML = pdata['statistics'][0]['team']['name'];
+	playerTeam.appendChild(playerTeamTd);
+
+
+	const playerGamesTd = document.createElement('td');
+	playerGamesTd.innerHTML = pdata['statistics'][0]['games']['appearences'];
+	playerGames.appendChild(playerGamesTd);
+
+
+	const playerShotsTd = document.createElement('td');
+	playerShotsTd.innerHTML = pdata['statistics'][0]['shots']['total'];
+	playerShots.appendChild(playerShotsTd);
+
+
+	const playerGoalsTd = document.createElement('td');
+	playerGoalsTd.innerHTML = pdata['statistics'][0]['goals']['total'];
+	playerGoals.appendChild(playerGoalsTd);
+
+
+	const playerPassesTd = document.createElement('td');
+	playerPassesTd.innerHTML = pdata['statistics'][0]['passes']['total'];
+	playerPasses.appendChild(playerPassesTd);
+
+	const playerTacklesTd = document.createElement('td');
+	playerTacklesTd.innerHTML = pdata['statistics'][0]['tackles']['total'];
+	playerTackles.appendChild(playerTacklesTd);
+
+
+	const playerDribblesTd = document.createElement('td');
+	playerDribblesTd.innerHTML = pdata['statistics'][0]['dribbles']['success'];
+	playerDribbles.appendChild(playerDribblesTd);
+
+
+	const playerFoulsTd = document.createElement('td');
+	playerFoulsTd.innerHTML = pdata['statistics'][0]['fouls']['committed'];
+	playerFouls.appendChild(playerFoulsTd);
+
+
+	const playerYCardsTd = document.createElement('td');
+	playerYCardsTd.innerHTML = pdata['statistics'][0]['cards']['yellow'];
+	playerYCards.appendChild(playerYCardsTd);
+
+
+	const playerRCardsTd = document.createElement('td');
+	playerRCardsTd.innerHTML = pdata['statistics'][0]['cards']['red'];
+	playerRCards.appendChild(playerRCardsTd);
+
+
+	const playerPenaltyTd = document.createElement('td');
+	playerPenaltyTd.innerHTML = pdata['statistics'][0]['penalty']['scored'];
+	playerPenalty.appendChild(playerPenaltyTd);
+}
+
+const findPlayerButton = document.querySelector('#find-player-button');
 const playerSurname = document.querySelector('.player-input');
 const leagueNumber = document.querySelector('.player-select')
-
+const playerWarning = document.querySelector('.not-fulfilled-player')
+const playerAllInfo = document.querySelector('.player');
 
 findPlayerButton.addEventListener('click', () => {
 	if (playerSurname.value !== "" && leagueNumber.value !== "null") {
-	fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=${leagueNumber}&search=${playerSurname}`, {
+	fetch(`https://api-football-v1.p.rapidapi.com/v3/players?league=${leagueNumber.value}&search=${playerSurname.value}`, {
 		"method": "GET",
 		"headers": {
-			"x-rapidapi-key": "83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff",
+			"x-rapidapi-key": "",
 			"x-rapidapi-host": "api-football-v1.p.rapidapi.com"
 		}
 	})
 	.then(response => response.json().then(data => {
-		const respns = data['response'];
-
+		const respnsPlayer = data['response'];
+		const dataRespnsPlayer = respnsPlayer;
+		playerAllInfo.style.display = 'flex';
+		for (let i = 0; i < respnsPlayer.length; i++ ) {
+					playerInfo(dataRespnsPlayer[i]);	
+				}
 	}))
 	.catch(err => {
 		console.log(err);
 	})
 	} else {
-	fulfillWarning.style.display='active';
-	}})
-
+	playerWarning.style.display='active';
+	}});

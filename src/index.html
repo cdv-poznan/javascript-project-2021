@@ -24,7 +24,7 @@
     <a class="log-in" type="button" href="#" id = "login-start-button">Log In</a>
     <a class="log-out" type="button" href="#" id = "logout-start-button">Log Out</a>
     <a class="sign-in" type="button" href="#" id = "signin-start-button">Sign In</a>
-    <a class="favourites" type="button" href="#" id = "favourites-button">Favourites</a></div>
+    </div>
     
     <div class = "down-front-section">
       <div class="down-front-centre">
@@ -93,7 +93,7 @@
     <div class = "overlay"></div>
     <section id="second-section" class="second-section">
       <h1 class="live-now">LIVE NOW
-        <a href="#" type="button" class="find-button">
+        <a href="#second-section" type="button" class="find-button" id="live-search-button">
       <img src="assets/find.png" alt="findlogo" class="find-logo"/></a></h1>
       
 <div class="live-home">
@@ -167,10 +167,10 @@
   </table>
 </div>
 </section>
-<section class="fourth-section">
+<section class="fourth-section" id="fourth-section">
 <div class = "find-player"><div class="find-player-text">
 <p>Find Player Statistics</p></div>
-<input type="text" placeholder="Player full name" class="player-input"/>
+<input type="text" placeholder="Player Surname" class="player-input"/>
 <select class = "player-select">
   <option value="null">Choose a league</option>
   <option value="39">Premier League</option>
@@ -181,6 +181,70 @@
   <button type="sumbit" class="find-match-button" id="find-player-button">Submit</button></div>
   <p class="not-fulfilled-player">Please fulfill every form.</p>
 </div>
+<div class="player">
+<div class="all-player-info">
+<div class="player-header">
+  <div class="player-image" id="player-image"></div>
+  <div class="player-info">
+    <table class="player-info-table">
+    <tr id="player-name">
+      <th>Name:</th>
+    </tr>
+    <tr id="player-age">
+      <th>Age:</th>
+    </tr>
+    <tr id="player-nationality">
+      <th>Nationality:</th>
+    </tr>
+    <tr id="player-height">
+      <th>Height:</th>
+    </tr>
+    <tr id="player-weight">
+      <th>Weight:</th>
+    </tr>
+    <tr id="player-team">
+      <th>Team:</th>
+    </table>
+  </div>
+</div>
+<div class="find-player-statistics">
+  <table class="player-statistics">
+    <thead></thead>
+     <tbody class="player-statistics-tbody">
+    </tr>
+    <tr id="player-games">
+      <th>Games:</th>
+    </tr>
+    <tr id="player-shots">
+      <th>Shots:</th>
+    </tr>
+    <tr id="player-goals">
+      <th>Goals:</th>
+    </tr>
+    <tr id="player-passes">
+      <th>Passes:</th>
+    </tr>
+    <tr id="player-tackles">
+      <th>Tackles:</th>
+    </tr>
+    <tr id="player-dribbles">
+      <th>Dribbles:</th>
+    </tr>
+    <tr id="player-fouls">
+      <th>Fouls:</th>
+    </tr>
+    <tr id="player-ycards">
+      <th>Yellow Cards:</th>
+    </tr>
+    <tr id="player-rcards">
+      <th>Red Cards:</th>
+    </tr>
+    <tr id="player-penalty">
+      <th>Penalty:</th>
+    </tr>
+  </tbody>
+  </table></div>
+</div></div>
 </section>
   </body>
 </html>
