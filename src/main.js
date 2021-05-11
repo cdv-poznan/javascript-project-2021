@@ -16,8 +16,9 @@ function game() {
     }
 
     //zmienne
-    var cardCompare = [];
-    var pairsCounter = 0;
+    var cardCompare = []; 
+    var pairsCounter = 0; // licznik trafień par kart
+    var sameCardChecker = [] //zmienna do sprawdzania czy ta sama karta jest kliknięta
     //funkcje
     function different() {
         // document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1")
@@ -38,7 +39,7 @@ function game() {
         addClass.push(var1);
         if (cardCompare.length == 2) {
             console.log("2!");
-            if (cardCompare[0] == cardCompare[1]) {
+            if (cardCompare[0] == cardCompare[1] && sameCardChecker[0] != sameCardChecker[1]) {
                 console.log("Te same!");
                 pairsCounter++;
                 console.log("pairsCounter= " + pairsCounter);
@@ -46,6 +47,7 @@ function game() {
                 document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.add("match");
                 cardCompare = [];
                 addClass = [];
+                sameCardChecker = [];
                 pairsCount();
             } else {
                 console.log("Różne!");
@@ -56,6 +58,7 @@ function game() {
                 //     document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
                 // });
                 setTimeout(different, 800);
+                sameCardChecker = [];
                 // different();
                 
                 // document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
@@ -74,6 +77,8 @@ function game() {
         getCard1.classList.add("card" + ranNums[0]);
         cardCompare.push(ranNums[0]);
         console.log(cardCompare);
+        console.log(sameCardChecker);
+        sameCardChecker.push(1); //11.05.2021
         sameCards("1"); //dodać argument do funkcji i przekazać go do niej
     };
     var getCard1 = document.querySelector(".board div:nth-child(1)");
@@ -87,7 +92,9 @@ function game() {
     function showCard2() {
         getCard2.classList.add("card" + ranNums[1]);
         cardCompare.push(ranNums[1]);
-        console.log(cardCompare);
+        console.log("card compare: " + cardCompare);
+        console.log(sameCardChecker);
+        sameCardChecker.push(2); //11.05.2021
         sameCards("2");
     };
 
@@ -102,6 +109,7 @@ function game() {
         getCard3.classList.add("card" + ranNums[2]);
         cardCompare.push(ranNums[2]);
         console.log(cardCompare);
+        sameCardChecker.push(3); //11.05.2021
         sameCards("3");
     }
     var getCard3 = document.querySelector(".board div:nth-child(3)");
@@ -115,6 +123,7 @@ function game() {
         getCard4.classList.add("card" + ranNums[3]);
         cardCompare.push(ranNums[3]);
         console.log(cardCompare);
+        sameCardChecker.push(4); //11.05.2021
         sameCards("4");
     }
     var getCard4 = document.querySelector(".board div:nth-child(4)");
@@ -128,6 +137,7 @@ function game() {
         getCard5.classList.add("card" + ranNums[4]);
         cardCompare.push(ranNums[4]);
         console.log(cardCompare);
+        sameCardChecker.push(5); //11.05.2021
         sameCards("5");
     }
     var getCard5 = document.querySelector(".board div:nth-child(5)");
@@ -142,6 +152,7 @@ function game() {
         getCard6.classList.add("card" + ranNums[5]);
         cardCompare.push(ranNums[5]);
         console.log(cardCompare);
+        sameCardChecker.push(6); //11.05.2021
         sameCards("6");
     }
     var getCard6 = document.querySelector(".board div:nth-child(6)");
@@ -156,6 +167,7 @@ function game() {
         getCard7.classList.add("card" + ranNums[6]);
         cardCompare.push(ranNums[6]);
         console.log(cardCompare);
+        sameCardChecker.push(7); //11.05.2021
         sameCards("7");
     }
     var getCard7 = document.querySelector(".board div:nth-child(7)");
@@ -170,6 +182,7 @@ function game() {
         getCard8.classList.add("card" + ranNums[7]);
         cardCompare.push(ranNums[7]);
         console.log(cardCompare);
+        sameCardChecker.push(8); //11.05.2021
         sameCards("8");
     }
     var getCard8 = document.querySelector(".board div:nth-child(8)");
@@ -184,6 +197,7 @@ function game() {
         getCard9.classList.add("card" + ranNums[8]);
         cardCompare.push(ranNums[8]);
         console.log(cardCompare);
+        sameCardChecker.push(9); //11.05.2021
         sameCards("9");
     }
     var getCard9 = document.querySelector(".board div:nth-child(9)");
@@ -197,6 +211,7 @@ function game() {
         getCard10.classList.add("card" + ranNums[9]);
         cardCompare.push(ranNums[9]);
         console.log(cardCompare);
+        sameCardChecker.push(10); //11.05.2021
         sameCards("10");
     }
     var getCard10 = document.querySelector(".board div:nth-child(10)");
@@ -211,6 +226,7 @@ function game() {
         getCard11.classList.add("card" + ranNums[10]);
         cardCompare.push(ranNums[10]);
         console.log(cardCompare);
+        sameCardChecker.push(11); //11.05.2021
         sameCards("11");
     }
     var getCard11 = document.querySelector(".board div:nth-child(11)");
@@ -224,6 +240,7 @@ function game() {
         getCard12.classList.add("card" + ranNums[11]);
         cardCompare.push(ranNums[11]);
         console.log(cardCompare);
+        sameCardChecker.push(12); //11.05.2021
         sameCards("12");
     }
     var getCard12 = document.querySelector(".board div:nth-child(12)");
@@ -237,6 +254,7 @@ function game() {
         getCard13.classList.add("card" + ranNums[12]);
         cardCompare.push(ranNums[12]);
         console.log(cardCompare);
+        sameCardChecker.push(13); //11.05.2021
         sameCards("13");
     }
     var getCard13 = document.querySelector(".board div:nth-child(13)");
@@ -251,6 +269,7 @@ function game() {
         getCard14.classList.add("card" + ranNums[13]);
         cardCompare.push(ranNums[13]);
         console.log(cardCompare);
+        sameCardChecker.push(14); //11.05.2021
         sameCards("14");
     }
     var getCard14 = document.querySelector(".board div:nth-child(14)");
@@ -265,6 +284,7 @@ function game() {
         getCard15.classList.add("card" + ranNums[14]);
         cardCompare.push(ranNums[14]);
         console.log(cardCompare);
+        sameCardChecker.push(15); //11.05.2021
         sameCards("15");
     }
     var getCard15 = document.querySelector(".board div:nth-child(15)");
@@ -279,6 +299,7 @@ function game() {
         getCard16.classList.add("card" + ranNums[15]);
         cardCompare.push(ranNums[15]);
         console.log(cardCompare);
+        sameCardChecker.push(16); //11.05.2021
         sameCards("16");
     }
     var getCard16 = document.querySelector(".board div:nth-child(16)");
@@ -292,6 +313,7 @@ function game() {
         getCard17.classList.add("card" + ranNums[16]);
         cardCompare.push(ranNums[16]);
         console.log(cardCompare);
+        sameCardChecker.push(17); //11.05.2021
         sameCards("17");
     }
     var getCard17 = document.querySelector(".board div:nth-child(17)");
@@ -305,6 +327,7 @@ function game() {
         getCard18.classList.add("card" + ranNums[17]);
         cardCompare.push(ranNums[17]);
         console.log(cardCompare);
+        sameCardChecker.push(18); //11.05.2021
         sameCards("18");
     }
     var getCard18 = document.querySelector(".board div:nth-child(18)");
@@ -318,6 +341,7 @@ function game() {
         getCard19.classList.add("card" + ranNums[18]);
         cardCompare.push(ranNums[18]);
         console.log(cardCompare);
+        sameCardChecker.push(19); //11.05.2021
         sameCards("19");
     }
     var getCard19 = document.querySelector(".board div:nth-child(19)");
@@ -331,6 +355,7 @@ function game() {
         getCard20.classList.add("card" + ranNums[19]);
         cardCompare.push(ranNums[19]);
         console.log(cardCompare);
+        sameCardChecker.push(20); //11.05.2021
         sameCards("20");
     }
     var getCard20 = document.querySelector(".board div:nth-child(20)");
@@ -345,6 +370,7 @@ function game() {
         getCard21.classList.add("card" + ranNums[20]);
         cardCompare.push(ranNums[20]);
         console.log(cardCompare);
+        sameCardChecker.push(21); //11.05.2021
         sameCards("21");
     }
     var getCard21 = document.querySelector(".board div:nth-child(21)");
@@ -359,6 +385,7 @@ function game() {
         getCard22.classList.add("card" + ranNums[21]);
         cardCompare.push(ranNums[21]);
         console.log(cardCompare);
+        sameCardChecker.push(22); //11.05.2021
         sameCards("22");
     }
     var getCard22 = document.querySelector(".board div:nth-child(22)");
@@ -372,6 +399,7 @@ function game() {
         getCard23.classList.add("card" + ranNums[22]);
         cardCompare.push(ranNums[22]);
         console.log(cardCompare);
+        sameCardChecker.push(23); //11.05.2021
         sameCards("23");
     }
     var getCard23 = document.querySelector(".board div:nth-child(23)");
@@ -385,6 +413,7 @@ function game() {
         getCard24.classList.add("card" + ranNums[23]);
         cardCompare.push(ranNums[23]);
         console.log(cardCompare);
+        sameCardChecker.push(24); //11.05.2021
         sameCards("24");
     }
     var getCard24 = document.querySelector(".board div:nth-child(24)");
