@@ -5,7 +5,6 @@
   "scripts": {
     "start": "webpack serve",
     "production": "webpack --mode production"
-
   },
   "repository": {
     "type": "git",
@@ -27,6 +26,7 @@
   },
   "homepage": "https://github.com/cdv-poznan/javascript-project-2021#readme",
   "dependencies": {
+    "eslint": "^7.26.0",
     "firebase": "^8.4.2",
     "firebaseui": "^4.8.0"
   },
