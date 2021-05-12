@@ -103,7 +103,7 @@ const emailVer = document.getElementById('email-wrong');
 const passVer = document.getElementById('password-wrong');
 const passVerSec = document.getElementById('password-wrong-twice');
 const signupError = document.querySelector('.signup-error');
-const signupSucces = document.querySelector('.popup-succesfull');
+const signupSucces = document.querySelector('#popup-succesfull');
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbersVal = /[0-9]/g;
@@ -156,8 +156,12 @@ signButton.addEventListener('click', () => {
 const logginInEmail = document.querySelector('#email-field');
 const logginInPassword = document.querySelector('#password-field');
 const logOutButton = document.querySelector('#logout-start-button');
-const favouritesButton = document.querySelector('#favourites-button');
+const deleteAccountButton = document.querySelector('#delete-account-button');
 const loginErrorMessage = document.querySelector('#login-error-message');
+const deletedPopup = document.querySelector('.popup-succesfull-deleted');
+const deleteCloseButton = document.querySelector(
+  '#close-button-deletedaccount',
+);
 
 loggingInButton.addEventListener('click', () => {
   const emailValue = logginInEmail.value;
@@ -166,18 +170,15 @@ loggingInButton.addEventListener('click', () => {
     .auth()
     .signInWithEmailAndPassword(emailValue, passwordValue)
     .then(userCredential => {
-      const user = userCredential.user;
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
+      firebase.auth().onAuthStateChanged(function (userOne) {
+        if (userOne) {
           document.querySelector('.popup').style.display = 'none';
           frontSection.classList.remove('active');
           logInButton.style.display = 'none';
           logOutButton.style.display = 'flex';
           signInButton.style.display = 'none';
-          favouritesButton.style.display = 'flex';
-          console.log('Logged In');
-        } else {
-          console.log('Not logged');
+          deleteAccountButton.style.display = 'flex';
+          deletedPopup.style.display = 'active';
         }
       });
     })
@@ -185,6 +186,29 @@ loggingInButton.addEventListener('click', () => {
       console.log(error.message);
       loginErrorMessage.innerHTML = error.message;
     });
+});
+
+//DELETE ACCOUNT MECHANISM
+
+deleteAccountButton.addEventListener('click', () => {
+  const user = firebase.auth().currentUser;
+  user.delete();
+  logInButton.style.display = 'flex';
+  logOutButton.style.display = 'none';
+  signInButton.style.display = 'flex';
+  deleteAccountButton.style.display = 'none';
+  frontSection.classList.add('active');
+  snackBar();
+});
+
+deleteCloseButton.addEventListener('click', () => {
+  deletedPopup.style.display = 'none';
+  frontSection.classList.remove('active');
+});
+
+frontSection.addEventListener('click', () => {
+  deletedPopup.style.display = 'none';
+  frontSection.classList.remove('active');
 });
 
 // FORGOT PASSWORD MECHANISM
@@ -213,12 +237,12 @@ function logOut() {
   logInButton.style.display = 'flex';
   logOutButton.style.display = 'none';
   signInButton.style.display = 'flex';
-  favouritesButton.style.display = 'none';
-  console.log('Logged Out');
+  deleteAccountButton.style.display = 'none';
 }
 logOutButton.addEventListener('click', logOut);
 
 // FETCH API MECHANISM
+//FINDING LIVE MATCHES
 const liveMatchesSection = document.querySelector('.live-home');
 
 const matchTime = document.querySelector('#time');
@@ -283,6 +307,7 @@ function addMatch(data) {
   liveMatchesSection.appendChild(matchtile);
 }
 const liveSearchButton = document.querySelector('#live-search-button');
+const liveHomeView = document.querySelector('.live-home');
 
 liveSearchButton.addEventListener('click', () => {
   fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all', {
@@ -302,10 +327,8 @@ liveSearchButton.addEventListener('click', () => {
       const time = matches[0]['fixture'];
       const goals = matches[0]['goals'];
       const teams = matches[0]['teams'];
-      console.log(matches.length);
-      console.log(matches);
-      console.log(goals);
-      console.log(teams);
+
+      liveHomeView.style.display = 'flex';
 
       matchTime.innerHTML = time['status']['elapsed'] + "'";
       firstTeam.innerHTML = teams['home']['name'];
@@ -455,7 +478,9 @@ tableButton.addEventListener('click', () => {
       .then(response =>
         response.json().then(data => {
           const respns = data['response'];
+          console.log(respns);
           const dataRespns = respns[0]['league']['standings'][0];
+          console.log(dataRespns);
 
           for (let i = 0; i < dataRespns.length; i++) {
             addTable(dataRespns[i]);
@@ -471,93 +496,201 @@ tableButton.addEventListener('click', () => {
 });
 
 // FIND PLAYER MECHANISM
-const playerImage = document.querySelector('#player-image');
-const playerName = document.querySelector('#player-name');
-const playerAge = document.querySelector('#player-age');
-const playerNationality = document.querySelector('#player-nationality');
-const playerHeight = document.querySelector('#player-height');
-const playerWeight = document.querySelector('#player-weight');
-const playerTeam = document.querySelector('#player-team');
-const playerGames = document.querySelector('#player-games');
-const playerShots = document.querySelector('#player-shots');
-const playerGoals = document.querySelector('#player-goals');
-const playerPasses = document.querySelector('#player-passes');
-const playerTackles = document.querySelector('#player-tackles');
-const playerDribbles = document.querySelector('#player-dribbles');
-const playerFouls = document.querySelector('#player-fouls');
-const playerYCards = document.querySelector('#player-ycards');
-const playerRCards = document.querySelector('#player-rcards');
-const playerPenalty = document.querySelector('#player-penalty');
+const newPlayer = document.querySelector('.player');
 
 function playerInfo(pdata) {
+  const allPlayerInfo = document.createElement('div');
+  allPlayerInfo.classList.add('all-player-info');
+
+  const playerHeader = document.createElement('div');
+  playerHeader.classList.add('player-header');
+
+  const playerImageNew = document.createElement('div');
+  playerImageNew.classList.add('player-image');
   const playerImageImg = document.createElement('img');
   playerImageImg.src = pdata['player']['photo'];
-  playerImageImg.classList.add('.player-logo');
-  playerImage.appendChild(playerImageImg);
+  playerImageImg.classList.add('player-logo');
 
+  playerImageNew.appendChild(playerImageImg);
+  playerHeader.appendChild(playerImageNew);
+  allPlayerInfo.appendChild(playerHeader);
+  newPlayer.appendChild(allPlayerInfo);
+
+  const playerInfoTable = document.createElement('div');
+  playerInfoTable.classList.add('player-info');
+  playerHeader.appendChild(playerInfoTable);
+
+  const playerTable = document.createElement('table');
+  playerTable.classList.add('player-info-table');
+  playerInfoTable.appendChild(playerTable);
+
+  const playerNameTr = document.createElement('tr');
+  playerNameTr.classList.add('player-name');
+  const playerNameTh = document.createElement('th');
+  playerNameTh.innerHTML = 'Name:';
+  playerNameTr.appendChild(playerNameTh);
   const playerNameTd = document.createElement('td');
   playerNameTd.innerHTML = pdata['player']['name'];
-  playerName.appendChild(playerNameTd);
+  playerNameTr.appendChild(playerNameTd);
+  playerTable.appendChild(playerNameTr);
 
+  const playerAgeTr = document.createElement('tr');
+  playerAgeTr.classList.add('player-age');
+  const playerAgeTh = document.createElement('th');
+  playerAgeTh.innerHTML = 'Age:';
+  playerAgeTr.appendChild(playerAgeTh);
   const playerAgeTd = document.createElement('td');
   playerAgeTd.innerHTML = pdata['player']['age'];
-  playerAge.appendChild(playerAgeTd);
+  playerAgeTr.appendChild(playerAgeTd);
+  playerTable.appendChild(playerAgeTr);
 
+  const playerNationalityTr = document.createElement('tr');
+  playerNationalityTr.classList.add('player-nationality');
+  const playerNationalityTh = document.createElement('th');
+  playerNationalityTh.innerHTML = 'Nationality:';
+  playerNationalityTr.appendChild(playerNationalityTh);
   const playerNationalityTd = document.createElement('td');
   playerNationalityTd.innerHTML = pdata['player']['nationality'];
-  playerNationality.appendChild(playerNationalityTd);
+  playerNationalityTr.appendChild(playerNationalityTd);
+  playerTable.appendChild(playerNationalityTr);
 
+  const playerHeightTr = document.createElement('tr');
+  playerHeightTr.classList.add('player-height');
+  const playerHeightTh = document.createElement('th');
+  playerHeightTh.innerHTML = 'Height:';
+  playerHeightTr.appendChild(playerHeightTh);
   const playerHeightTd = document.createElement('td');
   playerHeightTd.innerHTML = pdata['player']['height'];
-  playerHeight.appendChild(playerHeightTd);
+  playerHeightTr.appendChild(playerHeightTd);
+  playerTable.append(playerHeightTr);
 
+  const playerWeightTr = document.createElement('tr');
+  playerWeightTr.classList.add('player-weight');
+  const playerWeightTh = document.createElement('th');
+  playerWeightTh.innerHTML = 'Weight:';
+  playerWeightTr.appendChild(playerWeightTh);
   const playerWeightTd = document.createElement('td');
   playerWeightTd.innerHTML = pdata['player']['weight'];
-  playerWeight.appendChild(playerWeightTd);
+  playerWeightTr.appendChild(playerWeightTd);
+  playerTable.appendChild(playerWeightTr);
 
+  const playerTeamTr = document.createElement('tr');
+  playerTeamTr.classList.add('player-team');
+  const playerTeamTh = document.createElement('th');
+  playerTeamTh.innerHTML = 'Team:';
+  playerTeamTr.appendChild(playerTeamTh);
   const playerTeamTd = document.createElement('td');
   playerTeamTd.innerHTML = pdata['statistics'][0]['team']['name'];
-  playerTeam.appendChild(playerTeamTd);
+  playerTeamTr.appendChild(playerTeamTd);
+  playerTable.appendChild(playerTeamTr);
 
+  const findPlayerStatistics = document.createElement('div');
+  findPlayerStatistics.classList.add('find-player-statistics');
+  allPlayerInfo.appendChild(findPlayerStatistics);
+
+  const secondTable = document.createElement('table');
+  secondTable.classList.add('player-statistics');
+  findPlayerStatistics.appendChild(secondTable);
+
+  const playerGamesTr = document.createElement('tr');
+  playerGamesTr.classList.add('player-games');
+  const playerGamesTh = document.createElement('th');
+  playerGamesTh.innerHTML = 'Games:';
+  playerGamesTr.appendChild(playerGamesTh);
   const playerGamesTd = document.createElement('td');
   playerGamesTd.innerHTML = pdata['statistics'][0]['games']['appearences'];
-  playerGames.appendChild(playerGamesTd);
+  playerGamesTr.appendChild(playerGamesTd);
+  secondTable.appendChild(playerGamesTr);
 
+  const playerShotsTr = document.createElement('tr');
+  playerShotsTr.classList.add('player-shots');
+  const playerShotsTh = document.createElement('th');
+  playerShotsTh.innerHTML = 'Shots:';
+  playerShotsTr.appendChild(playerShotsTh);
   const playerShotsTd = document.createElement('td');
   playerShotsTd.innerHTML = pdata['statistics'][0]['shots']['total'];
-  playerShots.appendChild(playerShotsTd);
+  playerShotsTr.appendChild(playerShotsTd);
+  secondTable.appendChild(playerShotsTr);
 
+  const playerGoalsTr = document.createElement('tr');
+  playerGoalsTr.classList.add('player-goals');
+  const playerGoalsTh = document.createElement('th');
+  playerGoalsTh.innerHTML = 'Goals:';
+  playerGoalsTr.appendChild(playerGoalsTh);
   const playerGoalsTd = document.createElement('td');
   playerGoalsTd.innerHTML = pdata['statistics'][0]['goals']['total'];
-  playerGoals.appendChild(playerGoalsTd);
+  playerGoalsTr.appendChild(playerGoalsTd);
+  secondTable.appendChild(playerGoalsTr);
 
+  const playerPassesTr = document.createElement('tr');
+  playerPassesTr.classList.add('player-passes');
+  const playerPassesTh = document.createElement('th');
+  playerPassesTh.innerHTML = 'Passes:';
+  playerPassesTr.appendChild(playerPassesTh);
   const playerPassesTd = document.createElement('td');
   playerPassesTd.innerHTML = pdata['statistics'][0]['passes']['total'];
-  playerPasses.appendChild(playerPassesTd);
+  playerPassesTr.appendChild(playerPassesTd);
+  secondTable.appendChild(playerPassesTr);
 
+  const playerTacklesTr = document.createElement('tr');
+  playerTacklesTr.classList.add('player-tackles');
+  const playerTacklesTh = document.createElement('th');
+  playerTacklesTh.innerHTML = 'Tackles:';
+  playerTacklesTr.appendChild(playerTacklesTh);
   const playerTacklesTd = document.createElement('td');
   playerTacklesTd.innerHTML = pdata['statistics'][0]['tackles']['total'];
-  playerTackles.appendChild(playerTacklesTd);
+  playerTacklesTr.appendChild(playerTacklesTd);
+  secondTable.appendChild(playerTacklesTr);
 
+  const playerDribblesTr = document.createElement('tr');
+  playerDribblesTr.classList.add('player-dribbles');
+  const playerDribblesTh = document.createElement('th');
+  playerDribblesTh.innerHTML = 'Dribbles:';
+  playerDribblesTr.appendChild(playerDribblesTh);
   const playerDribblesTd = document.createElement('td');
   playerDribblesTd.innerHTML = pdata['statistics'][0]['dribbles']['success'];
-  playerDribbles.appendChild(playerDribblesTd);
+  playerDribblesTr.appendChild(playerDribblesTd);
+  secondTable.appendChild(playerDribblesTr);
 
+  const playerFoulsTr = document.createElement('tr');
+  playerFoulsTr.classList.add('player-fouls');
+  const playerFoulsTh = document.createElement('th');
+  playerFoulsTh.innerHTML = 'Fouls:';
+  playerFoulsTr.appendChild(playerFoulsTh);
   const playerFoulsTd = document.createElement('td');
   playerFoulsTd.innerHTML = pdata['statistics'][0]['fouls']['committed'];
-  playerFouls.appendChild(playerFoulsTd);
+  playerFoulsTr.appendChild(playerFoulsTd);
+  secondTable.appendChild(playerFoulsTr);
 
+  const playerYCardsTr = document.createElement('tr');
+  playerYCardsTr.classList.add('player-ycards');
+  const playerYCardsTh = document.createElement('th');
+  playerYCardsTh.innerHTML = 'Yellow Cards:';
+  playerYCardsTr.appendChild(playerYCardsTh);
   const playerYCardsTd = document.createElement('td');
   playerYCardsTd.innerHTML = pdata['statistics'][0]['cards']['yellow'];
-  playerYCards.appendChild(playerYCardsTd);
+  playerYCardsTr.appendChild(playerYCardsTd);
+  secondTable.appendChild(playerYCardsTr);
 
+  const playerRCardsTr = document.createElement('tr');
+  playerRCardsTr.classList.add('player-rcards');
+  const playerRCardsTh = document.createElement('th');
+  playerRCardsTh.innerHTML = 'Red Cards:';
+  playerRCardsTr.appendChild(playerRCardsTh);
   const playerRCardsTd = document.createElement('td');
   playerRCardsTd.innerHTML = pdata['statistics'][0]['cards']['red'];
-  playerRCards.appendChild(playerRCardsTd);
+  playerRCardsTr.appendChild(playerRCardsTd);
+  secondTable.append(playerRCardsTr);
 
+  const playerPenaltyTr = document.createElement('tr');
+  playerPenaltyTr.classList.add('player-penalty');
+  const playerPenaltyTh = document.createElement('th');
+  playerPenaltyTh.innerHTML = 'Penalty:';
+  playerPenaltyTr.appendChild(playerPenaltyTh);
   const playerPenaltyTd = document.createElement('td');
   playerPenaltyTd.innerHTML = pdata['statistics'][0]['penalty']['scored'];
-  playerPenalty.appendChild(playerPenaltyTd);
+  playerPenaltyTr.appendChild(playerPenaltyTd);
+  secondTable.appendChild(playerPenaltyTr);
 }
 
 const findPlayerButton = document.querySelector('#find-player-button');
@@ -583,6 +716,7 @@ findPlayerButton.addEventListener('click', () => {
           const respnsPlayer = data['response'];
           const dataRespnsPlayer = respnsPlayer;
           playerAllInfo.style.display = 'flex';
+
           for (let i = 0; i < respnsPlayer.length; i++) {
             playerInfo(dataRespnsPlayer[i]);
           }

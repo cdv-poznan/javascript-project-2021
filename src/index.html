@@ -23,6 +23,7 @@
     <div class="front-options">
     <a class="log-in" type="button" href="#" id = "login-start-button">Log In</a>
     <a class="log-out" type="button" href="#" id = "logout-start-button">Log Out</a>
+    <a class="log-out" type="button" href="#" id = "delete-account-button">Delete Account</a>
     <a class="sign-in" type="button" href="#" id = "signin-start-button">Sign In</a>
     </div>
     
@@ -38,15 +39,22 @@
       <div class="down-front-centre">
         <a href="#fourth-section" type="button" class="slide-third"> <p>Find Player</p>
         <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
-  </div></header>
+  </div>
 </section>
 
-<div class="popup-succesfull">
- <div class="popup-content-succcesfull">
+<div class="popup-succesfull" id="popup-succesfull">
+ <div class="popup-content-succesfull">
      <p>Account has been created succesfully.</p>
      <button data-close-button class="close-button-newaccount">Close</button>
  </div>
 </div>
+<div class="popup-succesfull-deleted" id="popup-deleted">
+  <div class="popup-content-succesfull">
+      <p>Account has been deleted.</p>
+      <button data-close-button id="close-button-deletedaccount"
+      class="close-button-deletedaccount">Close</button>
+  </div>
+ </div>
 
     <div class="popup">
        <button data-close-button class="close-button-login">&times;</button>
@@ -182,69 +190,8 @@
   <p class="not-fulfilled-player">Please fulfill every form.</p>
 </div>
 <div class="player">
-<div class="all-player-info">
-<div class="player-header">
-  <div class="player-image" id="player-image"></div>
-  <div class="player-info">
-    <table class="player-info-table">
-    <tr id="player-name">
-      <th>Name:</th>
-    </tr>
-    <tr id="player-age">
-      <th>Age:</th>
-    </tr>
-    <tr id="player-nationality">
-      <th>Nationality:</th>
-    </tr>
-    <tr id="player-height">
-      <th>Height:</th>
-    </tr>
-    <tr id="player-weight">
-      <th>Weight:</th>
-    </tr>
-    <tr id="player-team">
-      <th>Team:</th>
-    </table>
-  </div>
+
 </div>
-<div class="find-player-statistics">
-  <table class="player-statistics">
-    <thead></thead>
-     <tbody class="player-statistics-tbody">
-    </tr>
-    <tr id="player-games">
-      <th>Games:</th>
-    </tr>
-    <tr id="player-shots">
-      <th>Shots:</th>
-    </tr>
-    <tr id="player-goals">
-      <th>Goals:</th>
-    </tr>
-    <tr id="player-passes">
-      <th>Passes:</th>
-    </tr>
-    <tr id="player-tackles">
-      <th>Tackles:</th>
-    </tr>
-    <tr id="player-dribbles">
-      <th>Dribbles:</th>
-    </tr>
-    <tr id="player-fouls">
-      <th>Fouls:</th>
-    </tr>
-    <tr id="player-ycards">
-      <th>Yellow Cards:</th>
-    </tr>
-    <tr id="player-rcards">
-      <th>Red Cards:</th>
-    </tr>
-    <tr id="player-penalty">
-      <th>Penalty:</th>
-    </tr>
-  </tbody>
-  </table></div>
-</div></div>
 </section>
   </body>
 </html>

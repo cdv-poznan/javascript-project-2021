@@ -1,8 +1,13 @@
-html {
+html,
+body {
   color: #f1f0f0;
   font-family: "Baloo 2", cursive;
   background-color: #020202;
   scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -181,6 +186,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: top;
+  text-align: center;
   background-color: #faf4f4;
   opacity: 0.75;
   transition: 1s;
@@ -236,7 +242,6 @@ header {
   display: flex;
   position: absolute;
   bottom: 0;
-  left: 42%;
 }
 
 .down-front-centre {
@@ -309,11 +314,29 @@ header {
   transition: 200ms ease-in-out;
 }
 
-.popup-content-succcesfull {
+.popup-succesfull-deleted {
+  display: none;
+  position: fixed;
+  padding: 3vh 5vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #080808;
+  border-radius: 20px;
+  z-index: 10;
+  background: #faf4f4;
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  max-height: 80%;
+  transition: 200ms ease-in-out;
+}
+
+.popup-content-succesfull {
   text-align: center;
 }
 
-.popup-content-succcesfull p {
+.popup-content-succesfull p {
   color: #8d0808;
   font-size: 25px;
   text-align: center;
@@ -333,6 +356,24 @@ header {
 }
 
 .close-button-newaccount:hover {
+  border-color: #8d0808;
+  background-color: #8d0808;
+  color: #f1f0f0;
+}
+
+.close-button-deletedaccount {
+  text-align: center;
+  align-items: center;
+  font-size: 17px;
+  color: #8d0808;
+  margin: 15px;
+  border-radius: 25px;
+  border-color: #8d0808;
+  font-size: 18px;
+  transition: 1s;
+}
+
+.close-button-deletedaccount:hover {
   border-color: #8d0808;
   background-color: #8d0808;
   color: #f1f0f0;
@@ -555,7 +596,7 @@ header {
 }
 
 .live-home {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   height: 100vh;
@@ -645,6 +686,7 @@ header {
   color: #8d0808;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .find-specifications {
@@ -775,17 +817,43 @@ header {
 .player {
   display: none;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .all-player-info {
   border: 5px solid #f1f0f0;
   border-radius: 20px;
-  background-color: #020202;
-  height: fit-content;
-  width: fit-content;
+  background-color: #080808;
+  margin: 30px;
+  font: 20px bold;
 }
 
 .player-logo {
-  width: 50px;
-  height: 50px;
+  align-self: center;
+  border: solid 5px #f1f0f0;
+  border-radius: 20px;
+}
+
+.player-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 5px #f1f0f0;
+  margin: 10px;
+}
+
+.find-player-statistics {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.player-statistics {
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+.player-info-table {
+  border-collapse: separate;
+  border-spacing: 15px;
 }
