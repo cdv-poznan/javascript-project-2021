@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 const configure = (env, args) => {
   const PRODUCTION = args.mode === 'production';
@@ -59,6 +60,26 @@ const configure = (env, args) => {
         },
         minify: 'auto',
       }),
+      new HtmlWebpackPlugin({
+        template: './src/about.html',
+        filename: 'about.html',
+        favicon: './src/favicon.ico',
+        scriptLoading: 'defer',
+        meta: {
+          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        },
+        minify: 'auto',
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/contact.html',
+        filename: 'contact.html',
+        favicon: './src/favicon.ico',
+        scriptLoading: 'defer',
+        meta: {
+          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        },
+        minify: 'auto',
+      }),
       new ESLintWebpackPlugin({
         failOnError: false,
         failOnWarning: false,
@@ -83,6 +104,24 @@ const configure = (env, args) => {
         options: {
           concurrency: 100,
         },
+      }),
+      new HtmlWebpackPartialsPlugin({
+        path: resolve(__dirname, './src/partials/navigation.html'),
+        location: 'navigation',
+        template_filename: ['index.html', 'about.html', 'contact.html'],
+        options: {
+          homePage: 'Home',
+          aboutPage: 'About',
+          contactPage: 'Contact'
+        }
+      }),
+      new HtmlWebpackPartialsPlugin({
+        path: resolve(__dirname, './src/partials/footer.html'),
+        location: 'footer',
+        template_filename: ['index.html', 'about.html', 'contact.html'],
+        options: {
+          createdBy: 'Created by Magda Senger'
+        }
       }),
     ],
     devServer: {
