@@ -740,6 +740,7 @@ header {
 }
 
 .find-results {
+  height: 100vh;
   overflow: auto;
 }
 
@@ -753,6 +754,7 @@ header {
   border-radius: 10px;
   border: solid;
   background-color: #0c0c0c;
+  margin: 20px auto;
 }
 
 .not-fulfilled {
@@ -977,5 +979,51 @@ header {
   .player-input,
   .country-select {
     height: 28px;
+  }
+}
+@media (max-width: 430px) {
+  .player-image {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .frontlogo {
+    width: 300px;
+    height: auto;
+  }
+
+  .down-front-section p {
+    font-size: 13px;
+  }
+
+  .down-front-section img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .find-standings-text p {
+    font-size: 20px;
+    padding: 0;
+    margin: 6px;
+    border: 0;
+  }
+
+  .player-select,
+  .player-input,
+  .country-select {
+    height: 20px;
+    font-size: 15px;
+    width: 200px;
+  }
+
+  .find-specifications li {
+    margin: 0 0 5px;
+    font-size: 15px;
+  }
+
+  .find-match-button {
+    width: 200px;
+    height: auto;
   }
 }

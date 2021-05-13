@@ -313,7 +313,7 @@ liveSearchButton.addEventListener('click', () => {
   fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all', {
     method: 'GET',
     headers: {
-      'x-rapidapi-key': '',
+      'x-rapidapi-key': '83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff',
       'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
     },
   })
@@ -464,13 +464,13 @@ tableButton.addEventListener('click', () => {
     selectedLeague.value !== 'null' &&
     selectedYear.value !== 'null'
   ) {
-    matchesList.style.display = 'active';
     fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/standings?season=${selectedYear.value}&league=${selectedCountry.value}`,
+      `https://api-football-v1.p.rapidapi.com/v3/standings?season=${selectedYear.value}&league=${selectedLeague.value}`,
       {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': '',
+          'x-rapidapi-key':
+            '83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff',
           'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
         },
       },
@@ -481,7 +481,7 @@ tableButton.addEventListener('click', () => {
           console.log(respns);
           const dataRespns = respns[0]['league']['standings'][0];
           console.log(dataRespns);
-
+          matchesList.style.display = 'table';
           for (let i = 0; i < dataRespns.length; i++) {
             addTable(dataRespns[i]);
           }
@@ -706,7 +706,8 @@ findPlayerButton.addEventListener('click', () => {
       {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': '',
+          'x-rapidapi-key':
+            '83066ce9eamsh829dcf2a6eb1961p1891b6jsne7d1d851b2ff',
           'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
         },
       },
