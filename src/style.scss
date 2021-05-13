@@ -857,3 +857,125 @@ header {
   border-collapse: separate;
   border-spacing: 15px;
 }
+
+@media (max-width: 1035px) {
+  html,
+  body {
+    width: auto;
+    height: auto;
+  }
+
+  .front-options a {
+    height: 70px;
+    width: 130px;
+  }
+
+  .log-in,
+  .log-out,
+  .sign-in {
+    font-size: 25px;
+  }
+
+  .find-match {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .find-standings-text p {
+    font-size: 30px;
+    border: #f1f0f0 solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 8px;
+  }
+
+  .find-specifications {
+    padding: 0;
+  }
+
+  .find-standings-button {
+    margin: 0;
+  }
+
+  .find-player {
+    flex-direction: column;
+  }
+
+  .find-player-text p {
+    font-size: 30px;
+    border: #f1f0f0 solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .find-specifications {
+    display: block;
+  }
+}
+
+@media (max-width: 460px) {
+  .frontlogo {
+    width: 370px;
+    height: auto;
+  }
+
+  .front-options a {
+    height: 50px;
+    width: 110px;
+  }
+
+  .find-specifications p {
+    display: none;
+  }
+
+  .find-standings-text p {
+    font-size: 23px;
+  }
+
+  .find-specifications li {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+
+  .find-player-text p {
+    font-size: 23px;
+  }
+
+  .live-now {
+    font-size: 33px;
+  }
+
+  .find-logo {
+    width: 23px;
+    height: 23px;
+  }
+
+  .player-select,
+  .player-input,
+  .country-select {
+    height: 25px;
+    font-size: 18px;
+  }
+}
+@media (max-height: 780px) {
+  .down-front-section p {
+    font-size: 16px;
+  }
+
+  .down-front-section img {
+    width: 33px;
+    height: 33px;
+  }
+
+  .player-select,
+  .player-input,
+  .country-select {
+    height: 28px;
+  }
+}
