@@ -74,3 +74,33 @@ form {
   margin-top: 20vh;
   max-width: 14vw;
 }
+
+h2 {
+  text-align: center;
+  border-color: #09f;
+  border-style: dotted;
+}
+
+h5 {
+  text-align: justify;
+  border-color: #09f;
+  border-style: dotted;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  margin: 3vh;
+  border-color: #f6c;
+  border-style: dotted;
+}
+
+.section-left {
+  text-align: center;
+}
+
+.section-right {
+  margin: 0 1.5vw;
+  text-align: justify;
+}

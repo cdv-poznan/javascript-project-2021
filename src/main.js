@@ -6,8 +6,53 @@ function search() {
     .then(res => res.text())
     .then(res => {
         var parseRes = JSON.parse(res);
-        // wyświetlenie w przeglądarce
-        // var search = document.getElementById("my-class").innerHTML = `${parseRes.results[0].poster_path}`;
+        // browser
+        document.querySelector("h2").innerHTML = `${parseRes.name}`;
+        document.querySelector("h5").innerHTML = `${parseRes.description}`;
+        
+        for (var i=0; i < parseRes.results.length; i++) {
+
+
+            
+            var tag = document.createElement("div");
+            tag.setAttribute("class", "movie-info");
+            var text = document.createElement("section");
+            var text2 = document.createElement("section");
+            var text3 = document.createElement("p");
+            var content2 = document.createTextNode(parseRes.results[i].poster_path); // add
+
+            function choiceTitle() {
+                if (parseRes.results[i].original_title) {
+                    var content3 = document.createTextNode(parseRes.results[i].original_title);
+                }
+                else if (parseRes.results[i].original_name) {
+                    var content3 = document.createTextNode(parseRes.results[i].original_name);
+                }
+                return content3;
+            }
+
+            var content4 = document.createTextNode(parseRes.results[i].overview);
+            var text4 = document.createElement("p");
+            var text5 = document.createElement("p");
+            text.setAttribute("class", "section-left");
+            text2.setAttribute("class", "section-right");
+            text3.setAttribute("class", "movie-img");
+            text4.setAttribute("class", "movie-title");
+            text5.setAttribute("class", "movie-overview");
+            tag.appendChild(text);
+            tag.appendChild(text2);
+            text.appendChild(text3);
+            text2.appendChild(text4);
+            text2.appendChild(text5);
+            text3.appendChild(content2); // add
+            text4.appendChild(choiceTitle());
+            text5.appendChild(content4);
+            var element = document.querySelector(".movie-main");
+            element.appendChild(tag);
+
+        }
+    
+
 
         console.log(parseRes);
     })
