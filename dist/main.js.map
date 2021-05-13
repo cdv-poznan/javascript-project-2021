@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://javascript-project-2021/./src/main.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI","file":"main.js","sourcesContent":["console.log('JavaScript Project');\n"],"sourceRoot":""}
