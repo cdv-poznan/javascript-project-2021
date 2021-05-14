@@ -1,19 +1,31 @@
+function moviesClear() {
+    document.getElementById('movies-clear').innerHTML = "";
+}
 
-var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
+function test(clicked_value) {
+
+switch (clicked_value) {
+  case 'Star Wars':
+    var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
+    break;
+  case 'Comedy':
+    var baseUrl = 'https://api.themoviedb.org/4/list/7095579?api_key=1d177576971c8d250816c5fcd5cac600';
+    break;
+  default:
+    console.log('Sorry, we are out of ' + clicked_value + ' list.');
+}
 
 function search() {
     fetch(baseUrl)
     .then(res => res.text())
     .then(res => {
         var parseRes = JSON.parse(res);
-        // browser
+        // List name
         document.querySelector("h2").innerHTML = `${parseRes.name}`;
+        // List description
         document.querySelector("h5").innerHTML = `${parseRes.description}`;
-        
+        // List content (movies)
         for (var i=0; i < parseRes.results.length; i++) {
-
-
-            
             var tag = document.createElement("div");
             tag.setAttribute("class", "movie-info");
             var text = document.createElement("section");
@@ -49,12 +61,9 @@ function search() {
             text5.appendChild(content4);
             var element = document.querySelector(".movie-main");
             element.appendChild(tag);
-
         }
-    
-
-
         console.log(parseRes);
     })
 }
 search();
+}

@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
+    <script type="text/javascript" src="../src/main.js"></script>
   </head>
   <body>
     <div class="main-content">
@@ -10,13 +11,23 @@
         <h1>The Good Movie App</h1>
 
         <navigation></navigation>
-
         <h2></h2>
         <h5></h5>
       </div>
 
       <div class="movie-list">
         <p class="categories">Categories</p>
+
+        <button id="star-wars-list" value="Star Wars" onclick="test(this.value)">
+          <p class="categories-list">
+            Star Wars
+          </p>
+        </button>
+
+        <button id="comedy-list" value="Comedy" onclick="test(this.value)">
+          <p class="categories-list">Comedy</p>
+        </button>
+
       </div>
     </div>
     <footer></footer>
