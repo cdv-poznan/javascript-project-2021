@@ -350,45 +350,55 @@ liveSearchButton.addEventListener('click', () => {
 const table = document.querySelector('.matches-list');
 const tableTbody = document.querySelector('.matches-list-tbody');
 
-function addTable(sdata) {
-  const tableRow = document.createElement('tr');
-
-  const place = document.createElement('td');
-  place.innerHTML = sdata['rank'];
-
-  const teamName = document.createElement('td');
-  const teamLogo = document.createElement('img');
-  teamLogo.src = sdata['team']['logo'];
-  teamName.appendChild(teamLogo);
-  teamName.classList.add('logo-name');
-  teamName.innerHTML = sdata['team']['name'];
-
-  const teamPoints = document.createElement('td');
-  teamPoints.innerHTML = sdata['points'];
-
-  const teamMatchesPlayed = document.createElement('td');
-  teamMatchesPlayed.innerHTML = sdata['all']['played'];
-
-  const teamMatchesWon = document.createElement('td');
-  teamMatchesWon.innerHTML = sdata['all']['win'];
-
-  const teamMatchesDraw = document.createElement('td');
-  teamMatchesDraw.innerHTML = sdata['all']['draw'];
-
-  const teamMatchesLost = document.createElement('td');
-  teamMatchesLost.innerHTML = sdata['all']['lose'];
-
-  tableRow.appendChild(place);
-  tableRow.appendChild(teamName);
-  tableRow.appendChild(teamMatchesPlayed);
-  tableRow.appendChild(teamMatchesWon);
-  tableRow.appendChild(teamMatchesDraw);
-  tableRow.appendChild(teamMatchesLost);
-  tableRow.appendChild(teamPoints);
-  console.log(tableRow);
-
-  tableTbody.appendChild(tableRow);
+function addTable(tdata) {
+  return `<td>${tdata}</td>`;
 }
+
+const tableRowContent = [
+  sdata.rank,
+  sdata.team.name,
+  sdata.points,
+  sdata.all.played,
+  sdata.all.win,
+  sdata.all.draw,
+  sdata.all.lose,
+]
+  .map(addTable)
+  .join('');
+const tableRow = document.createElement('tr');
+tableRow.innerHTML = tableRowContent;
+
+// const place = document.createElement('td');
+// place.innerHTML = sdata['rank'];
+
+// const teamName = document.createElement('td');
+// teamName.innerHTML = sdata['team']['name'];
+
+// const teamPoints = document.createElement('td');
+// teamPoints.innerHTML = sdata['points'];
+
+// const teamMatchesPlayed = document.createElement('td');
+// teamMatchesPlayed.innerHTML = sdata['all']['played'];
+
+// const teamMatchesWon = document.createElement('td');
+// teamMatchesWon.innerHTML = sdata['all']['win'];
+
+// const teamMatchesDraw = document.createElement('td');
+// teamMatchesDraw.innerHTML = sdata['all']['draw'];
+
+// const teamMatchesLost = document.createElement('td');
+// teamMatchesLost.innerHTML = sdata['all']['lose'];
+
+// tableRow.appendChild(place);
+// tableRow.appendChild(teamName);
+// tableRow.appendChild(teamMatchesPlayed);
+// tableRow.appendChild(teamMatchesWon);
+// tableRow.appendChild(teamMatchesDraw);
+// tableRow.appendChild(teamMatchesLost);
+// tableRow.appendChild(teamPoints);
+// console.log(tableRow);
+
+tableTbody.appendChild(tableRow);
 
 const tableButton = document.querySelector('.find-match-button');
 const matchesList = document.querySelector('.matches-list');
@@ -396,64 +406,38 @@ const selectedCountry = document.querySelector('#country-select');
 const selectedLeague = document.querySelector('#league-select');
 const selectedYear = document.querySelector('#year-select');
 
+function renderOptions(options) {
+  return options
+    .map(option => `<option value=${option.value}>${option.text}</option>`)
+    .join('');
+}
 selectedCountry.addEventListener('change', () => {
   if (selectedCountry.value === 'England') {
     selectedLeague.options.length = 1;
-    console.log(selectedLeague.options.length);
 
-    const firstOptionEngland = document.createElement('option');
-    firstOptionEngland.innerHTML = 'Premier League';
-    firstOptionEngland.value = '39';
-    selectedLeague.appendChild(firstOptionEngland);
-
-    const secondOptionEngland = document.createElement('option');
-    secondOptionEngland.innerHTML = 'Championship';
-    secondOptionEngland.value = '40';
-    selectedLeague.appendChild(secondOptionEngland);
-
-    const thirdOptionEngland = document.createElement('option');
-    thirdOptionEngland.innerHTML = 'League One';
-    thirdOptionEngland.value = '41';
-    selectedLeague.appendChild(thirdOptionEngland);
-
-    const fourthOptionEngland = document.createElement('option');
-    fourthOptionEngland.innerHTML = 'League Two';
-    fourthOptionEngland.value = '42';
-    selectedLeague.appendChild(fourthOptionEngland);
-
-    const fifthOptionEngland = document.createElement('option');
-    fifthOptionEngland.innerHTML = 'National League';
-    fifthOptionEngland.value = '43';
-    selectedLeague.appendChild(fifthOptionEngland);
+    const options = renderOptions([
+      { text: 'Premier League', value: '39' },
+      { text: 'Championship', value: '40' },
+      { text: 'League One', value: '43' },
+      { text: 'League Two', value: '41' },
+      { text: 'National League', value: '42' },
+    ]);
+    selectedLeague.innerHTML += options;
   } else if (selectedCountry.value === 'Poland') {
     selectedLeague.options.length = 1;
-
-    const firstOptionPoland = document.createElement('option');
-    firstOptionPoland.innerHTML = 'Ekstraklasa';
-    firstOptionPoland.value = '106';
-    selectedLeague.appendChild(firstOptionPoland);
-
-    const secondOptionPoland = document.createElement('option');
-    secondOptionPoland.innerHTML = 'I Liga';
-    secondOptionPoland.value = '107';
-    selectedLeague.appendChild(secondOptionPoland);
+    const options = renderOptions([
+      { text: 'Ekstraklasa', value: '106' },
+      { text: 'I Liga', value: '107' },
+    ]);
+    selectedLeague.innerHTML += options;
   } else if (selectedCountry.value === 'Germany') {
     selectedLeague.options.length = 1;
-
-    const firstOptionGermany = document.createElement('option');
-    firstOptionGermany.innerHTML = 'Bundesliga 1';
-    firstOptionGermany.value = '78';
-    selectedLeague.appendChild(firstOptionGermany);
-
-    const secondOptionGermany = document.createElement('option');
-    secondOptionGermany.innerHTML = 'Bundesliga 2';
-    secondOptionGermany.value = '79';
-    selectedLeague.appendChild(secondOptionGermany);
-
-    const thirdOptionGermany = document.createElement('option');
-    thirdOptionGermany.innerHTML = 'Liga 3';
-    thirdOptionGermany.value = '80';
-    selectedLeague.appendChild(thirdOptionGermany);
+    const options = renderOptions([
+      { text: 'Bundesliga 1', value: '78' },
+      { text: 'Bundesliga 2', value: '79' },
+      { text: 'Liga 3', value: '80' },
+    ]);
+    selectedLeague.innerHTML += options;
   }
 });
 
@@ -498,6 +482,9 @@ tableButton.addEventListener('click', () => {
 // FIND PLAYER MECHANISM
 const newPlayer = document.querySelector('.player');
 
+function renderRow(header, data) {
+  return `<tr><th>${header}:</th><td>${data}</td></tr>`;
+}
 function playerInfo(pdata) {
   const allPlayerInfo = document.createElement('div');
   allPlayerInfo.classList.add('all-player-info');
@@ -524,65 +511,35 @@ function playerInfo(pdata) {
   playerTable.classList.add('player-info-table');
   playerInfoTable.appendChild(playerTable);
 
-  const playerNameTr = document.createElement('tr');
-  playerNameTr.classList.add('player-name');
-  const playerNameTh = document.createElement('th');
-  playerNameTh.innerHTML = 'Name:';
-  playerNameTr.appendChild(playerNameTh);
-  const playerNameTd = document.createElement('td');
-  playerNameTd.innerHTML = pdata['player']['name'];
-  playerNameTr.appendChild(playerNameTd);
-  playerTable.appendChild(playerNameTr);
+  const playerBasicInfo = pdata.player;
+  const playerSecondStatistics = pdata.statistics[0];
 
-  const playerAgeTr = document.createElement('tr');
-  playerAgeTr.classList.add('player-age');
-  const playerAgeTh = document.createElement('th');
-  playerAgeTh.innerHTML = 'Age:';
-  playerAgeTr.appendChild(playerAgeTh);
-  const playerAgeTd = document.createElement('td');
-  playerAgeTd.innerHTML = pdata['player']['age'];
-  playerAgeTr.appendChild(playerAgeTd);
-  playerTable.appendChild(playerAgeTr);
-
-  const playerNationalityTr = document.createElement('tr');
-  playerNationalityTr.classList.add('player-nationality');
-  const playerNationalityTh = document.createElement('th');
-  playerNationalityTh.innerHTML = 'Nationality:';
-  playerNationalityTr.appendChild(playerNationalityTh);
-  const playerNationalityTd = document.createElement('td');
-  playerNationalityTd.innerHTML = pdata['player']['nationality'];
-  playerNationalityTr.appendChild(playerNationalityTd);
-  playerTable.appendChild(playerNationalityTr);
-
-  const playerHeightTr = document.createElement('tr');
-  playerHeightTr.classList.add('player-height');
-  const playerHeightTh = document.createElement('th');
-  playerHeightTh.innerHTML = 'Height:';
-  playerHeightTr.appendChild(playerHeightTh);
-  const playerHeightTd = document.createElement('td');
-  playerHeightTd.innerHTML = pdata['player']['height'];
-  playerHeightTr.appendChild(playerHeightTd);
-  playerTable.append(playerHeightTr);
-
-  const playerWeightTr = document.createElement('tr');
-  playerWeightTr.classList.add('player-weight');
-  const playerWeightTh = document.createElement('th');
-  playerWeightTh.innerHTML = 'Weight:';
-  playerWeightTr.appendChild(playerWeightTh);
-  const playerWeightTd = document.createElement('td');
-  playerWeightTd.innerHTML = pdata['player']['weight'];
-  playerWeightTr.appendChild(playerWeightTd);
-  playerTable.appendChild(playerWeightTr);
-
-  const playerTeamTr = document.createElement('tr');
-  playerTeamTr.classList.add('player-team');
-  const playerTeamTh = document.createElement('th');
-  playerTeamTh.innerHTML = 'Team:';
-  playerTeamTr.appendChild(playerTeamTh);
-  const playerTeamTd = document.createElement('td');
-  playerTeamTd.innerHTML = pdata['statistics'][0]['team']['name'];
-  playerTeamTr.appendChild(playerTeamTd);
-  playerTable.appendChild(playerTeamTr);
+  [
+    {
+      header: 'Name',
+      data: playerBasicInfo.name,
+    },
+    {
+      header: 'Age',
+      data: playerBasicInfo.age,
+    },
+    {
+      header: 'Nationality',
+      data: playerBasicInfo.nationality,
+    },
+    {
+      header: 'Height',
+      data: playerBasicInfo.height,
+    },
+    {
+      header: 'Weight',
+      data: playerBasicInfo.weight,
+    },
+    { header: 'Team', data: playerSecondStatistics.team.name },
+  ].forEach(settings => {
+    const row = renderRow(settings.header, settings.data);
+    playerTable.innerHTML += row;
+  });
 
   const findPlayerStatistics = document.createElement('div');
   findPlayerStatistics.classList.add('find-player-statistics');
@@ -592,105 +549,21 @@ function playerInfo(pdata) {
   secondTable.classList.add('player-statistics');
   findPlayerStatistics.appendChild(secondTable);
 
-  const playerGamesTr = document.createElement('tr');
-  playerGamesTr.classList.add('player-games');
-  const playerGamesTh = document.createElement('th');
-  playerGamesTh.innerHTML = 'Games:';
-  playerGamesTr.appendChild(playerGamesTh);
-  const playerGamesTd = document.createElement('td');
-  playerGamesTd.innerHTML = pdata['statistics'][0]['games']['appearences'];
-  playerGamesTr.appendChild(playerGamesTd);
-  secondTable.appendChild(playerGamesTr);
-
-  const playerShotsTr = document.createElement('tr');
-  playerShotsTr.classList.add('player-shots');
-  const playerShotsTh = document.createElement('th');
-  playerShotsTh.innerHTML = 'Shots:';
-  playerShotsTr.appendChild(playerShotsTh);
-  const playerShotsTd = document.createElement('td');
-  playerShotsTd.innerHTML = pdata['statistics'][0]['shots']['total'];
-  playerShotsTr.appendChild(playerShotsTd);
-  secondTable.appendChild(playerShotsTr);
-
-  const playerGoalsTr = document.createElement('tr');
-  playerGoalsTr.classList.add('player-goals');
-  const playerGoalsTh = document.createElement('th');
-  playerGoalsTh.innerHTML = 'Goals:';
-  playerGoalsTr.appendChild(playerGoalsTh);
-  const playerGoalsTd = document.createElement('td');
-  playerGoalsTd.innerHTML = pdata['statistics'][0]['goals']['total'];
-  playerGoalsTr.appendChild(playerGoalsTd);
-  secondTable.appendChild(playerGoalsTr);
-
-  const playerPassesTr = document.createElement('tr');
-  playerPassesTr.classList.add('player-passes');
-  const playerPassesTh = document.createElement('th');
-  playerPassesTh.innerHTML = 'Passes:';
-  playerPassesTr.appendChild(playerPassesTh);
-  const playerPassesTd = document.createElement('td');
-  playerPassesTd.innerHTML = pdata['statistics'][0]['passes']['total'];
-  playerPassesTr.appendChild(playerPassesTd);
-  secondTable.appendChild(playerPassesTr);
-
-  const playerTacklesTr = document.createElement('tr');
-  playerTacklesTr.classList.add('player-tackles');
-  const playerTacklesTh = document.createElement('th');
-  playerTacklesTh.innerHTML = 'Tackles:';
-  playerTacklesTr.appendChild(playerTacklesTh);
-  const playerTacklesTd = document.createElement('td');
-  playerTacklesTd.innerHTML = pdata['statistics'][0]['tackles']['total'];
-  playerTacklesTr.appendChild(playerTacklesTd);
-  secondTable.appendChild(playerTacklesTr);
-
-  const playerDribblesTr = document.createElement('tr');
-  playerDribblesTr.classList.add('player-dribbles');
-  const playerDribblesTh = document.createElement('th');
-  playerDribblesTh.innerHTML = 'Dribbles:';
-  playerDribblesTr.appendChild(playerDribblesTh);
-  const playerDribblesTd = document.createElement('td');
-  playerDribblesTd.innerHTML = pdata['statistics'][0]['dribbles']['success'];
-  playerDribblesTr.appendChild(playerDribblesTd);
-  secondTable.appendChild(playerDribblesTr);
-
-  const playerFoulsTr = document.createElement('tr');
-  playerFoulsTr.classList.add('player-fouls');
-  const playerFoulsTh = document.createElement('th');
-  playerFoulsTh.innerHTML = 'Fouls:';
-  playerFoulsTr.appendChild(playerFoulsTh);
-  const playerFoulsTd = document.createElement('td');
-  playerFoulsTd.innerHTML = pdata['statistics'][0]['fouls']['committed'];
-  playerFoulsTr.appendChild(playerFoulsTd);
-  secondTable.appendChild(playerFoulsTr);
-
-  const playerYCardsTr = document.createElement('tr');
-  playerYCardsTr.classList.add('player-ycards');
-  const playerYCardsTh = document.createElement('th');
-  playerYCardsTh.innerHTML = 'Yellow Cards:';
-  playerYCardsTr.appendChild(playerYCardsTh);
-  const playerYCardsTd = document.createElement('td');
-  playerYCardsTd.innerHTML = pdata['statistics'][0]['cards']['yellow'];
-  playerYCardsTr.appendChild(playerYCardsTd);
-  secondTable.appendChild(playerYCardsTr);
-
-  const playerRCardsTr = document.createElement('tr');
-  playerRCardsTr.classList.add('player-rcards');
-  const playerRCardsTh = document.createElement('th');
-  playerRCardsTh.innerHTML = 'Red Cards:';
-  playerRCardsTr.appendChild(playerRCardsTh);
-  const playerRCardsTd = document.createElement('td');
-  playerRCardsTd.innerHTML = pdata['statistics'][0]['cards']['red'];
-  playerRCardsTr.appendChild(playerRCardsTd);
-  secondTable.append(playerRCardsTr);
-
-  const playerPenaltyTr = document.createElement('tr');
-  playerPenaltyTr.classList.add('player-penalty');
-  const playerPenaltyTh = document.createElement('th');
-  playerPenaltyTh.innerHTML = 'Penalty:';
-  playerPenaltyTr.appendChild(playerPenaltyTh);
-  const playerPenaltyTd = document.createElement('td');
-  playerPenaltyTd.innerHTML = pdata['statistics'][0]['penalty']['scored'];
-  playerPenaltyTr.appendChild(playerPenaltyTd);
-  secondTable.appendChild(playerPenaltyTr);
+  [
+    { header: 'Games', data: playerSecondStatistics.games.appearences },
+    { header: 'Shots', data: playerSecondStatistics.shots.total },
+    { header: 'Goals', data: playerSecondStatistics.goals.total },
+    { header: 'Passes', data: playerSecondStatistics.passes.total },
+    { header: 'Tackles', data: playerSecondStatistics.tackles.total },
+    { header: 'Dribbles', data: playerSecondStatistics.dribbles.success },
+    { header: 'Fouls', data: playerSecondStatistics.fouls.committed },
+    { header: 'Yellow Cards', data: playerSecondStatistics.cards.yellow },
+    { header: 'Red Cards', data: playerSecondStatistics.cards.red },
+    { header: 'Penalty', data: playerSecondStatistics.penalty.scored },
+  ].forEach(statistics => {
+    const row = renderRow(statistics.header, statistics.data);
+    secondTable.innerHTML += row;
+  });
 }
 
 const findPlayerButton = document.querySelector('#find-player-button');
