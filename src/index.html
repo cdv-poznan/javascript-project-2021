@@ -1,7 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body></body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book finder</title>
+    <script src="https://kit.fontawesome.com/1ec0d97a36.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" media="screen and (min-width: 575.98px)" href="./css/small.css">
+    <link rel="stylesheet" media="screen and (min-width: 767.98px)" href="./css/medium.css">
+    <link rel="stylesheet" media="screen and (min-width: 991.98px)" href="./css/large.css">
+</head>
+
+<body>
+    <nav id="navigation">
+        <div class="hero-img">
+            <div class="nav-bar">
+                <a class="logo" href="#"><i class="fas fa-book"></i></a>
+                <a href="#favourite">
+                    <p>favourite</p>
+                </a>
+                <a href="#" id="random-book">
+                    <p>random</p>
+                </a>
+            </div>
+            <div class="header-text">
+                <p class="site-title">book finder</p>
+                <div class="input-find">
+                    <input id="input-area" type="text" placeholder="Search book...">
+                    <i class="fas fa-search" id="search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page-wraper">
+        <section id="find-results"></section>
+        <section class="book-find">
+            <div class="book-find-info">
+                <a class="logo logo-click" href="#navigation"><i class="fas fa-book"></i></a>
+                <div class="book-info">
+                    <p class="book-author" id="book-author">Author</p>
+                    <p class="book-title" id='book-title'>Title</p>
+                    <p class="book-description" id="book-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum perspiciatis dolorem eius, voluptates rem tenetur! Ullam ut deleniti ab voluptatum minus amet consequatur, tempora magni reiciendis in aut ratione repudiandae assumenda dolorum ipsa ducimus voluptatibus magnam. Architecto sint praesentium, accusamus nam possimus atque veniam ipsa saepe illo optio nisi commodi vel culpa accusantium vitae at aperiam qui dolores aliquid nostrum aliquam aut? Ab ratione delectus qui? Voluptas, esse laborum saepe dicta iusto modi possimus molestias ullam, recusandae, magni rerum officiis fugit fugiat sunt quisquam deserunt quam obcaecati. Tempore repellendus iste architecto voluptatibus facilis, soluta cumque maiores ex ducimus ipsam suscipit!</p>
+                </div>
+            </div>
+            <div class="book-find-cover">
+                <div class="book-cover-bgc">
+                    <div class="book-cover" id="book-cover"></div>
+                </div>
+                <div class="box-btns">
+                    <button class="btn-favourite" id="btn-add">add to favourite</button>
+                    <button class="btn-buy-book" id="btn-buy">buy</button>
+                </div>
+            </div>
+        </section>
+        <section class="fav-box" id="favourite">
+            <div class="fav-title">
+                <a class="logo logo-click" href="#navigation"><i class="fas fa-book"></i></a>
+                <p>favourties</p>
+            </div>
+            <div id="fav-items">
+            </div>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
 </html>

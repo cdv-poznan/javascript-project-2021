@@ -1,0 +1,109 @@
+// ===============
+// LARGE
+// MIN-WIDTH: 992PX
+// ===============
+
+.logo {
+    display: inline-block;
+    font-size: 5.25rem;
+    cursor: auto;
+}
+
+.logo-click{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: #F9A801;
+}
+    
+a:visited{
+    text-decoration: none;
+    color: #F9A801;
+}
+
+// ===========
+// NAVIGATION
+// ===========
+
+.nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+
+.hero-img {
+    font-size: 18px;
+}
+
+#input-area {
+    width: 45vw;
+    max-width: 550px;
+    height: 6.5vh;
+}
+
+.input-find{
+    .fa-search{
+        transform: translate(-125%, 30%);
+    }
+}
+
+// ============
+// SECTION BOOK-FIND
+// ==============
+
+.book-find{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    .book-find-info{
+        flex-basis: 55%;
+    }
+    .book-find-cover{
+        flex-basis: 40%;
+        .book-cover-bgc{
+            margin: 0 auto;
+            height: 70vh;
+        }
+    }
+
+    .box-btns{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 2vh;
+    }
+
+    .btn-add, .btn-favourite{
+        width: 17rem;
+        height: 5rem;
+    }
+}
+
+
+// ============
+//  SECTION FAVOURITES
+// ===============
+
+.fav-box{
+    .fav-title{
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        padding: 6vh 0;
+        font-size: 7rem;
+        letter-spacing: 0.3rem;
+        i{
+            flex-basis: 10%;
+        }
+        p{
+            flex-basis: 90%;
+        }
+    }
+}
