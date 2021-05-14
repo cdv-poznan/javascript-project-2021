@@ -245,13 +245,6 @@ logOutButton.addEventListener('click', logOut);
 //FINDING LIVE MATCHES
 const liveMatchesSection = document.querySelector('.live-home');
 
-const matchTime = document.querySelector('#time');
-const firstTeam = document.querySelector('#home-name');
-const firstTeamLogo = document.querySelector('#home-logo');
-const secondTeam = document.querySelector('#away-name');
-const secondTeamLogo = document.querySelector('#away-logo');
-const actualScore = document.querySelector('#score');
-
 function addMatch(data) {
   const matchtile = document.createElement('div');
   matchtile.classList.add('match');
@@ -322,23 +315,11 @@ liveSearchButton.addEventListener('click', () => {
       return res.json();
     })
     .then(data => {
-      console.log(data.response);
       const matches = data['response'];
-      const time = matches[0]['fixture'];
-      const goals = matches[0]['goals'];
-      const teams = matches[0]['teams'];
 
       liveHomeView.style.display = 'flex';
 
-      matchTime.innerHTML = time['status']['elapsed'] + "'";
-      firstTeam.innerHTML = teams['home']['name'];
-      firstTeamLogo.src = teams['home']['logo'];
-      secondTeam.innerHTML = teams['away']['name'];
-      secondTeamLogo.src = teams['away']['logo'];
-
-      actualScore.innerHTML = goals['home'] + ' - ' + goals['away'];
-
-      for (let i = 1; i < matches.length; i++) {
+      for (let i = 0; i < matches.length; i++) {
         addMatch(matches[i]);
       }
     })
@@ -350,56 +331,27 @@ liveSearchButton.addEventListener('click', () => {
 const table = document.querySelector('.matches-list');
 const tableTbody = document.querySelector('.matches-list-tbody');
 
-function addTable(tdata) {
-  return `<td>${tdata}</td>`;
+function renderTableData(data) {
+  return `<td>${data}</td>`;
 }
 
-const tableRowContent = [
-  sdata.rank,
-  sdata.team.name,
-  sdata.points,
-  sdata.all.played,
-  sdata.all.win,
-  sdata.all.draw,
-  sdata.all.lose,
-]
-  .map(addTable)
-  .join('');
-const tableRow = document.createElement('tr');
-tableRow.innerHTML = tableRowContent;
+function addTable(sdata) {
+  const tableRowContent = [
+    sdata.rank,
+    sdata.team.name,
+    sdata.points,
+    sdata.all.played,
+    sdata.all.win,
+    sdata.all.draw,
+    sdata.all.lose,
+  ]
+    .map(renderTableData)
+    .join('');
+  const tableRow = document.createElement('tr');
+  tableRow.innerHTML = tableRowContent;
 
-// const place = document.createElement('td');
-// place.innerHTML = sdata['rank'];
-
-// const teamName = document.createElement('td');
-// teamName.innerHTML = sdata['team']['name'];
-
-// const teamPoints = document.createElement('td');
-// teamPoints.innerHTML = sdata['points'];
-
-// const teamMatchesPlayed = document.createElement('td');
-// teamMatchesPlayed.innerHTML = sdata['all']['played'];
-
-// const teamMatchesWon = document.createElement('td');
-// teamMatchesWon.innerHTML = sdata['all']['win'];
-
-// const teamMatchesDraw = document.createElement('td');
-// teamMatchesDraw.innerHTML = sdata['all']['draw'];
-
-// const teamMatchesLost = document.createElement('td');
-// teamMatchesLost.innerHTML = sdata['all']['lose'];
-
-// tableRow.appendChild(place);
-// tableRow.appendChild(teamName);
-// tableRow.appendChild(teamMatchesPlayed);
-// tableRow.appendChild(teamMatchesWon);
-// tableRow.appendChild(teamMatchesDraw);
-// tableRow.appendChild(teamMatchesLost);
-// tableRow.appendChild(teamPoints);
-// console.log(tableRow);
-
-tableTbody.appendChild(tableRow);
-
+  tableTbody.appendChild(tableRow);
+}
 const tableButton = document.querySelector('.find-match-button');
 const matchesList = document.querySelector('.matches-list');
 const selectedCountry = document.querySelector('#country-select');
@@ -462,10 +414,11 @@ tableButton.addEventListener('click', () => {
       .then(response =>
         response.json().then(data => {
           const respns = data['response'];
-          console.log(respns);
           const dataRespns = respns[0]['league']['standings'][0];
-          console.log(dataRespns);
+
           matchesList.style.display = 'table';
+          tableTbody.innerHTML = '';
+
           for (let i = 0; i < dataRespns.length; i++) {
             addTable(dataRespns[i]);
           }
@@ -501,6 +454,8 @@ function playerInfo(pdata) {
   playerImageNew.appendChild(playerImageImg);
   playerHeader.appendChild(playerImageNew);
   allPlayerInfo.appendChild(playerHeader);
+
+  newPlayer.innerHTML = '';
   newPlayer.appendChild(allPlayerInfo);
 
   const playerInfoTable = document.createElement('div');

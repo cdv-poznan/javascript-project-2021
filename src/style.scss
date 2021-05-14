@@ -13,6 +13,7 @@ body {
 * {
   text-decoration: none;
   color: #f1f0f0;
+  font-family: "Baloo 2", cursive;
 }
 
 .front-section {
@@ -451,8 +452,8 @@ header {
 
 .close-button-login {
   position: absolute;
-  top: 5px;
-  left: 290px;
+  top: 10px;
+  right: 10px;
   background: rgb(255, 0, 0);
   color: #8d0808;
   cursor: pointer;
@@ -499,8 +500,8 @@ header {
 
 .close-button-sign {
   position: absolute;
-  top: 5px;
-  left: 300px;
+  top: 10px;
+  right: 10px;
   background: rgb(255, 0, 0);
   color: #8d0808;
   cursor: pointer;
@@ -606,31 +607,42 @@ header {
 .match {
   background-color: #f1f0f0;
   opacity: 0.8;
-  min-width: 25%;
-  min-height: 25%;
-  max-width: 35%;
-  max-height: 35%;
   border: solid #8d0808;
   border-radius: 0 30px;
   color: #8d0808;
-  padding: 10px;
-  margin: 15px;
   text-align: center;
-  color: #8d0808;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .match {
+    width: 48%;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .match {
+    width: 28%;
+    margin: 10px 50px;
+  }
 }
 
 .match h1 {
   color: #8d0808;
 }
 
+.match .score {
+  width: 50px;
+}
+
 .match p {
   color: #8d0808;
   margin: 0;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .teams-names {
@@ -656,8 +668,6 @@ header {
 
 .teams-logo {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
   overflow-wrap: break-word;
@@ -687,16 +697,18 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 10px;
 }
 
 .find-specifications {
   display: flex;
+  align-items: center;
   list-style-type: none;
   margin: 0;
 }
 
 .find-specifications li {
-  margin: 0 20px 10px;
+  margin: 10px 0;
   font-size: 25px;
   font-weight: bold;
 }
@@ -704,14 +716,6 @@ header {
 .find-specifications p {
   margin: 5px;
   text-align: center;
-}
-
-.country-select {
-  width: 200px;
-  color: #f1f0f0;
-  font-weight: bold;
-  font-size: 20px;
-  background-color: #8d0808;
 }
 
 .find-standings-button {
@@ -722,15 +726,16 @@ header {
 .find-match-button {
   margin: 5px 0 10px;
   font-size: 20px;
-  width: 100px;
+  width: 200px;
   height: 40px;
   font-size: 17px;
   color: #8d0808;
   position: relative;
-  border-radius: 25px;
-  border-color: #8d0808;
+  border-radius: 5px;
+  border: 1px solid #8d0808;
   font-size: 18px;
   transition: 1s;
+  appearance: none;
 }
 
 .find-match-button:hover {
@@ -788,6 +793,7 @@ header {
   margin: 0 20px;
 }
 
+.country-select,
 .player-select,
 .player-input {
   margin: 0 20px 10px;
@@ -798,6 +804,11 @@ header {
   align-self: center;
   background-color: #8d0808;
   color: #f1f0f0;
+  border: 1px solid #f1f0f0;
+  border-radius: 5px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  height: 40px;
 }
 
 .player-input input {
@@ -888,7 +899,6 @@ header {
 
   .find-standings-text p {
     font-size: 30px;
-    border: #f1f0f0 solid;
     border-radius: 10px;
     padding: 5px;
     margin: 8px;
@@ -908,7 +918,6 @@ header {
 
   .find-player-text p {
     font-size: 30px;
-    border: #f1f0f0 solid;
     border-radius: 10px;
     padding: 5px;
     margin: 8px;
@@ -957,13 +966,6 @@ header {
     width: 23px;
     height: 23px;
   }
-
-  .player-select,
-  .player-input,
-  .country-select {
-    height: 25px;
-    font-size: 18px;
-  }
 }
 @media (max-height: 780px) {
   .down-front-section p {
@@ -973,12 +975,6 @@ header {
   .down-front-section img {
     width: 33px;
     height: 33px;
-  }
-
-  .player-select,
-  .player-input,
-  .country-select {
-    height: 28px;
   }
 }
 @media (max-width: 430px) {
@@ -1009,21 +1005,8 @@ header {
     border: 0;
   }
 
-  .player-select,
-  .player-input,
-  .country-select {
-    height: 20px;
-    font-size: 15px;
-    width: 200px;
-  }
-
   .find-specifications li {
     margin: 0 0 5px;
     font-size: 15px;
-  }
-
-  .find-match-button {
-    width: 200px;
-    height: auto;
   }
 }
