@@ -1,6 +1,3 @@
-function moviesClear() {
-    document.getElementById('movies-clear').innerHTML = "";
-}
 
 function test(clicked_value) {
 
@@ -16,6 +13,7 @@ switch (clicked_value) {
 }
 
 function search() {
+    document.querySelector('.movie-container').innerHTML = "";
     fetch(baseUrl)
     .then(res => res.text())
     .then(res => {
@@ -61,6 +59,8 @@ function search() {
             text5.appendChild(content4);
             var element = document.querySelector(".movie-main");
             element.appendChild(tag);
+            var element2 = document.querySelector('.movie-container');
+            element2.appendChild(tag)
         }
         console.log(parseRes);
     })
