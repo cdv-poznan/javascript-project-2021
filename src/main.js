@@ -1,3 +1,5 @@
+import style from './style.scss';
+
 /* eslint-disable no-inner-declarations */
 /* eslint-disable eqeqeq */
 const btnMarriage = document.querySelector('#btnMarriage');
