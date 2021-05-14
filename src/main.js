@@ -147,5 +147,5 @@ const clearJokeField = () => {
   responseArea.textContent = '';
 };
 
-jokeSubmit.addEventListener('click', displayJokes);
+submitPick.addEventListener('click', displayJokes);
 clearJoke.addEventListener('click', clearJokeField);
