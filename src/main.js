@@ -66,8 +66,8 @@ const clearResult = () => {
   nameField.textContent = '';
 };
 
-holidaySubmit.addEventListener('click', displayResults);
-holidayClear.addEventListener('click', clearResult);
+submit.addEventListener('click', displayResults);
+clear.addEventListener('click', clearResult);
 
 // The functions for Day off Countdowner.
 
@@ -129,11 +129,11 @@ const getJoke = () => {
     .then(response => response.json())
     .then(response => {
       const generateJoke = response.joke;
-      document.getElementById('joke_selected').textContent = generateJoke;
+      responseArea.textContent = generateJoke;
       console.log(response);
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.log('Error:', error);
     });
 };
 
