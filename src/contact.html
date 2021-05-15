@@ -3,12 +3,31 @@
     <h1>The Good Movie App</h1>
 
     <navigation></navigation>
-
+    <h2></h2>
+    <h5></h5>
+    <div class="movie-container"></div>
     <p>text contact</p>
   </div>
 
   <div class="movie-list">
     <p class="categories">Categories</p>
+
+    <button
+      id="star-wars-list"
+      value="Star Wars"
+      onclick="clickAndSearchMovieList(this.value)"
+    >
+      <p class="categories-list">Star Wars</p>
+    </button>
+
+    <button
+      id="comedy-list"
+      value="Comedy"
+      onclick="clickAndSearchMovieList(this.value)"
+    >
+      <p class="categories-list">Comedy</p>
+    </button>
   </div>
 </div>
 <footer></footer>
+<script type="text/javascript" src="../src/main.js"></script>

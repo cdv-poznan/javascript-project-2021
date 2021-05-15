@@ -1,6 +1,6 @@
 
-function test(clicked_value) {
-
+function clickAndSearchMovieList(clicked_value) {
+document.querySelector(".form-filter").style.display = "block";
 switch (clicked_value) {
   case 'Star Wars':
     var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
