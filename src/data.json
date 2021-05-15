@@ -1,0 +1,25 @@
+{
+  "cats": [
+    {
+      "name": "River",
+      "age": 4,
+      "colour": "torties",
+      "url": "https://cdn.pixabay.com/photo/2018/06/18/19/30/cat-3483146_960_720.jpg",
+      "description": "Lovely tortoiseshell female, energetic and fast."
+    },
+    {
+      "name": "Rory",
+      "age": 1,
+      "colour": "black",
+      "url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_960_720.jpg",
+      "description": "Little wary of strangers but settles down quickly."
+    },
+    {
+      "name": "Amy",
+      "age": 1,
+      "colour": "ginger",
+      "url": "https://cdn.pixabay.com/photo/2015/02/14/10/16/cat-636172_960_720.jpg",
+      "description": "She prefer sitting on your lap and having a cuddle."
+    }
+  ]
+}

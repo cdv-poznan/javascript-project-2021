@@ -3,5 +3,36 @@ h1 {
 }
 
 .text-center {
-  color: #1f1d1d;
+  color: #2b2828;
+}
+
+.album {
+  overflow: scroll;
+  max-height: 40rem;
+}
+
+.form-inline {
+  justify-content: center;
+}
+
+.allCats {
+  display: block;
+}
+
+.card-body {
+  max-width: 15rem;
+  min-width: fit-content;
+}
+
+.plus-button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  box-shadow: none;
+}
+
+button:focus {
+  outline: none;
 }
