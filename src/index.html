@@ -56,9 +56,15 @@
         <div class="container-input">
           <div class="search-wrap search-wrap-main">
             <div class="search-box">
-              <input type="text" class="input" placeholder="Chicken salad..." />
-              <div class="btn-input">
+              <input
+                type="text"
+                class="input"
+                placeholder="Chicken salad..."
+                id="search-input"
+              />
+              <div class="btn-input" id="search-btn">
                 <p>Find Recipe</p>
+                <a href="#check"></a>
               </div>
             </div>
           </div>
@@ -74,7 +80,7 @@
     <div class="container">
       <div class="meal-wrapper">
         <div class="meal-search">
-          <div class="meal-search-box">
+          <!-- <div class="meal-search-box">
             <input
               type="text"
               class="search-control"
@@ -84,10 +90,10 @@
             <button type="submit" class="search-btn btn" id="search-btn">
               <i class="fas fa-search"></i>
             </button>
-          </div>
+          </div> -->
         </div>
-        <div class="meal-result">
-          <h2 class="title">Your Search Rrsults:</h2>
+        <div class="meal-result" id="check">
+          <p class="title">Your Search Results:</p>
           <div class="meal">
             <!--  <div class="meal-item">
               <div class="meal-img">
