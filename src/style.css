@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
 
 * {
   padding: 0;
@@ -21,7 +21,7 @@ body {
   font-weight: 300;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 p a {
@@ -165,7 +165,7 @@ p a:hover {
   display: block;
   width: 175px;
   margin: 1rem auto;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   transition: all 0.3s linear;
 }
 
@@ -294,6 +294,11 @@ p a:hover {
   font-weight: 600;
   color: var(--mainColor);
   width: 100%;
+}
+
+.youtubeIcon {
+  width: 2.5rem;
+  height: 2.5 rem;
 }
 
 @media screen and (min-width: 600px) {
