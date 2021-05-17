@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/analytics';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { doc } from 'prettier';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCNxR65H1cPxr0fgxM7B9yaBqf-UlunAo4',
@@ -301,6 +302,7 @@ function addMatch(data) {
 }
 const liveSearchButton = document.querySelector('#live-search-button');
 const liveHomeView = document.querySelector('.live-home');
+const noLiveMatchesError = document.querySelector('.no-live-matches');
 
 liveSearchButton.addEventListener('click', () => {
   fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all', {
@@ -311,16 +313,20 @@ liveSearchButton.addEventListener('click', () => {
     },
   })
     .then(res => {
-      console.log('Succes', res);
       return res.json();
     })
     .then(data => {
       const matches = data['response'];
+      liveMatchesSection.innerHTML = '';
+      if (matches.length === 0) {
+        noLiveMatchesError.style.display = 'active';
+      } else {
+        noLiveMatchesError.style.display = 'none';
+        liveHomeView.style.display = 'flex';
 
-      liveHomeView.style.display = 'flex';
-
-      for (let i = 0; i < matches.length; i++) {
-        addMatch(matches[i]);
+        for (let i = 0; i < matches.length; i++) {
+          addMatch(matches[i]);
+        }
       }
     })
     .catch(err => {
@@ -352,7 +358,7 @@ function addTable(sdata) {
 
   tableTbody.appendChild(tableRow);
 }
-const tableButton = document.querySelector('.find-match-button');
+const tableButton = document.querySelector('#find-standing-button');
 const matchesList = document.querySelector('.matches-list');
 const selectedCountry = document.querySelector('#country-select');
 const selectedLeague = document.querySelector('#league-select');
@@ -393,8 +399,11 @@ selectedCountry.addEventListener('change', () => {
   }
 });
 
-const fulfillWarning = document.querySelector('.not-fulfilled');
+const fulfillWarning = document.querySelector('#not-selected-forms');
+const cantFindMatchesWarning = document.querySelector('#cant-find-matches');
+
 tableButton.addEventListener('click', () => {
+  tableTbody.innerHTML = '';
   if (
     selectedCountry.value !== 'null' &&
     selectedLeague.value !== 'null' &&
@@ -415,9 +424,9 @@ tableButton.addEventListener('click', () => {
         response.json().then(data => {
           const respns = data['response'];
           const dataRespns = respns[0]['league']['standings'][0];
-
+          cantFindMatchesWarning.style.display = 'none';
+          fulfillWarning.style.display = 'none';
           matchesList.style.display = 'table';
-          tableTbody.innerHTML = '';
 
           for (let i = 0; i < dataRespns.length; i++) {
             addTable(dataRespns[i]);
@@ -425,10 +434,14 @@ tableButton.addEventListener('click', () => {
         }),
       )
       .catch(err => {
-        console.log(err);
+        tableTbody.innerHTML = '';
+        fulfillWarning.style.display = 'none';
+        cantFindMatchesWarning.style.display = 'block';
       });
   } else {
-    fulfillWarning.style.display = 'active';
+    tableTbody.innerHTML = '';
+    fulfillWarning.style.display = 'block';
+    cantFindMatchesWarning.style.display = 'none';
   }
 });
 
@@ -544,6 +557,7 @@ findPlayerButton.addEventListener('click', () => {
         response.json().then(data => {
           const respnsPlayer = data['response'];
           const dataRespnsPlayer = respnsPlayer;
+          playerWarning.style.display = 'none';
           playerAllInfo.style.display = 'flex';
 
           for (let i = 0; i < respnsPlayer.length; i++) {
@@ -555,6 +569,7 @@ findPlayerButton.addEventListener('click', () => {
         console.log(err);
       });
   } else {
-    playerWarning.style.display = 'active';
+    playerAllInfo.innerHTML = '';
+    playerWarning.style.display = 'block';
   }
 });

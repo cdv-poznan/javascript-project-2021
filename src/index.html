@@ -102,6 +102,7 @@
     <section id="second-section" class="second-section">
       <div class="live-now">
         <button class="find-match-button" id="live-search-button">Search live results</button>
+        <p class="no-live-matches">Currently no matches are played.</p>
       </div>
       <div class="live-home">
         
@@ -136,9 +137,10 @@
           </li>
       </ul>
     <div class="find-standings-button">
-    <button type="sumbit" class="find-match-button">Submit</button></div>
-    <p class="not-fulfilled">Please fulfill every select form.</p>
-    </div>
+    <button type="sumbit" class="find-match-button" id="find-standing-button">Submit</button></div>
+    
+    </div><p class="not-fulfilled" id ="not-selected-forms">Please fulfill every select form.</p>
+    </div><p class="not-fulfilled" id="cant-find-matches">No matching results were found.</p>
 <div class="find-results">
   <table class="matches-list">
     <thead>
@@ -169,8 +171,9 @@
 </select>
 <div class="find-standings-button">
   <button type="sumbit" class="find-match-button" id="find-player-button">Submit</button></div>
-  <p class="not-fulfilled-player">Please fulfill every form.</p>
+  
 </div>
+<p class="not-fulfilled-player">Please fulfill every form.</p>
 <div class="player">
 
 </div>

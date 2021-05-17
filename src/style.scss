@@ -591,6 +591,11 @@ header {
   margin: 0 0 0 20px;
 }
 
+.no-live-matches {
+  display: none;
+  font-size: 15px;
+}
+
 .find-logo {
   height: 30px;
   width: 30px;
@@ -612,6 +617,7 @@ header {
   color: #8d0808;
   text-align: center;
   width: 100%;
+  height: fit-content;
   margin: 10px 0;
   box-sizing: border-box;
 }
@@ -766,7 +772,8 @@ header {
   display: none;
   color: #f1f0f0;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 25px;
+  text-align: center;
 }
 
 //FOURTH SECTION
@@ -824,7 +831,8 @@ header {
   display: none;
   color: #f1f0f0;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 25px;
+  text-align: center;
 }
 
 .player {
