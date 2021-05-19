@@ -254,6 +254,108 @@ footer {
 
 }
 
+// popup styles
+
+.container.blur {     
+  filter: blur(2px);
+}
+
+.modal-wrap {
+  display: none;
+ }
+
+ .modal-wrap.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+ }
+
+ .modal-wrap.active .modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 70%;
+  border: 2px solid black;
+  /* background-color: black; */
+ }
+
+ @media(max-width: 800px) {
+  .modal-wrap.active .modal {
+   width: 90%;
+   height: 90%;
+  }
+ }
+
+ .modal .top {
+  flex-basis: 15%;
+  background-color: #591bc5;
+ }
+
+ .modal .middle {
+  flex-grow: 1;
+  background-color: #ddd;
+ }
+
+ .modal .bottom {
+  flex-basis: 15%;
+  background-color: #591bc5;
+  ;
+ }
+
+ p.text {
+  text-align: center;
+   font-size: 32px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ p.text button {
+  position: relative;
+  border: 3px solid black;
+  overflow: hidden;
+  transition: .15s .15s;
+  background-color: transparent;
+
+   font-size: 32px;
+   padding: 10px 30px;
+   margin: 20px auto;
+   cursor: pointer;
+ }
+
+button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 16px;
+  background-color: black;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 100%;
+  transition: left 0.2s, height 0.1s 0.2s;
+  z-index: -1;
+
+}
+
+button:hover::before {
+  left: 0;
+  height: 102%;
+}
+
+button:hover {
+  color: yellow;
+}
+
+// popup end
 
 @media screen and (max-width: 500px) {
 

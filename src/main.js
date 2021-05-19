@@ -16,14 +16,22 @@ function game() {
     }
 
     //zmienne
-    var cardCompare = []; 
+    var cardCompare = [];
     var pairsCounter = 0; // licznik trafień par kart
     var sameCardChecker = [] //zmienna do sprawdzania czy ta sama karta jest kliknięta
+
+    // wyświetlanie popupa gdy liczba trafień równa 12
+    // if (pairsCounter == 0) {
+    //     document.querySelector(".modal-wrap").classList.add('active');
+    //     document.querySelector('.container').classList.add('blur');
+    // }
+
+
     //funkcje
     function different() {
         // document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1")
         document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24");
-            
+
         document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15", "card16", "card17", "card18", "card19", "card20", "card21", "card22", "card23", "card24");
 
         cardCompare = [];
@@ -31,7 +39,7 @@ function game() {
     };
 
     function pairsCount() {
-        document.querySelector(".countMatches").innerHTML="Liczba trafień: " + pairsCounter;
+        document.querySelector(".countMatches").innerHTML = "Liczba trafień: " + pairsCounter;
     }
 
     // porównanie kart
@@ -42,6 +50,13 @@ function game() {
             if (cardCompare[0] == cardCompare[1] && sameCardChecker[0] != sameCardChecker[1]) {
                 console.log("Te same!");
                 pairsCounter++;
+
+                // wyświetlanie popupa gdy liczba trafień równa 12
+                if (pairsCounter == 12) {
+                    document.querySelector(".modal-wrap").classList.add('active');
+                    document.querySelector('.container').classList.add('blur');
+                }
+
                 console.log("pairsCounter= " + pairsCounter);
                 document.querySelector(".board div:nth-child" + "(" + addClass[0] + ")").classList.add("match");
                 document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.add("match");
@@ -60,7 +75,7 @@ function game() {
                 setTimeout(different, 800);
                 sameCardChecker = [];
                 // different();
-                
+
                 // document.querySelector(".board div:nth-child" + "(" + addClass[1] + ")").classList.remove("card1");
 
                 // cardCompare = [];
