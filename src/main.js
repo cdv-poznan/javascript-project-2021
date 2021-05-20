@@ -39,7 +39,7 @@ function game() {
     };
 
     function pairsCount() {
-        document.querySelector(".countMatches").innerHTML = "Liczba trafień: " + pairsCounter;
+        document.querySelector(".countMatches").innerHTML = "Pairs found: " + pairsCounter;
     }
 
     // porównanie kart
