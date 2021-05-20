@@ -103,7 +103,6 @@ function game() {
 
 
     //karta 2
-
     function showCard2() {
         getCard2.classList.add("card" + ranNums[1]);
         cardCompare.push(ranNums[1]);

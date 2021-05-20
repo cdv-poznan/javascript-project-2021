@@ -177,51 +177,51 @@ section.board {
 //wylosowane karty
 
 .card1 {
-  background-image: url(assets/icons/1.png)
+  background-image: url(./assets/icons/1.png)
 }
 
 .card2 {
-  background-image: url(assets/icons/2.png)
+  background-image: url(./assets/icons/2.png)
 }
 
 .card3 {
-  background-image: url(assets/icons/3.png)
+  background-image: url(./assets/icons/3.png)
 }
 
 .card4 {
-  background-image: url(assets/icons/4.png)
+  background-image: url(./assets/icons/4.png)
 }
 
 .card5 {
-  background-image: url(assets/icons/5.png)
+  background-image: url(./assets/icons/5.png)
 }
 
 .card6 {
-  background-image: url(assets/icons/6.png)
+  background-image: url(./assets/icons/6.png)
 }
 
 .card7 {
-  background-image: url(assets/icons/7.png)
+  background-image: url(./assets/icons/7.png)
 }
 
 .card8 {
-  background-image: url(assets/icons/8.png)
+  background-image: url(./assets/icons/8.png)
 }
 
 .card9 {
-  background-image: url(assets/icons/9.png)
+  background-image: url(./assets/icons/9.png)
 }
 
 .card10 {
-  background-image: url(assets/icons/10.png)
+  background-image: url(./assets/icons/10.png)
 }
 
 .card11 {
-  background-image: url(assets/icons/11.png)
+  background-image: url(./assets/icons/11.png)
 }
 
 .card12 {
-  background-image: url(assets/icons/12.png)
+  background-image: url(./assets/icons/12.png)
 }
 
 .cards:hover {
@@ -281,8 +281,8 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 70%;
+  width: 40%;
+  height: 60%;
   border: 2px solid black;
   /* background-color: black; */
  }
@@ -335,7 +335,7 @@ footer {
 button::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 120%; 
   height: 16px;
   background-color: black;
   transform: translateY(-50%);
@@ -352,7 +352,7 @@ button:hover::before {
 }
 
 button:hover {
-  color: yellow;
+  color: white;
 }
 
 // popup end
