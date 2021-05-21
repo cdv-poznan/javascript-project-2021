@@ -56,7 +56,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     font-size: 2em;
     text-transform: uppercase;
     a{
@@ -112,7 +112,7 @@ body {
     .fa-search{
         position: absolute;
         font-size: 2em;
-        transform: translate(-125%, 50%);
+        transform: translate(-125%, 40%);
         transition: text-shadow 0.5s;
     }
     .fa-search:hover{
@@ -126,10 +126,11 @@ body {
 // ==============
 
 #find-results{
-    padding-top: 2rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     .find-item-bgc{
         display: flex;
         justify-content: center;
@@ -160,6 +161,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3vh;
 }
 
 .book-find-info{
@@ -178,7 +180,7 @@ body {
             content: '"';
         }
         .book-description{
-            max-height: 80vh;
+            max-height: 50vh;
             text-align: justify;
             font-size: 1.5rem;
             font-weight: normal;
@@ -195,8 +197,9 @@ body {
         justify-content: center;
         align-items: center;
         height: 60vh;
+        max-height: 440px;
         width: 75vw;
-        max-width: 375px;
+        max-width: 300px;
         background-color: $main-color;
         border-radius: 1rem;
         .book-cover{
@@ -237,13 +240,16 @@ body {
 // ===============
 
 .fav-box{
-    .fav-title{
-        padding-top: 5vh;
-        text-align: center;
-        font-size: 4.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-    }
+    display: block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.fav-title{
+    text-align: center;
+    font-size: 4.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
 }
 
 #fav-items{
@@ -271,22 +277,23 @@ body {
             box-shadow: 0 0 20px 5px $main-color;
             cursor: pointer;
         }
-        .btn-remove{
-            display: block;
-            height: 4rem ;
-            width: 12rem;
-            margin: 0 auto;
-            margin-top: 1rem;
-            background-color: $main-color;
-            border: none;
-            border-radius: 1rem;
-            font-size: 1.75rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-        .btn-remove:hover{
-            @include button-hover()
-        }  
     }
 }
+
+.btn-remove{
+    display: block;
+    height: 4rem ;
+    width: 12rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: $main-color;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.btn-remove:hover{
+    @include button-hover()
+}  

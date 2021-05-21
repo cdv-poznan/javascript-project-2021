@@ -20,7 +20,7 @@
 .input-find {
     .fa-search {
         font-size: 2.5em;
-        transform: translate(-120%, 30%);
+        transform: translate(-120%, 25%);
     }
 }
 
@@ -61,10 +61,8 @@
 //  SECTION FAVOURITES
 // ===============
 
-.fav-box{
-    .fav-title{
-        padding: 6vh 0;
-        font-size: 8rem;
-        letter-spacing: 0.3rem;
-    }
+.fav-title{
+    padding: 6vh 0;
+    font-size: 8rem;
+    letter-spacing: 0.3rem;
 }

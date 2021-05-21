@@ -3,16 +3,16 @@
 let searchInput // input where user write book name
 let searchIcon // button to find books
 let searchResults // show find results
-let btnAdd // add book to favourite
+let btnAdd // button add book to favourite
 let bookCover // currently book cover
 let bookAuthor // currently book author
 let bookTitle // currently book title
 let bookDescription // currently book description
 let url // url to google api book
 let favouriteContainer // box with favourite books
-let btnBuy // buy book
+let btnBuy // button buy book
 
-const randomBook = document.querySelector('#random-book')
+
 
 const main = () => {
     prepareDOMElements();
@@ -30,7 +30,7 @@ const prepareDOMElements = () =>{
     bookDescription = document.querySelector('#book-description')
     url = 'https://www.googleapis.com/books/v1/volumes?q='
     favouriteContainer  = document.querySelector('#fav-items')
-    btnBuy = document.querySelector('#btn-buy')  
+    btnBuy = document.querySelector('#btn-buy') 
 }
 
 const prepareDOMEvents = () => {
@@ -58,8 +58,8 @@ const checkKeyEnter = (event) => {
 }
 
 const removeFavourite = (event) => {
-    const book = event.target.closest('a')
-    if(event.target.closest('button').classList.contains('btn-remove')){
+    const book = event.target.closest('div')
+    if(event.target.closest('button')){
         book.remove()
     }
 }
@@ -71,15 +71,21 @@ const finder = () =>{
     fetch(url+searchInput.value)
         .then(res => res.json())
         .then(data => {
-            for (let element of data.items){
-                let temp = document.createElement('a')
-                temp.setAttribute('id', element.id)
-                temp.innerHTML= `
-                    <div class="find-item-bgc">
-                        <img class="find-item-book" src="${element.volumeInfo.imageLinks.thumbnail}"></img>
-                    </div>
-                    `
-                searchResults.appendChild(temp)
+            console.log(data)
+            for (const element of data.items){
+                if(element.volumeInfo.imageLinks !== undefined){
+                    let temp = document.createElement('a')
+                    temp.setAttribute('id', element.id)
+                    temp.innerHTML= `
+                        <div class="find-item-bgc">
+                            <img class="find-item-book" src="${element.volumeInfo.imageLinks?.thumbnail}"></img>
+                        </div>
+                        `
+                    searchResults.appendChild(temp)
+                }
+                else{
+                    continue
+                }
             }
         })
         .catch(error => console.log(error))
@@ -93,7 +99,12 @@ const finderDetails = (event) =>{
         sessionStorage.setItem('id', temp)
         bookAuthor.innerText = data.items[0].volumeInfo.authors
         bookTitle.innerText = data.items[0].volumeInfo.title
-        bookDescription.innerText = data.items[0].volumeInfo.description
+        if (data.items[0].volumeInfo.description !== undefined){
+            bookDescription.innerText = data.items[0].volumeInfo.description
+        }
+        else{
+            bookDescription.innerText = "This book havn't desrciption"
+        }
         bookCover.style.backgroundImage = `url(${data.items[0].volumeInfo.imageLinks.thumbnail})`
         sessionStorage.setItem('bookCover', `${data.items[0].volumeInfo.imageLinks.thumbnail}`)
         sessionStorage.setItem('buyLink', `${data.items[0].saleInfo.buyLink}`)
@@ -102,15 +113,14 @@ const finderDetails = (event) =>{
 }
 
 const addNewFavourite = () => {
-    let temp = document.createElement('a')
-    temp.setAttribute('id', `${sessionStorage.getItem('id')}`)
+    let temp = document.createElement('div')
     temp.innerHTML= `
-                <div class="fav-item">
+                <a class="fav-item" id=${sessionStorage.getItem('id')}>
                     <div class="fav-item-bgc">
                         <img class="fav-item-book" src='${sessionStorage.getItem('bookCover')}'></img>
                     </div>
-                    <button class="btn-remove">remove</button>
-                </div>
+                </a>
+                <button class="btn-remove">remove</button>
     `
     favouriteContainer.appendChild(temp)
 }

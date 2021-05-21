@@ -9,8 +9,8 @@
 
 .input-find .fa-search {
   font-size: 2.5em;
-  -webkit-transform: translate(-120%, 30%);
-          transform: translate(-120%, 30%);
+  -webkit-transform: translate(-120%, 25%);
+          transform: translate(-120%, 25%);
 }
 
 .book-find-info {
@@ -39,7 +39,7 @@
   width: 75vw;
 }
 
-.fav-box .fav-title {
+.fav-title {
   padding: 6vh 0;
   font-size: 8rem;
   letter-spacing: 0.3rem;

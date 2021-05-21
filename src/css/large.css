@@ -41,8 +41,8 @@ a:visited {
 }
 
 .input-find .fa-search {
-  -webkit-transform: translate(-125%, 30%);
-          transform: translate(-125%, 30%);
+  -webkit-transform: translate(-125%, 20%);
+          transform: translate(-125%, 20%);
 }
 
 .book-find {
@@ -91,7 +91,7 @@ a:visited {
   height: 5rem;
 }
 
-.fav-box .fav-title {
+.fav-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,12 +105,12 @@ a:visited {
   letter-spacing: 0.3rem;
 }
 
-.fav-box .fav-title i {
+.fav-title i {
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
 }
 
-.fav-box .fav-title p {
+.fav-title p {
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
 }
