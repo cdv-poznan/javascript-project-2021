@@ -31,7 +31,7 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: lime;
+  color: rgb(50, 205, 50);
 }
 
 /* Landing */
@@ -49,14 +49,13 @@ body {
   text-transform: uppercase;
 }
 
-.carousel-caption d-none d-md-block h1 {
+.carouselstyle h1 {
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
   padding-bottom: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
 }
 
-.carousel-caption d-none d-md-block p {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
-}
