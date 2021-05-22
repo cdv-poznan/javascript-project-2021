@@ -5,16 +5,20 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: lightgray;
+  background-color: (211, 211, 211);
 }
 
 /* Navigation */
 .navbar {
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.1rem;
   background-color: rgba(0, 0, 0, 0.5) !important;
   font-weight: bold;
+}
+
+.navbar::selection {
+  color: rgb(50, 205, 50);
 }
 
 .navbar-brand img {
@@ -46,7 +50,6 @@ body {
   top: 40%;
   color: rgb(0, 0, 0);
   z-index: 1;
-  text-transform: uppercase;
 }
 
 .carouselstyle h1 {
@@ -57,5 +60,7 @@ body {
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.5);
   display: inline-block;
+  text-transform: uppercase;
 }
+
 
