@@ -54,6 +54,7 @@ const buyBook = (event) => {
 const checkKeyEnter = (event) => {
     if (event.key === 'Enter'){
         finder()
+        searchResults.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"})
     }
 }
 
@@ -71,7 +72,6 @@ const finder = () =>{
     fetch(url+searchInput.value)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             for (const element of data.items){
                 if(element.volumeInfo.imageLinks !== undefined){
                     let temp = document.createElement('a')
@@ -108,6 +108,7 @@ const finderDetails = (event) =>{
         bookCover.style.backgroundImage = `url(${data.items[0].volumeInfo.imageLinks.thumbnail})`
         sessionStorage.setItem('bookCover', `${data.items[0].volumeInfo.imageLinks.thumbnail}`)
         sessionStorage.setItem('buyLink', `${data.items[0].saleInfo.buyLink}`)
+        bookCover.scrollIntoView({behavior: "smooth", block: "start"})
     })  
     .catch(error => console.log(error))
 }
