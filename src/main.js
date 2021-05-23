@@ -107,7 +107,7 @@ const finder = () =>{
     while (searchResults.firstChild) {
         searchResults.firstChild.remove()
     }
-    fetch(url+searchInput.value)
+    fetch(url+searchInput.value+'&maxResults=15')
         .then(res => res.json())
         .then(data => {
             // loop check and show only books witch cover image
@@ -170,11 +170,9 @@ const addNewFavourite = () => {
                     <button class="btn-remove">remove</button>
         `
         favouriteContainer.appendChild(temp)
-        console.log(favouriteArray)
         favouriteArray.push(`${sessionStorage.getItem('id')}`)
     }
     else{
-        console.log('This book is already add')
         showAlert(alertFavourite)
     }
 }
