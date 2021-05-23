@@ -16,9 +16,10 @@
   <header>
     <div class="container">
       <div class="text-center">
-        <img src="assets/happy.png">
+        <a href="./index.html">
+          <img src="/src/assets/happy.png"></a>
         <h1>Cats gallery</h1>
-        <h2>Make your own funny cats gallery</h2>
+        <h2>Make your own favourite funny cats album!</h2>
       </div>
     </div>
   </header>
@@ -31,6 +32,45 @@
     <div class="album py-5 allCats">
       <div class="container">
         <div class="row"></div>
+      </div>
+    </div>
+    <div class="container addNewCat">
+      <div class="col-md-13 mt-5 mb-5">
+        <div class="card box-shadow">
+          <div class="col-md-13">
+            <div class="col-md-8m col-lg-offset-4">
+              <div class="card mb-3 mt-3" id="catImage"></div>
+            </div>
+            <div class="text-center">
+              <button title="refresh" type="button" class="btn btn-sm" onclick="findAnotherCat()">
+                <i class="fas fa-sync fa-3x ml-5"></i>
+              </button>
+            </div>
+            <form class="form-inline m-5">
+              <div class="form-group">
+                <label for="inputNewName">Name</label>
+                <input type="text" class="form-control mr-3 ml-3" id="inputNewName" placeholder="e.g. Simba">
+              </div>
+              <div class="form-group">
+                <label for="inputNewAge">Age</label>
+                <input type="text" class="form-control mr-3 ml-3" id="inputNewAge" placeholder="e.g. 2">
+              </div>
+              <div class="form-group">
+                <label for="inputNewColour">Colour</label>
+                <input type="text" class="form-control mr-3 ml-3" id="inputNewColour" placeholder="e.g. white">
+              </div>
+              <textarea class="card-text description" id="inputNewDescription"></textarea>
+            </form>
+            <div class="text-center">
+              <button title="save" type="button" class="btn btn-sm" id="saveBtn">
+                <i class="fas fa-check-circle fa-3x mr-5"></i>
+              </button>
+              <button title="cancel" type="button" class="btn btn-sm" id="goToHome">
+                <i class="fas fa-ban fa-3x ml-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
