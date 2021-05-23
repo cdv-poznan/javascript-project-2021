@@ -18,6 +18,10 @@ a:visited {
   color: #F9A801;
 }
 
+.alert {
+  font-size: 1.75rem;
+}
+
 .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,6 +93,10 @@ a:visited {
 .book-find .btn-add, .book-find .btn-favourite {
   width: 17rem;
   height: 5rem;
+}
+
+.book-find-cover {
+  padding-top: 10rem;
 }
 
 .fav-title {

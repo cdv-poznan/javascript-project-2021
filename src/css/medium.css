@@ -1,3 +1,7 @@
+.alert {
+  font-size: 1.5rem;
+}
+
 .hero-img {
   font-size: 16px;
 }
@@ -27,7 +31,7 @@
 }
 
 .book-find-info .book-info .book-description {
-  max-height: 80vh;
+  max-height: 70vh;
   text-align: justify;
   font-size: 2rem;
   font-weight: normal;

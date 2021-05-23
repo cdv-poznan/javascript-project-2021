@@ -3,6 +3,9 @@
 // MIN-WIDTH: 576PX
 // =============
 
+.alert{
+    font-size: 1.25rem;
+}
 
 // ===========
 // NAVIGATION
@@ -40,7 +43,7 @@
             padding: 3vh 0;
         }
         .book-description{
-            max-height: 80vh;
+            max-height: 50vh;
             text-align: justify;
             font-size: 1.75rem;
             font-weight: normal;

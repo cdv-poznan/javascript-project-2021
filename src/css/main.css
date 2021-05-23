@@ -31,6 +31,53 @@ body {
   display: none;
 }
 
+.alert {
+  position: fixed;
+  width: 27.5vw;
+  top: 50%;
+  left: 50%;
+  padding: 10px 5px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: black;
+  background-color: #CBEE88;
+  border: 1px solid black;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.alert .alert-message {
+  padding: 1vh 1vw;
+}
+
+.alert .btn-close {
+  padding: 5px 10px;
+  color: black;
+  background-color: #F9A801;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.alert .btn-close:hover {
+  cursor: pointer;
+}
+
+.alert-hidden {
+  visibility: hidden;
+}
+
+.alert-visibility {
+  visibility: visible;
+}
+
 .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,7 +228,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 3vh;
 }
 
 .book-find-info {
@@ -209,7 +255,7 @@ body {
   text-align: justify;
   font-size: 1.5rem;
   font-weight: normal;
-  overflow: auto;
+  overflow: hidden;
   color: black;
 }
 
