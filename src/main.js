@@ -10,6 +10,7 @@ const searchBtn = document.getElementById('search-btn');
 const mealList = document.querySelector('.meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
 const recipeCloseBtn = document.querySelector('.recipe-close-btn');
+const flukeBtn = document.querySelector('.fluke');
 
 function getMealList() {
   const searchInputTxt = document.getElementById('search-input').value.trim();
@@ -33,10 +34,10 @@ function getMealList() {
               </div>
               `;
         });
-        mealList.classList.remove('notFound');
+        mealList.classList.remove('not-found');
       } else {
         html = 'Sorry, what do you mean?';
-        mealList.classList.add('notFound');
+        mealList.classList.add('not-found');
       }
       mealList.innerHTML = html;
     });
@@ -49,15 +50,36 @@ function mealRecipeModal(meal) {
       <img src="${meal.strMealThumb}" alt="" />
     </div>
     <h2 class="recipe-title">${meal.strMeal}</h2>
-    /* <p class="recipe-category">${meal.strCategory}</p> */
+    <div class="ingredients">
+      <div class="box">
+        ${meal.strIngredient1} ${meal.strMeasure1}<br />
+        ${meal.strIngredient2} ${meal.strMeasure2}<br />
+        ${meal.strIngredient3} ${meal.strMeasure3}<br />
+        ${meal.strIngredient4} ${meal.strMeasure4}<br />
+        ${meal.strIngredient5} ${meal.strMeasure5}<br />
+        ${meal.strIngredient6} ${meal.strMeasure6}<br />
+        ${meal.strIngredient7} ${meal.strMeasure7}<br />
+        ${meal.strIngredient8} ${meal.strMeasure8}<br />
+        ${meal.strIngredient9} ${meal.strMeasure9}<br />
+        ${meal.strIngredient10} ${meal.strMeasure10}<br />
+      </div>
+      <div class="box">
+        ${meal.strIngredient11} ${meal.strMeasure11}<br />
+        ${meal.strIngredient12} ${meal.strMeasure12}<br />
+        ${meal.strIngredient13} ${meal.strMeasure13}<br />
+        ${meal.strIngredient14} ${meal.strMeasure14}<br />
+        ${meal.strIngredient15} ${meal.strMeasure15}<br />
+        ${meal.strIngredient16} ${meal.strMeasure16}<br />
+        ${meal.strIngredient17} ${meal.strMeasure17}<br />
+        ${meal.strIngredient18} ${meal.strMeasure18}<br />
+        ${meal.strIngredient19} ${meal.strMeasure19}<br />
+        ${meal.strIngredient20} ${meal.strMeasure20}<br />
+      </div>
+    </div>
+   <hr class="result-line">
     <div class="recipe-instruct">
-      <h3>Instructions:</h3>
       <p>${meal.strInstructions}</p>
       
-    </div>
-    
-    <div class="recipe-link">
-      <a href="${meal.strYoutube}" target="_blank">Watch Video</a>
     </div>
     `;
   mealDetailsContent.innerHTML = html;
@@ -76,8 +98,61 @@ function getMealRecipe(e) {
   }
 }
 
+function fluckMeal() {
+  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      let html = '';
+      if (data.meals) {
+        data.meals.forEach(meal => {
+          html += ` <div class="recipe-meal-img">
+              <img src="${meal.strMealThumb}" alt="" />
+            </div>
+            <h2 class="recipe-title">${meal.strMeal}</h2>
+          <div class="ingredients">
+      <div class="box">
+        ${meal.strIngredient1} ${meal.strMeasure1}<br />
+        ${meal.strIngredient2} ${meal.strMeasure2}<br />
+        ${meal.strIngredient3} ${meal.strMeasure3}<br />
+        ${meal.strIngredient4} ${meal.strMeasure4}<br />
+        ${meal.strIngredient5} ${meal.strMeasure5}<br />
+        ${meal.strIngredient6} ${meal.strMeasure6}<br />
+        ${meal.strIngredient7} ${meal.strMeasure7}<br />
+        ${meal.strIngredient8} ${meal.strMeasure8}<br />
+        ${meal.strIngredient9} ${meal.strMeasure9}<br />
+        ${meal.strIngredient10} ${meal.strMeasure10}<br />
+      </div>
+      <div class="box">
+        ${meal.strIngredient11} ${meal.strMeasure11}<br />
+        ${meal.strIngredient12} ${meal.strMeasure12}<br />
+        ${meal.strIngredient13} ${meal.strMeasure13}<br />
+        ${meal.strIngredient14} ${meal.strMeasure14}<br />
+        ${meal.strIngredient15} ${meal.strMeasure15}<br />
+        ${meal.strIngredient16} ${meal.strMeasure16}<br />
+        ${meal.strIngredient17} ${meal.strMeasure17}<br />
+        ${meal.strIngredient18} ${meal.strMeasure18}<br />
+        ${meal.strIngredient19} ${meal.strMeasure19}<br />
+        ${meal.strIngredient20} ${meal.strMeasure20}<br />
+      </div>
+    </div>
+            <hr class="result-line"> 
+            <div class="recipe-instruct">
+              <p>${meal.strInstructions}</p>
+              
+            </div>
+                 
+            `;
+        });
+      }
+      mealDetailsContent.innerHTML = html;
+      mealDetailsContent.parentElement.classList.add('show-recipe');
+    });
+}
+
 searchBtn.addEventListener('click', getMealList);
 mealList.addEventListener('click', getMealRecipe);
+flukeBtn.addEventListener('click', fluckMeal);
 recipeCloseBtn.addEventListener('click', () => {
   mealDetailsContent.parentElement.classList.remove('show-recipe');
 });

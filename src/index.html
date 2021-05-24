@@ -35,8 +35,18 @@
       </div>
       <ul class="nav-links">
         <li><a href="#">Recomended</a></li>
-        <li><a href="#">Fluke</a></li>
-        <li><a href="#">Search</a></li>
+        <li><a class="fluke" href="#">Fluke</a></li>
+        <li>   <div class="nav-search-box">
+            <input
+              class="nav-search-txt"
+              type="text"
+              name=""
+              placeholder="Type to search"
+            />
+            <a class="nav-search-btn" href="">
+              <i class="fas fa-search"></i>
+            </a>
+          </div></li>
       </ul>
     </nav>
     <!--   <div class="page-content">Page content</div> -->
@@ -78,64 +88,26 @@
     </div>
     <div class="container">
       <div class="meal-wrapper">
-        <div class="meal-search">
-          <!-- <div class="meal-search-box">
-            <input
-              type="text"
-              class="search-control"
-              placeholder="Enter an ingredien"
-              id="search-input"
-            />
-            <button type="submit" class="search-btn btn" id="search-btn">
-              <i class="fas fa-search"></i>
-            </button>
-          </div> -->
-        </div>
+        <div class="meal-search"></div>
         <div class="meal-result" id="check">
           <p class="title">Your Search Results:</p>
-          <div class="meal">
-            <!--  <div class="meal-item">
-              <div class="meal-img">
-                <img src="./assets/main-photo.png" alt="" />
-              </div>
-              <div class="meal-name">
-                <h3>Potato Chips</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-              </div>
-            </div> -->
-            <!----->
-          </div>
+          <div class="meal"></div>
         </div>
-        <div class="meal-details">
-          <button
-            type="submit"
-            class="btn recipe-close-btn"
-            id="recipe-close-btn"
-          >
-            <i class="fas fa-times"></i>
-          </button>
-
-          <div class="meal-details-content">
-            <!--  <h2 class="recipe-title">Meals name here</h2>
-            <p class="recipe-category">Category Name</p>
-            <div class="recipe-instruct">
-              <h3>Instruction</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident magni facere quo accusamus officiis ex doloremque
-                aspernatur quis sit labore laborum, nihil amet deserunt modi
-                quia corrupti voluptatem dolor ducimus?
-              </p>
-            </div>
-            <div class="recipe-meal-img">
-              <img src="./assets/main-photo.png" alt="" />
-            </div>
-            <div class="recipe-link">
-              <a href="#" target="_blank">Watch Video</a>
-            </div> -->
+       
+          <div class="meal-details">
+            <button
+              type="submit"
+              class="btn recipe-close-btn"
+              id="recipe-close-btn"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="meal-details-content"></div>
+        
           </div>
-        </div>
-      </div>
+        
+      
     </div>
 
     <footer>
@@ -153,13 +125,13 @@
             2021 Created By Recipe For Today All Rights Reserved.
           </p>
         </div>
-        <div class="right-col">
+      <!--   <div class="right-col">
           <h1>Our Newsletter</h1>
           <div class="border"></div>
           <p>Enter Your Email to get our news and updates.</p>
           <input type="text" class="txtb" placeholder="Enter Your Email" />
           <input type="submit" class="btn" value="submit" />
-        </div>
+        </div> -->
       </div>
     </footer>
     <script
