@@ -1,3 +1,6 @@
+
+@import "~bootstrap/scss/bootstrap";
+
 body {
   color: #333;
   font-family: arial;
@@ -15,13 +18,11 @@ body {
 }
 
 .movie-main {
-  // flex-grow: 1;
   border-color: #0f0;
   border-style: dotted;
 }
 
 .movie-list {
-  // flex-grow: 1;
   border-color: #f00;
   border-style: dotted;
 }
@@ -40,7 +41,6 @@ header {
 
 h1 {
   font-size: 64px;
-  // margin-bottom: 16px;
 }
 
 header a {

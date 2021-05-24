@@ -2,14 +2,26 @@
 function clickAndSearchMovieList(clicked_value) {
 document.querySelector(".form-filter").style.display = "block";
 switch (clicked_value) {
-  case 'Star Wars':
-    var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
-    break;
-  case 'Comedy':
-    var baseUrl = 'https://api.themoviedb.org/4/list/7095579?api_key=1d177576971c8d250816c5fcd5cac600';
-    break;
-  default:
-    console.log('Sorry, we are out of ' + clicked_value + ' list.');
+    case 'Adventure':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7096193?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    case 'Family':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7096192?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    case 'Drama':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7096191?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    case 'Science fiction':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    case 'Comedy':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7095579?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    case 'Documentary':
+        var baseUrl = 'https://api.themoviedb.org/4/list/7096190?api_key=1d177576971c8d250816c5fcd5cac600';
+        break;
+    default:
+        console.log('Sorry, we are out of ' + clicked_value + ' list.');
 }
 
 function search() {

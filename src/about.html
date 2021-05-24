@@ -1,33 +1,19 @@
 <div class="main-content">
   <div class="movie-main">
-    <h1>The Good Movie App</h1>
+    <h1>The Good Movie DB</h1>
 
     <navigation></navigation>
+    <form class="form-filter">
+      <input type="text" placeholder="Movie title..." />
+      <button>Filter</button>
+    </form>
     <h2></h2>
     <h5></h5>
     <div class="movie-container"></div>
     <p>text about</p>
   </div>
 
-  <div class="movie-list">
-    <p class="categories">Categories</p>
-
-    <button
-      id="star-wars-list"
-      value="Star Wars"
-      onclick="clickAndSearchMovieList(this.value)"
-    >
-      <p class="categories-list">Star Wars</p>
-    </button>
-
-    <button
-      id="comedy-list"
-      value="Comedy"
-      onclick="clickAndSearchMovieList(this.value)"
-    >
-      <p class="categories-list">Comedy</p>
-    </button>
-  </div>
+  <categories class="movie-list"></categories>
 </div>
 <footer></footer>
 <script type="text/javascript" src="../src/main.js"></script>

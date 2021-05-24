@@ -8,7 +8,7 @@
   <body>
     <div class="main-content">
       <div class="movie-main">
-        <h1>The Good Movie App</h1>
+        <h1>The Good Movie DB</h1>
 
         <navigation></navigation>
         <form class="form-filter">
@@ -20,25 +20,7 @@
         <div class="movie-container"></div>
       </div>
 
-      <div class="movie-list">
-        <p class="categories">Categories</p>
-
-        <button
-          id="star-wars-list"
-          value="Star Wars"
-          onclick="clickAndSearchMovieList(this.value)"
-        >
-          <p class="categories-list">Star Wars</p>
-        </button>
-
-        <button
-          id="comedy-list"
-          value="Comedy"
-          onclick="clickAndSearchMovieList(this.value)"
-        >
-          <p class="categories-list">Comedy</p>
-        </button>
-      </div>
+      <categories class="movie-list"></categories>
     </div>
     <footer></footer>
   </body>

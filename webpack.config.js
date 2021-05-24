@@ -38,6 +38,16 @@ const configure = (env, args) => {
               : MiniCssExtractPlugin.loader,
             { loader: 'css-loader' },
             { loader: 'sass-loader' },
+            {
+              loader: 'postcss-loader', // Run post css actions
+              options: {
+                postcssOptions: function () { // post css plugins, can be exported to postcss.config.js
+                  return [
+                    require('autoprefixer')
+                  ];
+                }
+              }
+            }
           ],
         },
         {
@@ -122,6 +132,11 @@ const configure = (env, args) => {
         options: {
           createdBy: 'Created by Magda Senger'
         }
+      }),
+      new HtmlWebpackPartialsPlugin({
+        path: resolve(__dirname, './src/partials/categories.html'),
+        location: 'categories',
+        template_filename: ['index.html', 'about.html', 'contact.html']
       }),
     ],
     devServer: {
