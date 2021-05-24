@@ -234,23 +234,23 @@ body {
   padding-top: 2.5vh;
 }
 
-.book-find-info .book-info .book-author {
+.book-find-info .book-info #book-author {
   font-size: 1.75rem;
 }
 
-.book-find-info .book-info .book-title {
+.book-find-info .book-info #book-title {
   font-size: 3.25rem;
 }
 
-.book-find-info .book-info .book-title::before {
+.book-find-info .book-info #book-title::before {
   content: '"';
 }
 
-.book-find-info .book-info .book-title::after {
+.book-find-info .book-info #book-title::after {
   content: '"';
 }
 
-.book-find-info .book-info .book-description {
+.book-find-info .book-info #book-description {
   max-height: 50vh;
   text-align: justify;
   font-size: 1.5rem;
@@ -281,7 +281,7 @@ body {
   border-radius: 1rem;
 }
 
-.book-find-cover .book-cover-bgc .book-cover {
+.book-find-cover .book-cover-bgc #book-cover {
   height: 80%;
   width: 80%;
   background-image: none;
@@ -324,7 +324,7 @@ body {
   cursor: pointer;
 }
 
-.fav-box {
+#favourite {
   display: block;
   margin-top: 2vh;
   margin-bottom: 2vh;

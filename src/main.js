@@ -17,8 +17,6 @@ let btnCloseNav // button closed popup in navigation
 const url = 'https://www.googleapis.com/books/v1/volumes?q=' // url to google api book
 const favouriteArray = [] // array including id favourite books
 
-
-
 const main = () => {
     prepareDOMElements();
     prepareDOMEvents();
@@ -53,6 +51,10 @@ const prepareDOMEvents = () => {
     btnCloseNav.addEventListener('click', closePopupNav)
 }
 
+// scroll into view
+const scrolling = (element) =>{
+    element.scrollIntoView({behavior: "smooth", block: "center"})
+}
 
 // open new card in browser with buy option
 const buyBook = (event) => {
@@ -61,7 +63,7 @@ const buyBook = (event) => {
     }
 }
 
-// run finder after click "enter"
+// run finder function after click "enter"
 const checkKeyEnter = (event) => {
     if (event.key === 'Enter'){
         finder()
@@ -113,20 +115,20 @@ const finder = () =>{
             // loop check and show only books witch cover image
             for (const element of data.items){
                 if(element.volumeInfo.imageLinks !== undefined){
-                    let temp = document.createElement('a')
-                    temp.setAttribute('id', element.id)
-                    temp.innerHTML= `
+                    let newElement = document.createElement('a')
+                    newElement.setAttribute('id', element.id)
+                    newElement.innerHTML= `
                         <div class="find-item-bgc">
                             <img class="find-item-book" src="${element.volumeInfo.imageLinks?.thumbnail}"></img>
                         </div>
                         `
-                    searchResults.appendChild(temp)
+                    searchResults.appendChild(newElement)
                 }
                 else{
                     continue
                 }
             }
-            searchResults.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"})
+            scrolling(searchResults)
         })
         .catch(error => {
             console.log(error)
@@ -136,41 +138,43 @@ const finder = () =>{
 
 // find clicked book, and display details
 const finderDetails = (event) =>{
-    const temp = event.target.closest('a').id
-    fetch(url+temp)
+    const bookId = event.target.closest('a').id
+    fetch(url+bookId)
     .then(res => res.json())
     .then(data => {
-        sessionStorage.setItem('id', temp)
-        bookAuthor.innerText = data.items[0].volumeInfo.authors
-        bookTitle.innerText = data.items[0].volumeInfo.title
-        if (data.items[0].volumeInfo.description !== undefined){
-            bookDescription.innerText = data.items[0].volumeInfo.description
+        const dataApi = data.items[0]
+        sessionStorage.setItem('id', bookId)
+        bookAuthor.innerText = dataApi.volumeInfo.authors
+        bookTitle.innerText = dataApi.volumeInfo.title
+        if (dataApi.volumeInfo.description !== undefined){
+            bookDescription.innerText = dataApi.volumeInfo.description
         }
         else{
             bookDescription.innerText = "This book havn't desrciption"
         }
-        bookCover.style.backgroundImage = `url(${data.items[0].volumeInfo.imageLinks.thumbnail})`
-        sessionStorage.setItem('bookCover', `${data.items[0].volumeInfo.imageLinks.thumbnail}`)
-        sessionStorage.setItem('buyLink', `${data.items[0].saleInfo.buyLink}`)
-        bookAuthor.scrollIntoView({behavior: "smooth", block: "start"})
+        bookCover.style.backgroundImage = `url(${dataApi.volumeInfo.imageLinks.thumbnail})`
+        sessionStorage.setItem('bookCover', `${dataApi.volumeInfo.imageLinks.thumbnail}`)
+        sessionStorage.setItem('buyLink', `${dataApi.saleInfo.buyLink}`)
+        scrolling(bookAuthor)
     })  
     .catch(error => console.log(error))
 }
 
 // adding book to favourite
 const addNewFavourite = () => {
-    if (favouriteArray.includes(`${sessionStorage.getItem('id')}`) === false){
-        let temp = document.createElement('div')
-        temp.innerHTML= `
-                    <a class="fav-item" id=${sessionStorage.getItem('id')}>
+    const storageId = sessionStorage.getItem('id')
+    if (favouriteArray.includes(`${storageId}`) === false){
+        let newElement = document.createElement('div')
+        newElement.innerHTML= `
+                    <a class="fav-item" id=${storageId}>
                         <div class="fav-item-bgc">
                             <img class="fav-item-book" src='${sessionStorage.getItem('bookCover')}'></img>
                         </div>
                     </a>
                     <button class="btn-remove">remove</button>
         `
-        favouriteContainer.appendChild(temp)
-        favouriteArray.push(`${sessionStorage.getItem('id')}`)
+        favouriteContainer.appendChild(newElement)
+        favouriteArray.push(`${storageId}`)
     }
     else{
         showAlert(alertFavourite)

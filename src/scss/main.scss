@@ -10,10 +10,10 @@ $main-color: #F9A801;
     cursor: pointer;
 }
 
-
 // =========
 // GENERAL
 // ==========
+
 html{
     scroll-behavior: smooth
 }
@@ -32,7 +32,7 @@ html{
 body {
     font-family: 'Kalam', cursive;
     font-size: 10px;
-    color: #F9A801;
+    color: $main-color;
     background-color: #E5E5E5;
     font-weight: bold;
 }
@@ -50,7 +50,6 @@ body {
 .alert{
     position: fixed;
     width: 27.5vw;
-    // margin: 0 auto;
     top: 50%;
     left: 50%;
     padding: 10px 5px;
@@ -93,7 +92,6 @@ body {
     visibility: visible;
 }
 
-
 // ===========
 // NAVIGATION
 // ===========
@@ -108,7 +106,7 @@ body {
     a{
         margin: 2vh 3vw;
         text-decoration: none;
-        color: #F9A801;
+        color: $main-color
     }
     p{
         transition: transform 0.5s, text-shadow 0.5s;
@@ -212,19 +210,19 @@ body {
 .book-find-info{
     padding-top: 2.5vh;
     .book-info{
-        .book-author{
+        #book-author{
             font-size: 1.75rem;
         }
-        .book-title{
+        #book-title{
             font-size: 3.25rem;
         }
-        .book-title::before{
+        #book-title::before{
             content: '"';
         }
-        .book-title::after{
+        #book-title::after{
             content: '"';
         }
-        .book-description{
+        #book-description{
             max-height: 50vh;
             text-align: justify;
             font-size: 1.5rem;
@@ -247,7 +245,7 @@ body {
         max-width: 300px;
         background-color: $main-color;
         border-radius: 1rem;
-        .book-cover{
+        #book-cover{
             height: 80%;
             width: 80%;
             background-image: none;
@@ -284,7 +282,7 @@ body {
 //  SECTION FAVOURITES
 // ===============
 
-.fav-box{
+#favourite{
     display: block;
     margin-top: 2vh;
     margin-bottom: 2vh;
