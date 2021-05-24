@@ -13,17 +13,12 @@ body {
 }
 
 .main-content {
-  display: flex;
+  display: grid;
   flex-direction: row;
 }
 
 .movie-main {
   border-color: #0f0;
-  border-style: dotted;
-}
-
-.movie-list {
-  border-color: #f00;
   border-style: dotted;
 }
 
@@ -68,11 +63,15 @@ form {
   justify-content: flex-end;
 }
 
-.categories {
+.categories-title {
   color: #888;
   text-decoration: none;
-  margin-top: 20vh;
-  max-width: 14vw;
+}
+
+.categories-block {
+  color: #0ff;
+  border: dotted;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -107,6 +106,7 @@ h5 {
 
 .form-filter {
   display: none;
+  margin-bottom: 15px;
 }
 
 .header-img {
