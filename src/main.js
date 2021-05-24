@@ -1,30 +1,33 @@
-
-function clickAndSearchMovieList(clicked_value) {
-document.querySelector(".form-filter").style.display = "block";
-switch (clicked_value) {
-    case 'Adventure':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7096193?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    case 'Family':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7096192?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    case 'Drama':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7096191?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    case 'Science fiction':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    case 'Comedy':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7095579?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    case 'Documentary':
-        var baseUrl = 'https://api.themoviedb.org/4/list/7096190?api_key=1d177576971c8d250816c5fcd5cac600';
-        break;
-    default:
-        console.log('Sorry, we are out of ' + clicked_value + ' list.');
+function chooseMovieList(clicked_value) {
+    switch (clicked_value) {
+        case 'Adventure':
+            'https://api.themoviedb.org/4/list/7096193?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        case 'Family':
+            'https://api.themoviedb.org/4/list/7096192?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        case 'Drama':
+            'https://api.themoviedb.org/4/list/7096191?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        case 'Science fiction':
+            'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        case 'Comedy':
+            'https://api.themoviedb.org/4/list/7095579?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        case 'Documentary':
+            'https://api.themoviedb.org/4/list/7096190?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
+        default:
+            console.log('Sorry, we are out of ' + clicked_value + ' list.');
+    }
 }
 
-function search() {
+function clickAndSearchMovieList() {
+document.querySelector(".form-filter").style.display = "block";
+this.chooseMovieList(baseUrl);
+
+function displayMovie() {
     document.querySelector('.movie-container').innerHTML = "";
     fetch(baseUrl)
     .then(res => res.text())
@@ -43,15 +46,16 @@ function search() {
             var text3 = document.createElement("p");
             var content2 = document.createTextNode(parseRes.results[i].poster_path); // add
 
-            function choiceTitle() {
+            choiceTitle(() => {
                 if (parseRes.results[i].original_title) {
                     var content3 = document.createTextNode(parseRes.results[i].original_title);
+                    return content3;
                 }
                 else if (parseRes.results[i].original_name) {
-                    var content3 = document.createTextNode(parseRes.results[i].original_name);
+                    var content4 = document.createTextNode(parseRes.results[i].original_name);
+                    return content4;
                 }
-                return content3;
-            }
+            })
 
             var content4 = document.createTextNode(parseRes.results[i].overview);
             var text4 = document.createElement("p");
@@ -77,5 +81,5 @@ function search() {
         console.log(parseRes);
     })
 }
-search();
+displayMovie();
 }
