@@ -1,6 +1,6 @@
 .recipe {
   box-shadow: 0 0 15px 1px #ddd;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   width: 80%;
   padding: 30px;
   border-radius: 10px;
@@ -31,52 +31,55 @@
     font-weight: normal;
     color: white;
     background-color: #ddd;
+  }
 
-    &__additional-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  &__additional-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      .icon {
-        position: relative;
-        i {
-          margin: 0 10px;
-          color: #ddd;
-          font-size: 20px;
-          font-style: normal;
-          &:nth-last-child(1) {
-            font-size: 16px;
-          }
+    .icon {
+      position: relative;
+      i {
+        margin: 0 10px;
+        color: #ddd;
+        font-size: 20px;
+        font-style: normal;
+        &:nth-last-child(1) {
+          font-size: 16px;
         }
-        &__tooltip {
+      }
+      &__tooltip {
+        position: absolute;
+        color: black;
+        font-size: 12px;
+        font-weight: normal;
+        min-width: 120px;
+        width: auto;
+        height: 30px;
+        background-color: #ddd;
+        top: 30px;
+        padding: 0 5px;
+        transform: translate(10%);
+        border-radius: 5px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        &::after {
           position: absolute;
-          color: black;
-          font-size: 12px;
-          font-weight: normal;
-          min-width: 120px;
-          width: auto;
-          height: 30px;
-          background-color: #ddd;
-          top: 30px;
-          padding: 0 5px;
-          transform: translate(10%);
-          border-radius: 5px;
-          display: none;
-          justify-content: center;
-          align-items: center;
-          &::after {
-            position: absolute;
-            content: "";
-            display: block;
-            background-color: transparent;
-            border: 5px solid transparent;
-            border-bottom: 10px solid #ddd;
-            top: -10px;
-            left: 4px;
-          }
+          content: "";
+          display: block;
+          background-color: transparent;
+          border: 5px solid transparent;
+          border-bottom: 10px solid #ddd;
+          top: -10px;
+          left: 4px;
         }
       }
     }
+  }
+  &__text {
+    text-align: center;
   }
 }
 

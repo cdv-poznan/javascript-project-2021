@@ -25,6 +25,7 @@ export const getRecipeData = async () => {
 export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
   $('.recipe__title').text(data.title);
   $('.recipe__text').text(data.instructions);
+  $('.recipe__text').css('text-align', 'left');
   if (data.image) {
     $('head').append(
       `<style id="mystyle" type="text/css"> .plate::before {background-image: url('${data.image}'); box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;} </style>`,

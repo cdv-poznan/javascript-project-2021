@@ -4,6 +4,7 @@ import { fetchExactRecipe } from '../util/fetchData';
 
 $('ul.favourites__list').on('click', 'li', async e => {
   $('.recipe__note').css('display', 'block');
+  $('.recipe__note').attr('id', 'saved');
 
   let data;
   try {
