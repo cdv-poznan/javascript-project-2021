@@ -2,11 +2,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
+  font-family: "Cabin", sans-serif;
   color: #333;
-  font-family: arial;
-  max-width: 780px;
   margin: 0 auto;
-  padding: 0 16px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -29,19 +27,79 @@ footer {
   padding: 16px 0;
 }
 
-header {
-  margin-top: 16px;
-  margin-bottom: 48px;
+.header-all {
+  position: relative;
+}
+
+.header-img {
+  border-radius: 10px;
+  position: relative;
+  object-fit: cover;
+  max-height: 650px;
+  width: 100%;
+  filter: drop-shadow(8px 1px 30px #00b36b);
+  
 }
 
 h1 {
-  font-size: 64px;
+  font-family: "Akronim", cursive;
+  font-size: 90px;
+  position: absolute;
+  color: #fff;
+  bottom: 399px;
+  right: 150px;
+  text-align: right;
 }
 
-header a {
-  color: #888;
-  margin-right: 16px;
-  text-decoration: none;
+h3 {
+  font-family: "Charmonman", cursive;
+  font-size: 45px;
+  position: absolute;
+  color: #fff;
+  bottom: 334px;
+  right: 110px;
+  text-align: right;
+}
+
+.db {
+  font-size: 18px;
+  position: absolute;
+  color: #fff;
+  bottom: 20px;
+  right: 30px;
+  text-align: right;
+}
+
+.only {
+  font-family: "Charmonman", cursive;
+  font-size: 45px;
+  position: absolute;
+  color: #fff;
+  right: 600px;
+  text-align: right;
+  top: 90px;
+}
+
+.navigation {
+  position: absolute;
+  color: #fff;
+  left: 15px;
+  bottom: 20px;
+  font-family: "Charmonman", cursive;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none !important;
+  color: #fff;
+  border: groove;
+  border-radius: 8px;
+  padding: 0 10px 0 6px;
+}
+
+a:hover {
+  color: #00b36b !important;
+  font-style: italic;
 }
 
 input {
@@ -109,6 +167,63 @@ h5 {
   margin-bottom: 15px;
 }
 
-.header-img {
-  border-radius: 10px;
+/* media queries */
+
+@media (max-width: 990px) {
+  .only {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 65px;
+    bottom: 237px;
+    right: 31px;
+  }
+
+  h3 {
+    right: 41px;
+    bottom: 192px;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 50px;
+    bottom: 165px;
+    right: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
+    bottom: 132px;
+    right: 43px;
+  }
+
+  .db {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 35px;
+    bottom: 165px;
+    right: 35px;
+  }
+
+  h3 {
+    font-size: 20px;
+    bottom: 132px;
+    right: 43px;
+  }
+
+  .db {
+    display: none;
+  }
+
+  a {
+    font-size: 15px;
+  }
 }

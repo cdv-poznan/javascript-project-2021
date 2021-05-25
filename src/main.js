@@ -44,7 +44,7 @@ function clickAndSearchMovieList(clicked_value) {
                 var text3 = document.createElement("p");
                 var content2 = document.createTextNode(parseRes.results[i].poster_path); // add
     
-                function choiceTitle() {
+                var choiceTitleFn = function() {
                     if (parseRes.results[i].original_title) {
                         return document.createTextNode(parseRes.results[i].original_title);
                     }
@@ -67,7 +67,7 @@ function clickAndSearchMovieList(clicked_value) {
                 text2.appendChild(text4);
                 text2.appendChild(text5);
                 text3.appendChild(content2); // add
-                text4.appendChild(choiceTitle());
+                text4.appendChild(choiceTitleFn());
                 text5.appendChild(content4);
                 var element = document.querySelector(".movie-main");
                 element.appendChild(tag);

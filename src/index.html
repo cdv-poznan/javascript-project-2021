@@ -3,15 +3,21 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Cabin:ital,wght@0,400;0,700;1,400;1,700&family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="../src/main.js"></script>
   </head>
   <body>
     <div class="main-content">
-      <div><img src="../src/assets/header-img.jpg" class="img-fluid header-img" alt="header image"></div>
-      <div class="movie-main">
-        <h1>The Good Movie DB</h1>
-
+      <div class="header-all">
+        <img src="../src/assets/header-img.jpg" class="img-fluid header-img" alt="header image">
+        <h1>The Good Movie</h1>
+        <h3>watch you will</h3>
+        <span class="only">Only</span>
+        <span class="db">The Good Movie Database</span>
         <navigation></navigation>
+      </div>
+      <div class="movie-main">
         <categories></categories>
         <form class="form-filter">
           <input type="text" placeholder="Movie title..." />
@@ -21,8 +27,6 @@
         <h5></h5>
         <div class="movie-container"></div>
       </div>
-
-      
     </div>
     <footer></footer>
   </body>
