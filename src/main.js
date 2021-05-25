@@ -12,6 +12,7 @@ let favouriteContainer // box with favourite books
 let btnBuy // button buy book
 let alertFavourite // alert -  adding the same book second time
 let alertResults // alert no results
+let alertMessage // message of alert
 let btnCloseBF // button closed popup in section BOOK-FIND
 let btnCloseNav // button closed popup in navigation
 const url = 'https://www.googleapis.com/books/v1/volumes?q=' // url to google api book
@@ -35,6 +36,7 @@ const prepareDOMElements = () =>{
     btnBuy = document.querySelector('#btn-buy') 
     alertFavourite = document.querySelector('#alert-favourite')
     alertResults = document.querySelector('#alert-navigation') 
+    alertMessage = document.querySelector('#alert-message')
     btnCloseBF = document.querySelector('#close-popup-bookfind')
     btnCloseNav = document.querySelector('#close-popup-navigation')
 }
@@ -56,10 +58,17 @@ const scrolling = (element) =>{
     element.scrollIntoView({behavior: "smooth", block: "center"})
 }
 
-// open new card in browser with buy option
+// open new card in browser with buy option or show popup
 const buyBook = (event) => {
     if(event.target.closest('button').classList.contains('btn-buy-book')){
-        window.open(`${sessionStorage.getItem('buyLink')}`, '_blank')
+        if(sessionStorage.getItem('buyLink') !== 'undefined'){
+
+            window.open(`${sessionStorage.getItem('buyLink')}`, '_blank')
+        }
+        else{
+            showAlert(alertFavourite)
+            alertMessage.innerText = 'You cannot buy this book'
+        }
     }
 }
 
@@ -178,6 +187,7 @@ const addNewFavourite = () => {
     }
     else{
         showAlert(alertFavourite)
+        alertMessage.innerText = 'This book is already added to favourite !'
     }
 }
 
