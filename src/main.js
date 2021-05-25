@@ -6,6 +6,16 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
+const toTop = document.querySelector('.to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add('active');
+  } else {
+    toTop.classList.remove('active');
+  }
+});
+
 const searchBtn = document.getElementById('search-btn');
 const mealList = document.querySelector('.meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');

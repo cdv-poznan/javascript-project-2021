@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /*   background-image: linear-gradient(to right top, #d3d3d3, #d5cad9, #e3bed4, #f3b0c2, #ffa5a5);
   background: rgb(255, 255, 255);
@@ -556,9 +560,33 @@ footer {
 .box {
   width: 40%;
   height: 200px;
-
   margin: 20px;
   box-sizing: border-box;
+}
+
+.to-top {
+  background: #ff9b99;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
