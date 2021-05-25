@@ -27,9 +27,14 @@ export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
   $('.recipe__text').text(data.instructions);
   $('.recipe__text').css('text-align', 'left');
   if (data.image) {
-    $('head').append(
-      `<style id="mystyle" type="text/css"> .plate::before {background-image: url('${data.image}'); box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;} </style>`,
-    );
+    const newStyle = `<style id="mystyle" type="text/css"> .plate::before {background-image: url('${data.image}'); box-shadow: inset 7px 7px 10px 3px #888, inset 0 0 15px 20px #fff;} </style>`;
+
+    if ($('#mystyle')[0]) {
+      $('#mystyle').replaceWith(newStyle);
+    } else {
+      $('head').append(newStyle);
+    }
+
     $('.plate').attr('id', data.id);
   }
 

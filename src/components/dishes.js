@@ -32,7 +32,7 @@ $('.heart').click(() => {
 });
 
 $('.bin').click(() => {
-  // deleteFavourite();
+  deleteFavourite();
 });
 
 $('.icon i')

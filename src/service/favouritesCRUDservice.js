@@ -43,11 +43,34 @@ export const addNewFavourite = () => {
 
 // delete
 
-export const deleteFavourite = e => {
+export const deleteFavourite = () => {
   const favourites = getDataFromLocalStorage('favourites');
-
-  const newFavouritesList = favourites.filter(item => item !== e.target.id);
+  const deletedItemId = $('.plate').attr('id');
+  const newFavouritesList = favourites.filter(item => item !== deletedItemId);
   localStorage.setItem('favourites', newFavouritesList);
-  localStorage.removeItem(e.target.id);
-  e.target.closest('li').remove();
+  localStorage.removeItem(deletedItemId);
+  $(`li[id=${deletedItemId}]`).remove();
+
+  if ($('#mystyle')[0]) {
+    $('#mystyle').remove();
+  }
+
+  $('.recipe__note').attr('id', '');
+  $('.recipe__title').text(`Recipe's name`);
+  $('.recipe__ings--owned span').text('');
+  $('.recipe__ings--missed span').text('');
+  $('.recipe__text').text('Here you will find recipe and hints.');
+  $('.recipe__text').css('text-align', 'center');
+  $('.recipe__note').css('display', 'none');
+
+  $('i#vegan').css('color', '#ddd');
+  $('p.vegan').text('Not vegan');
+  $('i#vegetarian').css('color', '#ddd');
+  $('p.vegetarian').text('Not vegetarian');
+  $('i#glutenFree').css('color', '#ddd');
+  $('p.glutenFree').text('Not gluten free');
+  $('i#servings').css('color', '#ddd');
+  $('p.servings').text('No data about servings');
+  $('i#min').css('color', '#ddd');
+  $('p.min').text('No data about time');
 };

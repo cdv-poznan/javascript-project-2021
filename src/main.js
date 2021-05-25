@@ -19,5 +19,5 @@ for (const link of navLinks) {
 }
 $(document).ready(() => {
   $('.ingredients').css('display', 'block');
-  fetchRecipesByIngredients();
+  // fetchRecipesByIngredients();
 });
