@@ -1,5 +1,6 @@
 import { displayRecipe, getRecipeData } from '../service/dishesService';
 import { addNewFavourite, deleteFavourite } from '../service/favouritesCRUDservice';
+import { showNotification } from '../components/notification';
 
 $('.findBtn').click(async () => {
   $('.recipe__note').attr('id', '');
@@ -12,13 +13,16 @@ $('.findBtn').click(async () => {
 });
 
 $('.plate').hover(() => {
-  const attr = $('.recipe__note').attr('id');
-  if (attr === 'saved') {
-    $('.heart').css('display', 'none');
-    $('.bin').css('display', 'block');
-  } else {
-    $('.heart').css('display', 'block');
-    $('.bin').css('display', 'none');
+  const plateAttr = $('.plate').attr('id');
+  if (plateAttr && typeof plateAttr !== 'undefined' && plateAttr !== false) {
+    const recipeAttr = $('.recipe__note').attr('id');
+    if (recipeAttr === 'saved') {
+      $('.heart').css('display', 'none');
+      $('.bin').css('display', 'block');
+    } else {
+      $('.heart').css('display', 'block');
+      $('.bin').css('display', 'none');
+    }
   }
 });
 
@@ -33,6 +37,7 @@ $('.heart').click(() => {
 
 $('.bin').click(() => {
   deleteFavourite();
+  showNotification(`Recipe deleted from favourites list!`);
 });
 
 $('.icon i')

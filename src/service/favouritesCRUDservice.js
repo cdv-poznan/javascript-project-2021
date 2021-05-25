@@ -56,6 +56,7 @@ export const deleteFavourite = () => {
   }
 
   $('.recipe__note').attr('id', '');
+  $('.plate').attr('id', '');
   $('.recipe__title').text(`Recipe's name`);
   $('.recipe__ings--owned span').text('');
   $('.recipe__ings--missed span').text('');

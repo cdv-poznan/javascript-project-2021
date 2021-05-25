@@ -19,5 +19,7 @@ for (const link of navLinks) {
 }
 $(document).ready(() => {
   $('.ingredients').css('display', 'block');
+  $('.bin').css('display', 'none');
+  $('.heart').css('display', 'none');
   // fetchRecipesByIngredients();
 });
