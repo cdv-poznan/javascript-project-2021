@@ -25,6 +25,7 @@ footer {
   border-top: 1px solid #eee;
   margin-top: 16px;
   padding: 16px 0;
+  text-align: center;
 }
 
 .header-all {
@@ -32,7 +33,6 @@ footer {
 }
 
 .header-img {
-  border-radius: 10px;
   position: relative;
   object-fit: cover;
   max-height: 650px;
@@ -43,7 +43,7 @@ footer {
 
 h1 {
   font-family: "Akronim", cursive;
-  font-size: 90px;
+  font-size: 100px;
   position: absolute;
   color: #fff;
   bottom: 399px;
@@ -53,12 +53,22 @@ h1 {
 
 h3 {
   font-family: "Charmonman", cursive;
-  font-size: 45px;
+  font-size: 55px;
   position: absolute;
   color: #fff;
-  bottom: 334px;
+  bottom: 354px;
   right: 110px;
   text-align: right;
+}
+
+.only {
+  font-family: "Charmonman", cursive;
+  font-size: 55px;
+  position: absolute;
+  color: #fff;
+  right: 600px;
+  text-align: right;
+  top: 59px;
 }
 
 .db {
@@ -68,16 +78,6 @@ h3 {
   bottom: 20px;
   right: 30px;
   text-align: right;
-}
-
-.only {
-  font-family: "Charmonman", cursive;
-  font-size: 45px;
-  position: absolute;
-  color: #fff;
-  right: 600px;
-  text-align: right;
-  top: 90px;
 }
 
 .navigation {
@@ -136,12 +136,16 @@ h2 {
   text-align: center;
   border-color: #09f;
   border-style: dotted;
+  max-width: 120vh;
+  margin: auto;
 }
 
 h5 {
   text-align: justify;
   border-color: #09f;
   border-style: dotted;
+  max-width: 120vh;
+  margin: auto;
 }
 
 .movie-info {
@@ -151,6 +155,8 @@ h5 {
   margin: 3vh;
   border-color: #f6c;
   border-style: dotted;
+  max-width: 120vh;
+  margin: auto;
 }
 
 .section-left {
@@ -165,6 +171,16 @@ h5 {
 .form-filter {
   display: none;
   margin-bottom: 15px;
+  max-width: 120vh;
+  margin: auto;
+}
+
+.cat-select {
+  max-width: 120vh;
+  margin: auto;
+  text-align: center;
+  border: dashed;
+  display: block;
 }
 
 /* media queries */
@@ -184,7 +200,8 @@ h5 {
 
   h3 {
     right: 41px;
-    bottom: 192px;
+    bottom: 195px;
+    font-size: 45px;
   }
 }
 
@@ -197,24 +214,29 @@ h5 {
 
   h3 {
     font-size: 30px;
-    bottom: 132px;
+    bottom: 138px;
     right: 43px;
   }
 
   .db {
     display: none;
   }
+
+  .movie-img {
+    width: 100%;
+    min-width: 150px;
+  }
 }
 
 @media (max-width: 380px) {
   h1 {
-    font-size: 35px;
+    font-size: 46px;
     bottom: 165px;
     right: 35px;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 25px;
     bottom: 132px;
     right: 43px;
   }
@@ -225,5 +247,13 @@ h5 {
 
   a {
     font-size: 15px;
+  }
+
+  .movie-img {
+    width: 96%;
+  }
+
+  .movie-info {
+    display: block;
   }
 }

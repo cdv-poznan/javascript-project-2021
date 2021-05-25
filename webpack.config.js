@@ -130,7 +130,7 @@ const configure = (env, args) => {
         location: 'footer',
         template_filename: ['index.html', 'about.html', 'contact.html'],
         options: {
-          createdBy: 'Created by Magda Senger'
+          createdBy: 'Created by Magdalena Senger'
         }
       }),
       new HtmlWebpackPartialsPlugin({
