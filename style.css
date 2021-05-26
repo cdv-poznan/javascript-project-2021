@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Lato;
+  color: #274d66;
+  background-color: #d1d1d1;
+  margin: 0px;
+}
+
+.head {
+  color: #fff;
+  font-size: 20px;
+  background-color: #274d66;
+  padding: 10px 10px 15px 10px;
+}
+
+.column1 {
+  color: #fff;
+  padding: 0px 20px 10px 10px;
+  background-color: #274d66;
+  display: flex;
+  flex-direction: row;
+  font-size: 0px;
+}
+
+.column2 {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container1 {
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.container2 {
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.now,
+.temp,
+.desc,
+.city {
+  padding-left: 11px;
+  font-size: 25px;
+}
+
+.celsius {
+  padding-left: 3px;
+  font-size: 25px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather {
+  display: flex;
+  flex-direction: row;
+}
+
+.weatherlater {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: #fff;
+  background-color: #274d66;
+  padding: 0px 10px 10px 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.date1,
+.date2,
+.date3,
+.date4 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input[type='text'] {
+  max-width: 250px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 16px 0px 0px 0px;
+  border-bottom: 3px solid #df8e00;
+  margin-right: 0px;
+}
+
+input[type='submit'] {
+  max-width: 100px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 0px 0px 16px 0px;
+  border-bottom: 3px solid #df8e00;
+  border-left: 1px solid #274d66;
+  margin-left: 0px;
+}
+
+button {
+  border: 0px solid #dedede;
+  font-size: 14px;
+  padding: 8px 10px;
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.innercontainer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='tracker'] {
+  width: 350px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 16px 0px 16px 0px;
+  border-bottom: 3px solid #df8e00;
+  display: block;
+  font-size: 16px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #274d66;
+  color: #fff;
+  border: 0;
+  border-radius: 16px 0px 16px 0px;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 13px;
+  padding: 10px;
+  width: 350px;
+}
+
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list {
+  width: 350px;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.list li {
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 16px 0px 16px 0px;
+}
+
+.list li.budget {
+  border-bottom: 3px solid #2ecc71;
+}
+
+.list li.expense {
+  border-bottom: 3px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #d1d1d1;
+  color: #e74c3c;
+  font-size: 25px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .column1 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px 10px 10px 10px;
+  }
+
+  .column2 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .head {
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+  }
+
+  .container1 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .container2 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .weather {
+    flex-direction: row;
+    padding: 10px 10px 10px 0px;
+  }
+
+  .now {
+    padding-left: 0px;
+    font-size: 18px;
+  }
+
+  .temp,
+  .city,
+  .desc {
+    padding-left: 10px;
+    font-size: 18px;
+  }
+
+  .celsius {
+    padding-left: 3px;
+    font-size: 18px;
+  }
+
+  .weatherlater {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  input[type='text'] {
+    max-width: 150px;
+  }
+
+  input[type='submit'] {
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .list {
+    width: 270px;
+  }
+
+  input[type='tracker'] {
+    width: 270px;
+  }
+
+  .btn {
+    width: 270px;
+  }
+
+  .date1,
+  .date2,
+  .date3,
+  .date4 {
+    padding-left: 15px;
+    padding-right: 2px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .date4,
+  .temp4,
+  .celsius4 {
+    font-size: 0px;
+  }
+
+  .list {
+    width: 230px;
+  }
+
+  input[type='tracker'] {
+    width: 230px;
+  }
+
+  .btn {
+    width: 230px;
+  }
+}
