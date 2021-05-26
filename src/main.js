@@ -56,6 +56,7 @@ function getMealList() {
 function mealRecipeModal(meal) {
   meal = meal[0];
   const html = `
+  
     <div class="recipe-meal-img">
       <img src="${meal.strMealThumb}" alt="" />
     </div>
@@ -91,6 +92,7 @@ function mealRecipeModal(meal) {
       <p>${meal.strInstructions}</p>
       
     </div>
+    
     `;
   mealDetailsContent.innerHTML = html;
   mealDetailsContent.parentElement.classList.add('show-recipe');
