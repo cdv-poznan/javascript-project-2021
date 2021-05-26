@@ -9,9 +9,6 @@ html {
 }
 
 body {
-  /*   background-image: linear-gradient(to right top, #d3d3d3, #d5cad9, #e3bed4, #f3b0c2, #ffa5a5);
-  background: rgb(255, 255, 255);
-  background: linear-gradient(214deg, rgba(255, 255, 255, 1) 0%, rgba(255, 181, 180, 0.19091386554621848) 100%); */
   background: #fff3f3;
 }
 
@@ -57,7 +54,6 @@ nav {
 
 .nav-search-txt {
   border: 0;
-
   outline: none;
   float: left;
   padding: 0;
@@ -129,12 +125,6 @@ footer {
 
 .social-media a:hover {
   color: #ffb5b4;
-}
-
-.border {
-  width: 100px;
-  height: 4px;
-  background: #fc5c65;
 }
 
 .flex-container {
@@ -415,10 +405,6 @@ footer {
   display: block;
 }
 
-/* .meal-details-content {
-  margin: 2rem;
-}
- */
 .meal-details-content p:not(.recipe-category) {
   padding: 1rem 0;
   margin: 20px;
@@ -753,6 +739,7 @@ footer {
     width: 90%;
   }
 }
+
 @media screen and (max-width: 414px) {
   .line {
     width: 30px;
