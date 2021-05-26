@@ -1,7 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book finder</title>
+    <script src="https://kit.fontawesome.com/1ec0d97a36.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" media="screen and (min-width: 575.98px)" href="./css/small.css">
+    <link rel="stylesheet" media="screen and (min-width: 767.98px)" href="./css/medium.css">
+    <link rel="stylesheet" media="screen and (min-width: 991.98px)" href="./css/large.css">
+</head>
+<body>
+    <nav id="navigation">
+        <div class="hero-img">
+            <div class="nav-bar">
+                <a class="logo" href="#"><i class="fas fa-book"></i></a>
+                <a href="#favourite">
+                    <p>favourite</p>
+                </a>
+            </div>
+            <div class="header-text">
+                <p class="site-title">book finder</p>
+                <div class="input-find">
+                    <input id="input-area" type="text" placeholder="Search book...">
+                    <i class="fas fa-search" id="search-icon"></i>
+                </div>
+            </div>
+            <div class="alert alert-hidden" id="alert-navigation">
+                <p class="alert-message">there are no books with this title, please try again !</p>
+                <button class="btn-close" id="close-popup-navigation" href="">Close</button>
+            </div>
+        </div>
+    </nav>
+    <main class="page-wraper">
+        <section>
+            <div id="find-results"></div>
+        </section>
+        <section class="book-find">
+            <div class="book-find-info">
+                <a class="logo logo-click" href="#navigation"><i class="fas fa-book"></i></a>
+                <div class="book-info">
+                    <p id="book-author">Author</p>
+                    <p id='book-title'>Title</p>
+                    <p id="book-description">Book description</p>
+                </div>
+            </div>
+            <div class="book-find-cover">
+                <div class="book-cover-bgc">
+                    <div id="book-cover"></div>
+                </div>
+                <div class="box-btns">
+                    <button id="btn-add">add to favourite</button>
+                    <button class="btn-buy-book" id="btn-buy">buy</button>
+                </div>
+            </div>
+            <div class="alert alert-hidden " id="alert-favourite">
+                <p class="alert-message" id="alert-message"></p>
+                <button class="btn-close" id="close-popup-bookfind" href="">Close</button>
+            </div>
+        </section>
+        <section id="favourite">
+            <div class="fav-title">
+                <a class="logo logo-click" href="#navigation"><i class="fas fa-book"></i></a>
+                <p>favourties</p>
+            </div>
+            <div id="fav-items">
+            </div>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
 </html>

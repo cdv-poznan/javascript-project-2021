@@ -1,0 +1,342 @@
+// =========
+// VARIABLES AND MIXINS
+// ==========
+
+$main-color: #F9A801;
+
+@mixin button-hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 20px 5px $main-color;
+    cursor: pointer;
+}
+
+// =========
+// GENERAL
+// ==========
+
+html{
+    scroll-behavior: smooth
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 10px;
+}
+
+
+body {
+    font-family: 'Kalam', cursive;
+    font-size: 10px;
+    color: $main-color;
+    background-color: #E5E5E5;
+    font-weight: bold;
+}
+
+.page-wraper {
+    margin: 0 auto;
+    width: 95vw;
+    max-width: 1400px;
+}
+
+.logo {
+    display: none;
+}
+
+.alert{
+    position: fixed;
+    width: 27.5vw;
+    top: 50%;
+    left: 50%;
+    padding: 10px 5px;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: #CBEE88;
+    border: 1px solid black;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 10;
+    
+    .alert-message{
+        padding: 1vh 1vw;
+    }
+    
+    .btn-close{
+        padding: 5px 10px;
+        color: black;
+        background-color: $main-color;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid black;
+        border-radius:  0.5rem;
+    }
+    
+    .btn-close:hover{
+        cursor: pointer;
+    }
+}
+
+.alert-hidden{
+    visibility: hidden;
+}
+.alert-visibility{
+    visibility: visible;
+}
+
+// ===========
+// NAVIGATION
+// ===========
+
+.nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2em;
+    text-transform: uppercase;
+    a{
+        margin: 2vh 3vw;
+        text-decoration: none;
+        color: $main-color
+    }
+    p{
+        transition: transform 0.5s, text-shadow 0.5s;
+    }
+    p:hover{
+        transform: scale(1.25);
+        text-shadow: 0 0 20px;
+    }
+}
+
+.hero-img{
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url('../assets/pexels-stanislav-kondratiev-2908984.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .site-title{
+        padding: 10vh 1vh;
+        font-size: 7em;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+    }
+}
+
+.input-find{
+    margin: 0 auto;
+    input{
+        display: inline-block;
+        width: 80vw;
+        height: 5vh;
+        border-radius: 1rem;
+        outline: none;
+        border: none;
+        background-color: rgba(255,255,255, 0.5);
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .fa-search{
+        position: absolute;
+        font-size: 2em;
+        transform: translate(-125%, 40%);
+        transition: text-shadow 0.5s;
+    }
+    .fa-search:hover{
+        text-shadow: 0 0 20px;
+        cursor: pointer;
+    }
+}
+
+// ============
+// SECTION FIND RESULTS
+// ==============
+
+#find-results{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    .find-item-bgc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 200px;
+        margin: 1rem;
+        background-color: $main-color;
+        border-radius: 5px;
+        transition: transform 0.5s, box-shadow 0.5s;
+        .find-item-book{
+            height: 188px;
+            width: 138px;
+        }
+    }
+    .find-item-bgc:hover{
+        box-shadow: 0 0 20px 5px $main-color;
+        cursor: pointer;
+    }
+}
+
+// ============
+// SECTION BOOK-FIND
+// ==============
+
+.book-find{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-find-info{
+    padding-top: 2.5vh;
+    .book-info{
+        #book-author{
+            font-size: 1.75rem;
+        }
+        #book-title{
+            font-size: 3.25rem;
+        }
+        #book-title::before{
+            content: '"';
+        }
+        #book-title::after{
+            content: '"';
+        }
+        #book-description{
+            max-height: 50vh;
+            text-align: justify;
+            font-size: 1.5rem;
+            font-weight: normal;
+            overflow: hidden;
+            color: black;
+        }
+    }
+}
+
+.book-find-cover{
+    padding-top: 5vh;
+    .book-cover-bgc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        max-height: 440px;
+        width: 75vw;
+        max-width: 300px;
+        background-color: $main-color;
+        border-radius: 1rem;
+        #book-cover{
+            height: 80%;
+            width: 80%;
+            background-image: none;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+    .box-btns{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2vh;
+    }
+    #btn-add, #btn-buy{
+        width: 45%;
+        max-width: 15rem;
+        height: 5rem;
+        background-color: $main-color;
+        border-style: none;
+        border-radius: 1rem;
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: transform 0.5s, box-shadow 0.5s;
+    }
+    #btn-add:hover, #btn-buy:hover{
+        @include button-hover()
+    }
+}
+    
+
+
+// ============
+//  SECTION FAVOURITES
+// ===============
+
+#favourite{
+    display: block;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.fav-title{
+    text-align: center;
+    font-size: 4.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+#fav-items{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .fav-item{
+        margin: 1rem;
+        .fav-item-bgc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 35rem;
+            width: 20rem;
+            border-radius: 1rem;
+            background-color: $main-color;
+            transition: box-shadow 0.5s;
+            .fav-item-book{
+                height: 80%;
+                width: 80%;
+                background-color: red;
+            }
+        }
+        .fav-item-bgc:hover{
+            box-shadow: 0 0 20px 5px $main-color;
+            cursor: pointer;
+        }
+    }
+}
+
+.btn-remove{
+    display: block;
+    height: 4rem ;
+    width: 12rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background-color: $main-color;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.btn-remove:hover{
+    @include button-hover()
+}  

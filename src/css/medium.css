@@ -1,0 +1,51 @@
+.alert {
+  font-size: 1.5rem;
+}
+
+.hero-img {
+  font-size: 16px;
+}
+
+#input-area {
+  width: 50vw;
+  height: 6.5vh;
+}
+
+.input-find .fa-search {
+  font-size: 2em;
+  -webkit-transform: translate(-120%, 25%);
+          transform: translate(-120%, 25%);
+}
+
+.book-find-info {
+  padding-top: 2.5vh;
+}
+
+.book-find-info .book-info .book-author {
+  font-size: 2.25rem;
+}
+
+.book-find-info .book-info .book-title {
+  font-size: 4rem;
+  padding: 3vh 0;
+}
+
+.book-find-info .book-info .book-description {
+  max-height: 70vh;
+  text-align: justify;
+  font-size: 2rem;
+  font-weight: normal;
+  overflow: auto;
+}
+
+.book-find-cover .book-cover-bgc {
+  height: 50vh;
+  width: 35vw;
+}
+
+.fav-title {
+  padding: 6vh 0;
+  font-size: 10rem;
+  letter-spacing: 0.3rem;
+}
+/*# sourceMappingURL=medium.css.map */

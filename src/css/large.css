@@ -1,0 +1,125 @@
+.logo {
+  display: inline-block;
+  font-size: 5.25rem;
+  cursor: auto;
+}
+
+.logo-click {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #F9A801;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #F9A801;
+}
+
+.alert {
+  font-size: 1.75rem;
+}
+
+.nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-img {
+  font-size: 18px;
+}
+
+#input-area {
+  width: 45vw;
+  max-width: 550px;
+  height: 6.5vh;
+}
+
+.input-find .fa-search {
+  -webkit-transform: translate(-125%, 20%);
+          transform: translate(-125%, 20%);
+}
+
+.book-find {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100vh;
+}
+
+.book-find .book-find-info {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+}
+
+.book-find .book-find-cover {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.book-find .book-find-cover .book-cover-bgc {
+  margin: 0 auto;
+  height: 70vh;
+}
+
+.book-find .box-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 2vh;
+}
+
+.book-find .btn-add, .book-find .btn-favourite {
+  width: 17rem;
+  height: 5rem;
+}
+
+.book-find-cover {
+  padding-top: 10rem;
+}
+
+.fav-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 6vh 0;
+  font-size: 7rem;
+  letter-spacing: 0.3rem;
+}
+
+.fav-title i {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.fav-title p {
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+}
+/*# sourceMappingURL=large.css.map */
