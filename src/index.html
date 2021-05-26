@@ -18,15 +18,16 @@
         <navigation></navigation>
       </div>
       <div class="movie-main">
-        <categories></categories>
-        <form class="form-filter">
-          <input type="text" placeholder="Movie title..." />
-          <button>Filter</button>
-        </form>
+        <br>
+        <categories></categories><br>
+        <form class="form-filter" id="form-filter">
+          <span class="filter-btn">Filter by movie title</span><br>
+          <input type="text" id="filter-input" onkeyup="movieFilterFn()" placeholder="Movie title..." />
+        </form><br>
         <h2></h2>
-        <h5></h5>
+        <h5></h5><br>
         <div class="movie-container"></div>
-        <span class="text-not-movie">Select Category!</span>
+        <span class="text-not-movie select-cat">Select Category!</span>
       </div>
     </div>
     <footer></footer>

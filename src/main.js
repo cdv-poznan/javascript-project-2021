@@ -40,8 +40,8 @@ function clickAndSearchMovieList(clicked_value) {
             for (var i=0; i < parseRes.results.length; i++) {
                 var tag = document.createElement("div");
                 tag.setAttribute("class", "movie-info");
-                var text = document.createElement("section");
-                var text2 = document.createElement("section");
+                var text = document.createElement("ul");
+                var text2 = document.createElement("ul");
                 var text3 = document.createElement("img");
                 text3.src = `https://image.tmdb.org/t/p/w300${parseRes.results[i].poster_path}`;
                 var content2 = document.createTextNode(text3.src);
@@ -55,7 +55,7 @@ function clickAndSearchMovieList(clicked_value) {
                     }
                 }
 
-                var content4 = document.createTextNode(`Overwiew: ${parseRes.results[i].overview}`);
+                var content4 = document.createTextNode(`Overview: ${parseRes.results[i].overview}`);
                 var content5 = document.createTextNode(`Average vote: ${parseRes.results[i].vote_average}`);
 
                 var choiceReleaseDateFn = function() {
@@ -69,12 +69,18 @@ function clickAndSearchMovieList(clicked_value) {
 
                 var content7 = document.createTextNode(`Madia type: ${parseRes.results[i].media_type}`);
                 var content8 = document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
-                var text4 = document.createElement("p");
-                var text5 = document.createElement("p");
-                var text6 = document.createElement("p");
-                var text7 = document.createElement("p");
-                var text8 = document.createElement("p");
-                var text9 = document.createElement("p");
+                var text4 = document.createElement("li");
+                var text5 = document.createElement("li");
+                var text6 = document.createElement("li");
+                var text7 = document.createElement("li");
+                var text8 = document.createElement("li");
+                var text9 = document.createElement("li");
+                var text15 = document.createElement("li");
+                var text10 = document.createElement("img");
+                var text11 = document.createElement("img");
+                var text12 = document.createElement("img");
+                var text13 = document.createElement("img");
+                var text14 = document.createElement("img");
                 text.setAttribute("class", "section-left");
                 text2.setAttribute("class", "section-right");
                 text3.setAttribute("class", "movie-img");
@@ -84,10 +90,26 @@ function clickAndSearchMovieList(clicked_value) {
                 text7.setAttribute("class", "movie-release-date");
                 text8.setAttribute("class", "movie-media-type");
                 text9.setAttribute("class", "movie-comments");
+                text10.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+                text10.setAttribute("class", "arrow");
+                text11.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+                text11.setAttribute("class", "arrow");
+                text12.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+                text12.setAttribute("class", "arrow");
+                text13.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+                text13.setAttribute("class", "arrow");
+                text14.setAttribute("src", "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K");
+                text14.setAttribute("class", "arrow");
                 tag.appendChild(text);
                 tag.appendChild(text2);
-                text.appendChild(text3);
+                text.appendChild(text15);
+                text15.appendChild(text3);
                 text2.appendChild(text4);
+                text5.appendChild(text10);
+                text6.appendChild(text11);
+                text7.appendChild(text12);
+                text8.appendChild(text13);
+                text9.appendChild(text14);
                 text2.appendChild(text6);
                 text2.appendChild(text7);
                 text2.appendChild(text8);
@@ -105,8 +127,25 @@ function clickAndSearchMovieList(clicked_value) {
                 var element2 = document.querySelector('.movie-container');
                 element2.appendChild(tag)
             }
-            console.log(parseRes);
         })
     }
     search();
     }
+
+    function movieFilterFn() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("filter-input");
+        filter = input.value.toUpperCase();
+        ul = document.querySelector(".movie-container");
+        li = ul.querySelectorAll(".movie-info");
+        for (i = 0; i < li.length; i++) {
+            a = li[i];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+
