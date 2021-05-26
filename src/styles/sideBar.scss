@@ -32,7 +32,7 @@ aside {
     li {
       padding: 5px;
       color: #222;
-      
+
       &:hover {
         color: rgb(202, 121, 121);
         cursor: pointer;
@@ -102,6 +102,62 @@ aside {
   }
 
   &.menu {
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ul {
+      height: auto;
+
+      &:nth-last-child(1) {
+        margin: 0 auto;
+        justify-self: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      li {
+        &:hover {
+          &::after {
+            position: absolute;
+            content: "Show";
+            padding: 5px;
+            font-size: 16px;
+            margin: 0 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .calendar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      h3 {
+        width: 100%;
+        background-color: #f3d1d1;
+        padding: 5px 0;
+        color: white;
+      }
+
+      ul {
+        width: 45%;
+        align-items: center;
+        margin: 0;
+      }
+    }
   }
 
   &.favourites {

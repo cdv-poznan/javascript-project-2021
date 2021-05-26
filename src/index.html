@@ -12,9 +12,47 @@
 <body>
   <div class="backdrop">
     <div class="modal">
-      <p></p>
+      <div class="modal__text">
+      </div>
+      <div class="calendar">
+        <h2>Save that recipe for a selected day:</h2>
+        <div class="calendar__week">
+          <ul class="calendar__monday">
+            <h3>Monday</h3>
+            <li>Jedzonko 1</li>
+            <li>Jedzonko 2</li>
+            <li>Jedzonko 3</li>
+            <li>Jedzonko 4</li>
+            <li>Jedzonko 5</li>
+            <li>Jedzonko 6</li>
+          </ul>
+          <ul class="calendar__tuesday">
+            <h3>Tuesday</h3>
+            <li>Jedzonko 1</li>
+            <li>Jedzonko 2</li>
+            <li>Jedzonko 3</li>
+            <li>Jedzonko 4</li>
+          </ul>
+          <ul class="calendar__wednesday">
+            <h3>Wednesday</h3>
+          </ul>
+          <ul class="calendar__thursday">
+            <h3>Thursday</h3>
+          </ul>
+          <ul class="calendar__friday">
+            <h3>Friday</h3>
+          </ul>
+          <ul class="calendar__saturday">
+            <h3>Saturday</h3>
+          </ul>
+          <ul class="calendar__sunday">
+            <h3>Sunday</h3>
+          </ul>
+        </div>
+      </div>
       <button class="closeModalBtn">Close</button>
     </div>
+  </div>
   </div>
   <div class="notification">
     <p></p>
@@ -39,6 +77,9 @@
       </div>
       <button class="findBtn">Find new recipes</button>
       <article class="recipe">
+        <div class="recipe__calendar">
+          <i class="far fa-calendar-alt"></i>
+        </div>
         <h1 class="recipe__title">Recipe's name</h1>
         <h3 class="recipe__note">✓ Saved as favourite</h3>
         <p class="recipe__ings recipe__ings--owned">Your ingredients: <span></span></p>
@@ -89,18 +130,65 @@
     <button class="saveIngsBtn">Save ingredients for the next searching</button>
   </aside>
   <aside class="menu">
-    <h3>Menu for that week</h3>
-    <ul>
-      <li>Monday:</li>
-      <li>Tuesday:</li>
-      <li>Wednesday:</li>
-      <li>Thursday:</li>
-      <li>Friday:</li>
-      <li>Saturday:</li>
-      <li>Sunday:</li>
-    </ul>
-    <hr>
-    <div class="info">
+    <h3>Menu for that week:</h3>
+    <div class="calendar">
+      <ul class="calendar__monday">
+        <h3>Monday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+        <li>Jedzonko 3</li>
+        <li>Jedzonko 4</li>
+        <li>Jedzonko 5</li>
+        <li>Jedzonko 6</li>
+      </ul>
+      <ul class="calendar__tuesday">
+        <h3>Tuesday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+        <li>Jedzonko 3</li>
+        <li>Jedzonko 4</li>
+      </ul>
+      <ul class="calendar__wednesday">
+        <h3>Wednesday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+
+      </ul>
+      <ul class="calendar__thursday">
+        <h3>Thursday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+
+      </ul>
+      <ul class="calendar__friday">
+        <h3>Friday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+        <li>Jedzonko 3</li>
+        <li>Jedzonko 4</li>
+        <li>Jedzonko 5</li>
+        <li>Jedzonko 6</li>
+      </ul>
+      <ul class="calendar__saturday">
+        <h3>Saturday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+        <li>Jedzonko 3</li>
+        <li>Jedzonko 4</li>
+        <li>Jedzonko 5</li>
+        <li>Jedzonko 6</li>
+      </ul>
+      <ul class="calendar__sunday">
+        <h3>Sunday</h3>
+        <li>Jedzonko 1</li>
+        <li>Jedzonko 2</li>
+        <li>Jedzonko 3</li>
+        <li>Jedzonko 4</li>
+        <li>Jedzonko 5</li>
+        <li>Jedzonko 6</li>
+      </ul>
+    </div>
+    <!-- <div class="info">
       <h3>Recipe for <strong>Monday</strong> meal - <strong>dish name</strong> </h3>
       <p class="ings">Ingredients: water, salt, flour, sugar, eggs, milk</p>
       <p class="recipe">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nulla laboriosam natus
@@ -108,10 +196,10 @@
         exercitationem vitae commodi tempore illo accusamus, repellat accusantium provident? Earum repellendus
         praesentium
         exercitationem modi quos. Repellendus?</p>
-    </div>
+    </div> -->
   </aside>
   <aside class="favourites">
-    <h3>Favourite recipes</h3>
+    <h3>Favourite recipes:</h3>
     <ul class="favourites__list"></ul>
 
   </aside>

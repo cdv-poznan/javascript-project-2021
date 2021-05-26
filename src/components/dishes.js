@@ -1,6 +1,7 @@
 import { displayRecipe, getRecipeData } from '../service/dishesService';
 import { addNewFavourite, deleteFavourite } from '../service/favouritesCRUDservice';
 import { showNotification } from '../components/notification';
+import { showModal } from '../components/modal';
 
 $('.findBtn').click(async () => {
   $('.recipe__note').attr('id', '');
@@ -10,6 +11,11 @@ $('.findBtn').click(async () => {
   }
   $('.recipe__note').css('display', 'none');
   displayRecipe(data);
+});
+
+$('.recipe__calendar').click(() => {
+  $('.calendar').css('display', 'block');
+  showModal();
 });
 
 $('.plate').hover(() => {

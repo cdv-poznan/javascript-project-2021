@@ -1,11 +1,12 @@
 export const showModal = txt => {
   $('.backdrop').css('display', 'block');
-  $('.modal').css('display', 'flex');
-  $('.modal p').text(txt);
+  $('.modal').css('display', 'block');
+  $('.modal__text').text(txt);
 
   $('.closeModalBtn').click(() => {
     $('.backdrop').css('display', 'none');
     $('.modal').css('display', 'none');
-    $('.modal p').text('');
+    $('.modal__text').text('');
+    $('.calendar').css('display', 'none');
   });
 };

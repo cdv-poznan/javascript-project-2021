@@ -6,6 +6,23 @@
   border-radius: 10px;
   position: relative;
 
+  &__calendar {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-size: 30px;
+
+    i {
+      color: #f3d1d1;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: #222;
+      }
+    }
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 30px;
@@ -40,6 +57,7 @@
 
     .icon {
       position: relative;
+
       i {
         margin: 0 10px;
         color: #ddd;
@@ -49,6 +67,7 @@
           font-size: 16px;
         }
       }
+
       &__tooltip {
         position: absolute;
         color: black;
@@ -65,6 +84,7 @@
         display: none;
         justify-content: center;
         align-items: center;
+
         &::after {
           position: absolute;
           content: "";
@@ -78,6 +98,7 @@
       }
     }
   }
+
   &__text {
     text-align: center;
   }
@@ -100,5 +121,4 @@
     color: white;
     cursor: pointer;
   }
-  
 }
