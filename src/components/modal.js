@@ -7,6 +7,6 @@ export const showModal = txt => {
     $('.backdrop').css('display', 'none');
     $('.modal').css('display', 'none');
     $('.modal__text').text('');
-    $('.calendar').css('display', 'none');
+    $('.modal .calendar').css('display', 'none');
   });
 };

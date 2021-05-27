@@ -57,7 +57,11 @@ export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
   $('i#glutenFree').css('color', data.glutenFree ? '#222' : '#ddd');
   $('p.glutenFree').text(data.glutenFree ? 'Gluten free' : 'Not gluten free');
   $('i#servings').css('color', data.servings ? '#222' : '#ddd');
-  $('p.servings').text(data.servings ? `${data.servings} servings` : 'No data about servings');
+  $('p.servings').text(
+    data.servings ? `${data.servings} servings` : 'No data about servings',
+  );
   $('i#min').css('color', data.readyInMinutes ? '#222' : '#ddd');
-  $('p.min').text(data.readyInMinutes ? `${data.readyInMinutes} min` : 'No data about time');
+  $('p.min').text(
+    data.readyInMinutes ? `${data.readyInMinutes} min` : 'No data about time',
+  );
 };

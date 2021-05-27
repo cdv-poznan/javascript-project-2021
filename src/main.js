@@ -3,6 +3,7 @@
 import './components/dishes';
 import './components/favouritesAside';
 import './components/ingredientsAside';
+import './components/modalCalendar';
 import { fetchRecipesByIngredients } from './service/service';
 
 const navLinks = [

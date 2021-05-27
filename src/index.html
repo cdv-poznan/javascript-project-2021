@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
+
 <body>
   <div class="backdrop">
     <div class="modal">
@@ -17,37 +19,51 @@
       <div class="calendar">
         <h2>Save that recipe for a selected day:</h2>
         <div class="calendar__week">
-          <ul class="calendar__monday">
+          <div>
             <h3>Monday</h3>
-            <li>Jedzonko 1</li>
-            <li>Jedzonko 2</li>
-            <li>Jedzonko 3</li>
-            <li>Jedzonko 4</li>
-            <li>Jedzonko 5</li>
-            <li>Jedzonko 6</li>
-          </ul>
-          <ul class="calendar__tuesday">
+            <ul id='mon' class="calendar__monday__list">
+              <li>Jedzonko 1</li>
+              <li>Jedzonko 2</li>
+              <li>Jedzonko 3</li>
+              <li>Jedzonko 4</li>
+              <li>Jedzonko 5</li>
+              <li>Jedzonko 6</li>
+            </ul>
+          </div>
+          <div>
             <h3>Tuesday</h3>
-            <li>Jedzonko 1</li>
-            <li>Jedzonko 2</li>
-            <li>Jedzonko 3</li>
-            <li>Jedzonko 4</li>
-          </ul>
-          <ul class="calendar__wednesday">
+            <ul id='tue' class="calendar__tuesday__list">
+              <li>Jedzonko 1</li>
+              <li>Jedzonko 2</li>
+              <li>Jedzonko 3</li>
+              <li>Jedzonko 4</li>
+            </ul>
+          </div>
+          <div>
             <h3>Wednesday</h3>
-          </ul>
-          <ul class="calendar__thursday">
+            <ul id='wed' class="calendar__wednesday__list">
+            </ul>
+          </div>
+          <div>
             <h3>Thursday</h3>
-          </ul>
-          <ul class="calendar__friday">
+            <ul id='thu' class="calendar__thursday__list">
+            </ul>
+          </div>
+          <div>
             <h3>Friday</h3>
-          </ul>
-          <ul class="calendar__saturday">
+            <ul id='fri' class="calendar__friday__list">
+            </ul>
+          </div>
+          <div>
             <h3>Saturday</h3>
-          </ul>
-          <ul class="calendar__sunday">
+            <ul id='sat' class="calendar__saturday__list">
+            </ul>
+          </div>
+          <div>
             <h3>Sunday</h3>
-          </ul>
+            <ul id='sun' class="calendar__sunday__list">
+            </ul>
+          </div>
         </div>
       </div>
       <button class="closeModalBtn">Close</button>
@@ -188,15 +204,6 @@
         <li>Jedzonko 6</li>
       </ul>
     </div>
-    <!-- <div class="info">
-      <h3>Recipe for <strong>Monday</strong> meal - <strong>dish name</strong> </h3>
-      <p class="ings">Ingredients: water, salt, flour, sugar, eggs, milk</p>
-      <p class="recipe">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis nulla laboriosam natus
-        explicabo enim
-        exercitationem vitae commodi tempore illo accusamus, repellat accusantium provident? Earum repellendus
-        praesentium
-        exercitationem modi quos. Repellendus?</p>
-    </div> -->
   </aside>
   <aside class="favourites">
     <h3>Favourite recipes:</h3>
@@ -204,4 +211,5 @@
 
   </aside>
 </body>
+
 </html>

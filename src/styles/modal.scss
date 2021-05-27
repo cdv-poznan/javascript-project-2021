@@ -41,59 +41,62 @@
       &__week {
         display: flex;
 
-        ul {
-          list-style: none;
+        div {
           min-width: 14%;
-          transition: 0.3s;
-          height: 300px;
 
-          &:hover {
-            background-color: #ddd;
-            cursor: pointer;
-            position: relative;
+          ul {
+            list-style: none;
+            transition: 0.3s;
+            height: 300px;
 
-            & li {
-              color: black;
-              border-bottom: 1px solid #ddd;
+            &:hover {
+              background-color: #ddd;
+              cursor: pointer;
+              position: relative;
 
-              &:hover {
-                border-bottom: 1px solid #222;
+              & li {
+                color: black;
+                border-bottom: 1px solid #ddd;
+
+                &:hover {
+                  border-bottom: 1px solid #222;
+                }
+              }
+
+              &::after {
+                width: 100%;
+                content: "ADD HERE";
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: 5px;
+                transform: translateX(-50%);
+                color: white;
+                font-weight: 700px;
               }
             }
 
-            &::after {
-              width: 100%;
-              content: "ADD HERE";
-              display: block;
-              position: absolute;
-              left: 50%;
-              bottom: 5px;
-              transform: translateX(-50%);
-              color: white;
-              font-weight: 700px;
-            }
-          }
+            li {
+              padding: 20px;
+              list-style: none;
+              transition: 0.3s;
+              color: #f3d1d1;
 
-          li {
-            margin: 20px;
-            list-style: none;
-            transition: 0.3s;
-            color: #f3d1d1;
-            border-bottom: 1px solid #fff;
-
-            &:hover {
-              &::after {
-                position: absolute;
-                content: "Click to delete";
-                width: 120px;
-                padding: 5px;
-                font-size: 16px;
-                margin: -3px 10px 0;
-                background-color: #f3d1d1;
-                box-shadow: 0 0 0px 3px white;
-                border-radius: 5px;
-                text-decoration: none;
-                color: white;
+              &:hover {
+                text-decoration: underline;
+                &::after {
+                  position: absolute;
+                  content: "Click to delete";
+                  width: 120px;
+                  padding: 5px;
+                  font-size: 16px;
+                  margin: -3px 10px 0;
+                  background-color: #f3d1d1;
+                  box-shadow: 0 0 0px 3px white;
+                  border-radius: 5px;
+                  text-decoration: none;
+                  color: white;
+                }
               }
             }
           }
