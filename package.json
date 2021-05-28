@@ -4,7 +4,8 @@
   "description": "JavaScript Project at CDV",
   "scripts": {
     "start": "webpack serve",
-    "production": "webpack --mode production"
+    "production": "webpack --mode production",
+    "hello": "node ./src/main.js"
   },
   "repository": {
     "type": "git",

@@ -11,7 +11,7 @@ const configure = (env, args) => {
   return {
     mode: args.mode || 'development',
     entry: {
-      main: ['./src/main', './src/style.scss'],
+      main: ['./src/main.js', './src/style.scss'],
     },
     output: {
       path: resolve(__dirname, './dist'),
