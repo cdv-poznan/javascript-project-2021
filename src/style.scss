@@ -619,12 +619,13 @@ footer {
   align-items: center;
   font-family: "Dancing Script", cursive;
   font-size: 2em;
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
-.logo-footer span {
+.logo-footer a {
   font-size: 30px;
   color: #ffb5b4;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -779,7 +780,7 @@ footer {
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    clip-path: circle(110px at 65% -16%);
+    clip-path: circle(110px at 65% -18%);
     transition: all 1s ease-out;
     z-index: 10;
   }
@@ -1007,8 +1008,9 @@ footer {
     margin-left: 15px;
   }
 
-  .logo-footer span {
+  .logo-footer a {
     font-size: 30px;
     color: #ffb5b4;
+    text-decoration: none;
   }
 }
