@@ -1,10 +1,24 @@
 
 @import "~bootstrap/scss/bootstrap";
 
+$cursive-font: "Charmonman", cursive;
+$body-font: "Cabin", sans-serif;
+$header-main-font: "Akronim", cursive;
+$text-header-color: #fff;
+%centered-position {
+  max-width: 120vh;
+  margin: auto;
+}
+%h3-only-styles {
+  font-family: $cursive-font;
+  font-size: 55px;
+  position: absolute;
+  color: $text-header-color;
+}
+
 body {
-  font-family: "Cabin", sans-serif;
+  font-family: $body-font;
   background-color: #feffef;
-  color: #333;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -37,35 +51,29 @@ footer {
   object-fit: cover;
   max-height: 650px;
   width: 100%;
-  filter: drop-shadow(8px 10px 40px #ff9);
+  filter: drop-shadow(8px 10px 40px #ff9) hue-rotate(74deg);
   border-radius: 25px;
 }
 
 h1 {
-  font-family: "Akronim", cursive;
+  font-family: $header-main-font;
   font-size: 100px;
   position: absolute;
-  color: #fff;
+  color: $text-header-color;
   bottom: 399px;
   right: 150px;
   text-align: right;
 }
 
 h3 {
-  font-family: "Charmonman", cursive;
-  font-size: 55px;
-  position: absolute;
-  color: #fff;
+  @extend %h3-only-styles;
   bottom: 354px;
   right: 110px;
   text-align: right;
 }
 
 .only {
-  font-family: "Charmonman", cursive;
-  font-size: 55px;
-  position: absolute;
-  color: #fff;
+  @extend %h3-only-styles;
   right: 600px;
   text-align: right;
   top: 59px;
@@ -74,7 +82,7 @@ h3 {
 .db {
   font-size: 18px;
   position: absolute;
-  color: #fff;
+  color: $text-header-color;
   bottom: 20px;
   right: 30px;
   text-align: right;
@@ -82,16 +90,16 @@ h3 {
 
 .navigation {
   position: absolute;
-  color: #fff;
+  color: $text-header-color;
   left: 15px;
   bottom: 20px;
-  font-family: "Charmonman", cursive;
+  font-family: $cursive-font;
   font-size: 25px;
 }
 
 a {
   text-decoration: none !important;
-  color: #fff;
+  color: $text-header-color;
   border: groove;
   border-radius: 8px;
   padding: 0 10px 0 6px;
@@ -120,36 +128,33 @@ form {
 }
 
 .categories-block {
+  @extend %centered-position;
   margin-bottom: 15px;
-  max-width: 120vh;
-  margin: auto;
 }
 
 h2 {
+  @extend %centered-position;
   text-align: center;
-  max-width: 120vh;
-  margin: auto;
 }
 
 h5 {
+  @extend %centered-position;
   text-align: justify;
-  max-width: 120vh;
-  margin: auto;
 }
 
 .movie-info {
+  @extend %centered-position;
   display: flex;
   flex-direction: row !important;
   justify-content: center;
-  margin: 3vh;
-  max-width: 120vh;
-  margin: auto;
 }
 
 .movie-title {
-  font-weight: bold;
-  font-style: italic;
-  font-size: 30px;
+  font: {
+    weight: bold;
+    style: italic;
+    size: 30px;
+  }
 }
 
 .section-left {
@@ -170,15 +175,13 @@ li {
 }
 
 .form-filter {
+  @extend %centered-position;
   display: none;
   margin-bottom: 15px;
-  max-width: 120vh;
-  margin: auto;
 }
 
 .text-not-movie {
-  max-width: 120vh;
-  margin: auto;
+  @extend %centered-position;
   text-align: center;
   display: block;
 }
@@ -188,14 +191,16 @@ li {
 }
 
 .cat-btns {
-  font-family: "Charmonman", cursive;
-  font-weight: bold;
-  font-size: 20px;
   background-image: linear-gradient(to left, #ff8 2%, #0c6 26%, #3a7bd5 106%);
-  color: #fff;
+  color: $text-header-color;
   border-radius: 8px;
   border: solid;
   padding: 10px 15px;
+  font: {
+    family: $cursive-font;
+    weight: bold;
+    size: 23px;
+  }
 }
 
 .cat-btns:hover {
@@ -217,7 +222,7 @@ li {
   font-size: 19px;
 }
 
-/* media queries */
+/* ########################################## media queries ########################################## */
 
 @media (max-width: 990px) {
   .only {
