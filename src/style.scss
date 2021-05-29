@@ -56,7 +56,7 @@ header {
   background-size: 400% 400%;
   overflow: hidden;
   border: 1px solid #5529ca;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0 0;
   animation: Gradient 15s ease infinite;
 
 }
@@ -151,7 +151,7 @@ header {
 
 /* MAIN SECTION */
 
-section.board {
+.board {
   width: 100%;
   height: 500px;
   display: flex;
@@ -171,74 +171,72 @@ section.board {
   height: 90px;
   border-radius: 5px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 //wylosowane karty
 
 .card1 {
-  background-image: url(./assets/icons/1.png)
+  background-image: url("./assets/icons/1.png");
 }
 
 .card2 {
-  background-image: url(./assets/icons/2.png)
+  background-image: url("./assets/icons/2.png");
 }
 
 .card3 {
-  background-image: url(./assets/icons/3.png)
+  background-image: url("./assets/icons/3.png");
 }
 
 .card4 {
-  background-image: url(./assets/icons/4.png)
+  background-image: url("./assets/icons/4.png");
 }
 
 .card5 {
-  background-image: url(./assets/icons/5.png)
+  background-image: url("./assets/icons/5.png");
 }
 
 .card6 {
-  background-image: url(./assets/icons/6.png)
+  background-image: url("./assets/icons/6.png");
 }
 
 .card7 {
-  background-image: url(./assets/icons/7.png)
+  background-image: url("./assets/icons/7.png");
 }
 
 .card8 {
-  background-image: url(./assets/icons/8.png)
+  background-image: url("./assets/icons/8.png");
 }
 
 .card9 {
-  background-image: url(./assets/icons/9.png)
+  background-image: url("./assets/icons/9.png");
 }
 
 .card10 {
-  background-image: url(./assets/icons/10.png)
+  background-image: url("./assets/icons/10.png");
 }
 
 .card11 {
-  background-image: url(./assets/icons/11.png)
+  background-image: url("./assets/icons/11.png");
 }
 
 .card12 {
-  background-image: url(./assets/icons/12.png)
+  background-image: url("./assets/icons/12.png");
 }
 
 .cards:hover {
-  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5);
 }
 
 .board .match {
   visibility: hidden;
 }
 
-.countMatches {
+.countmatches {
   // background-color:#4169e1;
   padding: 10px;
   // font-weight: bold;
-  color: white;
+  color: #fff;
   font-size: 18px;
   border-bottom: 2px solid rgba(29, 31, 153, 0.3);
   background-color: rgb(9, 27, 82);
@@ -248,7 +246,7 @@ footer {
   background-color: rgb(9, 27, 82);
   display: block;
   height: 30px;
-  color: white;
+  color: #fff;
   text-align: center;
   line-height: 30px;
 
@@ -256,25 +254,25 @@ footer {
 
 // popup styles
 
-.container.blur {     
+.container.blur {
   filter: blur(2px);
 }
 
 .modal-wrap {
   display: none;
- }
+}
 
- .modal-wrap.active {
+.modal-wrap.active {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
- }
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
- .modal-wrap.active .modal {
+.modal-wrap.active .modal {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -283,61 +281,61 @@ footer {
   transform: translate(-50%, -50%);
   width: 40%;
   height: 60%;
-  border: 2px solid black;
+  border: 2px solid #000;
   /* background-color: black; */
- }
+}
 
- @media(max-width: 800px) {
+@media(max-width: 800px) {
   .modal-wrap.active .modal {
-   width: 90%;
-   height: 90%;
+    width: 90%;
+    height: 90%;
   }
- }
+}
 
- .modal .top {
+.modal .top {
   flex-basis: 15%;
   background-color: #591bc5;
- }
+}
 
- .modal .middle {
+.modal .middle {
   flex-grow: 1;
   background-color: #ddd;
- }
+}
 
- .modal .bottom {
+.modal .bottom {
   flex-basis: 15%;
   background-color: #591bc5;
   ;
- }
+}
 
- p.text {
+.text {
   text-align: center;
-   font-size: 32px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- }
+  font-size: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
- p.text button {
+.text button {
   position: relative;
-  border: 3px solid black;
+  border: 3px solid #000;
   overflow: hidden;
-  transition: .15s .15s;
+  transition: 0.15s 0.15s;
   background-color: transparent;
 
-   font-size: 32px;
-   padding: 10px 30px;
-   margin: 20px auto;
-   cursor: pointer;
- }
+  font-size: 32px;
+  padding: 10px 30px;
+  margin: 20px auto;
+  cursor: pointer;
+}
 
 button::before {
   content: "";
   position: absolute;
-  width: 120%; 
+  width: 120%;
   height: 16px;
-  background-color: black;
+  background-color: #000;
   transform: translateY(-50%);
   top: 50%;
   left: 100%;
@@ -352,14 +350,13 @@ button:hover::before {
 }
 
 button:hover {
-  color: white;
+  color: #fff;
 }
 
 // popup end
 
 @media screen and (max-width: 500px) {
-
-  section.board {
+  .board {
     padding: 20px 15px;
   }
 

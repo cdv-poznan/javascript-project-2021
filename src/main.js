@@ -30,7 +30,7 @@ function different() {
     cardCompare = [];
     addClass = [];
     stopShowing = true;
-};
+}
 
 //funkcja wypisująca na ekranie liczbę trafionych już par: 
 function pairsCount() {
