@@ -22,7 +22,12 @@ export const getRecipeData = async () => {
   return data;
 };
 
-export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
+export const displayRecipe = (
+  data,
+  ownedIngs = '',
+  missedIngs = '',
+  allIngs = '',
+) => {
   $('.recipe__title').text(data.title);
   $('.recipe__text').text(data.instructions);
   $('.recipe__text').css('text-align', 'left');
@@ -38,10 +43,21 @@ export const displayRecipe = (data, ownedIngs = '', missedIngs = '') => {
     $('.plate').attr('id', data.id);
   }
 
-  if (ownedIngs || missedIngs) {
+  if (allIngs.length > 0) {
+    $('p.recipe__ings--owned').css('display', 'none');
+    $('p.recipe__ings--missed').css('display', 'none');
+    $('p.recipe__ings--all').css('display', 'block');
+    $('.recipe__ings--all span').text(allIngs.join(', '));
+  } else if (ownedIngs || missedIngs) {
+    $('p.recipe__ings--owned').css('display', 'block');
+    $('p.recipe__ings--missed').css('display', 'block');
+    $('p.recipe__ings--all').css('display', 'none');
     $('.recipe__ings--owned span').text(ownedIngs);
     $('.recipe__ings--missed span').text(missedIngs);
   } else {
+    $('p.recipe__ings--owned').css('display', 'block');
+    $('p.recipe__ings--missed').css('display', 'block');
+    $('p.recipe__ings--all').css('display', 'none');
     $('.recipe__ings--owned span').text(
       RECIPES.all[CURRENT.getIndex - 1].usedIngredients[0].name,
     );

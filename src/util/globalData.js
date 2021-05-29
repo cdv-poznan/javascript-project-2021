@@ -23,3 +23,18 @@ export const CURRENT = {
     return this.currentIndex;
   },
 };
+
+export const DAYS_NAMES = {
+  daysNames: [
+    { short: 'mon', long: 'monday' },
+    { short: 'tue', long: 'tuesday' },
+    { short: 'wed', long: 'wednesday' },
+    { short: 'thu', long: 'thursday' },
+    { short: 'fri', long: 'friday' },
+    { short: 'sat', long: 'saturday' },
+    { short: 'sun', long: 'sunday' },
+  ],
+  get getNames() {
+    return this.daysNames;
+  },
+};

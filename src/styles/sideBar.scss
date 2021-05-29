@@ -143,19 +143,29 @@ aside {
     .calendar {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
 
-      h3 {
-        width: 100%;
-        background-color: #f3d1d1;
-        padding: 5px 0;
-        color: white;
-      }
-
-      ul {
+      div {
+        margin: 0 7px;
         width: 45%;
         align-items: center;
-        margin: 0;
+
+        &:nth-last-of-type(1) {
+          justify-self: center;
+        }
+
+        h3 {
+          width: 100%;
+          background-color: #f3d1d1;
+          padding: 5px 0;
+          color: white;
+          margin: 30px 0 10px 0;
+        }
+
+        ul {
+          margin: 0;
+          align-items: center;
+        }
       }
     }
   }

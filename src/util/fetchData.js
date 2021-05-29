@@ -15,8 +15,8 @@ export const fetchRecipesIds = async (
     )}&number=${maxNmberOfRecipes}&ranking=${ranking}&ignorePantry=${isPantryIgnored}`,
     method: 'GET',
     headers: {
-      'x-rapidapi-key': 'e1e27bda5fmshfefbc5216c53ce7p1e1e69jsn14e3044f98b5',
-      'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      'x-rapidapi-key': process.env.API_KEY,
+      'x-rapidapi-host': process.env.API_HOST,
     },
   };
 
@@ -30,8 +30,23 @@ export const fetchExactRecipe = async recipeId => {
     url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${recipeId}/information`,
     method: 'GET',
     headers: {
-      'x-rapidapi-key': 'e1e27bda5fmshfefbc5216c53ce7p1e1e69jsn14e3044f98b5',
-      'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      'x-rapidapi-key': process.env.API_KEY,
+      'x-rapidapi-host': process.env.API_HOST,
+    },
+  };
+
+  return await $.ajax(settings);
+};
+
+export const fetchIngredientsOnly = async recipeId => {
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${recipeId}/ingredientWidget.json`,
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': process.env.API_KEY,
+      'x-rapidapi-host': process.env.API_HOST,
     },
   };
 

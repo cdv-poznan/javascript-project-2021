@@ -3,16 +3,9 @@ import {
   deleteItemFromMenu,
   fetchMenu,
 } from '../service/menuCRUDservice';
+import { DAYS_NAMES } from '../util/globalData';
 
-const daysNames = [
-  { short: 'mon', long: 'monday' },
-  { short: 'tue', long: 'tuesday' },
-  { short: 'wed', long: 'wednesday' },
-  { short: 'thu', long: 'thursday' },
-  { short: 'fri', long: 'friday' },
-  { short: 'sat', long: 'saturday' },
-  { short: 'sun', long: 'sunday' },
-];
+const daysNames = DAYS_NAMES.getNames;
 
 export const showMenu = () => {
   for (const dayName of daysNames) {

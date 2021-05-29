@@ -31,6 +31,10 @@
   &__ings {
     text-align: center;
     color: #aaa;
+
+    &--all {
+      display: none;
+    }
   }
 
   hr {

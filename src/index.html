@@ -100,6 +100,7 @@
         <h3 class="recipe__note">✓ Saved as favourite</h3>
         <p class="recipe__ings recipe__ings--owned">Your ingredients: <span></span></p>
         <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span></span></p>
+        <p class="recipe__ings recipe__ings--all">All ingredients: <span></span></p>
         <hr>
         <div class="recipe__additional-info">
           <div class="icon">
@@ -124,7 +125,8 @@
           </div>
         </div>
         <hr>
-        <p class="recipe__text">Here you will find recipe and hints.</p>
+        <p class="recipe__text">Here you will find recipe and hints. <br /> Add your ingredients in the menu on the
+          right and then click 'Find new recipes' button to get some tasty ideas for a great meal!</p>
         <p class="receipe__additional-info"></p>
       </article>
     </section>
@@ -148,61 +150,73 @@
   <aside class="menu">
     <h3>Menu for that week:</h3>
     <div class="calendar">
-      <ul class="calendar__monday">
+      <div>
         <h3>Monday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-        <li>Jedzonko 3</li>
-        <li>Jedzonko 4</li>
-        <li>Jedzonko 5</li>
-        <li>Jedzonko 6</li>
-      </ul>
-      <ul class="calendar__tuesday">
+        <ul id='mon-aside' class="calendar__monday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+          <li>Jedzonko 3</li>
+          <li>Jedzonko 4</li>
+          <li>Jedzonko 5</li>
+          <li>Jedzonko 6</li>
+        </ul>
+      </div>
+      <div>
         <h3>Tuesday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-        <li>Jedzonko 3</li>
-        <li>Jedzonko 4</li>
-      </ul>
-      <ul class="calendar__wednesday">
+        <ul id='tue-aside' class="calendar__tuesday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+          <li>Jedzonko 3</li>
+          <li>Jedzonko 4</li>
+        </ul>
+      </div>
+      <div>
         <h3>Wednesday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-
-      </ul>
-      <ul class="calendar__thursday">
+        <ul id='wed-aside' class="calendar__wednesday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+        </ul>
+      </div>
+      <div>
         <h3>Thursday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-
-      </ul>
-      <ul class="calendar__friday">
+        <ul id='thu-aside' class="calendar__thursday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+        </ul>
+      </div>
+      <div>
         <h3>Friday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-        <li>Jedzonko 3</li>
-        <li>Jedzonko 4</li>
-        <li>Jedzonko 5</li>
-        <li>Jedzonko 6</li>
-      </ul>
-      <ul class="calendar__saturday">
+        <ul id='fri-aside' class="calendar__friday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+          <li>Jedzonko 3</li>
+          <li>Jedzonko 4</li>
+          <li>Jedzonko 5</li>
+          <li>Jedzonko 6</li>
+        </ul>
+      </div>
+      <div>
         <h3>Saturday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-        <li>Jedzonko 3</li>
-        <li>Jedzonko 4</li>
-        <li>Jedzonko 5</li>
-        <li>Jedzonko 6</li>
-      </ul>
-      <ul class="calendar__sunday">
+        <ul id='sat-aside' class="calendar__saturday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+          <li>Jedzonko 3</li>
+          <li>Jedzonko 4</li>
+          <li>Jedzonko 5</li>
+          <li>Jedzonko 6</li>
+        </ul>
+      </div>
+      <div>
         <h3>Sunday</h3>
-        <li>Jedzonko 1</li>
-        <li>Jedzonko 2</li>
-        <li>Jedzonko 3</li>
-        <li>Jedzonko 4</li>
-        <li>Jedzonko 5</li>
-        <li>Jedzonko 6</li>
-      </ul>
+        <ul id='sun-aside' class="calendar__sunday__list">
+          <li>Jedzonko 1</li>
+          <li>Jedzonko 2</li>
+          <li>Jedzonko 3</li>
+          <li>Jedzonko 4</li>
+          <li>Jedzonko 5</li>
+          <li>Jedzonko 6</li>
+        </ul>
+      </div>
     </div>
   </aside>
   <aside class="favourites">
