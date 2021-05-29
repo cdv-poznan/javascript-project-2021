@@ -14,8 +14,8 @@ const configure = (env, args) => {
       main: ['./docs/main.js', './docs/style.scss'],
     },
     output: {
-      path: resolve(__dirname, './dist'),
-      filename: '[name].js',
+      path: resolve(__dirname, './docs'),
+      filename: 'bundle.js',
     },
     module: {
       rules: [
