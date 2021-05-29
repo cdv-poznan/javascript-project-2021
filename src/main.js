@@ -10,6 +10,8 @@ const toggleView = () => {
 let cats = [];
 let actualURL = '';
 
+const findAnotherCatBtn = document.querySelector('#findAnotherCatBtn');
+
 function findAnotherCat() {
   fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => {
@@ -27,7 +29,7 @@ function findAnotherCat() {
       console.log(error);
     });
 }
-
+findAnotherCatBtn.addEventListener('click', () => findAnotherCat());
 const clearForm = () => {
   document.getElementById('inputNewName').value = '';
   document.getElementById('inputNewAge').value = '';
@@ -97,44 +99,44 @@ function init() {
 
 init();
 
-function checkIfEmpty() {
-  if (document.getElementById('inputNewName').value.trim() === '') {
-    document.getElementById('inputNewName').style.borderColor = 'red';
-    return true;
+const addNewCat = () => {
+  const newCat = {
+    name: document.getElementById('inputNewName').value,
+    age: document.getElementById('inputNewAge').value,
+    colour: document.getElementById('inputNewColour').value,
+    description: document.getElementById('inputNewDescription').value,
+    url: actualURL,
+  };
+
+  cats.push(newCat);
+
+  const html = `
+    <div class="col-md-4">
+      <div class="card mb-3">
+          <img src="${newCat.url}">
+          <div class="card-body" id="picture">
+              <p class="card-text" id="cats">Name: ${newCat.name}</p>
+              <p class="card-text" id="cats">Colour: ${newCat.colour}</p>
+              <p class="card-text" id="cats">Age: ${newCat.age}</p>
+              <p class="card-text" id="cats">Description: ${newCat.description}<p>
+          </div>
+      </div>
+    `;
+
+  document
+    .querySelector('.allCats .row')
+    .insertAdjacentHTML('afterbegin', html);
+
+  clearForm();
+  toggleView();
+};
+
+const form = document.getElementsByClassName('needs-validation')[0];
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  event.stopPropagation();
+  if (form.checkValidity() === true) {
+    addNewCat();
   }
-  return false;
-}
-
-document.querySelector('#saveBtn').addEventListener('click', () => {
-  if (!checkIfEmpty()) {
-    const newCat = {
-      name: document.getElementById('inputNewName').value,
-      age: document.getElementById('inputNewAge').value,
-      colour: document.getElementById('inputNewColour').value,
-      description: document.getElementById('inputNewDescription').value,
-      url: actualURL,
-    };
-
-    cats.push(newCat);
-
-    const html = `
-      <div class="col-md-4">
-        <div class="card mb-3">
-            <img src="${newCat.url}">
-            <div class="card-body" id="picture">
-                <p class="card-text" id="cats">Name: ${newCat.name}</p>
-                <p class="card-text" id="cats">Colour: ${newCat.colour}</p>
-                <p class="card-text" id="cats">Age: ${newCat.age}</p>
-                <p class="card-text" id="cats">Description: ${newCat.description}<p>
-            </div>
-        </div>
-      `;
-
-    document
-      .querySelector('.allCats .row')
-      .insertAdjacentHTML('afterbegin', html);
-
-    clearForm();
-    toggleView();
-  }
+  form.classList.add('was-validated');
 });
