@@ -27,7 +27,7 @@ function clickAndSearchMovieList(clicked_value) {
     
     function search() {
         document.querySelector('.movie-container').innerHTML = "";
-        document.querySelector('.text-not-movie').innerHTML = "";
+        document.querySelector('.text-not-movie').style.display = "none";
         fetch(baseUrl)
         .then(res => res.text())
         .then(res => {

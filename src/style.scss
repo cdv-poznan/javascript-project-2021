@@ -184,6 +184,7 @@ li {
   @extend %centered-position;
   text-align: center;
   display: block;
+  min-height: 450px;
 }
 
 .select-cat {
@@ -315,5 +316,9 @@ li {
 
   .contact-about {
     font-size: 1rem;
+  }
+
+  .text-not-movie {
+    min-height: 0;
   }
 }
