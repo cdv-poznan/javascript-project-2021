@@ -1,6 +1,11 @@
 h1 {
   font-size: 80px;
   margin-top: 20px;
+  color: #212121;
+}
+
+h2 {
+  color: #212121;
 }
 
 .text-center {
@@ -53,4 +58,20 @@ button:focus {
 
 .card.mb-3 {
   min-height: 30rem;
+}
+
+.refresh-color {
+  color: #205493;
+}
+
+.save-color {
+  color: #2e8540;
+}
+
+.cancel-color {
+  color: #cd2026;
+}
+
+.add-color {
+  color: rgb(240, 38, 72);
 }

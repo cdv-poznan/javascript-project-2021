@@ -25,7 +25,7 @@
   </header>
   <main role="main">
     <div class="col ml-3 plus-button ">
-      <button title="add new cat" type="button" class="btn btn-sm" id="addNewCatBtn">
+      <button title="add new cat" type="button" class="btn btn-sm add-color" id="addNewCatBtn">
         <i class="fas fa-plus-circle fa-3x mt-5"></i>
       </button>
     </div>
@@ -42,7 +42,7 @@
               <div class="card mb-3 mt-3" id="catImage"></div>
             </div>
             <div class="text-center">
-              <button title="refresh" type="button" class="btn btn-sm" onclick="findAnotherCat()">
+              <button title="refresh" type="button" class="btn btn-sm refresh-color" onclick="findAnotherCat()">
                 <i class="fas fa-sync fa-3x ml-5"></i>
               </button>
             </div>
@@ -59,13 +59,13 @@
                 <label for="inputNewColour">Colour</label>
                 <input type="text" class="form-control mr-3 ml-3" id="inputNewColour" placeholder="e.g. white">
               </div>
-              <textarea class="card-text description" id="inputNewDescription"></textarea>
+              <textarea class="card-text description" id="inputNewDescription" placeholder="description"></textarea>
             </form>
             <div class="text-center">
-              <button title="save" type="button" class="btn btn-sm" id="saveBtn">
+              <button title="save" type="button" class="btn btn-sm save-color" id="saveBtn">
                 <i class="fas fa-check-circle fa-3x mr-5"></i>
               </button>
-              <button title="cancel" type="button" class="btn btn-sm" id="goToHome">
+              <button title="cancel" type="button" class="btn btn-sm cancel-color" id="goToHome">
                 <i class="fas fa-ban fa-3x ml-5"></i>
               </button>
             </div>

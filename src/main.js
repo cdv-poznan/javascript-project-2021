@@ -1,3 +1,28 @@
+const allCatsView = document.querySelector('.allCats');
+const addNewCatView = document.querySelector('.addNewCat');
+const toggleView = () => {
+  allCatsView.style.display =
+    getComputedStyle(allCatsView).display === 'none' ? 'block' : 'none';
+  addNewCatView.style.display =
+    getComputedStyle(addNewCatView).display === 'none' ? 'block' : 'none';
+};
+
+const clearForm = () => {
+  document.getElementById('inputNewName').value = '';
+  document.getElementById('inputNewAge').value = '';
+  document.getElementById('inputNewColour').value = '';
+  document.getElementById('inputNewDescription').value = '';
+  findAnotherCat();
+};
+
+document.querySelector('#goToHome').addEventListener('click', () => {
+  clearForm();
+  toggleView();
+});
+document
+  .querySelector('#addNewCatBtn')
+  .addEventListener('click', () => toggleView());
+
 let actualURL = '';
 
 function fetchData() {
@@ -19,8 +44,6 @@ function fetchData() {
 }
 
 function findAnotherCat() {
-  console.log('findAnotherCat');
-
   fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => {
       if (!response.ok) {
@@ -46,6 +69,7 @@ function init() {
   fetch('./data.json')
     .then(res => res.json())
     .then(data => {
+      console.log(data);
       cats = data.cats;
       const html = cats
         .map(cat => {
@@ -108,33 +132,6 @@ document.querySelector('#saveBtn').addEventListener('click', () => {
     toggleView();
   }
 });
-
-const allCatsView = document.querySelector('.allCats');
-const addNewCatView = document.querySelector('.addNewCat');
-
-const toggleView = () => {
-  allCatsView.style.display =
-    getComputedStyle(allCatsView).display === 'none' ? 'block' : 'none';
-  addNewCatView.style.display =
-    getComputedStyle(addNewCatView).display === 'none' ? 'block' : 'none';
-};
-
-const clearForm = () => {
-  document.getElementById('inputNewName').value = '';
-  document.getElementById('inputNewAge').value = '';
-  document.getElementById('inputNewColour').value = '';
-  document.getElementById('inputNewDescription').value = '';
-
-  findAnotherCat();
-};
-
-document.querySelector('#goToHome').addEventListener('click', () => {
-  clearForm();
-  toggleView();
-});
-document
-  .querySelector('#addNewCatBtn')
-  .addEventListener('click', () => toggleView());
 
 function checkIfEmpty() {
   if (document.getElementById('inputNewName').value.trim() == '') {
