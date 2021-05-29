@@ -7,41 +7,8 @@ const toggleView = () => {
     getComputedStyle(addNewCatView).display === 'none' ? 'block' : 'none';
 };
 
-const clearForm = () => {
-  document.getElementById('inputNewName').value = '';
-  document.getElementById('inputNewAge').value = '';
-  document.getElementById('inputNewColour').value = '';
-  document.getElementById('inputNewDescription').value = '';
-  findAnotherCat();
-};
-
-document.querySelector('#goToHome').addEventListener('click', () => {
-  clearForm();
-  toggleView();
-});
-document
-  .querySelector('#addNewCatBtn')
-  .addEventListener('click', () => toggleView());
-
+let cats = [];
 let actualURL = '';
-
-function fetchData() {
-  fetch('https://api.thecatapi.com/v1/images/search')
-    .then(response => {
-      if (!response.ok) {
-        throw Error('error');
-      }
-      return response.json();
-    })
-    .then(data => {
-      actualURL = data[0].url;
-      const html = `<image src=${data[0].url} class="">`;
-      document.querySelector('#catImage').innerHTML = html;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-}
 
 function findAnotherCat() {
   fetch('https://api.thecatapi.com/v1/images/search')
@@ -61,9 +28,40 @@ function findAnotherCat() {
     });
 }
 
-fetchData();
+const clearForm = () => {
+  document.getElementById('inputNewName').value = '';
+  document.getElementById('inputNewAge').value = '';
+  document.getElementById('inputNewColour').value = '';
+  document.getElementById('inputNewDescription').value = '';
+  findAnotherCat();
+};
 
-let cats = [];
+document.querySelector('#goToHome').addEventListener('click', () => {
+  clearForm();
+  toggleView();
+});
+document
+  .querySelector('#addNewCatBtn')
+  .addEventListener('click', () => toggleView());
+
+function fetchData() {
+  fetch('https://api.thecatapi.com/v1/images/search')
+    .then(response => {
+      if (!response.ok) {
+        throw Error('error');
+      }
+      return response.json();
+    })
+    .then(data => {
+      actualURL = data[0].url;
+      const html = `<image src=${data[0].url} class="">`;
+      document.querySelector('#catImage').innerHTML = html;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
+fetchData();
 
 function init() {
   fetch('./data.json')
@@ -99,6 +97,14 @@ function init() {
 
 init();
 
+function checkIfEmpty() {
+  if (document.getElementById('inputNewName').value.trim() === '') {
+    document.getElementById('inputNewName').style.borderColor = 'red';
+    return true;
+  }
+  return false;
+}
+
 document.querySelector('#saveBtn').addEventListener('click', () => {
   if (!checkIfEmpty()) {
     const newCat = {
@@ -132,11 +138,3 @@ document.querySelector('#saveBtn').addEventListener('click', () => {
     toggleView();
   }
 });
-
-function checkIfEmpty() {
-  if (document.getElementById('inputNewName').value.trim() == '') {
-    document.getElementById('inputNewName').style.borderColor = 'red';
-    return true;
-  }
-  return false;
-}
