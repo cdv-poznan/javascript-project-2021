@@ -64,7 +64,7 @@ function fetchData() {
 fetchData();
 
 function init() {
-  fetch('./data.json')
+  fetch('./assets/data.json')
     .then(res => res.json())
     .then(data => {
       console.log(data);
