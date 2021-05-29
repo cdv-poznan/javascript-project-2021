@@ -1,1 +1,3 @@
-console.log('JavaScript Project');
+import test from './js/test.js';
+
+test();
