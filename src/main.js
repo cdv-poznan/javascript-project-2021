@@ -34,7 +34,7 @@ function different() {
 
 //funkcja wypisująca na ekranie liczbę trafionych już par: 
 function pairsCount() {
-    document.querySelector(".countMatches").innerHTML = "Pairs found: " + pairsCounter;
+    document.querySelector(".countmatches").innerHTML = "Pairs found: " + pairsCounter;
 }
 
 // funkcja odpowiedzialna za porównanie ze sobą kart:
