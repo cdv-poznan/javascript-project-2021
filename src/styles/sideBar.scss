@@ -164,6 +164,7 @@ aside {
     li {
       &:hover {
         &::after {
+          position: absolute;
           content: "Show";
           padding: 5px;
           font-size: 16px;

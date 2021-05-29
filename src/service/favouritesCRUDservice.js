@@ -31,14 +31,14 @@ export const addNewFavourite = () => {
   const favourites = getDataFromLocalStorage('favourites');
   const ifExists = checkIfExists(id, favourites);
   if (ifExists) {
-    showNotification(`${title} is already on your favourites list!`);
+    showNotification(`${title} is already on your favourites list`);
     return;
   }
   favourites.push(id);
   localStorage.setItem('favourites', favourites);
   localStorage.setItem(id, `${ownedIngs}-${missedIngs}`);
   addLiToTheList(title, 'favourites', id);
-  showNotification(`Saved as a favourite!`);
+  showNotification(`Saved as a favourite`);
 };
 
 // delete

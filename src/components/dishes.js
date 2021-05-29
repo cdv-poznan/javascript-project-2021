@@ -48,7 +48,7 @@ $('.heart').click(() => {
 
 $('.bin').click(() => {
   deleteFavourite();
-  showNotification(`Recipe deleted from favourites list!`);
+  showNotification(`Recipe deleted from favourites list`);
 });
 
 $('.icon i')

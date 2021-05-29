@@ -22,6 +22,10 @@ export const fetchMenu = async dayName => {
 
 export const addToMenu = dayName => {
   const recipeId = $('.plate').attr('id');
+  if (!recipeId) {
+    showNotification(`There is no dish on a plate!`);
+    return;
+  }
   const recipesForADay = getDataFromLocalStorage(dayName.long);
   const ifExists = checkIfExists(recipeId, recipesForADay);
   if (ifExists) {
@@ -32,7 +36,7 @@ export const addToMenu = dayName => {
   localStorage.setItem(dayName.long, recipesForADay);
   const title = $('.recipe__title').text();
   addLiToTheList(title, `calendar__${dayName.long}`, recipeId);
-  showNotification(`Saved for a ${capitalizeName(dayName.long)}!`);
+  showNotification(`Saved for a ${capitalizeName(dayName.long)}`);
 };
 
 // delete
@@ -43,4 +47,5 @@ export const deleteItemFromMenu = e => {
   const newMenuList = menu.filter(item => item !== deletedRecipeId);
   localStorage.setItem(e.data.dayName.long, newMenuList);
   e.target.closest('li').remove();
+  showNotification(`The dish was removed from the menu`);
 };

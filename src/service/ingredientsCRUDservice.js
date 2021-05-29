@@ -16,7 +16,7 @@ export const addNewIngredient = () => {
   const ifExists = checkIfExists(newIngredient, ingredients);
   if (ifExists) {
     showNotification(
-      `${capitalizeName(newIngredient)} is already on your ingredients list!`,
+      `${capitalizeName(newIngredient)} is already on your ingredients list`,
     );
     return;
   }
