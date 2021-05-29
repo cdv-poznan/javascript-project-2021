@@ -1,6 +1,6 @@
 # JavaScript Project
 ### Podgląd projektu dostępny pod linkiem:
-* [www.memory.naukowy.pl](http://www.memory.naukowy.pl)
+* [www.memory.naukowy.webd.pl](http://www.memory.naukowy.webd.pl)
 
 ### Instalacja Zależności
 
