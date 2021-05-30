@@ -12,6 +12,7 @@ import { CURRENT } from '../util/globalData';
 $('.saveIngsBtn').click(() => {
   CURRENT.setIndex = 0;
   fetchRecipesByIngredients();
+  $('.findBtn').trigger('click');
 });
 
 $('.addIngBtn').click(() => {

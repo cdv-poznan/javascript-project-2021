@@ -27,6 +27,12 @@ export const addToMenu = dayName => {
     return;
   }
   const recipesForADay = getDataFromLocalStorage(dayName.long);
+  if (recipesForADay.length > 4) {
+    showNotification(
+      `Menu for this day is full. Delete one recipe or select another day`,
+    );
+    return;
+  }
   const ifExists = checkIfExists(recipeId, recipesForADay);
   if (ifExists) {
     showNotification(`That recipe is already on that list`);
