@@ -32,3 +32,11 @@ export const addLiToTheList = (item, listType, id = '') => {
 
 export const capitalizeName = name =>
   name.charAt(0).toUpperCase() + name.slice(1);
+
+export const extractDataFromArrayInObj = (array, property) => {
+  const collectedItems = [];
+  for (const item of array) {
+    collectedItems.push(item[property]);
+  }
+  return collectedItems;
+};

@@ -1,6 +1,7 @@
 import { showModal } from '../components/modal';
 import { fetchExactRecipe } from '../util/fetchData';
 import { RECIPES, CURRENT } from '../util/globalData';
+import { extractDataFromArrayInObj } from './service';
 
 export const getRecipeData = async () => {
   if (RECIPES.all.length === CURRENT.getIndex) {
@@ -58,12 +59,18 @@ export const displayRecipe = (
     $('p.recipe__ings--owned').css('display', 'block');
     $('p.recipe__ings--missed').css('display', 'block');
     $('p.recipe__ings--all').css('display', 'none');
-    $('.recipe__ings--owned span').text(
-      RECIPES.all[CURRENT.getIndex - 1].usedIngredients[0].name,
+
+    const ownedIngList = extractDataFromArrayInObj(
+      RECIPES.all[CURRENT.getIndex - 1].usedIngredients,
+      'name',
     );
-    $('.recipe__ings--missed span').text(
-      RECIPES.all[CURRENT.getIndex - 1].missedIngredients[0].name,
+    const missedIngList = extractDataFromArrayInObj(
+      RECIPES.all[CURRENT.getIndex - 1].missedIngredients,
+      'name',
     );
+
+    $('.recipe__ings--owned span').text(ownedIngList.join(', '));
+    $('.recipe__ings--missed span').text(missedIngList.join(', '));
   }
 
   $('i#vegan').css('color', data.vegan ? '#222' : '#ddd');
