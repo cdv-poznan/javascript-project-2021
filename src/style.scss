@@ -5,7 +5,7 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: (211, 211, 211);
+  background-color: rgb(211, 211, 211);
 }
 
 /* Navigation */
@@ -62,4 +62,19 @@ body {
   display: inline-block;
   text-transform: uppercase;
 }
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+  background-color: rgb(211, 211, 211);
+
+}
+
+.cover .btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+
 
