@@ -1,291 +1,329 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Marcin Web page - final project for CDV</title>
-      <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-      <link rel="stylesheet" href="style.scss" />
-      <script src='node_modules/jquery/dist/jquery.min.js'></script>
-      <script src='node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
-      <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
-  </head>
-  <body>
-      <!-- Start section home -->
-      <div id="home">
-          <!-- Navigation -->
-          <nav class="navbar navbar-expand-md navbar-dar fixed-top">
-              <a class="navbar-brand" href="#">
-                  <img src="assets/logo/logo.png" alt="LOGO">
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a href="#home" class="nav-link">Main page</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#introduction" class="nav-link">Introduction</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#linux" class="nav-link">Linux</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#programming" class="nav-link">Programming</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#mass-effect" class="nav-link">Mass Effect</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#flash" class="nav-link">Flash</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#contact" class="nav-link">Contact</a>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-          <!--End Navigation -->
-          <!-- Carousel Section -->
-          <div class="landing">
-              <div class="home-wrap">
-                  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-                      <ol class="carousel-indicators">
-                          <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselIndicators" data-slide-to="1"></li>
-                          <li data-target="#carouselIndicators" data-slide-to="2"></li>
-                      </ol>
-                      <div class="carousel-inner">
-                          <div class="carousel-item active">
-                              <img class="d-block w-100" src="assets/slider/slider1.png" alt="First slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                  <div class="carouselstyle">
-                                      <h1>Linux <br>
-                                          & <br>
-                                      Programming</h1>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <img class="d-block w-100" src="assets/slider/slider2.png" alt="Second slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                  <div class="carouselstyle">
-                                      <h1>Mass effect</h1>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <img class="d-block w-100" src="assets/slider/slider3.png" alt="Third slide">
-                              <div class="carousel-caption d-none d-md-block">
-                                  <div class="carouselstyle">
-                                      <h1>Flash</h1>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Poprzedni</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Nastepny</span>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <!-- End Carousel -->
-      </div>
-      <!-- End Section Home -->
-        <!--Start section Introduction -->
-        <div id="introduction">
-            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-                <main role="main" class="inner cover">
-                    <h1 class="cover-heading text-center">Introduction</h1>
-                    <p class="lead text-justify">This project was created as part of a Frontend Developer postgraduate course.
-                        The original concept changed, so I found that in this project I would share some of the things that interested me,
-                        and in the process use the library that interested me the most, Bootstrap.
-                        Maybe I'll try to do something more with JavaScript, but I give no guarantee.</p>
-                </main>
-            </div>
-        </div>
-        <!-- End section Introduction -->
-        <!-- Start section Linux-->
-      <div id="linux">
-          <div class="jumbotron text-center">
-              <h2>Some reasons to know and use Linux:</h2>
-              <ul class="linux-list">
-                  <li>Linux is Free nad Open Source</li>
-                  <li>A Unix architecture that makes more sense than the dominant one in PCs</li>
-                  <li>Ability to develop software in multiple languages</li>
-                  <li>Enormous possibilities of customisation</li>
-              </ul>
-              <hr class="line">
-          </div>
-      </div>
-    <!-- End section Linux -->
-    <!-- Start section programming -->
-    <div id="programming">
-        <div class="jumbotron">
-            <div class="narrow">
-                <div class="col-12">
-                    <h3 class="heading text-center">Favourite Frontend Technologies:</h3>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-html5 fa-6x"></i>
-                            <h3>HTML 5</h3>
-                            <p>The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-css3 fa-6x"></i>
-                            <h3>CSS 3</h3>
-                            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-js-square fa-6x"></i>
-                            <h3>JavaScript</h3>
-                            <p>JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="jumbotron">
-            <div class="narrow">
-                <div class="col-12">
-                    <h3 class="heading text-center">Favourite Backend Technologies:</h3>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-java fa-6x"></i>
-                            <h3>Java</h3>
-                            <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere, meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-python fa-6x"></i>
-                            <h3>Python</h3>
-                            <p>Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="resource">
-                            <i class="fab fa-linux fa-6x"></i>
-                            <h3>Linux</h3>
-                            <p>Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>Marcin Web page - final project for CDV</title>
+  <link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet' />
+  <link rel='stylesheet' href='style.scss' />
+  <script src='node_modules/jquery/dist/jquery.min.js'></script>
+  <script src='node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+  <script src='https://use.fontawesome.com/releases/v5.5.0/js/all.js'></script>
+</head>
+<body>
+<!-- Start section home -->
+<div id='home'>
+  <!-- Navigation -->
+  <nav class='navbar navbar-expand-md navbar-dar fixed-top'>
+    <a class='navbar-brand' href='#'>
+      <img src='assets/logo/logo.png' alt='LOGO'>
+    </a>
+    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarResponsive'>
+      <ul class='navbar-nav ml-auto'>
+        <li class='nav-item'>
+          <a href='#home' class='nav-link'>Main page</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#introduction' class='nav-link'>Introduction</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#linux' class='nav-link'>Linux</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#programming' class='nav-link'>Programming</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#mass-effect' class='nav-link'>Mass Effect</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#flash' class='nav-link'>Flash</a>
+        </li>
+        <li class='nav-item'>
+          <a href='#contact' class='nav-link'>Contact</a>
+        </li>
+      </ul>
     </div>
-  <!-- End section Programming -->
-  <!--Start section Mass Effect -->
-  <div id="mass-effect">
-      <div class="jumbotron">
-          <div class="col-12">
-              <h3 class="heading text-center">My favourite characters from Mass Effect:</h3>
-          </div>
-      </div>
-      <div class="row text-center">
-          <div class="col-md-6">
-              <div class="row">
-                  <div class="col-lg-4">
-                      <img class="character" src="assets/ME/tali.png" alt="Tali">
-                  </div>
-                  <div class="col-lg-8">
-                      <blockquote class="blockquote text-center">
-                          <p>Tali'Zorah nar Rayya is a quarian and a member of Commander Shepard's squad. She is the daughter of Rael'Zorah, a member of the Admiralty Board. Though young, Tali is a mechanical genius. In 2183, she is on her Pilgrimage, the rite of passage to prove her worth and bring something of value back to her people aboard the Migrant Fleet. In 2185, having completed her Pilgrimage, Tali has been entrusted with leading an important research mission for the Admiralty Board.</p>
-                      </blockquote>
-                      <hr class="jumbo-line">
-                      <footer class="blockquote-footer">
-                          <cite title="Source Title">Tali'Zorah </cite>
-                      </footer>
-                  </div>
+  </nav>
+  <!--End Navigation -->
+  <!-- Carousel Section -->
+  <div class='landing'>
+    <div class='home-wrap'>
+      <div id='carouselIndicators' class='carousel slide' data-ride='carousel'>
+        <ol class='carousel-indicators'>
+          <li data-target='#carouselIndicators' data-slide-to='0' class='active'></li>
+          <li data-target='#carouselIndicators' data-slide-to='1'></li>
+          <li data-target='#carouselIndicators' data-slide-to='2'></li>
+        </ol>
+        <div class='carousel-inner'>
+          <div class='carousel-item active'>
+            <img class='d-block w-100' src='assets/slider/slider1.png' alt='First slide'>
+            <div class='carousel-caption d-none d-md-block'>
+              <div class='carouselstyle'>
+                <h1>Linux <br>
+                  & <br>
+                  Programming</h1>
               </div>
+            </div>
           </div>
-          <div class="col-md-6">
-              <div class="row">
-                  <div class="col-lg-4">
-                      <img class="character" src="assets/ME/garrus.png" alt="Garrus">
-                  </div>
-                  <div class="col-lg-8">
-                      <blockquote class="blockquote text-center">
-                          <p>Garrus Vakarian is a turian, formerly part of C-Sec's Investigation Division. Like most turians, Garrus had his military training at fifteen, but later followed in his father's footsteps to become a C-Sec officer. He was responsible for the investigation of Saren Arterius, the Council's top Spectre, after the Alliance claimed Saren had gone rogue. Although Garrus was told that the investigation was over, he decided to defy the Executor's order and pursue another lead on his own. Eventually, Garrus attempts to join Commander Shepard's team to help defeat Saren and the geth.</p>
-                      </blockquote>
-                      <hr class="jumbo-line">
-                      <footer class="blockquote-footer">
-                          <cite title="Source Title">Garrus Vakarian</cite>
-                      </footer>
-                  </div>
+          <div class='carousel-item'>
+            <img class='d-block w-100' src='assets/slider/slider2.png' alt='Second slide'>
+            <div class='carousel-caption d-none d-md-block'>
+              <div class='carouselstyle'>
+                <h1>Mass effect</h1>
               </div>
+            </div>
           </div>
-      </div>
-  </div>
-      <!--End section Mass Effect -->
-      <!-- Start section Flash -->
-    <div id="flash">
-        <div class="jumbotron text-center">
-            <h2>Flash:</h2>
-            <img src="assets/flash/under-construction.jpg" class="img-fluid" alt="Under construction">
-            <hr class="line">
+          <div class='carousel-item'>
+            <img class='d-block w-100' src='assets/slider/slider3.png' alt='Third slide'>
+            <div class='carousel-caption d-none d-md-block'>
+              <div class='carouselstyle'>
+                <h1>Flash</h1>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-  <!--End section Flash -->
-  <!--Start section contact form -->
-  <div id="contact">
-      <div class="jumbotron jumbotron-fluid text-center">
-          <h2>Contact form</h2>
-          <div class="col-12">
-              <form method="post" onsubmit="return validate(this)">
-                          <div class="form-row">
-                              <div class="col">
-                                  <label for="firstName">First name</label>
-                                  <input type="text" class="form-control" id="firstName" maxlength="32" placeholder="Enter first name">
-                              </div>
-                              <div class="col">
-                                  <label for="lastName">Last name</label>
-                                  <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
-                              </div>
-                          </div>
-                          <div class="form-row">
-                              <div class="col-4">
-                                  <label for="birthday">Birth date</label>
-                                  <input type="date" class="form-control" id="birthday" placeholder="Enter your birth date">
-                              </div>
-                              <div class="col-2">
-                                <label for="age">Age</label>
-                                <input type="number" class="form-control" id="age" placeholder="Enter your age">
-                              </div>
-                              <div class="col-6">
-                                  <label for="email">Email</label>
-                                  <input type="email" class="form-control" id="email" placeholder="Enter your email address">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="message">Write your message</label>
-                              <textarea class="form-control" id="message" cols="30" rows="3"></textarea>
-                          </div>
-                          <button type="submit" class="btn btn-success">Submit</button> <button type="reset" class="btn btn-danger">Reset</button>
-              </form>
-          </div>
+        <a class='carousel-control-prev' href='#carouselIndicators' role='button' data-slide='prev'>
+          <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+          <span class='sr-only'>Poprzedni</span>
+        </a>
+        <a class='carousel-control-next' href='#carouselIndicators' role='button' data-slide='next'>
+          <span class='carousel-control-next-icon' aria-hidden='true'></span>
+          <span class='sr-only'>Nastepny</span>
+        </a>
       </div>
+    </div>
   </div>
-  <!--End section contact -->
-  <!--Start footer -->
+  <!-- End Carousel -->
+</div>
+<!-- End Section Home -->
+<!--Start section Introduction -->
+<div id='introduction'>
+  <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
+    <main role='main' class='inner cover'>
+      <h1 class='cover-heading text-center'>Introduction</h1>
+      <p class='lead text-justify'>This project was created as part of a Frontend Developer postgraduate course.
+        The original concept changed, so I found that in this project I would share some of the things that interested
+        me,
+        and in the process use the library that interested me the most, Bootstrap.
+        Maybe I'll try to do something more with JavaScript, but I give no guarantee.</p>
+    </main>
+  </div>
+</div>
+<!-- End section Introduction -->
+<!-- Start section Linux-->
+<div id='linux'>
+  <div class='jumbotron text-center'>
+    <h2>Some reasons to know and use Linux:</h2>
+    <ul class='linux-list'>
+      <li>Linux is Free nad Open Source</li>
+      <li>A Unix architecture that makes more sense than the dominant one in PCs</li>
+      <li>Ability to develop software in multiple languages</li>
+      <li>Enormous possibilities of customisation</li>
+    </ul>
+    <hr class='line'>
+  </div>
+</div>
+<!-- End section Linux -->
+<!-- Start section programming -->
+<div id='programming'>
+  <div class='jumbotron'>
+    <div class='narrow'>
+      <div class='col-12'>
+        <h3 class='heading text-center'>Favourite Frontend Technologies:</h3>
+      </div>
 
+      <div class='row text-center'>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-html5 fa-6x'></i>
+            <h3>HTML 5</h3>
+            <p>The HyperText Markup Language, or HTML is the standard markup language for documents designed to be
+              displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and
+              scripting languages such as JavaScript.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-css3 fa-6x'></i>
+            <h3>CSS 3</h3>
+            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document
+              written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web,
+              alongside HTML and JavaScript.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-js-square fa-6x'></i>
+            <h3>JavaScript</h3>
+            <p>JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript
+              specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has
+              curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='jumbotron'>
+    <div class='narrow'>
+      <div class='col-12'>
+        <h3 class='heading text-center'>Favourite Backend Technologies:</h3>
+      </div>
 
-    </body>
+      <div class='row text-center'>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-java fa-6x'></i>
+            <h3>Java</h3>
+            <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few
+              implementation dependencies as possible. It is a general-purpose programming language intended to let
+              application developers write once, run anywhere, meaning that compiled Java code can run on all platforms
+              that support Java without the need for recompilation.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-python fa-6x'></i>
+            <h3>Python</h3>
+            <p>Python is an interpreted high-level general-purpose programming language. Python's design philosophy
+              emphasizes code readability with its notable use of significant indentation. Its language constructs as
+              well as its object-oriented approach aim to help programmers write clear, logical code for small and
+              large-scale projects.</p>
+          </div>
+        </div>
+        <div class='col-md-4'>
+          <div class='resource'>
+            <i class='fab fa-linux fa-6x'></i>
+            <h3>Linux</h3>
+            <p>Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating
+              system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a
+              Linux distribution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End section Programming -->
+<!--Start section Mass Effect -->
+<div id='mass-effect'>
+  <div class='jumbotron'>
+    <div class='col-12'>
+      <h3 class='heading text-center'>My favourite characters from Mass Effect:</h3>
+    </div>
+  </div>
+  <div class='row text-center'>
+    <div class='col-md-6'>
+      <div class='row'>
+        <div class='col-lg-4'>
+          <img class='character' src='assets/ME/tali.png' alt='Tali'>
+        </div>
+        <div class='col-lg-8'>
+          <blockquote class='blockquote text-center'>
+            <p>Tali'Zorah nar Rayya is a quarian and a member of Commander Shepard's squad. She is the daughter of
+              Rael'Zorah, a member of the Admiralty Board. Though young, Tali is a mechanical genius. In 2183, she is on
+              her Pilgrimage, the rite of passage to prove her worth and bring something of value back to her people
+              aboard the Migrant Fleet. In 2185, having completed her Pilgrimage, Tali has been entrusted with leading
+              an important research mission for the Admiralty Board.</p>
+          </blockquote>
+          <hr class='jumbo-line'>
+          <footer class='blockquote-footer'>
+            <cite title='Source Title'>Tali'Zorah </cite>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6'>
+      <div class='row'>
+        <div class='col-lg-4'>
+          <img class='character' src='assets/ME/garrus.png' alt='Garrus'>
+        </div>
+        <div class='col-lg-8'>
+          <blockquote class='blockquote text-center'>
+            <p>Garrus Vakarian is a turian, formerly part of C-Sec's Investigation Division. Like most turians, Garrus
+              had his military training at fifteen, but later followed in his father's footsteps to become a C-Sec
+              officer. He was responsible for the investigation of Saren Arterius, the Council's top Spectre, after the
+              Alliance claimed Saren had gone rogue. Although Garrus was told that the investigation was over, he
+              decided to defy the Executor's order and pursue another lead on his own. Eventually, Garrus attempts to
+              join Commander Shepard's team to help defeat Saren and the geth.</p>
+          </blockquote>
+          <hr class='jumbo-line'>
+          <footer class='blockquote-footer'>
+            <cite title='Source Title'>Garrus Vakarian</cite>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End section Mass Effect -->
+<!-- Start section Flash -->
+<div id='flash'>
+  <div class='jumbotron text-center'>
+    <h2>Flash:</h2>
+    <img src='assets/flash/under-construction.jpg' class='img-fluid' alt='Under construction'>
+    <hr class='line'>
+  </div>
+</div>
+<!--End section Flash -->
+<!--Start section contact form -->
+<div id='contact'>
+  <div class='jumbotron jumbotron-fluid text-center'>
+    <h2>Contact form</h2>
+    <div class='col-12'>
+      <form method='post' onsubmit='return validate(this)'>
+        <div class='form-row'>
+          <div class='col'>
+            <label for='firstName'>First name</label>
+            <input type='text' class='form-control' id='firstName' maxlength='32' placeholder='Enter first name'>
+          </div>
+          <div class='col'>
+            <label for='lastName'>Last name</label>
+            <input type='text' class='form-control' id='lastName' placeholder='Enter last name'>
+          </div>
+        </div>
+        <div class='form-row'>
+          <div class='col-4'>
+            <label for='birthday'>Birth date</label>
+            <input type='date' class='form-control' id='birthday' placeholder='Enter your birth date'>
+          </div>
+          <div class='col-2'>
+            <label for='age'>Age</label>
+            <input type='number' class='form-control' id='age' placeholder='Enter your age'>
+          </div>
+          <div class='col-6'>
+            <label for='email'>Email</label>
+            <input type='email' class='form-control' id='email' placeholder='Enter your email address'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='message'>Write your message</label>
+          <textarea class='form-control' id='message' cols='30' rows='3'></textarea>
+        </div>
+        <button type='submit' class='btn btn-success'>Submit</button>
+        <button type='reset' class='btn btn-danger'>Reset</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class='col-12 text-center'>
+      <h3 class='heading'>The creator:</h3>
+      <img src='assets/author.jpeg' alt='author'>
+      <p>I have no idea, why do I have no artistic skills - apologize</p>
+      <hr>
+      <strong>Do not hesitate to contact me by phone 5550123</strong>
+      <a href='https://www.youtube.com' target='_blank'>
+        <i class='fab fa-youtube-square fa-2x'></i></a>
+      <a href='https://www.instagram.com' target='_blank'>
+        <i class='fab fa-instagram fa-2x'></i>
+      </a>
+      <p> &copy; Copyright by Marcin "Linux Kyrios; Linux Atrocius" Malinowski</p>
+    </div>
+  </footer>
+</div>
+<!--End section contact -->
+<!-- Thank to the God - end of this file -->
+</body>
 </html>

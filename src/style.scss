@@ -104,8 +104,31 @@ body {
   margin: 0 auto;
 }
 
-/*Contact form*/
+/*Contact*/
 .signup {
   background-color: #f5f5f5;
   box-sizing: border-box;
+}
+
+footer, footer a {
+  background-color: rgb(221, 221, 221);
+  color: rgba(0, 0, 255);
+
+}
+
+footer img {
+
+  border-radius: 20%;
+}
+
+footer a:hover, footer p, footer h3{
+  color: rgb(0, 0, 0,);
+}
+
+/* Own @media rules */
+@media only screen and(max-width: 768px) {
+  .client {
+    width: 50%;
+    max-width: 30vw;
+  }
 }
