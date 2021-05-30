@@ -114,7 +114,7 @@ aside {
     }
 
     ul {
-      height: auto;
+      height: 100%;
 
       &:nth-last-child(1) {
         margin: 0 auto;
@@ -144,10 +144,12 @@ aside {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      height: 480px;
 
       div {
         margin: 0 7px;
         width: 45%;
+        min-height: 200px;
         align-items: center;
 
         &:nth-last-of-type(1) {

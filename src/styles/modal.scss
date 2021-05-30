@@ -17,7 +17,7 @@
     border-radius: 15px;
     position: fixed;
     left: calc(100vw * 0.35);
-    top: 28%;
+    top: 15%;
     transform: translate(-50%);
     padding: 30px;
     flex-direction: column;
@@ -47,7 +47,8 @@
           ul {
             list-style: none;
             transition: 0.3s;
-            height: 300px;
+            min-height: 400px;
+            padding-bottom: 20px;
 
             &:hover {
               background-color: #ddd;
@@ -64,9 +65,9 @@
                 display: block;
                 position: absolute;
                 left: 50%;
-                bottom: 5px;
+                bottom: -30px;
                 transform: translateX(-50%);
-                color: white;
+                color: #ddd;
                 font-weight: 700px;
               }
             }
@@ -91,6 +92,7 @@
                   border-radius: 5px;
                   text-decoration: none;
                   color: white;
+                  z-index: 15;
                 }
               }
             }
@@ -110,7 +112,7 @@
       display: block;
       align-self: center;
       justify-self: flex-end;
-      margin: 20px auto 0;
+      margin: 40px auto 0;
 
       &:hover {
         background-color: #222;
