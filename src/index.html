@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body></body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meme Generator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="post">  
+                <h1>GENERATOR FRAJDY</h1>
+               </div>
+            <div class="content">
+                <img src="" alt="" class="img" />
+                <p class="joke-text"></p>
+            </div>
+            <button class="btn" onclick="getMeme()">GENERUJ MEM</button>
+            <button class="new-joke-btn" onclick="getJoke()">GENERUJ ŻART</button>
+        </div>
+        <div class="display">
+            <p id="displayJoke"></p>
+        </div>
+        <script src="main.js"></script>
+        <footer class="footer">
+            Projekt zaliczeniowy - JAVASCRIPT - Michał Librowski
+          </footer>
+    </body>
 </html>
