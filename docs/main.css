@@ -14,7 +14,6 @@ html {
 
 header {
   height: 15vh;
-  border: 2px solid black;
 }
 
 main {
@@ -23,7 +22,6 @@ main {
 
 footer {
   height: 10vh;
-  border: 2px solid black;
 }
 
 .gameTitle {
@@ -37,7 +35,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 70%;
-  border: 2px solid black;
 }
 
 .gameScore {
@@ -51,7 +48,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 30%;
-  border: 2px solid black;
 }
 
 .gameFooter {
@@ -65,7 +61,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  border: 2px solid black;
 }
 
 header h1 {
