@@ -2,3 +2,139 @@ html {
   background-color: #f5f5f5;
   color: #111;
 }
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(211, 211, 211);
+}
+
+/* Navigation */
+.navbar {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  font-weight: bold;
+}
+
+.navbar::selection {
+  color: rgb(50, 205, 50);
+}
+
+.navbar-brand img {
+  height: 1.8rem;
+}
+
+.navbar-nav li {
+  padding-right: 0.6rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255);
+  padding-top: 0.6rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgb(50, 205, 50);
+}
+
+/* Landing */
+.home-wrap {
+  background-size: contain;
+}
+
+.carousel-caption d-none d-md-block {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 40%;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+.carouselstyle h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding-bottom: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+  background-color: rgb(211, 211, 211);
+
+}
+
+.cover .btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+
+/* linux */
+.jumbotron {
+  color: rgba(0, 0, 0,);
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.linux-list {
+  list-style: none;
+}
+
+.jumbotron .line {
+  margin-bottom: 0;
+}
+
+/* Mass Effect*/
+.character {
+  border-radius: 50%;
+  width: 80%;
+  max-width: 80%;
+}
+
+.blockquote {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/*Contact*/
+.signup {
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+footer footer a {
+  background-color: rgb(221, 221, 221);
+  color: rgba(0, 0, 255);
+}
+
+footer img {
+  border-radius: 20%;
+}
+
+footer a:hover {
+  color: rgb(0, 0, 0,);
+}
+
+footer p {
+  color: rgb(0, 0, 0,);
+}
+
+footer h3 {
+  color: rgb(0, 0, 0,);
+}
+
+/* Own @media rules */
+@media only screen and(max-width: 768px) {
+  .client {
+    width: 50%;
+    max-width: 30vw;
+  }
+}
