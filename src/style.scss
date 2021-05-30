@@ -110,18 +110,24 @@ body {
   box-sizing: border-box;
 }
 
-footer, footer a {
+footer footer a {
   background-color: rgb(221, 221, 221);
   color: rgba(0, 0, 255);
-
 }
 
 footer img {
-
   border-radius: 20%;
 }
 
-footer a:hover, footer p, footer h3{
+footer a:hover {
+  color: rgb(0, 0, 0,);
+}
+
+footer p {
+  color: rgb(0, 0, 0,);
+}
+
+footer h3 {
   color: rgb(0, 0, 0,);
 }
 

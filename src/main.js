@@ -15,6 +15,7 @@ function validate(form) {
     return false;
   }
 }
+
 function validateFirstname(field) {
   if (field === '') {
     return 'First name field contains no first name\n';
@@ -28,9 +29,11 @@ function validateFirstname(field) {
     return 'First name must start from upper letter.\n';
   }
 }
+
 function validateLastname(field) {
   return field === '' ? 'Last name field contains no last name.\n' : '';
 }
+
 function validateAge(field) {
   if (isNaN(field)) {
     return 'Age field contains no age.\n';
@@ -39,6 +42,7 @@ function validateAge(field) {
   }
   return '';
 }
+
 function validateEmail(field) {
   if (field === '') {
     return 'Email field contains no email.\n';
