@@ -147,4 +147,8 @@ img {
   background-color: $hiddenBackground !important;
 }
 
+.hidden > img {
+  display: none;
+}
+
 // zmienić czcionke, zaimportować

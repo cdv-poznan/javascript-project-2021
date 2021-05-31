@@ -163,4 +163,8 @@ img {
 .hidden {
   background-color: yellow !important;
 }
+
+.hidden > img {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */

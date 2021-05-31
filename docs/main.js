@@ -32,6 +32,16 @@ const cardsImage = [
 
 var cards = document.querySelectorAll('.cards div');
 cards = [...cards];
+const gameTime = new Date().getTime();
+var cardActive = '';
+const cardsActive = [];
+const pairs = cards.length / 2;
+var score = 0;
+
+const click = function () {
+  cardActive = this;
+  cardActive.classList.remove('hidden');
+};
 
 const start = function () {
   cards.forEach(function (card) {
@@ -42,7 +52,7 @@ const start = function () {
   setTimeout(function () {
     cards.forEach(function (card) {
       card.classList.add('hidden');
-      card.innerHTML = '';
+      card.addEventListener('click', click);
     });
   }, 2000);
 };
