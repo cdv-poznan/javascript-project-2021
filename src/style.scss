@@ -833,21 +833,24 @@ footer {
     font-size: 30px;
     text-align: center;
     justify-content: center;
+
+    margin-left: 0;
   }
 
   .flex-item-left {
-    padding: 10px;
     flex: 50%;
     text-align: left;
-    margin-left: 100px;
     margin-top: 50px;
+    padding: 0;
+    margin-left: 1px !important;
   }
 
   .motto {
     color: #000;
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 2px;
-    padding-left: 2rem;
+    margin: 0;
+    width: 70vw;
   }
 
   .daily {
@@ -864,8 +867,8 @@ footer {
   }
 
   .circle {
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -874,8 +877,8 @@ footer {
   }
 
   .main-photo {
-    width: 330px;
-    height: 330px;
+    width: 280px;
+    height: 280px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -887,15 +890,14 @@ footer {
     color: #000;
   }
 
-  .search-wrap {
-    width: 500px;
-    padding-left: 20px;
-  }
-
   .search-wrap .search-box {
     position: relative;
-    width: 350px;
+    width: 300px;
     height: 60px;
+  }
+
+  .search-wrap {
+    width: 0;
   }
 
   .search-wrap .search-box .input {
@@ -926,7 +928,7 @@ footer {
   }
 
   .btn-input p {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .search-wrap.search-wrap-main .search-box .input {
