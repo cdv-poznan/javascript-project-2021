@@ -1,5 +1,3 @@
-// BEM
-
 import './components/dishes';
 import './components/favouritesAside';
 import './components/ingredientsAside';

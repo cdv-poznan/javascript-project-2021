@@ -14,6 +14,7 @@ export const showMenuInTheAside = async () => {
         data = await fetchExactRecipe(e.target.id);
       } catch (err) {
         console.log(err);
+        showModal('Something went wrong...');
         return;
       }
       if (!data) {

@@ -1,5 +1,3 @@
-// export let RECIPES_IDS = [];
-
 export const RECIPES = {
   idsList: [],
   set ids(values) {

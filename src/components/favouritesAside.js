@@ -10,7 +10,8 @@ $('ul.favourites__list').on('click', 'li', async e => {
   try {
     data = await fetchExactRecipe(e.target.id);
   } catch (err) {
-    console.log(err);
+    console.log(err)
+    showModal('Something went wrong...');
     return;
   }
   if (!data) {
@@ -22,7 +23,6 @@ $('ul.favourites__list').on('click', 'li', async e => {
   const missedIngs = ingredients[1];
 
   displayRecipe(data, ownedIngs, missedIngs);
-  // deleteFavourite(e);
 });
 
 $(document).ready(() => {

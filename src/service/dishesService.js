@@ -14,6 +14,7 @@ export const getRecipeData = async () => {
     CURRENT.setIndex = +1;
   } catch (err) {
     console.log(err);
+    showModal('Something went wrong...');
     return;
   }
 
