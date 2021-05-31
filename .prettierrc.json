@@ -1,13 +1,8 @@
 {
-  "printWidth": 80,
-  "tabWidth": 2,
-  "useTabs": false,
-  "semi": true,
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
   "singleQuote": true,
-  "quoteProps": "consistent",
-  "trailingComma": "all",
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
   "overrides": [
     {
       "files": "*.js",
@@ -16,11 +11,11 @@
       }
     },
     {
-      "files": "*.scss",
+      "files": "*.css",
       "options": {
-        "singleQuote": false,
+        "singleQuote": true,
         "printWidth": 140,
-        "parser": "scss"
+        "parser": "css"
       }
     },
     {
@@ -28,7 +23,7 @@
       "options": {
         "parser": "html",
         "printWidth": 140,
-        "singleQuote": false,
+        "singleQuote": true,
         "htmlWhitespaceSensitivity": "css"
       }
     }
