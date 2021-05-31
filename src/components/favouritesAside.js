@@ -10,7 +10,7 @@ $('ul.favourites__list').on('click', 'li', async e => {
   try {
     data = await fetchExactRecipe(e.target.id);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     showModal('Something went wrong...');
     return;
   }
