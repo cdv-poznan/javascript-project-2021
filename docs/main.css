@@ -104,16 +104,22 @@ footer p {
   margin-bottom: 0.4vh;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: relative;
-  font-size: 12vh;
+  text-align: center;
+}
+
+img {
+  width: 11.26vw;
+  height: 16.95vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .emoji {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 11.26vw;
+  height: 16.95vh;
+  font-size: 100%;
 }
 
 @media (orientation: portrait) {
@@ -141,6 +147,12 @@ footer p {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     font-size: 9vh;
+  }
+  img {
+    width: 23.2vw;
+    height: 11.43vh;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 /*# sourceMappingURL=main.css.map */

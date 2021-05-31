@@ -89,19 +89,23 @@ footer p {
   margin-top: 0.4vh;
   margin-bottom: 0.4vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: relative;
-  font-size: 12vh;
-  // text-align: center;
+  text-align: center;
   // padding-top: 1vh;
   // padding-bottom: 1vh;
 }
 
+img {
+  width: 11.26vw;
+  height: 16.95vh;
+  object-fit: contain;
+}
+
 .emoji {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin:0;
+  padding:0;
+  width: 11.26vw;
+  height: 16.95vh;
+  font-size: 100%;
 }
 
 @media (orientation: portrait) {
@@ -125,5 +129,11 @@ footer p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     font-size: 9vh;
+  }
+
+  img {
+    width: 23.2vw;
+    height: 11.43vh;
+    object-fit: contain;
   }
 }
