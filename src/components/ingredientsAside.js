@@ -19,7 +19,7 @@ $('.addIngBtn').click(() => {
   addNewIngredient();
 });
 
-$('.ingredients__input').keypress(e => {
+$('.ingredients__add__input').keypress(e => {
   const keycode = e.keyCode ? e.keyCode : e.which;
   if (keycode === 13) {
     addNewIngredient();

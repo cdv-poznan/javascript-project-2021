@@ -7,227 +7,200 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body>
-  <div class="backdrop">
-    <div class="modal">
-      <div class="modal__text">
-      </div>
-      <div class="calendar">
-        <h2>Save that recipe for a selected day:</h2>
-        <div class="calendar__week">
-          <div>
-            <h3>Monday</h3>
-            <ul id='mon' class="calendar__monday__list">
-              <li>Jedzonko 1</li>
-              <li>Jedzonko 2</li>
-              <li>Jedzonko 3</li>
-              <li>Jedzonko 4</li>
-              <li>Jedzonko 5</li>
-              <li>Jedzonko 6</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Tuesday</h3>
-            <ul id='tue' class="calendar__tuesday__list">
-              <li>Jedzonko 1</li>
-              <li>Jedzonko 2</li>
-              <li>Jedzonko 3</li>
-              <li>Jedzonko 4</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Wednesday</h3>
-            <ul id='wed' class="calendar__wednesday__list">
-            </ul>
-          </div>
-          <div>
-            <h3>Thursday</h3>
-            <ul id='thu' class="calendar__thursday__list">
-            </ul>
-          </div>
-          <div>
-            <h3>Friday</h3>
-            <ul id='fri' class="calendar__friday__list">
-            </ul>
-          </div>
-          <div>
-            <h3>Saturday</h3>
-            <ul id='sat' class="calendar__saturday__list">
-            </ul>
-          </div>
-          <div>
-            <h3>Sunday</h3>
-            <ul id='sun' class="calendar__sunday__list">
-            </ul>
+  <div class="wrapper">
+    <div class="backdrop">
+      <div class="modal">
+        <div class="modal__text">
+        </div>
+        <div class="calendar">
+          <h2>Save that recipe for a selected day:</h2>
+          <div class="calendar__week">
+            <div id='mon'>
+              <h3>Monday</h3>
+              <ul class="calendar__monday__list">
+              </ul>
+            </div>
+            <div id='tue'>
+              <h3>Tuesday</h3>
+              <ul class="calendar__tuesday__list">
+              </ul>
+            </div>
+            <div id='wed'>
+              <h3>Wednesday</h3>
+              <ul class="calendar__wednesday__list">
+              </ul>
+            </div>
+            <div id='thu'>
+              <h3>Thursday</h3>
+              <ul class="calendar__thursday__list">
+              </ul>
+            </div>
+            <div id='fri'>
+              <h3>Friday</h3>
+              <ul class="calendar__friday__list">
+              </ul>
+            </div>
+            <div id='sat'>
+              <h3>Saturday</h3>
+              <ul class="calendar__saturday__list">
+              </ul>
+            </div>
+            <div id='sun'>
+              <h3>Sunday</h3>
+              <ul class="calendar__sunday__list">
+              </ul>
+            </div>
           </div>
         </div>
+        <button class="closeModalBtn">Close</button>
       </div>
-      <button class="closeModalBtn">Close</button>
     </div>
-  </div>
-  </div>
-  <div class="notification">
-    <p></p>
-  </div>
-  <main>
-    <nav>
-      <div class="logo"></div>
-      <ul>
-        <li class="ingsBtn"><a href="#">My ingredients list</a></li>
-        <li class="menuBtn"><a href="#">Menu for a week</a></li>
-        <li class="favsBtn"><a href="#">Favourite recipes</a></li>
+    <div class="notification">
+      <p></p>
+    </div>
+    <main>
+      <nav>
+        <div class="logo">
+          <img src="assets/logo.jpg" alt="Logo">
+          <p class="name">Recipe finder</p>
+        </div>
+        <ul>
+          <li class="ingsBtn"><a href="#">My ingredients list</a></li>
+          <li class="menuBtn"><a href="#">Menu for a week</a></li>
+          <li class="favsBtn"><a href="#">Favourite recipes</a></li>
+        </ul>
+      </nav>
+      <section>
+        <div class="dishes">
+          <div class="fork">
+            <img src="assets/fork-white.svg" alt="Fork">
+          </div>
+          <div class="plate">
+            <div class="bin"><i class="fas fa-trash"></i></div>
+            <div class="heart"></div>
+          </div>
+          <div class="knife">
+            <img src="assets/knife-white.svg" alt="Knife">
+          </div>
+        </div>
+        <button class="findBtn">Find new recipes</button>
+        <article class="recipe">
+          <div class="recipe__calendar">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+          <h1 class="recipe__title">Recipe's name</h1>
+          <h3 class="recipe__note">✓ Saved as favourite</h3>
+          <p class="recipe__ings recipe__ings--owned">Your ingredients: <span></span></p>
+          <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span></span></p>
+          <p class="recipe__ings recipe__ings--all">All ingredients: <span></span></p>
+          <hr>
+          <div class="recipe__additional-info">
+            <div class="icon">
+              <i class="fas fa-carrot" id="vegan"></i>
+              <p class="icon__tooltip vegan">Not vegan</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-egg" id="vegetarian"></i>
+              <p class="icon__tooltip vegetarian">Not vegetarian</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-bread-slice" id="glutenFree"></i>
+              <p class="icon__tooltip glutenFree">Not gluten free</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-utensils" id="servings"></i>
+              <p class="icon__tooltip servings">Servings' amount</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-clock" id="min"></i>
+              <p class="icon__tooltip min">Required time</p>
+            </div>
+          </div>
+          <hr>
+          <p class="recipe__text">Here you will find recipe and hints. <br /> Add your ingredients in the menu on the
+            right and then click 'Find new recipes' button to get some tasty ideas for a great meal!</p>
+          <p class="receipe__additional-info"></p>
+        </article>
+      </section>
+    </main>
+    <aside class="ingredients">
+      <div class="closeAside">
+        ✖
+      </div>
+      <h3>My ingredients:</h3>
+      <div class="ingredients__add">
+        <label for="ing-input">Add new ingredient:
+        </label>
+        <div class="input-wrapper">
+          <input id="ing-input" class="ingredients__add__input" type="text">
+          <button class="addIngBtn">+</button>
+        </div>
+      </div>
+      <ul class="ingredients__list">
       </ul>
-    </nav>
-    <section>
-      <div class="dishes">
-        <div class="fork">
-          <img src="assets/fork-white.svg" alt="Fork">
+      <div class="ingredients__add">
+        <label for="checkbox">Ignore pantry such as water, salt, flour etc...</label>
+        <label class="switch">
+          <input checked type="checkbox" id="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="saveIngsBtn">Save ingredients for the next searching</button>
+    </aside>
+    <aside class="menu">
+      <div class="closeAside">✖</div>
+      <h3>Menu for that week:</h3>
+      <div class="calendar">
+        <div>
+          <h3>Monday</h3>
+          <ul id='mon-aside' class="calendar__monday__list">
+          </ul>
         </div>
-        <div class="plate">
-          <div class="bin"><i class="fas fa-trash"></i></div>
-          <div class="heart"></div>
+        <div>
+          <h3>Tuesday</h3>
+          <ul id='tue-aside' class="calendar__tuesday__list">
+          </ul>
         </div>
-        <div class="knife">
-          <img src="assets/knife-white.svg" alt="Knife">
+        <div>
+          <h3>Wednesday</h3>
+          <ul id='wed-aside' class="calendar__wednesday__list">
+          </ul>
+        </div>
+        <div>
+          <h3>Thursday</h3>
+          <ul id='thu-aside' class="calendar__thursday__list">
+          </ul>
+        </div>
+        <div>
+          <h3>Friday</h3>
+          <ul id='fri-aside' class="calendar__friday__list">
+          </ul>
+        </div>
+        <div>
+          <h3>Saturday</h3>
+          <ul id='sat-aside' class="calendar__saturday__list">
+          </ul>
+        </div>
+        <div>
+          <h3>Sunday</h3>
+          <ul id='sun-aside' class="calendar__sunday__list">
+          </ul>
         </div>
       </div>
-      <button class="findBtn">Find new recipes</button>
-      <article class="recipe">
-        <div class="recipe__calendar">
-          <i class="far fa-calendar-alt"></i>
-        </div>
-        <h1 class="recipe__title">Recipe's name</h1>
-        <h3 class="recipe__note">✓ Saved as favourite</h3>
-        <p class="recipe__ings recipe__ings--owned">Your ingredients: <span></span></p>
-        <p class="recipe__ings recipe__ings--missed">Missed ingredients: <span></span></p>
-        <p class="recipe__ings recipe__ings--all">All ingredients: <span></span></p>
-        <hr>
-        <div class="recipe__additional-info">
-          <div class="icon">
-            <i class="fas fa-carrot" id="vegan"></i>
-            <p class="icon__tooltip vegan">Not vegan</p>
-          </div>
-          <div class="icon">
-            <i class="fas fa-egg" id="vegetarian"></i>
-            <p class="icon__tooltip vegetarian">Not vegetarian</p>
-          </div>
-          <div class="icon">
-            <i class="fas fa-bread-slice" id="glutenFree"></i>
-            <p class="icon__tooltip glutenFree">Not gluten free</p>
-          </div>
-          <div class="icon">
-            <i class="fas fa-utensils" id="servings"></i>
-            <p class="icon__tooltip servings">Servings' amount</p>
-          </div>
-          <div class="icon">
-            <i class="fas fa-clock" id="min"></i>
-            <p class="icon__tooltip min">Required time</p>
-          </div>
-        </div>
-        <hr>
-        <p class="recipe__text">Here you will find recipe and hints. <br /> Add your ingredients in the menu on the
-          right and then click 'Find new recipes' button to get some tasty ideas for a great meal!</p>
-        <p class="receipe__additional-info"></p>
-      </article>
-    </section>
-  </main>
-  <aside class="ingredients">
-    <h3>My ingredients:</h3>
-    <label class="row">Add new ingredient:
-      <input class="ingredients__input" type="text">
-      <button class="addIngBtn">+</button>
-    </label>
-    <ul class="ingredients__list">
-    </ul>
-    <label class="row">Ignore pantry such as water, salt, flour etc..
-      <label class="switch">
-        <input checked type="checkbox" id="checkbox">
-        <span class="slider"></span>
-      </label>
-    </label>
-    <button class="saveIngsBtn">Save ingredients for the next searching</button>
-  </aside>
-  <aside class="menu">
-    <h3>Menu for that week:</h3>
-    <div class="calendar">
-      <div>
-        <h3>Monday</h3>
-        <ul id='mon-aside' class="calendar__monday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-          <li>Jedzonko 3</li>
-          <li>Jedzonko 4</li>
-          <li>Jedzonko 5</li>
-          <li>Jedzonko 6</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Tuesday</h3>
-        <ul id='tue-aside' class="calendar__tuesday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-          <li>Jedzonko 3</li>
-          <li>Jedzonko 4</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Wednesday</h3>
-        <ul id='wed-aside' class="calendar__wednesday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Thursday</h3>
-        <ul id='thu-aside' class="calendar__thursday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Friday</h3>
-        <ul id='fri-aside' class="calendar__friday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-          <li>Jedzonko 3</li>
-          <li>Jedzonko 4</li>
-          <li>Jedzonko 5</li>
-          <li>Jedzonko 6</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Saturday</h3>
-        <ul id='sat-aside' class="calendar__saturday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-          <li>Jedzonko 3</li>
-          <li>Jedzonko 4</li>
-          <li>Jedzonko 5</li>
-          <li>Jedzonko 6</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Sunday</h3>
-        <ul id='sun-aside' class="calendar__sunday__list">
-          <li>Jedzonko 1</li>
-          <li>Jedzonko 2</li>
-          <li>Jedzonko 3</li>
-          <li>Jedzonko 4</li>
-          <li>Jedzonko 5</li>
-          <li>Jedzonko 6</li>
-        </ul>
-      </div>
-    </div>
-  </aside>
-  <aside class="favourites">
-    <h3>Favourite recipes:</h3>
-    <ul class="favourites__list"></ul>
-
-  </aside>
+    </aside>
+    <aside class="favourites">
+      <div class="closeAside">✖</div>
+      <h3>Favourite recipes:</h3>
+      <ul class="favourites__list"></ul>
+    </aside>
+  </div>
 </body>
 
 </html>

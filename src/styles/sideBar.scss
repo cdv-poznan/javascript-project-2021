@@ -10,6 +10,28 @@ aside {
   padding: 0 30px;
   box-shadow: 0 0 15px 1px #ddd;
   display: none;
+  z-index: 2;
+
+  .closeAside {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 30px;
+    color: #ddd;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: #222;
+    }
+  }
+
+  @media (max-width: 900px) {
+    background-color: #fff;
+    display: none;
+    width: 60%;
+  }
 
   h3,
   h4 {
@@ -59,24 +81,54 @@ aside {
       }
     }
 
-    .row {
+    .ingredients__add {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
       height: 30px;
+      width: 100%;
 
-      input {
-        padding: 5px;
-        flex-grow: 1;
-        margin: 0 10px;
+      &:nth-of-type(1) {
+        @media (max-width: 1515px) {
+          flex-wrap: wrap;
+        }
+      }
+      &:nth-of-type(2) {
+        flex-wrap: wrap;
+        label {
+          margin-right: 15px;
+          @media (max-width: 1515px) {
+            width: 100%;
+          }
+        }
       }
 
-      .addIngBtn {
-        min-width: 22px;
-        width: 40px;
-        height: 30px;
-        font-size: 26px;
+      .input-wrapper {
+        display: flex;
+        flex-grow: 1;
+        @media (max-width: 1515px) {
+          margin: 15px 0;
+          width: 100%;
+        }
+
+        input {
+          padding: 5px;
+          flex-grow: 1;
+          margin: 0 10px 0 0;
+
+          @media (max-width: 1515px) {
+            width: 100%;
+            height: 30px;
+          }
+        }
+
+        .addIngBtn {
+          min-width: 22px;
+          width: 40px;
+          height: 30px;
+          font-size: 26px;
+        }
       }
     }
 
@@ -102,17 +154,6 @@ aside {
   }
 
   &.menu {
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    & {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
     ul {
       height: 100%;
 
@@ -144,13 +185,26 @@ aside {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      height: 480px;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
 
       div {
         margin: 0 7px;
         width: 45%;
         min-height: 200px;
         align-items: center;
+
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
 
         &:nth-last-of-type(1) {
           justify-self: center;

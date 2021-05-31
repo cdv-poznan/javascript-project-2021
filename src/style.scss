@@ -18,4 +18,8 @@ main {
   position: absolute;
   width: 70%;
   padding: 10px;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 }
