@@ -9,6 +9,9 @@ window.clickAndSearchMovieList = function(clicked_value) {
         case 'Family':
             baseUrl = 'https://api.themoviedb.org/4/list/7096192?api_key=1d177576971c8d250816c5fcd5cac600';
             break;
+        case 'Animation':
+            baseUrl = 'https://api.themoviedb.org/4/list/7097020?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
         case 'Drama':
             baseUrl = 'https://api.themoviedb.org/4/list/7096191?api_key=1d177576971c8d250816c5fcd5cac600';
             break;
