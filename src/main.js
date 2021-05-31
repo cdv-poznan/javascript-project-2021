@@ -1,5 +1,5 @@
 
-function clickAndSearchMovieList(clicked_value) {
+window.clickAndSearchMovieList = function(clicked_value) {
     document.querySelector(".form-filter").style.display = "block";
     var baseUrl;
     switch (clicked_value) {
