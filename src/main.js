@@ -75,7 +75,21 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 }
 
                 var content_media_type = document.createTextNode(`Madia type: ${parseRes.results[i].media_type}`);
-                var content_comment = document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
+                
+                var content_comment = function() {
+                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'green') {
+                        return document.createTextNode('Comment: Good for viewers in all age.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'orange') {
+                        return document.createTextNode('Comment: Good for all viewers. May contain some curses or violence. Some scenes may need an explanation for young people (depends on sensitivity).');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'yellow') {
+                        return document.createTextNode('Comment: Not for all viewers (depends on sensitivity). Some scenes may be inappropriate for younger viewers.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'red') {
+                        return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
+                    } else {
+                        return document.createTextNode('Comment: Unknown. Contact with us using contact tab.');
+                    }
+                }
+
                 var li_movie_title = document.createElement("li");
                 var li_movie_overview = document.createElement("li");
                 var li_movie_vote = document.createElement("li");
@@ -127,7 +141,7 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 li_movie_vote.appendChild(content_vote_average);
                 li_movie_release_date.appendChild(choiceReleaseDateFn());
                 li_movie_media_type.appendChild(content_media_type);
-                li_movie_comments.appendChild(content_comment);
+                li_movie_comments.appendChild(content_comment());
                 li_movie_overview.appendChild(content_overview);
                 var div_movie_main = document.querySelector(".movie-main");
                 div_movie_main.appendChild(div_movie_info);
