@@ -7,7 +7,7 @@
 
 html {
   background-color: #a8a8a8;
-  color: black;
+  color: #272727;
   height: 100vh;
   width: 100vw;
 }
@@ -104,6 +104,16 @@ footer p {
   margin-bottom: 0.4vh;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  font-size: 12vh;
+}
+
+.emoji {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (orientation: portrait) {
@@ -129,6 +139,8 @@ footer p {
     margin-bottom: 0.2vh;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    font-size: 9vh;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
 $mainBackground: rgb(168, 168, 168);
-$font: black;
+$font: rgb(39, 39, 39);
 
 * {
   margin: 0;
@@ -89,6 +89,19 @@ footer p {
   margin-top: 0.4vh;
   margin-bottom: 0.4vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  font-size: 12vh;
+  // text-align: center;
+  // padding-top: 1vh;
+  // padding-bottom: 1vh;
+}
+
+.emoji {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 @media (orientation: portrait) {
@@ -110,5 +123,7 @@ footer p {
     margin-top: 0.2vh;
     margin-bottom: 0.2vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    font-size: 9vh;
   }
 }
