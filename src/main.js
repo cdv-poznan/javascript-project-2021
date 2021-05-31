@@ -1,5 +1,5 @@
-const allCatsView = document.querySelector('.allCats');
-const addNewCatView = document.querySelector('.addNewCat');
+const allCatsView = document.querySelector('.all-cats');
+const addNewCatView = document.querySelector('.add-new-cat');
 const toggleView = () => {
   allCatsView.style.display =
     getComputedStyle(allCatsView).display === 'none' ? 'block' : 'none';
@@ -89,7 +89,7 @@ function init() {
         })
         .join('');
       document
-        .querySelector('.allCats .row')
+        .querySelector('.all-cats .row')
         .insertAdjacentHTML('afterbegin', html);
     })
     .catch(error => {
@@ -124,7 +124,7 @@ const addNewCat = () => {
     `;
 
   document
-    .querySelector('.allCats .row')
+    .querySelector('.all-cats .row')
     .insertAdjacentHTML('afterbegin', html);
 
   clearForm();
