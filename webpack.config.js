@@ -5,6 +5,8 @@ const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
+const Dotenv = require('dotenv-webpack');
+
 const configure = (env, args) => {
   const PRODUCTION = args.mode === 'production';
 
@@ -84,6 +86,7 @@ const configure = (env, args) => {
           concurrency: 100,
         },
       }),
+      new Dotenv(),
     ],
     devServer: {
       port: 4200,
