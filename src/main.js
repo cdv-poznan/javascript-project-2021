@@ -133,7 +133,7 @@ window.clickAndSearchMovieList = function(clicked_value) {
     search();
     }
 
-    function movieFilterFn() {
+window.movieFilterFn = function() {
         var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById("filter-input");
         filter = input.value.toUpperCase();
