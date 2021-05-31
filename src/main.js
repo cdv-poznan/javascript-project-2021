@@ -24,6 +24,9 @@ window.clickAndSearchMovieList = function(clicked_value) {
         case 'Documentary':
             baseUrl = 'https://api.themoviedb.org/4/list/7096190?api_key=1d177576971c8d250816c5fcd5cac600';
             break;
+        case 'Series':
+            baseUrl = 'https://api.themoviedb.org/4/list/7097021?api_key=1d177576971c8d250816c5fcd5cac600';
+            break;
         default:
             console.log('Sorry, we are out of ' + clicked_value + ' list.');
     }
