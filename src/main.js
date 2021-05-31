@@ -86,7 +86,7 @@ window.clickAndSearchMovieList = function(clicked_value) {
                     } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'red') {
                         return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
                     } else {
-                        return document.createTextNode('Comment: Unknown. Contact with us using contact tab.');
+                        return document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
                     }
                 }
 
