@@ -1,98 +1,65 @@
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { styles } = require('ansi-colors');
+const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
-const configure = (env, args) => {
-  const PRODUCTION = args.mode === 'production';
-
-  return {
-    mode: args.mode || 'development',
-    entry: {
-      main: ['./src/main', './src/style.scss'],
-    },
-    output: {
-      path: resolve(__dirname, './dist'),
-      filename: '[name].js',
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          use: [
-            {
-              loader: 'babel-loader',
-            },
-          ],
-        },
-        {
-          test: /\.sc?ss$/,
-          use: [
-            env.WEBPACK_SERVE
-              ? {
-                  loader: 'style-loader',
-                }
-              : MiniCssExtractPlugin.loader,
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' },
-          ],
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.(svg|eot|woff|woff2|ttf)$/,
-          type: 'asset/resource',
-        },
-      ],
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        favicon: './src/favicon.ico',
-        scriptLoading: 'defer',
-        meta: {
-          viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-        },
-        minify: 'auto',
-      }),
-      new ESLintWebpackPlugin({
-        failOnError: false,
-        failOnWarning: false,
-        formatter: 'codeframe',
-      }),
-      new StylelintWebpackPlugin({
-        files: './src/*.scss',
-        failOnError: false,
-        failOnWarning: false,
-        formatter: 'string',
-      }),
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-      }),
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: './src/assets',
-            to: 'assets',
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
+  },
+  mode: 'none',
+  devServer: {
+    contentBase: path.join(__dirname, './dist'),
+    port: 9000,
+    watchContentBase: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
           },
-        ],
-        options: {
-          concurrency: 100,
         },
-      }),
+      },
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env'],
+          },
+        },
+      },
     ],
-    devServer: {
-      port: 4200,
-    },
-    performance: {
-      hints: false,
-    },
-    devtool: PRODUCTION ? 'source-map' : 'eval-source-map',
-  };
+  },
+  plugins: [
+    new TerserPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),
+    new ESLintWebpackPlugin({
+      failOnError: false,
+      failOnWarning: false,
+      formatter: 'codeframe',
+    }),
+    new StylelintWebpackPlugin({
+      files: './src/*.scss',
+      failOnError: false,
+      failOnWarning: false,
+      formatter: 'string',
+    }),
+  ],
 };
-
-module.exports = configure;

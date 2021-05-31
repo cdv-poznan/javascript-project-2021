@@ -1,51 +1,17 @@
-# JavaScript Project
+### An app showing information/stats for the desired videogame.
 
-### Instalacja Zależności
+Just search for the desired game and look at the results! 
+Searching did not go as planned? Try again, but slightly modify your query.
+API used for the project contains info about amateur-created games so search results are sometimes surprizing.
 
-```shell
-npm install
-```
 
-### Uruchomienie serwera deweloperskigo
+https://bedkow.github.io/gamers_stats/
 
-```shell
-nmp start
-```
+Using:
+- Vanilla JS
+- Sass
+- RAWG API (https://rawg.io/apidocs)
+- Day.js library (https://day.js.org/en/)
+- Webpack 5
 
-### Budowanie w trybie produkcyjnym
-
-```shell
-npm run production
-```
-
-## Wykorzystane narzędzia
-* [node](https://nodejs.org/en/)
-* [webpack](https://webpack.js.org/)
-* [babel](https://babeljs.io/)
-* [eslint](https://eslint.org/)
-* [sass](https://sass-lang.com/)
-* [stylelint](https://stylelint.io/)
-* [prettier](https://prettier.io/)
-
-## Omawiane biblioteki
-* [bootstrap](https://getbootstrap.com/)
-* [fontawesome](https://fontawesome.com/)
-* [chart.js](https://www.chartjs.org/)
-* [lodash](https://lodash.com/)
-* [push.js](https://pushjs.org/)
-* [localforage](https://localforage.github.io/localForage/)
-
-## Przykładowe API
-* [api.nbp.pl](http://api.nbp.pl/)
-* [api.covid19api.com](https://api.covid19api.com/)
-* [api.exchangerate-api.com](https://api.exchangerate-api.com)
-* [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)
-* [swapi.dev](https://swapi.dev)
-* [pokeapi.co](https://pokeapi.co/)
-* [reqres.in](https://reqres.in/)
-* [api.nasa.gov](https://api.nasa.gov)
-
-## Linki
-* [MDN Web Docs](https://developer.mozilla.org/)
-* [Web Dev](https://web.dev/)
-* [Service Workers](https://serviceworke.rs/)
+known issue: searching starts working from the 2nd try
