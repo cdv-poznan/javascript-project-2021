@@ -1,8 +1,15 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "rules": {
+    "scss/dollar-variable-pattern": "(^[a-z]|[A-Z0-9])[a-z]*",
     "order/properties-alphabetical-order": null,
     "max-nesting-depth": 8,
-    "string-quotes" :"double"
+    "string-quotes": "double",
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ]
   }
 }
