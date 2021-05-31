@@ -53,7 +53,7 @@ const start = function () {
     cards.forEach(function (card) {
       card.classList.add('hidden');
       card.addEventListener('click', click);
-      card.addEventListener('touch', click);
+      card.addEventListener('touchstart', click);
     });
   }, 2000);
 };
