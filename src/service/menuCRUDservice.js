@@ -33,8 +33,7 @@ export const addToMenu = dayName => {
     );
     return;
   }
-  const ifExists = checkIfExists(recipeId, recipesForADay);
-  if (ifExists) {
+  if (checkIfExists(recipeId, recipesForADay)) {
     showNotification(`That recipe is already on that list`);
     return;
   }
