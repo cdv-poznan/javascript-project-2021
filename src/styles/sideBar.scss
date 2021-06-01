@@ -1,0 +1,250 @@
+@import "./checkbox.scss";
+
+aside {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  padding: 0 30px;
+  box-shadow: 0 0 15px 1px #ddd;
+  display: none;
+  z-index: 2;
+  background-color: #e4b2b21f;
+
+  .closeAside {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 30px;
+    color: #ddd;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: #222;
+    }
+  }
+
+  @media (max-width: 900px) {
+    background-color: #fff;
+    display: none;
+    width: 60%;
+  }
+
+  h3,
+  h4 {
+    text-align: center;
+    margin: 30px;
+  }
+
+  p.ings {
+    text-align: center;
+    margin: 30px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 50px 0;
+    list-style: none;
+
+    li {
+      padding: 5px;
+      color: #222;
+
+      &:hover {
+        color: rgb(202, 121, 121);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .recipe {
+    text-align: justify;
+  }
+
+  &.ingredients {
+    button {
+      background-color: #e4b2b2;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #222;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    .ingredients__add {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      height: 30px;
+      width: 100%;
+
+      &:nth-of-type(1) {
+        @media (max-width: 1515px) {
+          flex-wrap: wrap;
+        }
+      }
+      &:nth-of-type(2) {
+        flex-wrap: wrap;
+        label {
+          margin-right: 15px;
+          @media (max-width: 1515px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .input-wrapper {
+        display: flex;
+        flex-grow: 1;
+        @media (max-width: 1515px) {
+          margin: 15px 0;
+          width: 100%;
+        }
+
+        input {
+          padding: 5px;
+          flex-grow: 1;
+          margin: 0 10px 0 0;
+          border: 1px solid #e4b2b241;
+          border-radius: 5px;
+          font-size: 16px;
+
+          @media (max-width: 1515px) {
+            width: 100%;
+            height: 30px;
+          }
+        }
+
+        .addIngBtn {
+          min-width: 22px;
+          width: 40px;
+          height: 30px;
+          font-size: 26px;
+        }
+      }
+    }
+
+    li {
+      &:hover {
+        &::after {
+          content: "Click to delete";
+          padding: 5px;
+          margin: 0 20px;
+          background-color: #ddd;
+          border-radius: 5px;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+
+    .saveIngsBtn {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  &.menu {
+    ul {
+      height: 100%;
+
+      &:nth-last-child(1) {
+        margin: 0 auto;
+        justify-self: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      li {
+        &:hover {
+          &::after {
+            position: absolute;
+            content: "Show";
+            padding: 5px;
+            font-size: 16px;
+            margin: 0 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .calendar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      div {
+        margin: 0 7px;
+        width: 45%;
+        min-height: 200px;
+        align-items: center;
+
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+
+        &:nth-last-of-type(1) {
+          justify-self: center;
+        }
+
+        h3 {
+          width: 100%;
+          background-color: #e4b2b2;
+          padding: 5px 0;
+          color: white;
+          margin: 30px 0 10px 0;
+        }
+
+        ul {
+          margin: 0;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &.favourites {
+    li {
+      &:hover {
+        &::after {
+          position: absolute;
+          content: "Show";
+          padding: 5px;
+          font-size: 16px;
+          margin: 0 10px;
+          background-color: #ddd;
+          border-radius: 5px;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
