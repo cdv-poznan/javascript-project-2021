@@ -5,6 +5,7 @@ export const showModal = txt => {
   $('body').css('overflow', 'hidden');
 
   $('.closeModalBtn').click(() => {
+    $('.calendar__week div').off();
     $('.backdrop').css('display', 'none');
     $('.modal').css('display', 'none');
     $('.modal__text').text('');
