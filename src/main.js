@@ -15,6 +15,9 @@ window.clickAndSearchMovieList = function(clicked_value) {
         case 'Drama':
             baseUrl = 'https://api.themoviedb.org/4/list/7096191?api_key=1d177576971c8d250816c5fcd5cac600';
             break;
+        case 'Thriller':
+            baseUrl = 'https://api.themoviedb.org/4/list/7097077?api_key=1d177576971c8d250816c5fcd5cac600';
+            break; 
         case 'Science fiction':
             baseUrl = 'https://api.themoviedb.org/4/list/7094258?api_key=1d177576971c8d250816c5fcd5cac600';
             break;
