@@ -1,0 +1,7 @@
+<svg id="Component_2_1" data-name="Component 2 – 1" xmlns="http://www.w3.org/2000/svg" width="206" height="37" viewBox="0 0 206 37">
+  <text id="Recipe_For_Today" data-name="Recipe For Today" transform="translate(24)" fill="#fff" font-size="30" font-family="BrushScriptMT, Brush Script MT"><tspan x="0" y="27">Recipe For Today</tspan></text>
+  <g id="restaurant_menu_black_24dp_1_" data-name="restaurant_menu_black_24dp (1)" transform="translate(0 4.144)">
+    <path id="Path_7" data-name="Path 7" d="M0,0H23.94V24.857H0Z" fill="none"/>
+    <path id="Path_8" data-name="Path 8" d="M8.083,13.822,10.9,10.858l-7-7.341a4.348,4.348,0,0,0,0,5.927Zm6.759-1.9c1.525.743,3.668.22,5.253-1.445,1.9-2,2.273-4.869.807-6.409s-4.187-1.152-6.1.848a5.267,5.267,0,0,0-1.376,5.519L3.7,20.66,5.1,22.136l6.868-7.194,6.858,7.2,1.406-1.477-6.858-7.2,1.465-1.539Z" transform="translate(0 0)" fill="#ffa5a5"/>
+  </g>
+</svg>
