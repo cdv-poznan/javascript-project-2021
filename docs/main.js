@@ -30,17 +30,55 @@ const cardsImage = [
   '<img src="./assets/71993-monkey-of-sticker-smiley-poo-pile-whatsapp.png" alt="monkey">',
 ];
 
-var cards = document.querySelectorAll('.cards div');
+let cards = document.querySelectorAll('.cards div');
 cards = [...cards];
-const gameTime = new Date().getTime();
-var cardActive = '';
+const timeStart = new Date().getTime();
+let cardActive = '';
 const cardsActive = [];
 const pairs = cards.length / 2;
 var score = 0;
 
 const click = function () {
+  //   var cardActive = '';
+  //   var cardsActive = [];
   cardActive = this;
   cardActive.classList.remove('hidden');
+
+  if (cardsActive.length === 0) {
+    cardsActive[0] = cardActive;
+  } else {
+    cards.forEach(card => {
+      card.removeEventListener('click', click);
+      card.removeEventListener('touchstart', click);
+      cardsActive[1] = cardActive;
+      setTimeout(function () {
+        if (cardsActive[0].innerHTML === cardsActive[1].innerHTML) {
+          console.log('wygrana');
+          // eslint-disable-next-line no-shadow
+          cardsActive.forEach(card => card.classList.add('done'));
+          score++;
+          if (score === pairs) {
+            console.log('Wygrana');
+            const timeEnd = new Date().getTime();
+            // eslint-disable-next-line no-shadow
+            const score = (timeEnd - timeStart) / 1000;
+            alert('Your score ' + score);
+          }
+        } else {
+          console.log('przegrana');
+          // eslint-disable-next-line no-shadow
+          cardsActive.forEach(card => card.classList.add('hidden'));
+        }
+        cardActive = '';
+        cardsActive.length = 0;
+        // eslint-disable-next-line no-shadow
+        cards.forEach(function (card) {
+          card.addEventListener('click', click);
+          card.addEventListener('touchstart', click);
+        });
+      }, 500);
+    });
+  }
 };
 
 const start = function () {

@@ -73,6 +73,15 @@ footer p {
   font-size: 2.5vh;
 }
 
+// .start {
+//   display: flex;
+//   flex-wrap: wrap;
+//   padding-left: 15vw;
+//   padding-right: 15vw;
+//   padding-top: 2vh;
+//   padding-bottom: 2vh;
+// }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -139,10 +148,6 @@ img {
   }
 }
 
-.done {
-  background-color: $doneBackground;
-}
-
 .hidden {
   background-color: $hiddenBackground !important;
 }
@@ -150,5 +155,14 @@ img {
 .hidden > img {
   display: none;
 }
+
+.done {
+  background-color: $doneBackground !important;
+}
+
+.done > img {
+  display: none;
+}
+
 
 // zmienić czcionke, zaimportować

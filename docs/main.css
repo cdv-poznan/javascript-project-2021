@@ -156,15 +156,19 @@ img {
   }
 }
 
-.done {
-  background-color: #e6e6e6;
-}
-
 .hidden {
   background-color: yellow !important;
 }
 
 .hidden > img {
+  display: none;
+}
+
+.done {
+  background-color: #e6e6e6 !important;
+}
+
+.done > img {
   display: none;
 }
 /*# sourceMappingURL=main.css.map */
