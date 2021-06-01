@@ -1,4 +1,96 @@
-html {
-  background-color: #f5f5f5;
-  color: #111;
+body {
+  font-family: sans-serif;
+  background: #001012;
+  color: #9cadd9;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+  font-weight: normal;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+input {
+  background: rgba(7, 8, 16, 0.7);
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  color: #fff;
+}
+
+button {
+  background: #449bda;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header {
+  padding: 20px;
+  background: url(../assets/bg.png) no-repeat center center;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header img {
+  display: block;
+  max-width: 400px;
+}
+
+hr {
+  margin: 40px 0;
+  // border: none;
+  border-top: 1px solid rgba(200, 200, 255, 0.25);
+}
+
+article {
+  padding: 40px;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 300px;
+  float: left;
+  margin: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lightbox {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 200ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
