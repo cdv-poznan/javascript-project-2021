@@ -1,7 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-air-freshener"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Podsumowanie</h1>
+      <p class="lead">Podsumowanie z dnia <b><span id="Date"></span></b></p>
+      <hr class="my-4">
+      <p>Nowe przypadki potwierdzone: <b><span id="NewConfirmed"></span></b></p>
+      <p>Wszystkie przypadki potwierdzone: <b><span id="TotalConfirmed"></span></b></p>
+      <p>Liczba śmierci: <b><span id="NewDeaths"></span></b></p>
+      <p>Liczba wszyskich śmierci: <b><span id="TotalDeaths"></span></b></p>
+      <p>Nowi ozdrowieńcy: <b><span id="NewRecovered"></span></b></p>
+      <p>Wszyscy ozdrowieńcy: <b><span id="TotalRecovered"></span></b></p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" role="button" id="updateSummary">Odśwież dane</a>
+      </p>
+    </div>
+  </section>
+<br><br>
+
+  <section class="container" id="covid">
+    <h2>Liczba chorych na covid w Polsce</h2>
+    <h5>data od:</h5>
+    <div class="input-group">
+      <input id="data-od" type="date" class="form-control" value="2021-04-04"/>
+    </div>
+    <h5>status:</h5>
+    <div class="input-group">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+          Przypadki potwierdzone
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" id="statusConfirmed">Przypadki potwierdzone</a>
+          <a class="dropdown-item" id="statusRecovered">Przypadki ozdrowienia</a>
+          <a class="dropdown-item" id="statusDeath">Przypadki śmiertelne</a>
+        </div>
+      </div>
+      <input type="text" class="form-control" id="status" value="Confirmed" style="display: none;">
+    </div>
+    </div>
+    <canvas id="covid-canvas"></canvas>
+  </section>
+</body>
+
 </html>
