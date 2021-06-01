@@ -143,7 +143,8 @@ h2 {
 
 h5 {
   @extend %centered-position;
-  text-align: justify;
+  text-align: center;
+  padding: 15px;
 }
 
 .movie-info {
@@ -181,7 +182,6 @@ li {
 .form-filter {
   @extend %centered-position;
   display: none;
-  margin-bottom: 15px;
 }
 
 .text-not-movie {
@@ -324,5 +324,9 @@ li {
 
   .text-not-movie {
     min-height: 0;
+  }
+
+  .form-filter {
+    padding: 15px;
   }
 }
