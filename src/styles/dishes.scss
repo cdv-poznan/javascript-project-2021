@@ -73,7 +73,7 @@
       cursor: pointer;
 
       i {
-        color: #f3d1d1;
+        color: #e4b2b2;
 
         &:hover {
           color: #e4b2b2;
@@ -83,7 +83,7 @@
 
     .heart {
       display: none;
-      background-color: #f3d1d1;
+      background-color: #e4b2b2;
       height: 30px;
       margin: 0 10px;
       position: absolute;
@@ -108,7 +108,7 @@
       &:before,
       &:after {
         content: "";
-        background-color: #f3d1d1;
+        background-color: #e4b2b2;
         border-radius: 50%;
         height: 30px;
         position: absolute;
