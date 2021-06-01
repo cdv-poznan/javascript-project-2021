@@ -38,6 +38,11 @@ const cardsActive = [];
 const pairs = cards.length / 2;
 var score = 0;
 
+// function hideCards() {
+//   var x = document.getElementsByClassName('cards');
+//   x[0].innerHTML = 'Hello World!';
+// }
+
 const click = function () {
   //   var cardActive = '';
   //   var cardsActive = [];
@@ -49,7 +54,7 @@ const click = function () {
   } else {
     cards.forEach(card => {
       card.removeEventListener('click', click);
-      card.removeEventListener('touchstart', click);
+    //   card.removeEventListener('touchstart', click);
       cardsActive[1] = cardActive;
       setTimeout(function () {
         if (cardsActive[0].innerHTML === cardsActive[1].innerHTML) {
@@ -63,6 +68,9 @@ const click = function () {
             // eslint-disable-next-line no-shadow
             const score = (timeEnd - timeStart) / 1000;
             alert('Your score ' + score);
+            document
+              .getElementsByClassName('cards')[0]
+              .classList.add('hiddenClass');
           }
         } else {
           console.log('przegrana');
@@ -74,7 +82,7 @@ const click = function () {
         // eslint-disable-next-line no-shadow
         cards.forEach(function (card) {
           card.addEventListener('click', click);
-          card.addEventListener('touchstart', click);
+        //   card.addEventListener('touchstart', click);
         });
       }, 500);
     });
@@ -91,7 +99,7 @@ const start = function () {
     cards.forEach(function (card) {
       card.classList.add('hidden');
       card.addEventListener('click', click);
-      card.addEventListener('touchstart', click);
+    //   card.addEventListener('touchstart', click);
     });
   }, 2000);
 };

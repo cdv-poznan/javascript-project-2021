@@ -73,14 +73,16 @@ footer p {
   font-size: 2.5vh;
 }
 
-// .start {
-//   display: flex;
-//   flex-wrap: wrap;
-//   padding-left: 15vw;
-//   padding-right: 15vw;
-//   padding-top: 2vh;
-//   padding-bottom: 2vh;
-// }
+.start {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  // margin-top: 12vh;
+  // margin-bottom: 12vh;
+  background-color: $activeBackground;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .cards {
   display: flex;
@@ -161,6 +163,10 @@ img {
 }
 
 .done > img {
+  display: none;
+}
+
+.hiddenClass {
   display: none;
 }
 
