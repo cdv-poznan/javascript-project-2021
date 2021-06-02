@@ -55,7 +55,7 @@ footer {
   object-fit: cover;
   max-height: 650px;
   width: 100%;
-  filter: drop-shadow(8px 10px 40px #ff9) hue-rotate(74deg);
+  filter: drop-shadow(8px 10px 70px #fc0) hue-rotate(3deg);
   border-radius: 25px;
 }
 
@@ -65,20 +65,20 @@ h1 {
   position: absolute;
   color: $text-header-color;
   bottom: 399px;
-  right: 150px;
+  left: 150px;
   text-align: right;
 }
 
 h3 {
   @extend %h3-only-styles;
   bottom: 354px;
-  right: 110px;
+  left: 110px;
   text-align: right;
 }
 
 .only {
   @extend %h3-only-styles;
-  right: 600px;
+  left: 600px;
   text-align: right;
   top: 59px;
 }
@@ -243,11 +243,11 @@ li {
   h1 {
     font-size: 65px;
     bottom: 237px;
-    right: 31px;
+    left: 31px;
   }
 
   h3 {
-    right: 41px;
+    left: 41px;
     bottom: 195px;
     font-size: 45px;
   }
@@ -257,13 +257,13 @@ li {
   h1 {
     font-size: 50px;
     bottom: 165px;
-    right: 35px;
+    left: 35px;
   }
 
   h3 {
     font-size: 30px;
     bottom: 138px;
-    right: 43px;
+    left: 43px;
   }
 
   .db {
@@ -280,7 +280,7 @@ li {
   h1 {
     font-size: 46px;
     bottom: 165px;
-    right: 35px;
+    left: 35px;
   }
 
   h2 {
@@ -290,7 +290,7 @@ li {
   h3 {
     font-size: 25px;
     bottom: 132px;
-    right: 43px;
+    left: 43px;
   }
 
   h5 {
