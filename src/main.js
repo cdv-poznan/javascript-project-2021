@@ -68,6 +68,15 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 var content_overview = document.createTextNode(`Overview: ${parseRes.results[i].overview}`);
                 var content_vote_average = document.createTextNode(`Average vote: ${parseRes.results[i].vote_average}`);
 
+                var choiceOriginalTitleFn = function() {
+                    if (parseRes.results[i].original_title) {
+                        return document.createTextNode(`Original title: ${parseRes.results[i].original_title}`);
+                    }
+                    else if (parseRes.results[i].original_name) {
+                        return document.createTextNode(`Original name: ${parseRes.results[i].original_name}`);
+                    }
+                }
+
                 var choiceReleaseDateFn = function() {
                     if (parseRes.results[i].release_date) {
                         return document.createTextNode(`Release date: ${parseRes.results[i].release_date}`);
@@ -96,12 +105,14 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 var li_movie_title = document.createElement("li");
                 var li_movie_overview = document.createElement("li");
                 var li_movie_vote = document.createElement("li");
+                var li_movie_original_title = document.createElement("li");
                 var li_movie_release_date = document.createElement("li");
                 var li_movie_media_type = document.createElement("li");
                 var li_movie_comments = document.createElement("li");
                 var li_movie_img = document.createElement("li");
                 var img_arrow_overview = document.createElement("img");
                 var img_arrow_vote = document.createElement("img");
+                var img_arrow_original_title = document.createElement("img");
                 var img_arrow_release_date = document.createElement("img");
                 var img_arrow_media_type = document.createElement("img");
                 var img_arrow_comments = document.createElement("img");
@@ -111,6 +122,7 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 li_movie_title.setAttribute("class", "movie-title");
                 li_movie_overview.setAttribute("class", "movie-overview");
                 li_movie_vote.setAttribute("class", "movie-vote");
+                li_movie_original_title.setAttribute("class", "movie-original-title");
                 li_movie_release_date.setAttribute("class", "movie-release-date");
                 li_movie_media_type.setAttribute("class", "movie-media-type");
                 li_movie_comments.setAttribute("class", "movie-comments");
@@ -118,6 +130,8 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 img_arrow_overview.setAttribute("class", "arrow");
                 img_arrow_vote.setAttribute("src", arrow_img);
                 img_arrow_vote.setAttribute("class", "arrow");
+                img_arrow_original_title.setAttribute("src", arrow_img);
+                img_arrow_original_title.setAttribute("class", "arrow");
                 img_arrow_release_date.setAttribute("src", arrow_img);
                 img_arrow_release_date.setAttribute("class", "arrow");
                 img_arrow_media_type.setAttribute("src", arrow_img);
@@ -131,9 +145,11 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 ul_section_right.appendChild(li_movie_title);
                 li_movie_overview.appendChild(img_arrow_overview);
                 li_movie_vote.appendChild(img_arrow_vote);
+                li_movie_original_title.appendChild(img_arrow_original_title);
                 li_movie_release_date.appendChild(img_arrow_release_date);
                 li_movie_media_type.appendChild(img_arrow_media_type);
                 li_movie_comments.appendChild(img_arrow_comments);
+                ul_section_right.appendChild(li_movie_original_title);
                 ul_section_right.appendChild(li_movie_vote);
                 ul_section_right.appendChild(li_movie_release_date);
                 ul_section_right.appendChild(li_movie_media_type);
@@ -141,6 +157,7 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 ul_section_right.appendChild(li_movie_overview);
                 img_poster.appendChild(content_img_poster);
                 li_movie_title.appendChild(choiceTitleFn());
+                li_movie_original_title.appendChild(choiceOriginalTitleFn());
                 li_movie_vote.appendChild(content_vote_average);
                 li_movie_release_date.appendChild(choiceReleaseDateFn());
                 li_movie_media_type.appendChild(content_media_type);
