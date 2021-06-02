@@ -36,12 +36,14 @@ const goToStartAgain = function () {
 const startGame = function () {
   document.querySelector('.cards').style.display = 'none';
   document.querySelector('.playAgain').style.display = 'none';
+  loadCards();
   document
     .getElementsByClassName('button')[0]
     .addEventListener('click', goToStart);
 };
 
 const playAgain = function () {
+  loadCards();
   document
     .getElementsByClassName('button')[1]
     .addEventListener('click', goToStartAgain);
@@ -134,7 +136,7 @@ click = function () {
 
 // assigning images to the cards
 
-start = function () {
+loadCards = function () {
   const cardsImage = [
     '<img src="./assets/1-2-wink-emoji-png.png" alt="wink">',
     '<img src="./assets/1-2-wink-emoji-png.png" alt="wink">',
@@ -161,6 +163,7 @@ start = function () {
     '<img src="./assets/71993-monkey-of-sticker-smiley-poo-pile-whatsapp.png" alt="monkey">',
     '<img src="./assets/71993-monkey-of-sticker-smiley-poo-pile-whatsapp.png" alt="monkey">',
   ];
+
   cards = '';
   cards = document.querySelectorAll('.cards div');
   cards = [...cards];
@@ -169,6 +172,11 @@ start = function () {
     card.innerHTML = cardsImage[position];
     cardsImage.splice(position, 1);
   });
+};
+
+// start
+
+start = function () {
   setTimeout(function () {
     timeStart = new Date().getTime();
     timeCountStart();
