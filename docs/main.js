@@ -1,17 +1,17 @@
-const reset = function () {
-  console.log('reset');
-};
-
-reset();
-
-let cards = document.querySelectorAll('.cards div');
+var cards = document.querySelectorAll('.cards div');
 cards = [...cards];
-var timeStart = new Date().getTime();
+var cardActive = '';
 var cardsActive = [];
 var pairs = cards.length / 2;
 var score = 0;
-let start = '';
-let click = '';
+var start = '';
+var click = '';
+var timeStart = '';
+var timeEnd = '';
+var timeScore = '';
+var sec = 0;
+var timeLoop = '';
+var counting = '';
 
 const goToStart = function () {
   document.querySelector('.start').style.display = 'none';
@@ -22,6 +22,10 @@ const goToStart = function () {
 const goToStartAgain = function () {
   document.querySelector('.playAgain').style.display = 'none';
   document.querySelector('.cards').style.display = 'flex';
+  cards.forEach(function (card) {
+    card.classList.remove('done');
+  });
+  score = 0;
   start();
 };
 
@@ -39,11 +43,30 @@ const playAgain = function () {
     .addEventListener('click', goToStartAgain);
 };
 
-playAgain();
+function timeCount() {
+  if (counting === 0) {
+    document.querySelector('.gameScore p').innerHTML = `Time: ${sec}`;
+  } else {
+    document.querySelector('.gameScore p').innerHTML = `Time: ${sec}`;
+    sec = sec + 1;
+    timeLoop = setTimeout(timeCount, 1000);
+  }
+}
+
+function timeCountStart() {
+  counting = 1;
+  timeCount();
+}
+
+function timeCountStop() {
+  counting = 0;
+  clearTimeout(timeCount);
+  sec = 0;
+  timeLoop = '';
+}
 
 click = function () {
-  // cardsActive = [];
-  const cardActive = this;
+  cardActive = this;
   cardActive.classList.remove('hidden');
 
   if (cardsActive.length === 0) {
@@ -61,19 +84,22 @@ click = function () {
           score++;
           if (score === pairs) {
             console.log('Wygrana');
-            const timeEnd = new Date().getTime();
+            timeEnd = new Date().getTime();
             // eslint-disable-next-line no-shadow
-            const score = (timeEnd - timeStart) / 1000;
+            timeScore = Math.round((timeEnd - timeStart) / 1000);
             document
               .getElementsByClassName('cards')[0]
               .classList.add('hiddenClass');
+            timeCountStop();
             setTimeout(function () {
               // alert('Your score ' + score);
               //   document.getElementsByClassName('cards')[0].innerHTML = '';
               document.querySelector('.cards').style.display = 'none';
               document.querySelector('.playAgain').style.display = 'flex';
-              document.querySelectorAll('.cards div').classList.remove('done');
-              reset();
+              document.getElementsByClassName(
+                'score',
+              )[0].innerHTML = `Your score: ${timeScore} seconds`;
+              playAgain();
             }, 600);
           }
         } else {
@@ -130,6 +156,8 @@ start = function () {
     cardsImage.splice(position, 1);
   });
   setTimeout(function () {
+    timeStart = new Date().getTime();
+    timeCountStart();
     cards.forEach(function (card) {
       card.classList.add('hidden');
       card.addEventListener('click', click);
