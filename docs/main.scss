@@ -3,6 +3,7 @@ $activeBackground: rgb(255, 200, 0);
 $hiddenBackground: rgb(255, 255, 0);
 $doneBackground: rgb(230, 230, 230);
 $font: rgb(39, 39, 39);
+$fontType: Arial, Helvetica, sans-serif;
 
 * {
   margin: 0;
@@ -76,12 +77,67 @@ footer p {
 .start {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 25vw;
-  margin-right: 25vw;
-  // margin-top: 12vh;
-  // margin-bottom: 12vh;
+  padding-left: 35vw;
+  padding-right: 35vw;
+  padding-top: 15vh;
+  padding-bottom: 40vh;
+  // display: none;
+}
+
+.startDiv {
+  width: 30vw;
+  height: 20vh;
   background-color: $activeBackground;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.playAgain {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 35vw;
+  padding-right: 35vw;
+  padding-top: 10vh;
+  padding-bottom: 40vh;
+  // display: none;
+  // border: 1px solid black;
+}
+
+.playAgainDiv {
+  width: 30vw;
+  height: 25vh;
+  background-color: $activeBackground;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+  // border: 1px solid black;
+}
+
+.score {
+  width: 24vw;
+  height: 5vh;
+  font-size: 4vmin;
+  margin-bottom: 3vh;
+  // border: 1px solid black;
+}
+
+.button {
+  width: 24vw;
+  height: 10vh;
+  border-radius: 6px;
+  background-color: $hiddenBackground;
+  border:none;
+  font-size: 4vmin;
+  font-family: $fontType;
+  font-weight: bold;
+  // border: 1px solid black;
 }
 
 .cards {
@@ -91,6 +147,7 @@ footer p {
   padding-right: 15vw;
   padding-top: 2vh;
   padding-bottom: 2vh;
+  // display: none;
 }
 
 .cards div {
@@ -171,4 +228,3 @@ img {
 }
 
 
-// zmienić czcionke, zaimportować
