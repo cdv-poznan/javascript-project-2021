@@ -1,0 +1,321 @@
+// fonts imported
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=ZCOOL+KuaiLe&display=swap');
+
+// variables
+
+$mainBackground: rgb(168, 168, 168);
+$activeBackground: rgb(255, 200, 0);
+$hiddenBackground: rgb(255, 255, 0);
+$doneBackground: rgb(230, 230, 230);
+$font: rgb(39, 39, 39);
+
+// main set
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $mainBackground;
+  color: $font;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'ZCOOL KuaiLe', curswasive, 'Roboto', sans-serif;
+}
+
+header {
+  height: 15vh;
+  // border: 2px solid black;
+}
+
+main {
+  height: 75vh;
+}
+
+footer {
+  height: 10vh;
+  // border: 2px solid black;
+}
+
+.gameTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  // border: 2px solid black;
+}
+
+.gameScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  // border: 2px solid black;
+}
+
+.gameFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  // border: 2px solid black;
+}
+
+header h1 {
+  text-align: center;
+  padding: 2px;
+  font-size: 6vh;
+}
+
+header p {
+  text-align: center;
+  margin: auto;
+  font-size: 3.5vh;
+}
+
+footer p {
+  text-align: center;
+  margin: auto;
+  font-size: 2.5vh;
+}
+
+#o {
+  height: 6vh;
+  width: 6vh;
+}
+
+// play and play again section
+
+.start {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 35vw;
+  padding-right: 35vw;
+  padding-top: 15vh;
+  padding-bottom: 40vh;
+  // display: none;
+}
+
+.startDiv {
+  width: 30vw;
+  height: 20vh;
+  background-color: $activeBackground;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.playAgain {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 35vw;
+  padding-right: 35vw;
+  padding-top: 10vh;
+  padding-bottom: 40vh;
+  // display: none;
+  // border: 1px solid black;
+}
+
+.playAgainDiv {
+  width: 30vw;
+  height: 25vh;
+  background-color: $activeBackground;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 3vh;
+  padding-bottom: 5vh;
+  // border: 1px solid black;
+}
+
+.score {
+  width: 24vw;
+  height: 5vh;
+  font-size: 4vmin;
+  margin-bottom: 3vh;
+  text-align: center;
+  // border: 1px solid black;
+}
+
+.button {
+  width: 24vw;
+  height: 10vh;
+  border-radius: 6px;
+  background-color: $hiddenBackground;
+  border:none;
+  font-size: 4vmin;
+  font-weight: bold;
+  font-family: 'ZCOOL KuaiLe', curswasive, 'Roboto', sans-serif;
+  // border: 1px solid black;
+}
+
+// cards section
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  // display: none;
+}
+
+.cards div {
+  border-radius: 6px;
+  width: 11.26vw;
+  height: 16.95vh;
+  background-color: $activeBackground;
+  margin-left: 0.2vw;
+  margin-right: 0.2vw;
+  margin-top: 0.4vh;
+  margin-bottom: 0.4vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+img {
+  width: 11.26vw;
+  height: 16.95vh;
+  object-fit: contain;
+}
+
+.emoji {
+  margin:0;
+  padding:0;
+  width: 11.26vw;
+  height: 16.95vh;
+  font-size: 100%;
+}
+
+// settings for vertical
+
+@media (orientation: portrait) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  .cards div {
+    border-radius: 6px;
+    width: 23.2vw;
+    height: 11.43vh;
+    background-color: $activeBackground;
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+    margin-top: 0.2vh;
+    margin-bottom: 0.2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    font-size: 9vh;
+  }
+
+  img {
+    width: 23.2vw;
+    height: 11.43vh;
+    object-fit: contain;
+  }
+
+  .start {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 15vh;
+    padding-bottom: 40vh;
+    // display: none;
+  }
+
+  .startDiv {
+    width: 70vw;
+    height: 20vh;
+    background-color: $activeBackground;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .score {
+    width: 64vw;
+    height: 5vh;
+    font-size: 4vmin;
+    margin-bottom: 3vh;
+    text-align: center;
+    // border: 1px solid black;
+  }
+
+  .button {
+    width: 64vw;
+    height: 10vh;
+    border-radius: 6px;
+    background-color: $hiddenBackground;
+    border:none;
+    font-size: 4vmin;
+    font-weight: bold;
+    font-family: 'ZCOOL KuaiLe', curswasive, 'Roboto', sans-serif;
+    // border: 1px solid black;
+  }
+
+  .playAgain {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 10vh;
+    padding-bottom: 40vh;
+    // display: none;
+    // border: 1px solid black;
+  }
+
+  .playAgainDiv {
+    width: 70vw;
+    height: 25vh;
+    background-color: $activeBackground;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    // border: 1px solid black;
+  }
+}
+
+// display and colors changes --> using in JS fuctions
+
+.hidden {
+  background-color: $hiddenBackground !important;
+}
+
+.hidden > img {
+  display: none;
+}
+
+.done {
+  background-color: $doneBackground !important;
+}
+
+.done > img {
+  display: none;
+}
+
+.hiddenClass {
+  display: none;
+}
+
+

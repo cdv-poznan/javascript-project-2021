@@ -11,11 +11,11 @@ const configure = (env, args) => {
   return {
     mode: args.mode || 'development',
     entry: {
-      main: ['./src/main', './src/style.scss'],
+      main: ['./docs/main.js', './docs/style.scss'],
     },
     output: {
-      path: resolve(__dirname, './dist'),
-      filename: '[name].js',
+      path: resolve(__dirname, './docs'),
+      filename: 'bundle.js',
     },
     module: {
       rules: [
@@ -51,8 +51,8 @@ const configure = (env, args) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        favicon: './src/favicon.ico',
+        template: './docs/index.html',
+        favicon: './docs/favicon.ico',
         scriptLoading: 'defer',
         meta: {
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -65,7 +65,7 @@ const configure = (env, args) => {
         formatter: 'codeframe',
       }),
       new StylelintWebpackPlugin({
-        files: './src/*.scss',
+        files: './docs/*.scss',
         failOnError: false,
         failOnWarning: false,
         formatter: 'string',
@@ -76,7 +76,7 @@ const configure = (env, args) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: './src/assets',
+            from: './docs/assets',
             to: 'assets',
           },
         ],
