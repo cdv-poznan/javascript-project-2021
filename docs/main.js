@@ -67,6 +67,10 @@ function timeCountStop() {
 
 click = function () {
   cardActive = this;
+  if (cardActive === cardsActive[0]) {
+    return;
+  }
+
   cardActive.classList.remove('hidden');
 
   if (cardsActive.length === 0) {
@@ -96,6 +100,7 @@ click = function () {
               //   document.getElementsByClassName('cards')[0].innerHTML = '';
               document.querySelector('.cards').style.display = 'none';
               document.querySelector('.playAgain').style.display = 'flex';
+              document.querySelector('.gameScore p').innerHTML = '';
               document.getElementsByClassName(
                 'score',
               )[0].innerHTML = `Your score: ${timeScore} seconds`;
@@ -110,6 +115,9 @@ click = function () {
         cardsActive.length = 0;
         // eslint-disable-next-line no-shadow
         cards.forEach(function (card) {
+          if (card.classList.contains('done') === true) {
+            return;
+          }
           card.addEventListener('click', click);
           //   card.addEventListener('touchstart', click);
         });
