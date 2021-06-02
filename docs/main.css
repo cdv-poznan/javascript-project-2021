@@ -72,6 +72,11 @@ header h1 {
   font-size: 6vh;
 }
 
+#o {
+  height: 6vh;
+  width: 6vh;
+}
+
 header p {
   text-align: center;
   margin: auto;
