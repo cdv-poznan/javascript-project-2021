@@ -57,11 +57,11 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 var content_img_poster = document.createTextNode(img_poster.src);
 
                 var choiceTitleFn = function() {
-                    if (parseRes.results[i].original_title) {
-                        return document.createTextNode(parseRes.results[i].original_title);
+                    if (parseRes.results[i].title) {
+                        return document.createTextNode(parseRes.results[i].title);
                     }
-                    else if (parseRes.results[i].original_name) {
-                        return document.createTextNode(parseRes.results[i].original_name);
+                    else if (parseRes.results[i].name) {
+                        return document.createTextNode(parseRes.results[i].name);
                     }
                 }
 
