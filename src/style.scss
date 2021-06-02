@@ -166,6 +166,21 @@ h5 {
   }
 }
 
+.movie-pagination {
+  text-align: center;
+}
+
+.btn-next {
+  background-color: transparent;
+  border-radius: 8px;
+  font-size: 22px;
+}
+
+.btn-next:hover {
+  color: #ff9;
+  border-color: #ff9;
+}
+
 .section-left {
   text-align: center;
   padding: 10px;
