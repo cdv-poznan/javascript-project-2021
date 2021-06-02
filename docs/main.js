@@ -1,3 +1,5 @@
+// variables
+
 var cards = document.querySelectorAll('.cards div');
 cards = [...cards];
 var cardActive = '';
@@ -12,6 +14,8 @@ var timeScore = '';
 var sec = 0;
 var timeLoop = '';
 var counting = '';
+
+// launched / play again section
 
 const goToStart = function () {
   document.querySelector('.start').style.display = 'none';
@@ -43,6 +47,8 @@ const playAgain = function () {
     .addEventListener('click', goToStartAgain);
 };
 
+// time section
+
 function timeCount() {
   if (counting === 0) {
     document.querySelector('.gameScore p').innerHTML = `Time: ${sec}`;
@@ -64,6 +70,8 @@ function timeCountStop() {
   sec = 0;
   timeLoop = '';
 }
+
+// game mechanism
 
 click = function () {
   cardActive = this;
@@ -124,6 +132,8 @@ click = function () {
   }
 };
 
+// assigning images to the cards
+
 start = function () {
   const cardsImage = [
     '<img src="./assets/1-2-wink-emoji-png.png" alt="wink">',
@@ -170,5 +180,6 @@ start = function () {
   }, 2000);
 };
 
+// first time initiation
+
 startGame();
-// start();

@@ -1,12 +1,17 @@
+// fonts imported
 
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=ZCOOL+KuaiLe&display=swap');
+
+// variables
 
 $mainBackground: rgb(168, 168, 168);
 $activeBackground: rgb(255, 200, 0);
 $hiddenBackground: rgb(255, 255, 0);
 $doneBackground: rgb(230, 230, 230);
 $font: rgb(39, 39, 39);
+
+// main set
 
 * {
   margin: 0;
@@ -66,11 +71,6 @@ header h1 {
   font-size: 6vh;
 }
 
-#o {
-  height: 6vh;
-  width: 6vh;
-}
-
 header p {
   text-align: center;
   margin: auto;
@@ -82,6 +82,13 @@ footer p {
   margin: auto;
   font-size: 2.5vh;
 }
+
+#o {
+  height: 6vh;
+  width: 6vh;
+}
+
+// play and play again section
 
 .start {
   display: flex;
@@ -150,6 +157,8 @@ footer p {
   // border: 1px solid black;
 }
 
+// cards section
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -186,6 +195,8 @@ img {
   height: 16.95vh;
   font-size: 100%;
 }
+
+// settings for vertical
 
 @media (orientation: portrait) {
   .cards {
@@ -284,6 +295,8 @@ img {
     // border: 1px solid black;
   }
 }
+
+// display and colors changes --> using in JS fuctions
 
 .hidden {
   background-color: $hiddenBackground !important;
