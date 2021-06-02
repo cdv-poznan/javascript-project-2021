@@ -70,9 +70,7 @@ click = function () {
   if (cardActive === cardsActive[0]) {
     return;
   }
-
   cardActive.classList.remove('hidden');
-
   if (cardsActive.length === 0) {
     cardsActive[0] = cardActive;
   } else {
@@ -153,11 +151,9 @@ start = function () {
     '<img src="./assets/71993-monkey-of-sticker-smiley-poo-pile-whatsapp.png" alt="monkey">',
     '<img src="./assets/71993-monkey-of-sticker-smiley-poo-pile-whatsapp.png" alt="monkey">',
   ];
-
   cards = '';
   cards = document.querySelectorAll('.cards div');
   cards = [...cards];
-
   cards.forEach(function (card) {
     const position = Math.floor(Math.random() * cardsImage.length);
     card.innerHTML = cardsImage[position];

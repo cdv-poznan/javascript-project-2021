@@ -191,6 +191,7 @@ img {
     padding-top: 2vh;
     padding-bottom: 2vh;
   }
+
   .cards div {
     border-radius: 6px;
     width: 23.2vw;
@@ -209,6 +210,73 @@ img {
     width: 23.2vw;
     height: 11.43vh;
     object-fit: contain;
+  }
+
+  .start {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 15vh;
+    padding-bottom: 40vh;
+    // display: none;
+  }
+
+  .startDiv {
+    width: 70vw;
+    height: 20vh;
+    background-color: $activeBackground;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .score {
+    width: 64vw;
+    height: 5vh;
+    font-size: 4vmin;
+    margin-bottom: 3vh;
+    text-align: center;
+    // border: 1px solid black;
+  }
+
+  .button {
+    width: 64vw;
+    height: 10vh;
+    border-radius: 6px;
+    background-color: $hiddenBackground;
+    border:none;
+    font-size: 4vmin;
+    font-weight: bold;
+    font-family: 'ZCOOL KuaiLe', curswasive, 'Roboto', sans-serif;
+    // border: 1px solid black;
+  }
+
+  .playAgain {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 10vh;
+    padding-bottom: 40vh;
+    // display: none;
+    // border: 1px solid black;
+  }
+
+  .playAgainDiv {
+    width: 70vw;
+    height: 25vh;
+    background-color: $activeBackground;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    // border: 1px solid black;
   }
 }
 
