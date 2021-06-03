@@ -2,6 +2,8 @@
 
 Application that searches for recipes by the specified ingredient.
 
+[You can preview this website here.](https://emilien-wittchen.github.io/javascript-project-2021/)
+
 ### Instalacja Zależności
 
 ```shell
