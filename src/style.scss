@@ -15,6 +15,15 @@ $text-header-color: #fff;
   position: absolute;
   color: $text-header-color;
 }
+%btns-bottom {
+  background-color: transparent;
+  border-radius: 8px;
+  font-size: 22px;
+}
+%btns-bottom-hover {
+  color: #ff9;
+  border-color: #ff9;
+}
 
 body {
   font-family: $body-font;
@@ -171,14 +180,20 @@ h5 {
 }
 
 .btn-next {
-  background-color: transparent;
-  border-radius: 8px;
-  font-size: 22px;
+  @extend %btns-bottom;
+}
+
+.go-up-btn {
+  @extend %btns-bottom;
+  @extend %centered-position;
 }
 
 .btn-next:hover {
-  color: #ff9;
-  border-color: #ff9;
+  @extend %btns-bottom-hover;
+}
+
+.go-up-btn:hover {
+  @extend %btns-bottom-hover;
 }
 
 .section-left {
@@ -268,7 +283,7 @@ li {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   h1 {
     font-size: 50px;
     bottom: 165px;
@@ -286,8 +301,7 @@ li {
   }
 
   .movie-img {
-    width: 100%;
-    min-width: 150px;
+    width: 30vw;
   }
 }
 
@@ -349,5 +363,9 @@ li {
 
   .form-filter {
     padding: 15px;
+  }
+
+  %btns-bottom {
+    font-size: 16px;
   }
 }
