@@ -14,9 +14,9 @@ const removeModal = () => {
 };
 
 const mealRecipeModal = function (meal) {
-  console.log(meal);
   meal = meal[0];
   let html = '';
+
   html += `
   <h2 class="recipe-title">${meal.strMeal}</h2>
   <div class="recipe-meal-img">
@@ -35,6 +35,7 @@ const mealRecipeModal = function (meal) {
     <a href="${meal.strYoutube}" target="_blank"><img src="assets/youtube.png" alt="youtube icon" class="youtubeIcon"/><br/>Watch Video!</a>
   </div>
   `;
+
   mealDetailsContent.innerHTML = html;
   mealDetailsContent.parentElement.classList.add('run-fast-animation');
   mealDetailsContent.parentElement.classList.add('showRecipe');
@@ -48,6 +49,7 @@ const getMealList = function () {
     document.querySelector('#notFound').id = 'meal';
   }
   const searchInputText = document.querySelector('#search-input').value.trim();
+
   fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`,
   )
