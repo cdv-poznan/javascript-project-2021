@@ -2,6 +2,183 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet"> 
   </head>
-  <body></body>
+  <body>
+    <section class="front-section">
+    <header>
+      <div class="clock">
+      <div class="hour">
+        <div class="hr" id="hr"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc"></div>
+      </div>
+      </div>
+    <img class="frontlogo" src="/assets/logobeztlabig.png" title="LogoBetterBET" alt="LOGO"></img>
+    <div class="front-options">
+    <a class="log-in" type="button" href="#" id = "login-start-button">Log In</a>
+    <a class="log-out" type="button" href="#" id = "logout-start-button">Log Out</a>
+    <a class="log-out" type="button" href="#" id = "delete-account-button">Delete Account</a>
+    <a class="sign-in" type="button" href="#" id = "signin-start-button">Sign In</a>
+    </div>
+    
+    <div class = "down-front-section">
+      <div class="down-front-centre">
+    <a href="#second-section" type="button" class="slide-first"> <p>Live Now</p>
+    <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+  
+    <div class="down-front-centre">
+      <a href="#third-section" type="button" class="slide-second"> <p>Standings</p>
+      <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+
+      <div class="down-front-centre">
+        <a href="#fourth-section" type="button" class="slide-third"> <p>Find Player</p>
+        <img src="/assets/arrowdown.png" title="ArrowDown" alt="downarrow"></img></a></div>
+  </div>
+</section>
+
+<div class="popup-succesfull" id="popup-succesfull">
+ <div class="popup-content-succesfull">
+     <p>Account has been created succesfully.</p>
+     <button data-close-button class="close-button-newaccount">Close</button>
+ </div>
+</div>
+<div class="popup-succesfull-deleted" id="popup-deleted">
+  <div class="popup-content-succesfull">
+      <p>Account has been deleted.</p>
+      <button data-close-button id="close-button-deletedaccount"
+      class="close-button-deletedaccount">Close</button>
+  </div>
+ </div>
+
+    <div class="popup">
+       <button data-close-button class="close-button-login">&times;</button>
+      <div class="popup-content">
+          <p>E-mail: 
+          <input type="email" id="email-field" placeholder="Example@example.com"/>
+          </p>
+          <p id = "login-error-message" class="login-error-message"></p>
+          <p>Password:
+            <input type="password" name="password" size="15" placeholder="Password" id="password-field"/>
+          </p>
+          
+          <a class = "password-forgot" id = "password-forgot-button" href="#" type="link">Forgot Password?</a><br />
+
+          <p class="remember-checkbox"><input type="checkbox" value="lsRememberMe" id="rememberMe"/><label for="rememberMe">Remember me</label></p>
+          
+          <p><button type="submit" class="submit-button" id = "login-button">Log In</button></p>
+      </div>
+    </div>
+    <div class="popup-sign">
+      <button data-close-button class="close-button-sign">&times;</button>
+     <div class="popup-sign-content">
+       <p id="signup-error"></p>
+         <p>E-mail: 
+         <input id="sign-email" type="email" name="email" placeholder="Example@example.com" pattern="\d*" title="This E-mail will be used to verification."/></p>
+         <div id ="email-wrong" class = "wrong"></div>
+         <p>Password:
+           <input id="sign-password" type="password" name="password" size="15" placeholder="Password" pattern="\d*" title="Password must have 8 - 15 characters long and containt minimum one upper case letter, one lower case letter, one number."/>
+         </p><div id ="password-wrong" class = "wrong"></div>
+         <p>Type password again:
+          <input id = "sign-aga-password" type="password" name="password" size="15" placeholder="Password again" pattern="\d*" title="Password must be the same as above."/>
+         </p><div id ="password-wrong-twice" class = "wrong"></div>
+         <div class="upload-content">
+         <p>Upload ID Scan
+           <div class="image-input">
+             <label for="file-input">
+               <img class="upload-logo" src="assets/uploadicon.jpeg" title = "uploadlogo" alt="uploadLogo"/>
+             </label>
+           <input type="file" id = "file-input" class="upload-button" accept="image/png, image/jpeg, image/jpg, image/pdf"/></div>
+         </p>
+         <p><button type="submit" id = "sub-button" class="submit-button">Sign In</button></p></div>
+     </div>
+   </div>
+    <div class = "overlay"></div>
+    <section id="second-section" class="second-section">
+      <div class="live-now">
+        <button class="find-match-button" id="live-search-button">Search live results</button>
+        <p class="no-live-matches">Currently no matches are played.</p>
+      </div>
+      <div class="live-home">
+        
+      </div>
+</section>
+<section id="third-section" class="third-section">
+  <div class = "find-match">
+    <div class="find-standings-text"><p>Find Standings</p></div>
+      <ul class = "find-specifications">
+        <li>
+          <select class = "country-select" id="country-select">
+            <option value="null">Choose a country</option>
+            <option value="England">England</option>
+            <option value="Poland">Poland</option>
+            <option value="Germany">Germany</option>
+          </select>
+          </li>
+          <li>
+            <select class = "country-select" id="league-select">
+              <option value="null">Choose a league</option>
+            </select>
+          </li>
+          <li>
+            <select class = "country-select" id="year-select">
+              <option value="null">Choose a year</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+            </select>
+          </li>
+      </ul>
+    <div class="find-standings-button">
+    <button type="sumbit" class="find-match-button" id="find-standing-button">Submit</button></div>
+    
+    </div><p class="not-fulfilled" id ="not-selected-forms">Please fulfill every select form.</p>
+    </div><p class="not-fulfilled" id="cant-find-matches">No matching results were found.</p>
+<div class="find-results">
+  <table class="matches-list">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Club Name</th>
+      <th>Matches Played</th>
+      <th>Wins</th>
+      <th>Draws</th>
+      <th>Loses</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody class="matches-list-tbody">
+</tbody>
+  </table>
+</div>
+</section>
+<section class="fourth-section" id="fourth-section">
+<div class = "find-player"><div class="find-player-text">
+<p>Find Player Statistics</p></div>
+<input type="text" placeholder="Player Surname" class="player-input"/>
+<select class = "player-select">
+  <option value="null">Choose a league</option>
+  <option value="39">Premier League</option>
+  <option value="78">Bundesliga</option>
+  <option value="106">Ekstraklasa</option>
+</select>
+<div class="find-standings-button">
+  <button type="sumbit" class="find-match-button" id="find-player-button">Submit</button></div>
+  
+</div>
+<p class="not-fulfilled-player">Please fulfill every form.</p>
+<div class="player">
+
+</div>
+</section>
+  </body>
 </html>
+  
+  
