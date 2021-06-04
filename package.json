@@ -5,7 +5,6 @@
   "scripts": {
     "start": "webpack serve",
     "production": "webpack --mode production"
-
   },
   "repository": {
     "type": "git",
@@ -41,6 +40,7 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.1.0",
+    "eslint": "^7.27.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-webpack-plugin": "^2.5.2",
     "html-webpack-plugin": "^5.2.0",
