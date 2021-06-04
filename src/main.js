@@ -58,137 +58,140 @@ window.clickAndSearchMovieList = function(clicked_value) {
                 if (counter < parseRes.total_pages) {
                     var page = counter += 1;
                     fetch(baseUrl + '&page=' + page)
-                    .then(res2 => res2.text())
-                    .then(res2 => {
-                        var parseRes2 = JSON.parse(res2);
-                        for (var i=0; i < parseRes2.results.length; i++) {
-                            var arrow_img = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
-                            var div_movie_info = document.createElement("div");
-                            div_movie_info.setAttribute("class", "movie-info");
-                            var ul_section_left = document.createElement("ul");
-                            var ul_section_right = document.createElement("ul");
-                            var img_poster = document.createElement("img");
-                            img_poster.src = `https://image.tmdb.org/t/p/w300${parseRes2.results[i].poster_path}`;
-                            var content_img_poster = document.createTextNode(img_poster.src);
-                        
-                            var choiceTitleFn = function() {
-                                if (parseRes2.results[i].title) {
-                                    return document.createTextNode(parseRes2.results[i].title);
-                                }
-                                else if (parseRes2.results[i].name) {
-                                    return document.createTextNode(parseRes2.results[i].name);
-                                }
-                            }
-                        
-                            var content_overview = document.createTextNode(`Overview: ${parseRes2.results[i].overview}`);
-                            var content_vote_average = document.createTextNode(`Average vote: ${parseRes2.results[i].vote_average}`);
-                        
-                            var choiceOriginalTitleFn = function() {
-                                if (parseRes2.results[i].original_title) {
-                                    return document.createTextNode(`Original title: ${parseRes2.results[i].original_title}`);
-                                }
-                                else if (parseRes2.results[i].original_name) {
-                                    return document.createTextNode(`Original name: ${parseRes2.results[i].original_name}`);
-                                }
-                            }
-                        
-                            var choiceReleaseDateFn = function() {
-                                if (parseRes2.results[i].release_date) {
-                                    return document.createTextNode(`Release date: ${parseRes2.results[i].release_date}`);
-                                }
-                                else if (parseRes2.results[i].first_air_date) {
-                                    return document.createTextNode(`First release date: ${parseRes2.results[i].first_air_date}`);
-                                }
-                            }
-                        
-                            var content_media_type = document.createTextNode(`Madia type: ${parseRes2.results[i].media_type}`);
+                    .then(res => res.text())
+                    .then(res => {
+                        var parseRes = JSON.parse(res);
+                        function displayNextPage() {
+                            for (var i=0; i < parseRes.results.length; i++) {
+                                var arrow_img = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjY2NyA0OTAuNjY3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjY3IDQ5MC42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMwMDk2ODg7IiBkPSJNNDY2LjIxOSwyMzcuNzgxTDIzMS41NTIsMy4xMTVDMjI5LjU0OCwxLjExNSwyMjYuODMxLTAuMDA1LDIyNCwwSDMyDQoJYy01Ljg5MS0wLjAxMS0xMC42NzUsNC43NTctMTAuNjg2LDEwLjY0OGMtMC4wMDUsMi44NCwxLjEyMyw1LjU2NSwzLjEzNCw3LjU3MWwyMjcuMTM2LDIyNy4xMTVMMjQuNDQ4LDQ3Mi40NDgNCgljLTQuMTcxLDQuMTYtNC4xNzksMTAuOTE0LTAuMDE5LDE1LjA4NWMyLjAwNiwyLjAxMSw0LjczMSwzLjEzOSw3LjU3MSwzLjEzNGgxOTJjMi44MzEsMC4wMDUsNS41NDgtMS4xMTUsNy41NTItMy4xMTUNCglsMjM0LjY2Ny0yMzQuNjY3YzQuMTcxLTQuMTYsNC4xNzktMTAuOTE0LDAuMDE5LTE1LjA4NUM0NjYuMjMxLDIzNy43OTQsNDY2LjIyNSwyMzcuNzg4LDQ2Ni4yMTksMjM3Ljc4MXoiLz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+                                var div_movie_info = document.createElement("div");
+                                div_movie_info.setAttribute("class", "movie-info");
+                                var ul_section_left = document.createElement("ul");
+                                var ul_section_right = document.createElement("ul");
+                                var img_poster = document.createElement("img");
+                                img_poster.src = `https://image.tmdb.org/t/p/w300${parseRes.results[i].poster_path}`;
+                                var content_img_poster = document.createTextNode(img_poster.src);
                             
-                            var content_comment = function() {
-                                if (`${parseRes2.comments[parseRes2.results[i].media_type + ':' + parseRes2.results[i].id]}` === 'green') {
-                                    return document.createTextNode('Comment: Good for viewers in all age.');
-                                } else if (`${parseRes2.comments[parseRes2.results[i].media_type + ':' + parseRes2.results[i].id]}` === 'orange') {
-                                    return document.createTextNode('Comment: Good for all viewers. May contain some curses or violence. Some scenes may need an explanation for young people (depends on sensitivity).');
-                                } else if (`${parseRes2.comments[parseRes2.results[i].media_type + ':' + parseRes2.results[i].id]}`  === 'yellow') {
-                                    return document.createTextNode('Comment: Not for all viewers (depends on sensitivity). Some scenes may be inappropriate for younger viewers.');
-                                } else if (`${parseRes2.comments[parseRes2.results[i].media_type + ':' + parseRes2.results[i].id]}`  === 'red') {
-                                    return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
-                                } else {
-                                    return document.createTextNode(`Comment: ${parseRes2.comments[parseRes2.results[i].media_type + ':' + parseRes2.results[i].id]}`);
+                                var choiceTitleFn = function() {
+                                    if (parseRes.results[i].title) {
+                                        return document.createTextNode(parseRes.results[i].title);
+                                    }
+                                    else if (parseRes.results[i].name) {
+                                        return document.createTextNode(parseRes.results[i].name);
+                                    }
                                 }
-                            }
-                        
-                            var li_movie_title = document.createElement("li");
-                            var li_movie_overview = document.createElement("li");
-                            var li_movie_vote = document.createElement("li");
-                            var li_movie_original_title = document.createElement("li");
-                            var li_movie_release_date = document.createElement("li");
-                            var li_movie_media_type = document.createElement("li");
-                            var li_movie_comments = document.createElement("li");
-                            var li_movie_img = document.createElement("li");
-                            var img_arrow_overview = document.createElement("img");
-                            var img_arrow_vote = document.createElement("img");
-                            var img_arrow_original_title = document.createElement("img");
-                            var img_arrow_release_date = document.createElement("img");
-                            var img_arrow_media_type = document.createElement("img");
-                            var img_arrow_comments = document.createElement("img");
-                            ul_section_left.setAttribute("class", "section-left");
-                            ul_section_right.setAttribute("class", "section-right");
-                            img_poster.setAttribute("class", "movie-img");
-                            li_movie_title.setAttribute("class", "movie-title");
-                            li_movie_overview.setAttribute("class", "movie-overview");
-                            li_movie_vote.setAttribute("class", "movie-vote");
-                            li_movie_original_title.setAttribute("class", "movie-original-title");
-                            li_movie_release_date.setAttribute("class", "movie-release-date");
-                            li_movie_media_type.setAttribute("class", "movie-media-type");
-                            li_movie_comments.setAttribute("class", "movie-comments");
-                            img_arrow_overview.setAttribute("src", arrow_img);
-                            img_arrow_overview.setAttribute("class", "arrow");
-                            img_arrow_vote.setAttribute("src", arrow_img);
-                            img_arrow_vote.setAttribute("class", "arrow");
-                            img_arrow_original_title.setAttribute("src", arrow_img);
-                            img_arrow_original_title.setAttribute("class", "arrow");
-                            img_arrow_release_date.setAttribute("src", arrow_img);
-                            img_arrow_release_date.setAttribute("class", "arrow");
-                            img_arrow_media_type.setAttribute("src", arrow_img);
-                            img_arrow_media_type.setAttribute("class", "arrow");
-                            img_arrow_comments.setAttribute("src", arrow_img);
-                            img_arrow_comments.setAttribute("class", "arrow");
-                            div_movie_info.appendChild(ul_section_left);
-                            div_movie_info.appendChild(ul_section_right);
-                            ul_section_left.appendChild(li_movie_img);
-                            li_movie_img.appendChild(img_poster);
-                            ul_section_right.appendChild(li_movie_title);
-                            li_movie_overview.appendChild(img_arrow_overview);
-                            li_movie_vote.appendChild(img_arrow_vote);
-                            li_movie_original_title.appendChild(img_arrow_original_title);
-                            li_movie_release_date.appendChild(img_arrow_release_date);
-                            li_movie_media_type.appendChild(img_arrow_media_type);
-                            li_movie_comments.appendChild(img_arrow_comments);
-                            ul_section_right.appendChild(li_movie_original_title);
-                            ul_section_right.appendChild(li_movie_vote);
-                            ul_section_right.appendChild(li_movie_release_date);
-                            ul_section_right.appendChild(li_movie_media_type);
-                            ul_section_right.appendChild(li_movie_comments);
-                            ul_section_right.appendChild(li_movie_overview);
-                            img_poster.appendChild(content_img_poster);
-                            li_movie_title.appendChild(choiceTitleFn());
-                            li_movie_original_title.appendChild(choiceOriginalTitleFn());
-                            li_movie_vote.appendChild(content_vote_average);
-                            li_movie_release_date.appendChild(choiceReleaseDateFn());
-                            li_movie_media_type.appendChild(content_media_type);
-                            li_movie_comments.appendChild(content_comment());
-                            li_movie_overview.appendChild(content_overview);
-                            var div_movie_main = document.querySelector(".movie-main");
-                            div_movie_main.appendChild(div_movie_info);
-                            var div_movie_container = document.querySelector('.movie-container');
-                            div_movie_container.appendChild(div_movie_info);
-                            // Paginacja
-                            if (parseRes2.total_pages >= 2) {
-                                div_movie_container.appendChild(div_pagination_btns);
-                                div_pagination_btns.appendChild(btn_next);
-                                btn_next.appendChild(btn_next_text);
+                            
+                                var content_overview = document.createTextNode(`Overview: ${parseRes.results[i].overview}`);
+                                var content_vote_average = document.createTextNode(`Average vote: ${parseRes.results[i].vote_average}`);
+                            
+                                var choiceOriginalTitleFn = function() {
+                                    if (parseRes.results[i].original_title) {
+                                        return document.createTextNode(`Original title: ${parseRes.results[i].original_title}`);
+                                    }
+                                    else if (parseRes.results[i].original_name) {
+                                        return document.createTextNode(`Original name: ${parseRes.results[i].original_name}`);
+                                    }
+                                }
+                            
+                                var choiceReleaseDateFn = function() {
+                                    if (parseRes.results[i].release_date) {
+                                        return document.createTextNode(`Release date: ${parseRes.results[i].release_date}`);
+                                    }
+                                    else if (parseRes.results[i].first_air_date) {
+                                        return document.createTextNode(`First release date: ${parseRes.results[i].first_air_date}`);
+                                    }
+                                }
+                            
+                                var content_media_type = document.createTextNode(`Madia type: ${parseRes.results[i].media_type}`);
+                                
+                                var content_comment = function() {
+                                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'green') {
+                                        return document.createTextNode('Comment: Good for viewers in all age.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'orange') {
+                                        return document.createTextNode('Comment: Good for all viewers. May contain some curses or violence. Some scenes may need an explanation for young people (depends on sensitivity).');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'yellow') {
+                                        return document.createTextNode('Comment: Not for all viewers (depends on sensitivity). Some scenes may be inappropriate for younger viewers.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'red') {
+                                        return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
+                                    } else {
+                                        return document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
+                                    }
+                                }
+                            
+                                var li_movie_title = document.createElement("li");
+                                var li_movie_overview = document.createElement("li");
+                                var li_movie_vote = document.createElement("li");
+                                var li_movie_original_title = document.createElement("li");
+                                var li_movie_release_date = document.createElement("li");
+                                var li_movie_media_type = document.createElement("li");
+                                var li_movie_comments = document.createElement("li");
+                                var li_movie_img = document.createElement("li");
+                                var img_arrow_overview = document.createElement("img");
+                                var img_arrow_vote = document.createElement("img");
+                                var img_arrow_original_title = document.createElement("img");
+                                var img_arrow_release_date = document.createElement("img");
+                                var img_arrow_media_type = document.createElement("img");
+                                var img_arrow_comments = document.createElement("img");
+                                ul_section_left.setAttribute("class", "section-left");
+                                ul_section_right.setAttribute("class", "section-right");
+                                img_poster.setAttribute("class", "movie-img");
+                                li_movie_title.setAttribute("class", "movie-title");
+                                li_movie_overview.setAttribute("class", "movie-overview");
+                                li_movie_vote.setAttribute("class", "movie-vote");
+                                li_movie_original_title.setAttribute("class", "movie-original-title");
+                                li_movie_release_date.setAttribute("class", "movie-release-date");
+                                li_movie_media_type.setAttribute("class", "movie-media-type");
+                                li_movie_comments.setAttribute("class", "movie-comments");
+                                img_arrow_overview.setAttribute("src", arrow_img);
+                                img_arrow_overview.setAttribute("class", "arrow");
+                                img_arrow_vote.setAttribute("src", arrow_img);
+                                img_arrow_vote.setAttribute("class", "arrow");
+                                img_arrow_original_title.setAttribute("src", arrow_img);
+                                img_arrow_original_title.setAttribute("class", "arrow");
+                                img_arrow_release_date.setAttribute("src", arrow_img);
+                                img_arrow_release_date.setAttribute("class", "arrow");
+                                img_arrow_media_type.setAttribute("src", arrow_img);
+                                img_arrow_media_type.setAttribute("class", "arrow");
+                                img_arrow_comments.setAttribute("src", arrow_img);
+                                img_arrow_comments.setAttribute("class", "arrow");
+                                div_movie_info.appendChild(ul_section_left);
+                                div_movie_info.appendChild(ul_section_right);
+                                ul_section_left.appendChild(li_movie_img);
+                                li_movie_img.appendChild(img_poster);
+                                ul_section_right.appendChild(li_movie_title);
+                                li_movie_overview.appendChild(img_arrow_overview);
+                                li_movie_vote.appendChild(img_arrow_vote);
+                                li_movie_original_title.appendChild(img_arrow_original_title);
+                                li_movie_release_date.appendChild(img_arrow_release_date);
+                                li_movie_media_type.appendChild(img_arrow_media_type);
+                                li_movie_comments.appendChild(img_arrow_comments);
+                                ul_section_right.appendChild(li_movie_original_title);
+                                ul_section_right.appendChild(li_movie_vote);
+                                ul_section_right.appendChild(li_movie_release_date);
+                                ul_section_right.appendChild(li_movie_media_type);
+                                ul_section_right.appendChild(li_movie_comments);
+                                ul_section_right.appendChild(li_movie_overview);
+                                img_poster.appendChild(content_img_poster);
+                                li_movie_title.appendChild(choiceTitleFn());
+                                li_movie_original_title.appendChild(choiceOriginalTitleFn());
+                                li_movie_vote.appendChild(content_vote_average);
+                                li_movie_release_date.appendChild(choiceReleaseDateFn());
+                                li_movie_media_type.appendChild(content_media_type);
+                                li_movie_comments.appendChild(content_comment());
+                                li_movie_overview.appendChild(content_overview);
+                                var div_movie_main = document.querySelector(".movie-main");
+                                div_movie_main.appendChild(div_movie_info);
+                                var div_movie_container = document.querySelector('.movie-container');
+                                div_movie_container.appendChild(div_movie_info);
+                                // Paginacja
+                                if (parseRes.total_pages >= 2) {
+                                    div_movie_container.appendChild(div_pagination_btns);
+                                    div_pagination_btns.appendChild(btn_next);
+                                    btn_next.appendChild(btn_next_text);
+                                }
                             }
                         }
+                        return displayNextPage();
                     })
                 } else {
                     alert('Sorry, no more movies!');
