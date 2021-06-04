@@ -59,13 +59,16 @@ footer {
   position: relative;
 }
 
+.categories-btns {
+  text-align: center;
+}
+
 .header-img {
   position: relative;
   object-fit: cover;
   max-height: 650px;
   width: 100%;
   filter: drop-shadow(8px 10px 25px #fc0) hue-rotate(3deg);
-  border-radius: 25px;
 }
 
 h1 {
