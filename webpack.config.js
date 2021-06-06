@@ -57,12 +57,13 @@ const configure = (env, args) => {
         failOnWarning: false,
         formatter: 'codeframe',
       }),
-      // new StylelintWebpackPlugin({
-      //   files: './src/*.scss',
-      //   failOnError: false,
-      //   failOnWarning: false,
-      //   formatter: 'string',
-      // }),
+      new StylelintWebpackPlugin({
+        files: './src/*.css',
+        failOnError: false,
+        failOnWarning: false,
+        fix: true,
+        formatter: 'string',
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),

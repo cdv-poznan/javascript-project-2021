@@ -1,9 +1,7 @@
 'use strict';
 
-import css from './style.css';
-
 const searchBtn = document.querySelector('#search-btn');
-const mealList = document.querySelector('#meal');
+const mealList = document.querySelector('.meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
 const recipeCloseBtn = document.querySelector('#recipe-close-btn');
 const searchControl = document.querySelector('.search-control');
@@ -11,7 +9,7 @@ const overlay = document.querySelector('.overlay');
 
 // Functions
 const removeModal = () => {
-  mealDetailsContent.parentElement.classList.remove('showRecipe');
+  mealDetailsContent.parentElement.classList.remove('show-recipe');
   overlay.classList.add('hidden');
 };
 
@@ -34,21 +32,21 @@ const mealRecipeModal = function (meal) {
   
   <div class="recipe-link">
     
-    <a href="${meal.strYoutube}" target="_blank"><img src="assets/youtube.png" alt="youtube icon" class="youtubeIcon"/><br/>Watch Video!</a>
+    <a href="${meal.strYoutube}" target="_blank"><img src="assets/youtube.png" alt="youtube icon" class="youtube-icon"/><br/>Watch Video!</a>
   </div>
   `;
 
   mealDetailsContent.innerHTML = html;
   mealDetailsContent.parentElement.classList.add('run-fast-animation');
-  mealDetailsContent.parentElement.classList.add('showRecipe');
+  mealDetailsContent.parentElement.classList.add('show-recipe');
 };
 
 const getMealList = function () {
   mealList.classList.remove('run-slow-animation');
   void mealList.offsetWidth;
   mealList.classList.add('run-slow-animation');
-  if (document.querySelector('#notFound')) {
-    document.querySelector('#notFound').id = 'meal';
+  if (document.querySelector('.not-found')) {
+    document.querySelector('.not-found').id = 'meal';
   }
   const searchInputText = document.querySelector('#search-input').value.trim();
 
@@ -76,7 +74,7 @@ const getMealList = function () {
         mealList.classList.remove('run-slow-animation');
         html =
           'Please give us only one ingredient! Make sure you wrote it correctly!';
-        mealList.id = 'notFound';
+        mealList.classList.add('not-found');
       }
       mealList.innerHTML = html;
     });
