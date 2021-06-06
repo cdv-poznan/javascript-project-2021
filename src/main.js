@@ -1,5 +1,7 @@
 'use strict';
 
+import css from './style.css';
+
 const searchBtn = document.querySelector('#search-btn');
 const mealList = document.querySelector('#meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -78,7 +80,7 @@ const getMealList = function () {
       }
       mealList.innerHTML = html;
     });
-  searchControl.value = '';
+  // searchControl.value = ''; -- THIS CREATES A BUG
 };
 
 const getMealRecipe = function (e) {
@@ -111,5 +113,3 @@ document.addEventListener('keydown', function (e) {
     getMealList();
   }
 });
-
-import css from './style.css';

@@ -289,7 +289,7 @@ p a:hover {
 }
 
 #notFound {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr !important;
   font-size: 2rem;
   font-weight: 600;
   color: var(--mainColor);
