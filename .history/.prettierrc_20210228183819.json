@@ -8,7 +8,6 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "endOfLine": "auto",
   "overrides": [
     {
       "files": "*.js",

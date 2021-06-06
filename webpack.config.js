@@ -52,13 +52,16 @@ const configure = (env, args) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
+        filname: 'index.html',
         favicon: './src/favicon.ico',
         scriptLoading: 'defer',
         meta: {
           viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         },
         minify: 'auto',
+        chunks: ['main'],
       }),
+
       new ESLintWebpackPlugin({
         failOnError: false,
         failOnWarning: false,
@@ -78,6 +81,17 @@ const configure = (env, args) => {
           {
             from: './src/assets',
             to: 'assets',
+          },
+        ],
+        options: {
+          concurrency: 100,
+        },
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: './src/scripts',
+            to: 'scripts',
           },
         ],
         options: {
