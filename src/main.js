@@ -78,7 +78,7 @@ const getMealList = function () {
       }
       mealList.innerHTML = html;
     });
-  searchControl.value = '';
+//   searchControl.value = '';
 };
 
 const getMealRecipe = function (e) {
