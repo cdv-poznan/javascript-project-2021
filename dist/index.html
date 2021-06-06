@@ -1,1 +1,1093 @@
-<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="icon" href="favicon.ico"><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head><body><h1>test 2</h1>testt</body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <title>BodyCalculation v.01</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <script src="./scripts/test.js"></script>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-1 pt-1" style="size: 75%">
+            <img src="./assets/logo.png" class="card-img-top" />
+          </div>
+          <div class="row"></div>
+          <div class="text-center">
+            <div class="col-3 mx-auto pb-3" style="size: 75%">
+              <img src="./assets/logo.png" class="card-img-top" />
+            </div>
+          </div>
+          <!--         <div class="col-10">
+            <button class="btn btn-primary float-right rounded-pill">
+              Zaloguj
+            </button>
+          </div>>
+          -->
+          <div class="col-12">
+            <img src="./assets/slider.png" class="img-fluid" />
+
+            <div
+              class="centered-1stline text-center text-white"
+              id="mainHeader"
+            ></div>
+
+            <div class="centered-2ndline text-center text-white" id="2ndHeader">
+              Opis
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <br />
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <ul
+          class="nav nav-pills nav-fill justify-content-center"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item py-2">
+            <a
+              class="nav-link active rounded-pill mx-4 btn-primary2"
+              id="pills-bmi-tab"
+              data-toggle="pill"
+              href="#pills-bmi"
+              role="tab"
+              aria-controls="pills-bmi"
+              aria-selected="true"
+              >Kalkulator BMI</a
+            >
+          </li>
+          <li class="nav-item py-2">
+            <a
+              class="nav-link rounded-pill mx-4 btn-primary2"
+              id="pills-kalorii-tab"
+              data-toggle="pill"
+              href="#pills-kalorii"
+              role="tab"
+              aria-controls="pills-kalorii"
+              aria-selected="false"
+              >Kalkulator Kalorii</a
+            >
+          </li>
+          <li class="nav-item py-2">
+            <a
+              class="nav-link rounded-pill mx-4 btn-primary2"
+              id="pills-wody-tab"
+              data-toggle="pill"
+              href="#pills-wody"
+              role="tab"
+              aria-controls="pills-wody"
+              aria-selected="false"
+              >Kalkulator Wody</a
+            >
+          </li>
+          <li class="nav-item py-2">
+            <a
+              class="nav-link rounded-pill mx-4 btn-primary2"
+              id="pills-whr-tab"
+              data-toggle="pill"
+              href="#pills-whr"
+              role="tab"
+              aria-controls="pills-whr"
+              aria-selected="false"
+              >Kalkulator WHR</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-12 pt-4">
+      <div class="tab-content" id="pills-tabContent">
+        <!-- Sekcja BMI -->
+        <div
+          class="tab-pane fade show active"
+          id="pills-bmi"
+          role="tabpanel"
+          aria-labelledby="pills-bmi-tab"
+        >
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="bmiWaga">Waga (kg)</label>
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="bmiWaga"
+                  id="bmiWaga"
+                  placeholder="waga"
+                  aria-describedby="bmiWagaOpis"
+                  min="1"
+                />
+              </div>
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="bmiWzrost"
+                  >Wzrost (cm)</label
+                >
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="bmiWzrost"
+                  id="bmiWzrost"
+                  placeholder="wzrost"
+                  aria-describedby="bmiWzrostOpis"
+                />
+              </div>
+            </div>
+            <div class="text-center pt-3">
+              <button
+                type="button"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
+                onclick="przeliczBMI()"
+              >
+                Oblicz
+              </button>
+            </div>
+            <div class="col-12 text-center py-3">
+              <strong> Twój BMI to:</strong>
+            </div>
+
+            <div
+              class="col-12 text-center border rounded py-3"
+              id="wynikBmi"
+              style=""
+            >
+              <h3>WYNIK</h3>
+            </div>
+            <div class="justify-content-start pt-3">
+              <ul>
+                <li>niedowaga: poniżej 18,5</li>
+                <li>prawidłowa masa ciała: 18,5-24,9</li>
+                <li>nadwaga: 25,0-29,9</li>
+                <li>otyłość I stopnia: 30,0-34,9</li>
+                <li>otyłość II stopnia: 35,0-39,9</li>
+                <li>otyłość III stopnia: powyżej 40</li>
+              </ul>
+
+              <div class="text-right justify-content-end">
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-oblicz"
+                  data-toggle="modal"
+                  data-target="#infoBmi"
+                >
+                  Informacja o BMI
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div
+              class="modal fade"
+              id="infoBmi"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoBmiTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoBmiTytul">
+                      Informacja o BMI
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <h2>Co to jest wskaźnik BMI?</h2>
+                    BMI - Body Mass Index, czyli indeks masy ciała to iloraz
+                    masy ciała wyrażonej w kilogramach i wzrostu wyrażonego w
+                    metrach podniesionego do kwadratu. Nazywany jest inaczej
+                    wskaźnikiem Queteleta od nazwiska jego twórcy - belgijskiego
+                    statystyka Adolfa Queteleta. Przelicznik BMI został
+                    opracowany w 1832 roku, a do powszechnego użytku wszedł w
+                    latach 70. XX wieku. Stosowany jest zarówno przez mężczyzn,
+                    jak i przez kobiety. Służy do określenia prawidłowej masy
+                    ciała i zyskał największe znaczenie w ocenie zagrożenia
+                    chorobami dietozależnymi.Wykazano, że współczynnik BMI w
+                    dużym stopniu koreluje z zawartością tłuszczu w organizmie.
+                    Dlatego kalkulator BMI w sposób pośredni i orientacyjny
+                    określa zawartość tkanki tłuszczowej w organizmie na
+                    podstawie proporcji wagi do wzrostu.
+
+                    <h2>Jak obliczyć BMI?</h2>
+                    W jaki sposób obliczyć indeks BMI? Wzór lub kalkulator BMI -
+                    to dwa narzędzia, które mogą posłużyć nam do obliczenia
+                    wskaźnika BMI. Wystarczy znać swoją aktualną masę ciała i
+                    wzrost. Oczywiście obliczanie BMI za pomocą kalkulatora
+                    online jest wygodniejsze niż korzystanie z matematycznego
+                    wzoru. Dla sceptyków, którzy chcą porównać wynik otrzymany w
+                    kalkulatorze, podajemy wzór służący do obliczenia stosunku
+                    wagi do wzrostu: BMI = masa ciała [kg] / wzrost [m2] Wynik,
+                    jaki otrzymasz, powinien być identyczny z wynikiem
+                    otrzymanym w naszym kalkulatorze BMI. Będzie on mieścił się
+                    w jednym z sześciu zakresów. Dzięki kontrolowaniu wielkości
+                    BMI możesz uniknąć ryzyka otyłości oraz związanych z nią
+                    chorób.
+
+                    <h2>Jaka jest prawidłowa waga? Normy BMI</h2>
+                    Licznik BMI podaje wynik według podstawowej kwalifikacji dla
+                    dorosłych mężczyzn i kobiet:
+                    <div class="mx-2">
+                      <ul>
+                        <li>niedowaga: poniżej 18,5</li>
+                        <li>prawidłowa masa ciała: 18,5-24,9</li>
+                        <li>nadwaga: 25,0-29,9</li>
+                        <li>otyłość I stopnia: 30,0-34,9</li>
+                        <li>otyłość II stopnia: 35,0-39,9</li>
+                        <li>otyłość III stopnia: powyżej 40</li>
+                      </ul>
+                    </div>
+                    Im wyższy stopień otyłości, tym większe ryzyko wystąpienia
+                    groźnych chorób, takich jak: miażdżyca, choroba
+                    niedokrwienna serca, udar mózgu, a nawet niektóre nowotwory.
+                    Kalkulator BMI nie jest wskaźnikiem precyzyjnym. Dla
+                    dokładniejszego określenia stanu odżywienia organizmu warto
+                    skorzystać też z innych wskaźników, które uwzględniają wiek,
+                    płeć i aktywność fizyczną. Należy też pamiętać o tym, że na
+                    masę ciała mają również wpływ choroby przewlekłe. W
+                    przypadku osób chorych samo obliczenie wskaźnika BMI nie
+                    jest wystarczające, konieczna jest również konsultacja z
+                    lekarzem i wykonanie odpowiednich badań. W przypadku
+                    niektórych osób pomiar BMI może być obarczony pewnym błędem.
+                    Osoby aktywne fizycznie, uprawiające sport, posiadające dużą
+                    masę mięśniową, mogą mieć wynik BMI wskazujący na nadwagę, a
+                    w rzeczywistości mieć prawidłową masę ciała. Ponadto
+                    kalkulator BMI nie jest przeznaczony dla dzieci do około 14
+                    roku życia i dla kobiet w ciąży - dla osób z tych grup
+                    opracowano specjalne wskaźniki do obliczania wagi.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn rounded-pill btn-oblicz"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Koniec sekcji BMI-->
+        </div>
+        <!--Poczatek sekcji Kalorie-->
+
+        <div
+          class="tab-pane fade"
+          id="pills-kalorii"
+          role="tabpanel"
+          aria-labelledby="pills-kalorii-tab"
+        >
+          <div class="container">
+            <div class="mx-auto text-center py-3">
+              <div
+                class="col custom-control custom-radio custom-control-inline justify-content-center"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input text-center"
+                  name="sexWybor"
+                  id="man"
+                  value="man"
+                /><label class="custom-control-label" for="man"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >Mężczyzna</span
+                  >
+                </label>
+              </div>
+              <span>&nbsp;</span>
+              <div
+                class="col custom-control custom-radio custom-control-inline justify-content-center"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input text-center"
+                  name="sexWybor"
+                  id="woman"
+                  autocomplete="off"
+                  value="woman"
+                />
+                <label class="custom-control-label" for="woman"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >&nbsp;Kobieta &nbsp;</span
+                  ></label
+                >
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="bmrWiek">Wiek</label>
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="bmrWiek"
+                  id="bmrWiek"
+                  placeholder="wiek"
+                  aria-describedby="bmrWiekOpis"
+                  min="1"
+                />
+              </div>
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="bmrWaga">Waga (kg)</label>
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="bmrWaga"
+                  id="bmrWaga"
+                  placeholder="waga"
+                  aria-describedby="bmrWagaOpis"
+                  min="1"
+                />
+              </div>
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="bmrWzrost"
+                  >Wzrost (cm)</label
+                >
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="bmrWzrost"
+                  id="bmrWzrost"
+                  placeholder="wzrost"
+                  aria-describedby="bmrWzrostOpis"
+                />
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div
+                class="d-flex flex-column col-md-4 justify-content-center py-3"
+              >
+                <label
+                  class="small text-center"
+                  for="wyborAktywnosci"
+                  name="wyborAktywnosciOpis"
+                  >Poziom Aktywnosci</label
+                >
+
+                <select
+                  class="form-control"
+                  id="wyborAktywnosci"
+                  name="wyborAktywnosci"
+                  aria-describedby="wyborAktywnosciOpis"
+                >
+                  <option value="1.2">pacjent leżący w łóżku - 1.2</option>
+                  <option selected="selected" value="1.4">
+                    przy siedzącym trybie życia - 1.4
+                  </option>
+                  <option value="1.6">
+                    przy umiarkowanej aktywności fizycznej - 1.6
+                  </option>
+                  <option value="1.8">przy aktywnym trybie życia - 1.8</option>
+                  <option value="2">
+                    przy bardzo aktywnym trybie życia - 2.0
+                  </option>
+                  <option value="2.3">
+                    przy wyczynowym uprawianiu sportu - 2.2-2.4 (średnio 2.3)
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div
+                class="d-flex flex-column col-md-4 justify-content-center py-3"
+              >
+                <label
+                  class="small text-center"
+                  for="wyborCelu"
+                  name="wyborCeluOpis"
+                  >Jaki jest twój cel</label
+                >
+                <select
+                  class="form-control"
+                  id="wyborCelu"
+                  name="wyborCelu"
+                  aria-describedby="wyborCeluOpis"
+                >
+                  <option value="utrzymac">Utrzymać swoją wagę</option>
+                  <option value="schudnac">Schudnąć</option>
+                  <option value="przytyc">Przytyć</option>
+                </select>
+              </div>
+            </div>
+            <div style="visibility: hidden" id="parametryShudnac">
+              <div class="row justify-content-center">
+                <div
+                  class="d-flex flex-column col-md-3 justify-content-center"
+                  id="strataTygodniowo"
+                >
+                  <label
+                    class="small text-center"
+                    id="bmrTygodniowoOpis"
+                    for="bmrTygodniowo"
+                    >Strata wagi tygodniowo(kg)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control rounded text-center"
+                    name="bmrTygodniowo"
+                    id="bmrTygodniowo"
+                    placeholder="kg"
+                    aria-describedby="bmrTygodniowoOpis"
+                    max="2"
+                    min="0"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  class="d-flex flex-column col-md-3 justify-content-center py-3"
+                >
+                  <label
+                    class="small text-center"
+                    id="bmrUbytekOpis"
+                    for="bmrUbytek"
+                    >Ile kg chcesz zrzucić</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control rounded text-center"
+                    name="bmrUbytek"
+                    id="bmrUbytek"
+                    placeholder="kg"
+                    aria-describedby="bmrUbytekOpis"
+                    min="0"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="text-center pt-3">
+              <button
+                type="button"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
+                onclick="przeliczBMR()"
+              >
+                Oblicz
+              </button>
+            </div>
+
+            <div class="text-center py-3">
+              <strong> Twój BMR (wg wzoru PPM Harrisa-Benedicta):</strong>
+            </div>
+            <div class="text-center border rounded py-3" id="wynikBmr" style="">
+              <h3>WYNIK</h3>
+            </div>
+            <div class="text-right text-muted small">
+              *) CPM- całkowita przemiana materii, PPM - podstawowa przemiana
+              materii
+            </div>
+            <div class="mx-auto">
+              <div style="color: orange">
+                PAL - współczynnik aktywności fizycznej
+              </div>
+
+              <ul>
+                <li>pacjent leżący w łóżku - 1.2</li>
+                <li>przy siedzącym trybie życia - 1.4</li>
+                <li>przy umiarkowanej aktywnosci fizycznej - 1.6</li>
+                <li>przy aktywnym trybie życia - 1.8</li>
+                <li>przy bardzo aktywnym trybie życia - 2.0</li>
+                <li>przy wyczynowym uprawianiu sportu - 2.2-2.4</li>
+              </ul>
+              <div class="text-right">
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-oblicz"
+                  data-toggle="modal"
+                  data-target="#infoBmr"
+                >
+                  Informacja o BMR
+                </button>
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="infoBmr"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoBmrTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoBmrTytul">
+                      Informacja o BMR
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h2>Co to jest zapotrzebowanie kaloryczne?</h2>
+                    Zapotrzebowanie kaloryczne organizmu to nic innego, jak
+                    nasze całkowite wydatki energetyczne w ciągu doby, na które
+                    składają się:
+                    <div class="mx-2">
+                      <ul>
+                        <li>
+                          podstawowa przemiana materii (PPM, BMR) - dzienna
+                          ilość kalorii potrzebna do podtrzymania podstawowych
+                          funkcji życiowych,
+                        </li>
+                        <li>termogeneza</li>
+                        <li>aktywność fizyczna</li>
+                      </ul>
+                    </div>
+                    Jak najprościej obliczyć zapotrzebowanie kaloryczne?
+                    Wypełnić puste pola w naszym kalkulatorze kalorii i kliknąć
+                    przycisk „oblicz”! Zanim jednak tego dokonasz, dowiedz się
+                    więcej na temat sposobów obliczania kalorii. Poznaj
+                    teoretyczne podstawy naszego kalkulatora żywieniowego!
+
+                    <h2>Wskaźnik BMR</h2>
+                    BMR (ang. Basal Metabolic Rate) - metabolizm podstawowy,
+                    określany inaczej podstawową przemianą materii (PPM) to
+                    najniższy poziom przemian energetycznych, warunkujący
+                    dostarczenie energii niezbędnej do zachowania podstawowych
+                    funkcji życiowych w optymalnych warunkach bytowych.
+                    Kalkulator BMR określa dzienne zapotrzebowanie kaloryczne
+                    dla osoby w spoczynku, po 12-godzinnej przerwie od
+                    ostatniego posiłku i aktywności fizycznej, w warunkach
+                    komfortu psychicznego i cieplnego (w temperaturze około
+                    24℃). Dla zdrowej osoby dorosłej wskaźnik BMR wynosi około 1
+                    kcal/kg m.c./godz., czyli około 24 kcal/kg m.c./dobę.
+
+                    <h2>Jak obliczyć zapotrzebowanie kaloryczne?</h2>
+                    Jeśli zastanawiasz się, ile kalorii w ciągu dnia
+                    potrzebujesz, aby utrzymać aktualną masę ciała, możesz
+                    skorzystać z naszego przelicznika kalorii lub obliczyć BMR
+                    samodzielnie na podstawie jednego z dwóch wzorów - Miffina
+                    lub Harrisa i Benedicta. Oba przeliczniki biorą pod uwagę
+                    aktualną masę ciała, wzrost, płeć, a także wiek. Jednak samo
+                    obliczenie BMR nie jest wystarczające dla ustalenia, ile
+                    kalorii powinniśmy jeść w ciągu dnia. Konieczne jest
+                    uwzględnienie aktywności fizycznej. Aby obliczyć
+                    zapotrzebowanie kaloryczne na cały dzień, należy otrzymany
+                    wynik pomnożyć przez współczynnik aktywności fizycznej
+                    (Physical Activity Level, PAL), który dla zdrowych osób
+                    dorosłych wynosi:
+
+                    <ul>
+                      <li>pacjent leżący w łóżku - 1.2</li>
+                      <li>przy siedzącym trybie życia - 1.4</li>
+                      <li>przy umiarkowanej aktywnosci fizycznej - 1.6</li>
+                      <li>przy aktywnym trybie życia - 1.8</li>
+                      <li>przy bardzo aktywnym trybie życia - 2.0</li>
+                      <li>przy wyczynowym uprawianiu sportu - 2.2-2.4</li>
+                    </ul>
+
+                    Jeśli jednak cenisz sobie wygodę lub chcesz uniknąć błędu w
+                    obliczeniach, skorzystaj z naszego kalkulatora kalorii
+                    online.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn rounded-pill btn-oblicz"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Koniec sekcji Kalorie-->
+        </div>
+        <!--poczatek kalkulator wody-->
+        <div
+          class="tab-pane fade"
+          id="pills-wody"
+          role="tabpanel"
+          aria-labelledby="pills-woda-tab"
+        >
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="wodaWaga"
+                  >Waga (kg)</label
+                >
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="wodaWaga"
+                  id="wodaWaga"
+                  placeholder="waga"
+                  aria-describedby="wodaWagaOpis"
+                  min="1"
+                />
+              </div>
+            </div>
+            <div class="text-center pt-3">
+              <button
+                type="button"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
+                onclick="przeliczWode()"
+              >
+                Oblicz
+              </button>
+            </div>
+            <div class="col-12 text-center py-3">
+              <strong> Twoje zapotrzebowanie dzienne na wodę:</strong>
+            </div>
+
+            <div
+              class="col-12 text-center border rounded py-3"
+              id="wynikWoda"
+              style=""
+            >
+              <h3>WYNIK</h3>
+            </div>
+            <div class="justify-content-start pt-4">
+              <ul>
+                <li>dla mężczyzn - 2500 ml na dobę</li>
+                <li>dla kobiet - 2000 ml na dobę</li>
+                <li>dla kobiet w ciąży - 2300 ml</li>
+                <li>dla kobiet podczas laktacji - 2700 ml</li>
+              </ul>
+
+              <div class="text-right justify-content-end">
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-oblicz"
+                  data-toggle="modal"
+                  data-target="#infoWoda"
+                >
+                  Informacja o zapotrzebowaniu na wodę
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div
+              class="modal fade"
+              id="infoWoda"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoWodaTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoWodaTytul">
+                      Informacja o zapotrzebowaniu na wodę
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <h2>Ile wynosi średnie zapotrzebowanie na wodę?</h2>
+                    Woda jest głównym składnikiem organizmu człowieka i stanowi
+                    około 45-75% masy ciała. U dorosłego człowieka o prawidłowej
+                    masie ciała, udział wody sięga zwykle około 60%. Więcej wody
+                    znajduje się w organizmach mężczyzn niż kobiet - wynika to z
+                    faktu, że w organizmie kobiety znajduje się więcej tkanki
+                    tłuszczowej. Woda zaliczana jest do niezbędnych składników
+                    pokarmowych, ponieważ organizm nie jest w stanie jej sam
+                    wytwarzać. Kalkulator wody wylicza zapotrzebowanie na wodę
+                    na podstawie masy ciała, jednak zależy ono również od takich
+                    czynników, jak:
+                    <div class="mx-2">
+                      <ul>
+                        <li>wiek,</li>
+                        <li>płeć,</li>
+                        <li>stan fizjologiczny,</li>
+                        <li>aktywność fizyczna,</li>
+                        <li>warunki klimatyczne,</li>
+                        <li>stan zdrowia,</li>
+                        <li>
+                          wartość kaloryczna diety (im wyższa, tym większe
+                          zapotrzebowanie na wodę),
+                        </li>
+                        <li>skład diety.</li>
+                      </ul>
+                    </div>
+                    Niektóre leki, alkohol i kofeina mogą zwiększać diurezę
+                    (wydalanie moczu) i tym samym wpływać na większe
+                    zapotrzebowanie organizmu na wodę. Wysokie spożycie białka,
+                    błonnika czy sodu, również wymaga zwiększenie ilości wody w
+                    diecie. Według norm żywienia ustalonych przez Instytut
+                    Żywności i Żywienia wystarczające spożycie wody (AI -
+                    adequate intake) pochodzącej z napojów i produktów
+                    spożywczych, dla dorosłych osób wynosi:
+
+                    <div class="mx-2">
+                      <ul>
+                        <li>dla mężczyzn - 2500 ml na dobę</li>
+                        <li>dla kobiet - 2000 ml na dobę</li>
+                        <li>dla kobiet w ciąży - 2300 ml</li>
+                        <li>dla kobiet podczas laktacji - 2700 ml</li>
+                      </ul>
+                    </div>
+                    <h2>Jak obliczamy zapotrzebowanie na wodę?</h2>
+                    Przyjmuje się, że osoba dorosła na każdy kilogram masy ciała
+                    potrzebuje około 35 ml wody. Inny przelicznik, to 1 ml wody
+                    na 1 kcal spożytego pokarmu. Najłatwiej jest skorzystać z
+                    kalkulatora wody, który obliczy za nas, ile pić wody
+                    dziennie, aby uzupełnić zapotrzebowanie.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn rounded-pill btn-oblicz"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Koniec kalkulator wody-->
+        </div>
+        <!--poczatek kalkulator wody-->
+        <div
+          class="tab-pane fade"
+          id="pills-whr"
+          role="tabpanel"
+          aria-labelledby="pills-whr-tab"
+        >
+          <div class="container">
+            <div class="text-center py-3">
+              <div
+                class="col custom-control custom-radio custom-control-inline justify-content-center"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input text-center"
+                  name="sexWyborWHR"
+                  id="manWHR"
+                  value="man"
+                /><label class="custom-control-label" for="manWHR"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >Mężczyzna</span
+                  >
+                </label>
+              </div>
+              <span>&nbsp;</span>
+              <div
+                class="col custom-control custom-radio custom-control-inline justify-content-center"
+              >
+                <input
+                  type="radio"
+                  class="custom-control-input text-center"
+                  name="sexWyborWHR"
+                  id="womanWHR"
+                  autocomplete="off"
+                  value="woman"
+                />
+                <label class="custom-control-label" for="womanWHR"
+                  ><span class="border rounded-pill px-3 py-2 sex-selector"
+                    >&nbsp; Kobieta &nbsp;</span
+                  ></label
+                >
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="whrTalia"
+                  >Talia (cm)</label
+                >
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="whrTalia"
+                  id="whrTalia"
+                  placeholder="talia"
+                  aria-describedby="whrTaliaOpis"
+                  min="1"
+                />
+              </div>
+              <div class="d-flex flex-column col-md-2 justify-content-center">
+                <label class="small text-center" for="whrBiodra"
+                  >Biodra (cm)</label
+                >
+                <input
+                  type="number"
+                  class="form-control rounded text-center"
+                  name="whrBiodra"
+                  id="whrBiodra"
+                  placeholder="biodra"
+                  aria-describedby="whrBiodraOpis"
+                  min="1"
+                />
+              </div>
+            </div>
+            <div class="text-center pt-3">
+              <button
+                type="button"
+                class="btn btn-oblicz rounded-pill text-center justify-content-center"
+                onclick="przeliczWHR()"
+              >
+                Oblicz
+              </button>
+            </div>
+            <div class="col-12 text-center py-3">
+              <strong> Twoj WHR:</strong>
+            </div>
+
+            <div
+              class="col-12 text-center border rounded py-3"
+              id="wynikWHR"
+              style=""
+            >
+              <h3>WYNIK</h3>
+            </div>
+            <div class="justify-content-start pt-4">
+              WHR - normy u kobiet:
+              <ul>
+                <li>>0,8 - typ androidalny (jabłko)</li>
+                <li><0,8 - typ gynoidalny (gruszka)</li>
+              </ul>
+              WHR - normy u mężczyzn:
+              <ul>
+                <li>>1 - typ androidalny (jabłko)</li>
+                <li><1 - typ gynoidalny (gruszka)</li>
+              </ul>
+
+              <div class="text-right justify-content-end">
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-oblicz"
+                  data-toggle="modal"
+                  data-target="#infoWHR"
+                >
+                  Informacja o WHR
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div
+              class="modal fade"
+              id="infoWHR"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="infoWHRTytul"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="infoWHRTytul">
+                      Informacja o WHR
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Zamknij"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <h2>Co to jest WHR?</h2>
+                    Kalkulator WHR (Waist Hip Ratio) to niezwykle przydatny
+                    wskaźnik w ocenie rozmieszczenia tkanki tłuszczowej w
+                    organizmie. Wskaźnik WHR to stosunek obwodu talii do bioder.
+                    Stosuje się go do określenia typu sylwetki lub typu otyłości
+                    u osób z nadmierną masą ciała. Dzięki określeniu
+                    rozmieszczenia tkanki tłuszczowej u osób z nadwagą i
+                    otyłością można stwierdzić, czy występuje u nich zwiększone
+                    ryzyko wystąpienia groźnych chorób cywilizacyjnych.
+                    <br />
+                    <h2>Czym jest kalkulator WHR?</h2>
+                    Wykorzystując kalkulator WHR, można dowiedzieć się, czy
+                    stosunek obwodu bioder do talii jest prawidłowy, a na jego
+                    podstawie określić typ sylwetki, który posiadamy. Na
+                    podstawie wyników otrzymanych w kalkulatorze WHR wyróżnia
+                    się dwa typy otyłości:
+                    <ul>
+                      <li>
+                        otyłość brzuszna (androidalna, trzewna, centralna lub
+                        typu jabłko) - spotykana najczęściej u mężczyzn i kobiet
+                        po okresie menopauzy, zwiększa ryzyko chorób układu
+                        krążenia oraz cukrzycy typu 2;
+                      </li>
+                      <li>
+                        otyłość pośladkowo-udowa (gynoidalna, obwodowa lub typu
+                        gruszka) - spotykana częściej u kobiet - wynika z
+                        nagromadzenia tkanki tłuszczowej w okolicy bioder i ud;
+                        bezpieczniejsza dla zdrowia niż otyłość brzuszna.
+                      </li>
+                    </ul>
+
+                    <br />
+                    <h2>Stosunek talii</h2>
+                    do bioder Najbardziej niebezpiecznym dla zdrowia typem
+                    otyłości jest otyłość brzuszna. Kalkulator WHR w takim
+                    przypadku wskazuje wysoki stosunek talii do bioder. Zbyt
+                    duży obwód talii w stosunku do obwodu bioder może świadczyć
+                    o gromadzeniu się tkanki tłuszczowej w jamie brzusznej,
+                    wokół narządów (tzw. trzewna tkanka tłuszczowa). Sprzyja to
+                    występowaniu zaburzeń metabolicznych i zwiększa ryzyko
+                    chorób:
+                    <ul>
+                      <li>sercowo-naczyniowych,</li>
+                      <li>choroby niedokrwiennej serca,</li>
+                      <li>cukrzycy typu 2,</li>
+                      <li>insulinooporności,</li>
+                      <li>nadciśnienia tętniczego.</li>
+                    </ul>
+
+                    <br />
+                    <h2>Jak obliczyć WHR?</h2>
+                    Najłatwiej jest po prostu skorzystać z kalkulatora WHR,
+                    który obliczy stosunek talii do bioder za nas. Można też
+                    samodzielnie obliczyć wskaźnik WHR. Wzór to proste działanie
+                    matematyczne:
+                    <h4 class="text-center">WHR = talia (cm) / biodra (cm)</h4>
+                    Oblicz WHR w wybrany sposób, a następnie porównaj wynik z
+                    poniższymi normami. WHR - normy u kobiet:
+
+                    <ul>
+                      <li>>0,8 - typ androidalny (jabłko)</li>
+                      <li><0,8 - typ gynoidalny (gruszka)</li>
+                    </ul>
+                    WHR - normy u mężczyzn:
+                    <ul>
+                      <li>>1 - typ androidalny (jabłko)</li>
+                      <li><1 - typ gynoidalny (gruszka)</li>
+                    </ul>
+
+                    Za idealne proporcje u kobiet uznaje się wskaźnik WHR = 0,7,
+                    a u mężczyzn WHR = 1.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn rounded-pill btn-oblicz"
+                      data-dismiss="modal"
+                    >
+                      Zamknij
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sekcja Kalkulator wody -->
+    <!-- STOPKA
+  -->
+    <div class="pt-4">
+      <footer class="border-top px-1 py-2">
+        <div class="container">
+          <small class="col-10"
+            >Copyright by: <span class="footer-name">Laura Wisniewska</span>
+          </small>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    wpiszNaglowek('Kalkulator BMI', 'Oblicz wskaźnik masy ciała');
+    $('#pills-bmi-tab').click(function () {
+      wpiszNaglowek('Kalkulator BMI', 'Oblicz wskaźnik masy ciała');
+    });
+    $('#pills-kalorii-tab').click(function () {
+      wpiszNaglowek(
+        'Kalkulator BMR',
+        'Oblicz swoje zapotrzebowanie kaloryczne',
+      );
+    });
+    $('#pills-wody-tab').click(function () {
+      wpiszNaglowek('Kalkulator wody', 'Oblicz swoje zapotrzebowanie na wodę');
+    });
+    $('#pills-whr-tab').click(function () {
+      wpiszNaglowek(
+        'Kalkulator WHR',
+        'Oblicz proporcje obwodu talii do bioder - typ figury',
+      );
+    });
+    $('#wyborCelu').change(function () {
+      var warunek = document.getElementById('wyborCelu').value;
+      console.log(warunek);
+      switch (warunek) {
+        case 'schudnac':
+          document.getElementById('parametryShudnac').style.visibility =
+            'visible';
+          document.getElementById('bmrTygodniowoOpis').innerHTML =
+            'Strata wagi tygodniowo(kg)';
+          document.getElementById('bmrUbytekOpis').innerHTML =
+            'Ile kg chcesz zrzucic?';
+          break;
+        case 'przytyc':
+          document.getElementById('parametryShudnac').style.visibility =
+            'visible';
+          document.getElementById('bmrTygodniowoOpis').innerHTML =
+            'Przyrost wagi tygodniwo (kg)';
+          document.getElementById('bmrUbytekOpis').innerHTML =
+            'Calościowy przyrost wagi (kg)';
+          break;
+        default:
+          document.getElementById('parametryShudnac').style.visibility =
+            'hidden';
+      }
+    });
+  </script>
+</html>
