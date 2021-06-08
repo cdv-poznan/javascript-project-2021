@@ -34,6 +34,7 @@ npm run production
 * [lodash](https://lodash.com/)
 * [push.js](https://pushjs.org/)
 * [localforage](https://localforage.github.io/localForage/)
+* [jQuery.balloons.js](http://urin.github.io/jquery.balloon.js/)
 
 ## Przykładowe API
 * [api.nbp.pl](http://api.nbp.pl/)
@@ -44,6 +45,9 @@ npm run production
 * [pokeapi.co](https://pokeapi.co/)
 * [reqres.in](https://reqres.in/)
 * [api.nasa.gov](https://api.nasa.gov)
+
+### Wykorzystane API
+* [
 
 ## Linki
 * [MDN Web Docs](https://developer.mozilla.org/)
