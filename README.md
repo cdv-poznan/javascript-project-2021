@@ -48,7 +48,7 @@ npm run production
 * [api.nasa.gov](https://api.nasa.gov)
 
 ### Wykorzystane API
-* [world.openbeautyfacts.org]( "https://world.openbeautyfacts.org/api/")
+* [world.openbeautyfacts.org](https://world.openbeautyfacts.org/api/)
 
 ## Linki
 * [MDN Web Docs](https://developer.mozilla.org/)
