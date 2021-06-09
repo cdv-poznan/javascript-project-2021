@@ -104,15 +104,28 @@ window.clickAndSearchMovieList = function(clicked_value) {
                             
                                 var content_media_type = document.createTextNode(`Madia type: ${parseRes.results[i].media_type}`);
                                 
+                                // Marks:
+                                // 1 - Violence
+                                // 2 - Vulgar language
+                                // 3 - Sexual content
+
                                 var content_comment = function() {
-                                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'green') {
+                                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === '0') {
                                         return document.createTextNode('Comment: Good for viewers in all age.');
-                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'orange') {
-                                        return document.createTextNode('Comment: Good for all viewers. May contain some curses or violence. Some scenes may need an explanation for young people (depends on sensitivity).');
-                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'yellow') {
-                                        return document.createTextNode('Comment: Not for all viewers (depends on sensitivity). Some scenes may be inappropriate for younger viewers.');
-                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'red') {
-                                        return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === '1') {
+                                        return document.createTextNode('Comment: Contain violence.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '2') {
+                                        return document.createTextNode('Comment: Contain vulgar language.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '3') {
+                                        return document.createTextNode('Comment: Contain sexual content.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 2') {
+                                        return document.createTextNode('Comment: Contain violence and vulgar language.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 3') {
+                                        return document.createTextNode('Comment: Contain violence and sexual content.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '2 3') {
+                                        return document.createTextNode('Comment: Contain vulgar language and sexual content.');
+                                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 2 3') {
+                                        return document.createTextNode('Comment: Contain violence, vulgar language and sexual content.');
                                     } else {
                                         return document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
                                     }
@@ -244,15 +257,28 @@ window.clickAndSearchMovieList = function(clicked_value) {
 
                 var content_media_type = document.createTextNode(`Madia type: ${parseRes.results[i].media_type}`);
                 
+                // Marks:
+                // 1 - Violence
+                // 2 - Vulgar language
+                // 3 - Sexual content
+
                 var content_comment = function() {
-                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'green') {
+                    if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === '0') {
                         return document.createTextNode('Comment: Good for viewers in all age.');
-                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === 'orange') {
-                        return document.createTextNode('Comment: Good for all viewers. May contain some curses or violence. Some scenes may need an explanation for young people (depends on sensitivity).');
-                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'yellow') {
-                        return document.createTextNode('Comment: Not for all viewers (depends on sensitivity). Some scenes may be inappropriate for younger viewers.');
-                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === 'red') {
-                        return document.createTextNode('Comment: Some scenes may be not worth watching and recommended to be omitted. Younger viewer should watch only witch adult or they should not be watching at all.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}` === '1') {
+                        return document.createTextNode('Comment: Contain violence.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '2') {
+                        return document.createTextNode('Comment: Contain vulgar language.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '3') {
+                        return document.createTextNode('Comment: Contain sexual content.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 2') {
+                        return document.createTextNode('Comment: Contain violence and vulgar language.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 3') {
+                        return document.createTextNode('Comment: Contain violence and sexual content.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '2 3') {
+                        return document.createTextNode('Comment: Contain vulgar language and sexual content.');
+                    } else if (`${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`  === '1 2 3') {
+                        return document.createTextNode('Comment: Contain violence, vulgar language and sexual content.');
                     } else {
                         return document.createTextNode(`Comment: ${parseRes.comments[parseRes.results[i].media_type + ':' + parseRes.results[i].id]}`);
                     }
