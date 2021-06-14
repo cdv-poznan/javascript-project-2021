@@ -11,7 +11,7 @@ const configure = (env, args) => {
   return {
     mode: args.mode || 'development',
     entry: {
-      main: ['./src/main', './src/style.scss'],
+      main: ['./src/main', './src/style.css'],
     },
     output: {
       path: resolve(__dirname, './dist'),
@@ -28,17 +28,10 @@ const configure = (env, args) => {
           ],
         },
         {
-          test: /\.sc?ss$/,
-          use: [
-            env.WEBPACK_SERVE
-              ? {
-                  loader: 'style-loader',
-                }
-              : MiniCssExtractPlugin.loader,
-            { loader: 'css-loader' },
-            { loader: 'sass-loader' },
-          ],
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
         },
+
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
@@ -65,9 +58,10 @@ const configure = (env, args) => {
         formatter: 'codeframe',
       }),
       new StylelintWebpackPlugin({
-        files: './src/*.scss',
+        files: './src/*.css',
         failOnError: false,
         failOnWarning: false,
+        fix: true,
         formatter: 'string',
       }),
       new MiniCssExtractPlugin({
